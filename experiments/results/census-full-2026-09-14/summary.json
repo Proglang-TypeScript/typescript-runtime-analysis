@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "identity": "8235039d24e334ab26863f6a87cb8f828ff91f75dbfbe01bcf9d2a9cd4f7dcf0",
+  "provenance": {
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+    "commit": "455254aa7204192e7f7fbe50266d2313cefdf6c9",
+    "scope": "full",
+    "pinnedCorpusPackages": 8680
+  },
+  "compiler": "6.0.3",
+  "policy": "declared-entry-module-exports-v1",
+  "coverage": {
+    "selection": 8680,
+    "pinnedCorpusPackages": 8680,
+    "fullPinnedCorpusSelected": true,
+    "extractionFailures": 21,
+    "compilerDiagnosticPackages": 3738
+  },
+  "counts": {
+    "totalExportedCallableDeclarations": 145776,
+    "exportSignaturePairs": 1161271,
+    "distinctCallableExports": 894014,
+    "declarationsWithTypeParameters": 22180,
+    "declarationsWithOwnTypeParameters": 9035,
+    "declarationsWithBothPolarities": 2558,
+    "packagesWithExports": 6783,
+    "packagesWithTypeParameters": 2430,
+    "packagesWithBothPolarities": 786,
+    "genericOnlyThroughEnclosing": 12617,
+    "firstOrderPotentialDeclarations": 272,
+    "classes": {
+      "identity": 758,
+      "container-element": 98,
+      "value-to-container": 49,
+      "multiple-arguments": 216,
+      "constrained-generic": 551,
+      "higher-order": 1698,
+      "overload-or-discriminated": 31455,
+      "unsupported": 131898
+    },
+    "obtainableRuntimePackages": 0,
+    "verifiedExecutableExports": 0,
+    "runtimeAssessment": "not-assessed"
+  },
+  "manualReview": {
+    "pending": 40,
+    "agree": 0,
+    "false-classification": 0,
+    "ambiguous": 0,
+    "excluded": 0
+  },
+  "evidencePolicy": "Compact derivative summary; detailed source notices/manifests/declarations and raw shards deliberately excluded. Per-package metrics are in packages.csv."
+}

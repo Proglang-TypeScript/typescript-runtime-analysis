@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "identity": "8235039d24e334ab26863f6a87cb8f828ff91f75dbfbe01bcf9d2a9cd4f7dcf0",
+  "records": [
+    {
+      "package": "aframe",
+      "status": "extraction-failed",
+      "failure": "ENOBUFS",
+      "entry": null,
+      "diagnostics": [
+        "spawnSync /opt/homebrew/Cellar/node@24/24.21.0/bin/node ENOBUFS"
+      ]
+    },
+    {
+      "package": "aws-sdk2-types",
+      "status": "extraction-failed",
+      "failure": "WORKER_FAILURE",
+      "entry": null,
+      "diagnostics": [
+        "Namespace traversal depth exceeded: aws-sdk2-types\n"
+      ]
+    },
+    {
+      "package": "babel__register",
+      "status": "extraction-failed",
+      "failure": "WORKER_FAILURE",
+      "entry": null,
+      "diagnostics": [
+        "Namespace traversal depth exceeded: babel__register\n"
+      ]
+    },
+    {
+      "package": "beyonk__gdpr-cookie-consent-banner",
+      "status": "missing-entry",
+      "failure": null,
+      "entry": "types/beyonk__gdpr-cookie-consent-banner/index.d.ts",
+      "diagnostics": []
+    },
+    {
+      "package": "dom-css",
+      "status": "extraction-failed",
+      "failure": "WORKER_FAILURE",
+      "entry": null,
+      "diagnostics": [
+        "Namespace traversal depth exceeded: dom-css\n"
+      ]
+    },
+    {
+      "package": "dynogels",
+      "status": "extraction-failed",
+      "failure": "WORKER_FAILURE",
+      "entry": null,
+      "diagnostics": [
+        "Namespace traversal depth exceeded: dynogels\n"
+      ]
+    },
+    {
+      "package": "frisby",
+      "status": "extraction-failed",
+      "failure": "WORKER_FAILURE",
+      "entry": null,
+      "diagnostics": [
+        "Namespace traversal depth exceeded: frisby\n"
+      ]
+    },
+    {
+      "package": "go",
+      "status": "extraction-failed",
+      "failure": "ENOBUFS",
+      "entry": null,
+      "diagnostics": [
+        "spawnSync /opt/homebrew/Cellar/node@24/24.21.0/bin/node ENOBUFS"
+      ]
+    },
+    {
+      "package": "iv-viewer",
+      "status": "extraction-failed",
+      "failure": "WORKER_FAILURE",
+      "entry": null,
+      "diagnostics": [
+        "Namespace traversal depth exceeded: iv-viewer\n"
+      ]
+    },
+    {
+      "package": "k6",
+      "status": "extraction-failed",
+      "failure": "WORKER_FAILURE",
+      "entry": null,
+      "diagnostics": [
+        "Namespace traversal depth exceeded: k6\n"
+      ]
+    },
+    {
+      "package": "node",
+      "status": "extraction-failed",
+      "failure": "WORKER_FAILURE",
+      "entry": null,
+      "diagnostics": [
+        "Namespace traversal depth exceeded: node\n"
+      ]
+    },
+    {
+      "package": "node-fetch",
+      "status": "extraction-failed",
+      "failure": "WORKER_FAILURE",
+      "entry": null,
+      "diagnostics": [
+        "Namespace traversal depth exceeded: node-fetch\n"
+      ]
+    },
+    {
+      "package": "nums2words-bg",
+      "status": "extraction-failed",
+      "failure": "WORKER_FAILURE",
+      "entry": null,
+      "diagnostics": [
+        "Namespace traversal depth exceeded: nums2words-bg\n"
+      ]
+    },
+    {
+      "package": "openui5",
+      "status": "extraction-failed",
+      "failure": "ENOBUFS",
+      "entry": null,
+      "diagnostics": [
+        "spawnSync /opt/homebrew/Cellar/node@24/24.21.0/bin/node ENOBUFS"
+      ]
+    },
+    {
+      "package": "ottomated__passport-streamlabs",
+      "status": "extraction-failed",
+      "failure": "WORKER_FAILURE",
+      "entry": null,
+      "diagnostics": [
+        "Namespace traversal depth exceeded: ottomated__passport-streamlabs\n"
+      ]
+    },
+    {
+      "package": "ottomated__passport-twitch",
+      "status": "extraction-failed",
+      "failure": "WORKER_FAILURE",
+      "entry": null,
+      "diagnostics": [
+        "Namespace traversal depth exceeded: ottomated__passport-twitch\n"
+      ]
+    },
+    {
+      "package": "passport-auth0",
+      "status": "extraction-failed",
+      "failure": "WORKER_FAILURE",
+      "entry": null,
+      "diagnostics": [
+        "Namespace traversal depth exceeded: passport-auth0\n"
+      ]
+    },
+    {
+      "package": "passport-discord",
+      "status": "extraction-failed",
+      "failure": "WORKER_FAILURE",
+      "entry": null,
+      "diagnostics": [
+        "Namespace traversal depth exceeded: passport-discord\n"
+      ]
+    },
+    {
+      "package": "passport-github",
+      "status": "extraction-failed",
+      "failure": "WORKER_FAILURE",
+      "entry": null,
+      "diagnostics": [
+        "Namespace traversal depth exceeded: passport-github\n"
+      ]
+    },
+    {
+      "package": "vimeo__player",
+      "status": "extraction-failed",
+      "failure": "WORKER_FAILURE",
+      "entry": null,
+      "diagnostics": [
+        "Namespace traversal depth exceeded: vimeo__player\n"
+      ]
+    },
+    {
+      "package": "yeoman-assert",
+      "status": "extraction-failed",
+      "failure": "WORKER_FAILURE",
+      "entry": null,
+      "diagnostics": [
+        "Namespace traversal depth exceeded: yeoman-assert\n"
+      ]
+    }
+  ]
+}

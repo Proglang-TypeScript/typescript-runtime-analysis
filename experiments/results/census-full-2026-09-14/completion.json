@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "identity": "8235039d24e334ab26863f6a87cb8f828ff91f75dbfbe01bcf9d2a9cd4f7dcf0",
+  "state": "extraction-complete",
+  "processedPackages": 8680,
+  "successfulPackages": 8659,
+  "failedPackages": 21,
+  "pendingPackages": 0,
+  "timeLimitHours": 1,
+  "elapsedHours": 0.8977180729283333,
+  "command": [
+    "run",
+    "--snapshot",
+    "work/definitelytyped",
+    "--out",
+    "work/census",
+    "--time-limit-hours",
+    "1"
+  ],
+  "resumableBundle": false
+}

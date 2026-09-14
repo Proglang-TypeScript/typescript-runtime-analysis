@@ -75,6 +75,7 @@ Revised Track B retains one tuple per instrumented invocation, including argumen
 - [Revision 2 delta and executed acceptance checks](docs/revision-2-delta.md)
 - [Polarity-directed sealing contract and limitations](docs/sealing.md)
 - [Census infrastructure, timed checkpoints and complete resume commands](readme-infrastructure.md)
+- [Full pinned census: compact baseline evidence and remaining reviews](experiments/results/census-full-2026-09-14/README.md)
 - [Phase-2 census setup, units, review and availability](docs/generic-api-census.md)
 - [Sealing feasibility preparation and remaining gates](docs/sealing-feasibility-report.md)
 

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "censusIdentity": "8235039d24e334ab26863f6a87cb8f828ff91f75dbfbe01bcf9d2a9cd4f7dcf0",
+  "softwareRepository": "https://github.com/Proglang-TypeScript/typescript-runtime-analysis",
+  "softwareCommit": "cd895cc3664f4d47de96e2fc9b083cf6084ed7b8",
+  "sourceRelativeDirectory": "work/census",
+  "snapshotRelativeDirectory": "work/definitelytyped",
+  "snapshot": {
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+    "commit": "455254aa7204192e7f7fbe50266d2313cefdf6c9"
+  },
+  "sourceFiles": [
+    {
+      "path": "run.json",
+      "bytes": 404624,
+      "sha256": "022d86ec033ac2bddcea43d12777f736e93b9f59e4c0336f5e7722c8a758ff54"
+    },
+    {
+      "path": "checkpoint.json",
+      "bytes": 386933,
+      "sha256": "786e6ad2aca385c0be0f2a1cdf32d05aa88a5325ea9e315ed8cc84b47b07faf1"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 16088328,
+      "sha256": "6c192d5a4fbc3eea32bcddf6997785fb85e1959a39a0cf154c419d8cdc23a59b"
+    },
+    {
+      "path": "summary.csv",
+      "bytes": 612,
+      "sha256": "7224b570cc748e04f1bc4525e10b7bd9b371f7af725ccb5a35cc58f994e8c9de"
+    },
+    {
+      "path": "review-queue.json",
+      "bytes": 53894,
+      "sha256": "789792aef94c0e52d20c1dce8b3c82bf3159a802472d09e27163fefb1a109f8d"
+    }
+  ],
+  "rawShardCount": 8680,
+  "rawShardBytes": 2142519432,
+  "rawShardHashIndex": "raw-shards.sha256",
+  "externalRawArchive": null,
+  "resumableBundle": false,
+  "validation": {
+    "allShardsSchemaAndIdentityChecked": true,
+    "summaryCountsRecomputed": true,
+    "candidateCount": 272,
+    "reviewItems": 40
+  },
+  "diagnosticsPolicy": "Code counts cover retained unique diagnostics, not uncapped per-entry totals; at most two code-distinct examples per package, each message truncated to 240 characters. Full diagnostics stay in raw shards."
+}
