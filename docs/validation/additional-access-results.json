@@ -1,0 +1,42 @@
+[
+  {
+    "repository": "Proglang-TypeScript/concrete-types",
+    "kind": "pulls",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "repository": "Proglang-TypeScript/concrete-types",
+    "kind": "issues",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "repository": "proglang/dts-generate-results",
+    "kind": "pulls",
+    "count": 0
+  },
+  {
+    "repository": "proglang/dts-generate-results",
+    "kind": "issues",
+    "count": 0
+  },
+  {
+    "repository": "Proglang-TypeScript/JSTYPELOG",
+    "kind": "pulls",
+    "count": 0
+  },
+  {
+    "repository": "Proglang-TypeScript/JSTYPELOG",
+    "kind": "issues",
+    "count": 0
+  },
+  {
+    "repository": "Proglang-TypeScript/JSTYPELOG-Evaluation",
+    "kind": "pulls",
+    "count": 0
+  },
+  {
+    "repository": "Proglang-TypeScript/JSTYPELOG-Evaluation",
+    "kind": "issues",
+    "count": 0
+  }
+]

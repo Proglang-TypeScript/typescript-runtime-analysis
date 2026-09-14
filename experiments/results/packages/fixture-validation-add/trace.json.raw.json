@@ -1,0 +1,135 @@
+{
+  "functions": {
+    "functionId_1": {
+      "functionId": "functionId_1",
+      "functionName": "calculate",
+      "isConstructor": false,
+      "args": {
+        "0": {
+          "argumentIndex": 0,
+          "argumentName": "left",
+          "argumentId": "9zFqqJJ1jQUr1rhWMVS4d",
+          "interactions": [
+            {
+              "code": "inputValue",
+              "traceId": "trace__1",
+              "interactionId": "Z_OJk0WndjKnK8Ehr9fZa",
+              "typeof": "number"
+            },
+            {
+              "code": "convertedTo",
+              "traceId": "trace__1",
+              "interactionId": "MiOn0fJoIBIS9_IiwcNQa",
+              "convertedTo": "number",
+              "isNaN": false,
+              "toPrimitive": null,
+              "operator": "+",
+              "originalTypeof": "number"
+            },
+            {
+              "code": "operator",
+              "traceId": "trace__1",
+              "interactionId": "RvAVoVgIAk61uuSGxgsWw",
+              "leftType": "number",
+              "rightType": "number",
+              "leftIsNaN": false,
+              "rightIsNan": false,
+              "leftToPrimitiveType": "number",
+              "rightToPrimitiveType": "number",
+              "leftToPrimitiveIsNaN": false,
+              "rightToPrimitiveIsNaN": false,
+              "operator": "+",
+              "operandForInteraction": "left"
+            }
+          ]
+        },
+        "1": {
+          "argumentIndex": 1,
+          "argumentName": "right",
+          "argumentId": "x2gKmZut079wP0-JIz0RD",
+          "interactions": [
+            {
+              "code": "inputValue",
+              "traceId": "trace__1",
+              "interactionId": "JGaUKQSAzQUX37_BbVxF0",
+              "typeof": "number"
+            },
+            {
+              "code": "convertedTo",
+              "traceId": "trace__1",
+              "interactionId": "IUnlCPOT3uX-Gu87owoIe",
+              "convertedTo": "number",
+              "isNaN": false,
+              "toPrimitive": null,
+              "operator": "+",
+              "originalTypeof": "number"
+            },
+            {
+              "code": "operator",
+              "traceId": "trace__1",
+              "interactionId": "GlZ-35brkL-sIWY46fO_m",
+              "leftType": "number",
+              "rightType": "number",
+              "leftIsNaN": false,
+              "rightIsNan": false,
+              "leftToPrimitiveType": "number",
+              "rightToPrimitiveType": "number",
+              "leftToPrimitiveIsNaN": false,
+              "rightToPrimitiveIsNaN": false,
+              "operator": "+",
+              "operandForInteraction": "right"
+            }
+          ]
+        }
+      },
+      "declarationEnclosingFunctionId": -1,
+      "returnTypeOfs": [
+        {
+          "typeOf": "number",
+          "traceId": "trace__1"
+        }
+      ],
+      "functionIid": 57,
+      "requiredModule": "./module",
+      "isExported": true,
+      "constructedBy": "",
+      "sourceLocation": {
+        "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/results/packages/fixture-validation-add/module.js",
+        "line": 2,
+        "column": 1
+      }
+    }
+  },
+  "patterns": [
+    {
+      "operator": "+",
+      "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/results/packages/fixture-validation-add/module.js",
+      "line": 2,
+      "column": 43,
+      "leftType": "number",
+      "rightType": "number"
+    }
+  ],
+  "sourceMaps": {
+    "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/results/packages/fixture-validation-add/client.js": {
+      "version": 3,
+      "file": "client.js",
+      "sourceRoot": "",
+      "sources": [
+        "client.js"
+      ],
+      "names": [],
+      "mappings": ";AAAA,IAAI,SAAS,GAAG,OAAO,CAAC,UAAU,CAAC,CAAC;AACpC,SAAS,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC"
+    },
+    "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/results/packages/fixture-validation-add/module.js": {
+      "version": 3,
+      "file": "module.js",
+      "sourceRoot": "",
+      "sources": [
+        "module.js"
+      ],
+      "names": [],
+      "mappings": ";AAAA,SAAS,SAAS,CAAC,IAAI,EAAE,KAAK,IAAI,OAAO,CAAC,IAAI,GAAG,KAAK,CAAC,CAAC,CAAC,CAAC;AAC1D,MAAM,CAAC,OAAO,GAAG,SAAS,CAAC"
+    }
+  }
+}

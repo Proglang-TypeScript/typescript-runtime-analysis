@@ -1,0 +1,143 @@
+{
+  "functions": {
+    "functionId_1": {
+      "functionId": "functionId_1",
+      "functionName": "calculate",
+      "isConstructor": false,
+      "args": {
+        "0": {
+          "argumentIndex": 0,
+          "argumentName": "left",
+          "argumentId": "Of0bZt-P_2cAm_pfmceqM",
+          "interactions": [
+            {
+              "code": "inputValue",
+              "traceId": "trace__1",
+              "interactionId": "9gcklVkSvQq6W9KW7cPcF",
+              "typeof": "number"
+            },
+            {
+              "code": "convertedTo",
+              "traceId": "trace__1",
+              "interactionId": "SHqSeo9rFqKKJstILEUxm",
+              "convertedTo": "number",
+              "isNaN": false,
+              "toPrimitive": null,
+              "operator": "+",
+              "originalTypeof": "number"
+            },
+            {
+              "code": "operator",
+              "traceId": "trace__1",
+              "interactionId": "PMoT1RQpCgdIw21zfwMxL",
+              "leftType": "number",
+              "rightType": "number",
+              "leftIsNaN": false,
+              "rightIsNan": false,
+              "leftToPrimitiveType": "number",
+              "rightToPrimitiveType": "number",
+              "leftToPrimitiveIsNaN": false,
+              "rightToPrimitiveIsNaN": false,
+              "operator": "+",
+              "operandForInteraction": "left"
+            }
+          ]
+        },
+        "1": {
+          "argumentIndex": 1,
+          "argumentName": "right",
+          "argumentId": "wyOSkGZ60E6Qjc8gY_ahZ",
+          "interactions": [
+            {
+              "code": "inputValue",
+              "traceId": "trace__1",
+              "interactionId": "m7tEqyoF5oN7S-mDJ0qof",
+              "typeof": "number"
+            },
+            {
+              "code": "convertedTo",
+              "traceId": "trace__1",
+              "interactionId": "9_FzUdfT0Ep5s656alpW9",
+              "convertedTo": "number",
+              "isNaN": false,
+              "toPrimitive": null,
+              "operator": "+",
+              "originalTypeof": "number"
+            },
+            {
+              "code": "operator",
+              "traceId": "trace__1",
+              "interactionId": "IvQci89sfcFT1cFr4neBg",
+              "leftType": "number",
+              "rightType": "number",
+              "leftIsNaN": false,
+              "rightIsNan": false,
+              "leftToPrimitiveType": "number",
+              "rightToPrimitiveType": "number",
+              "leftToPrimitiveIsNaN": false,
+              "rightToPrimitiveIsNaN": false,
+              "operator": "+",
+              "operandForInteraction": "right"
+            }
+          ]
+        }
+      },
+      "declarationEnclosingFunctionId": -1,
+      "returnTypeOfs": [
+        {
+          "typeOf": "number",
+          "traceId": "trace__1"
+        }
+      ],
+      "functionIid": 57,
+      "requiredModule": "./module",
+      "isExported": true,
+      "constructedBy": "",
+      "sourceLocation": {
+        "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/results/evidence/source/module.js",
+        "line": 2,
+        "column": 1
+      }
+    }
+  },
+  "patterns": [
+    {
+      "operator": "+",
+      "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/results/evidence/source/module.js",
+      "line": 3,
+      "column": 12,
+      "leftType": "number",
+      "rightType": "number"
+    },
+    {
+      "operator": "!==",
+      "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/results/evidence/source/client.js",
+      "line": 3,
+      "column": 5,
+      "leftType": "number",
+      "rightType": "number"
+    }
+  ],
+  "sourceMaps": {
+    "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/results/evidence/source/client.js": {
+      "version": 3,
+      "file": "client.js",
+      "sourceRoot": "",
+      "sources": [
+        "client.js"
+      ],
+      "names": [],
+      "mappings": ";AAAA,IAAI,SAAS,GAAG,OAAO,CAAC,UAAU,CAAC,CAAC;AACpC,IAAI,SAAS,CAAC,CAAC,EAAE,CAAC,CAAC,KAAK,CAAC;IAAE,MAAM,IAAI,KAAK,CAAC,eAAe,CAAC,CAAC"
+    },
+    "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/results/evidence/source/module.js": {
+      "version": 3,
+      "file": "module.js",
+      "sourceRoot": "",
+      "sources": [
+        "module.js"
+      ],
+      "names": [],
+      "mappings": ";AAAA,SAAS,SAAS,CAAC,IAAI,EAAE,KAAK;IAC5B,OAAO,IAAI,GAAG,KAAK,CAAC;AACtB,CAAC;AACD,MAAM,CAAC,OAAO,GAAG,SAAS,CAAC"
+    }
+  }
+}

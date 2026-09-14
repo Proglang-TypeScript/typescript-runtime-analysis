@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "provenance": {
+    "package": "fixture-validation-add",
+    "version": "1.0.0",
+    "repository": "local-fixture",
+    "commit": "uncommitted-fixture",
+    "evidence": "fixture",
+    "entryPoint": "client.js",
+    "publicModule": "module",
+    "backend": "jalangi2",
+    "backendVersion": "bc879287b1678de6e3c423f5debe63207559525b",
+    "executionId": "8db0e5dc73b076f674d17dd2"
+  },
+  "observations": [
+    {
+      "functionId": "module.js:1:1:calculate",
+      "functionName": "calculate",
+      "position": "parameter",
+      "index": 0,
+      "type": "number",
+      "source": {
+        "file": "module.js",
+        "line": 1,
+        "column": 1
+      },
+      "executionId": "8db0e5dc73b076f674d17dd2",
+      "order": 0,
+      "public": true,
+      "interaction": {
+        "kind": "inputValue",
+        "code": "inputValue",
+        "traceId": "trace__1",
+        "typeof": "number"
+      }
+    },
+    {
+      "functionId": "module.js:1:1:calculate",
+      "functionName": "calculate",
+      "position": "parameter",
+      "index": 0,
+      "type": "unknown",
+      "source": {
+        "file": "module.js",
+        "line": 1,
+        "column": 1
+      },
+      "executionId": "8db0e5dc73b076f674d17dd2",
+      "order": 1,
+      "public": true,
+      "interaction": {
+        "kind": "convertedTo",
+        "code": "convertedTo",
+        "traceId": "trace__1",
+        "convertedTo": "number",
+        "isNaN": false,
+        "toPrimitive": null,
+        "operator": "+",
+        "originalTypeof": "number"
+      }
+    },
+    {
+      "functionId": "module.js:1:1:calculate",
+      "functionName": "calculate",
+      "position": "parameter",
+      "index": 0,
+      "type": "unknown",
+      "source": {
+        "file": "module.js",
+        "line": 1,
+        "column": 1
+      },
+      "executionId": "8db0e5dc73b076f674d17dd2",
+      "order": 2,
+      "public": true,
+      "interaction": {
+        "kind": "operator",
+        "code": "operator",
+        "traceId": "trace__1",
+        "leftType": "number",
+        "rightType": "number",
+        "leftIsNaN": false,
+        "rightIsNan": false,
+        "leftToPrimitiveType": "number",
+        "rightToPrimitiveType": "number",
+        "leftToPrimitiveIsNaN": false,
+        "rightToPrimitiveIsNaN": false,
+        "operator": "+",
+        "operandForInteraction": "left"
+      }
+    },
+    {
+      "functionId": "module.js:1:1:calculate",
+      "functionName": "calculate",
+      "position": "parameter",
+      "index": 1,
+      "type": "number",
+      "source": {
+        "file": "module.js",
+        "line": 1,
+        "column": 1
+      },
+      "executionId": "8db0e5dc73b076f674d17dd2",
+      "order": 3,
+      "public": true,
+      "interaction": {
+        "kind": "inputValue",
+        "code": "inputValue",
+        "traceId": "trace__1",
+        "typeof": "number"
+      }
+    },
+    {
+      "functionId": "module.js:1:1:calculate",
+      "functionName": "calculate",
+      "position": "parameter",
+      "index": 1,
+      "type": "unknown",
+      "source": {
+        "file": "module.js",
+        "line": 1,
+        "column": 1
+      },
+      "executionId": "8db0e5dc73b076f674d17dd2",
+      "order": 4,
+      "public": true,
+      "interaction": {
+        "kind": "convertedTo",
+        "code": "convertedTo",
+        "traceId": "trace__1",
+        "convertedTo": "number",
+        "isNaN": false,
+        "toPrimitive": null,
+        "operator": "+",
+        "originalTypeof": "number"
+      }
+    },
+    {
+      "functionId": "module.js:1:1:calculate",
+      "functionName": "calculate",
+      "position": "parameter",
+      "index": 1,
+      "type": "unknown",
+      "source": {
+        "file": "module.js",
+        "line": 1,
+        "column": 1
+      },
+      "executionId": "8db0e5dc73b076f674d17dd2",
+      "order": 5,
+      "public": true,
+      "interaction": {
+        "kind": "operator",
+        "code": "operator",
+        "traceId": "trace__1",
+        "leftType": "number",
+        "rightType": "number",
+        "leftIsNaN": false,
+        "rightIsNan": false,
+        "leftToPrimitiveType": "number",
+        "rightToPrimitiveType": "number",
+        "leftToPrimitiveIsNaN": false,
+        "rightToPrimitiveIsNaN": false,
+        "operator": "+",
+        "operandForInteraction": "right"
+      }
+    },
+    {
+      "functionId": "module.js:1:1:calculate",
+      "functionName": "calculate",
+      "position": "result",
+      "index": -1,
+      "type": "number",
+      "source": {
+        "file": "module.js",
+        "line": 1,
+        "column": 1
+      },
+      "executionId": "8db0e5dc73b076f674d17dd2",
+      "order": 6,
+      "public": true,
+      "interaction": {
+        "kind": "return",
+        "traceId": "trace__1"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "operator": "+",
+      "source": {
+        "file": "module.js",
+        "line": 1,
+        "column": 43
+      },
+      "leftType": "number",
+      "rightType": "number",
+      "executionId": "8db0e5dc73b076f674d17dd2",
+      "order": 0
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+[
+  {
+    "check": "versions",
+    "command": [
+      "sh",
+      "-c",
+      "node --version; npm --version"
+    ],
+    "exit": 0,
+    "seconds": 0.06,
+    "container": "typescript-recovery-clean-install"
+  },
+  {
+    "check": "install",
+    "command": [
+      "npm",
+      "ci"
+    ],
+    "exit": 0,
+    "seconds": 5.71,
+    "container": "typescript-recovery-clean-install"
+  },
+  {
+    "check": "check",
+    "command": [
+      "npm",
+      "run",
+      "check"
+    ],
+    "exit": 0,
+    "seconds": 23.59,
+    "container": "typescript-recovery-clean-install"
+  },
+  {
+    "check": "audit",
+    "command": [
+      "npm",
+      "audit",
+      "--json"
+    ],
+    "exit": 0,
+    "seconds": 0.51,
+    "container": "typescript-recovery-clean-install"
+  }
+]

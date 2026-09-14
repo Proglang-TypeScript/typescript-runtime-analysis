@@ -1,0 +1,209 @@
+{
+  "functions": {
+    "functionId_1": {
+      "functionId": "functionId_1",
+      "functionName": "calculate",
+      "isConstructor": false,
+      "args": {
+        "0": {
+          "argumentIndex": 0,
+          "argumentName": "left",
+          "argumentId": "ei9dRys5b5LWmeYmEz0XO",
+          "interactions": [
+            {
+              "code": "inputValue",
+              "traceId": "trace__1",
+              "interactionId": "cPAfDTRH3u-ejZ29Cfl0u",
+              "typeof": "number"
+            },
+            {
+              "code": "convertedTo",
+              "traceId": "trace__1",
+              "interactionId": "Af3iNdkT-axPWp3IYL7vd",
+              "convertedTo": "number",
+              "isNaN": false,
+              "toPrimitive": null,
+              "operator": "+",
+              "originalTypeof": "number"
+            },
+            {
+              "code": "operator",
+              "traceId": "trace__1",
+              "interactionId": "w6kG39VNY1UbcPN_TfD8R",
+              "leftType": "number",
+              "rightType": "number",
+              "leftIsNaN": false,
+              "rightIsNan": false,
+              "leftToPrimitiveType": "number",
+              "rightToPrimitiveType": "number",
+              "leftToPrimitiveIsNaN": false,
+              "rightToPrimitiveIsNaN": false,
+              "operator": "+",
+              "operandForInteraction": "left"
+            },
+            {
+              "code": "inputValue",
+              "traceId": "trace__2",
+              "interactionId": "mMUmJJDpKJjty3ufQWsXj",
+              "typeof": "number"
+            },
+            {
+              "code": "convertedTo",
+              "traceId": "trace__2",
+              "interactionId": "ScRBydh1iSwpJH4NVZ5pt",
+              "convertedTo": "number",
+              "isNaN": false,
+              "toPrimitive": null,
+              "operator": "+",
+              "originalTypeof": "number"
+            },
+            {
+              "code": "operator",
+              "traceId": "trace__2",
+              "interactionId": "vDmHoGCrneJ3sqneyLHhB",
+              "leftType": "number",
+              "rightType": "number",
+              "leftIsNaN": false,
+              "rightIsNan": false,
+              "leftToPrimitiveType": "number",
+              "rightToPrimitiveType": "number",
+              "leftToPrimitiveIsNaN": false,
+              "rightToPrimitiveIsNaN": false,
+              "operator": "+",
+              "operandForInteraction": "left"
+            }
+          ]
+        },
+        "1": {
+          "argumentIndex": 1,
+          "argumentName": "right",
+          "argumentId": "PToSLzR_UAcu3Kgzif8kd",
+          "interactions": [
+            {
+              "code": "inputValue",
+              "traceId": "trace__1",
+              "interactionId": "jlKo83Av6Qx0N_dwnsbBX",
+              "typeof": "number"
+            },
+            {
+              "code": "convertedTo",
+              "traceId": "trace__1",
+              "interactionId": "rIQZU32Oy0ALyZ4hKw4q1",
+              "convertedTo": "number",
+              "isNaN": false,
+              "toPrimitive": null,
+              "operator": "+",
+              "originalTypeof": "number"
+            },
+            {
+              "code": "operator",
+              "traceId": "trace__1",
+              "interactionId": "c8Dg77P5dcVHxk3fJow_-",
+              "leftType": "number",
+              "rightType": "number",
+              "leftIsNaN": false,
+              "rightIsNan": false,
+              "leftToPrimitiveType": "number",
+              "rightToPrimitiveType": "number",
+              "leftToPrimitiveIsNaN": false,
+              "rightToPrimitiveIsNaN": false,
+              "operator": "+",
+              "operandForInteraction": "right"
+            },
+            {
+              "code": "inputValue",
+              "traceId": "trace__2",
+              "interactionId": "QBtuMGWdLv7klo3-oDR3j",
+              "typeof": "number"
+            },
+            {
+              "code": "convertedTo",
+              "traceId": "trace__2",
+              "interactionId": "pg5gopntqdYe6ixzw-dmg",
+              "convertedTo": "number",
+              "isNaN": false,
+              "toPrimitive": null,
+              "operator": "+",
+              "originalTypeof": "number"
+            },
+            {
+              "code": "operator",
+              "traceId": "trace__2",
+              "interactionId": "okDmeumVkeTGbBptN8j0x",
+              "leftType": "number",
+              "rightType": "number",
+              "leftIsNaN": false,
+              "rightIsNan": false,
+              "leftToPrimitiveType": "number",
+              "rightToPrimitiveType": "number",
+              "leftToPrimitiveIsNaN": false,
+              "rightToPrimitiveIsNaN": false,
+              "operator": "+",
+              "operandForInteraction": "right"
+            }
+          ]
+        }
+      },
+      "declarationEnclosingFunctionId": -1,
+      "returnTypeOfs": [
+        {
+          "typeOf": "number",
+          "traceId": "trace__1"
+        },
+        {
+          "typeOf": "number",
+          "traceId": "trace__2"
+        }
+      ],
+      "functionIid": 81,
+      "requiredModule": "./module",
+      "isExported": true,
+      "constructedBy": "",
+      "sourceLocation": {
+        "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/results/packages/fixture-train-sum/module.js",
+        "line": 2,
+        "column": 1
+      }
+    }
+  },
+  "patterns": [
+    {
+      "operator": "+",
+      "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/results/packages/fixture-train-sum/module.js",
+      "line": 2,
+      "column": 45,
+      "leftType": "number",
+      "rightType": "number"
+    },
+    {
+      "operator": "+",
+      "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/results/packages/fixture-train-sum/module.js",
+      "line": 2,
+      "column": 45,
+      "leftType": "number",
+      "rightType": "number"
+    }
+  ],
+  "sourceMaps": {
+    "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/results/packages/fixture-train-sum/client.js": {
+      "version": 3,
+      "file": "client.js",
+      "sourceRoot": "",
+      "sources": [
+        "client.js"
+      ],
+      "names": [],
+      "mappings": ";AAAA,IAAI,SAAS,GAAG,OAAO,CAAC,UAAU,CAAC,CAAC;AACpC,SAAS,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC;AAChB,SAAS,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC"
+    },
+    "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/results/packages/fixture-train-sum/module.js": {
+      "version": 3,
+      "file": "module.js",
+      "sourceRoot": "",
+      "sources": [
+        "module.js"
+      ],
+      "names": [],
+      "mappings": ";AAAA,SAAS,SAAS,CAAC,IAAI,EAAE,KAAK,IAAI,IAAI,GAAG,GAAG,IAAI,GAAG,KAAK,CAAC,CAAC,OAAO,GAAG,CAAC,CAAC,CAAC;AACvE,MAAM,CAAC,OAAO,GAAG,SAAS,CAAC"
+    }
+  }
+}

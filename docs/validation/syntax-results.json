@@ -1,0 +1,152 @@
+[
+  {
+    "file": "/Users/thiemann/git/typescript/dts-auto-generate/filter_classes.py",
+    "check": "Python AST parse",
+    "exit": 0
+  },
+  {
+    "file": "/Users/thiemann/git/typescript/dts-auto-generate/find_instrumentable.py",
+    "check": "Python AST parse",
+    "exit": 0
+  },
+  {
+    "file": "/Users/thiemann/git/typescript/dts-auto-generate/find-1-func-libs/run.py",
+    "check": "Python AST parse",
+    "exit": 0
+  },
+  {
+    "file": "/Users/thiemann/git/typescript/dts-auto-generate/sample-based/install_modules.py",
+    "check": "Python AST parse",
+    "exit": 0
+  },
+  {
+    "file": "work/sources/JSTYPELOG/jstypelog/generation.py",
+    "check": "Python AST parse",
+    "exit": 0
+  },
+  {
+    "file": "work/sources/JSTYPELOG/jstypelog/evaluation.py",
+    "check": "Python AST parse",
+    "exit": 0
+  },
+  {
+    "file": "work/sources/JSTYPELOG/jstypelog/__init__.py",
+    "check": "Python AST parse",
+    "exit": 0
+  },
+  {
+    "file": "work/sources/JSTYPELOG/jstypelog/declaration.py",
+    "check": "Python AST parse",
+    "exit": 0
+  },
+  {
+    "file": "work/sources/JSTYPELOG/jstypelog/comparison.py",
+    "check": "Python AST parse",
+    "exit": 0
+  },
+  {
+    "file": "work/sources/JSTYPELOG/jstypelog/examplification.py",
+    "check": "Python AST parse",
+    "exit": 0
+  },
+  {
+    "file": "work/sources/JSTYPELOG/jstypelog/__main__.py",
+    "check": "Python AST parse",
+    "exit": 0
+  },
+  {
+    "file": "work/sources/JSTYPELOG/jstypelog/utils/build.py",
+    "check": "Python AST parse",
+    "exit": 0
+  },
+  {
+    "file": "work/sources/JSTYPELOG/jstypelog/utils/shell.py",
+    "check": "Python AST parse",
+    "exit": 0
+  },
+  {
+    "file": "work/sources/JSTYPELOG/jstypelog/utils/__init__.py",
+    "check": "Python AST parse",
+    "exit": 0
+  },
+  {
+    "file": "work/sources/JSTYPELOG/jstypelog/utils/shared.py",
+    "check": "Python AST parse",
+    "exit": 0
+  },
+  {
+    "file": "work/sources/JSTYPELOG/jstypelog/utils/helpers.py",
+    "check": "Python AST parse",
+    "exit": 0
+  },
+  {
+    "file": "work/sources/JSTYPELOG/jstypelog/utils/printer.py",
+    "check": "Python AST parse",
+    "exit": 0
+  },
+  {
+    "file": "/Users/thiemann/git/typescript/dts-auto-generate/rundocker.sh",
+    "check": "bash -n",
+    "exit": 0
+  },
+  {
+    "file": "/Users/thiemann/git/typescript/dts-auto-generate/docker_with_rti.sh",
+    "check": "bash -n",
+    "exit": 0
+  },
+  {
+    "file": "/Users/thiemann/git/typescript/dts-auto-generate/test/run_all.sh",
+    "check": "bash -n",
+    "exit": 0
+  },
+  {
+    "file": "/Users/thiemann/git/typescript/dts-auto-generate/sample-based/run_all.sh",
+    "check": "bash -n",
+    "exit": 0
+  },
+  {
+    "file": "work/sources/JSTYPELOG/assets/declaration/generateDeclarationFile.sh",
+    "check": "bash -n",
+    "exit": 0
+  },
+  {
+    "file": "work/sources/JSTYPELOG/assets/declaration/getRunTimeInformation.linux.sh",
+    "check": "bash -n",
+    "exit": 0
+  },
+  {
+    "file": "work/sources/JSTYPELOG/assets/declaration/getRunTimeInformation.sh",
+    "check": "bash -n",
+    "exit": 0
+  },
+  {
+    "file": "work/sources/ts-declaration-file-generator-service/install.sh",
+    "check": "bash -n",
+    "exit": 0
+  },
+  {
+    "file": "work/sources/ts-declaration-file-generator-service/bin/run.sh",
+    "check": "bash -n",
+    "exit": 0
+  },
+  {
+    "file": "work/sources/ts-declaration-file-generator-service/cli/generateDeclarationFile.sh",
+    "check": "bash -n",
+    "exit": 0
+  },
+  {
+    "file": "work/sources/ts-declaration-file-generator-service/cli/getRunTimeInformation.sh",
+    "check": "bash -n",
+    "exit": 0
+  },
+  {
+    "file": "work/sources/ts-declaration-file-generator-service/install/ts-declaration-file-generator/install.sh",
+    "check": "bash -n",
+    "exit": 0
+  },
+  {
+    "file": "work/sources/ts-declaration-file-generator-service/install/master-mind/install.sh",
+    "check": "bash -n",
+    "exit": 0
+  }
+]

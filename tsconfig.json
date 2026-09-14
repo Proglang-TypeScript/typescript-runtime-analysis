@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    "outDir": "dist",
+    "rootDir": "packages",
+    "strict": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "types": ["node", "jest"],
+    "declaration": true
+  },
+  "include": ["packages/**/*.ts"],
+  "exclude": ["**/*.test.ts", "**/__tests__/**", "**/e2e/**", "**/vendor/**"]
+}

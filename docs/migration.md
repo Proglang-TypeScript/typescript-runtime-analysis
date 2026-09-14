@@ -1,0 +1,15 @@
+# Migration decisions and limits
+
+Historical behavior was attempted before upgrades, under Node 16.20.2/npm 8.19.4 without host mounts or credentials. Generator build, lint, formatting, 65 unit tests and one integration test passed. Tracer locked install passed; its existing lint failed, but an explicitly pinned Jalangi 0.2.6 calculator run produced a genuine trace. Pattern source built; its `test` command was an empty shell placeholder. AST utilities built and passed their real tests. The newest comparator failed to compile newer Babel typings with TS3, and Jest29 could not load its ts-jest25 transformer.
+
+The consolidation replaces TS3 factory exports with `ts.factory`, removes obsolete decorator argument positions, updates source files through the supported factory, models null as a literal type, and updates tuple access from `elementTypes` to `elements`. Comparator node modifier types now admit decorators as required by modern APIs; missing symbol declarations are handled safely. Invalid formatter selection fails explicitly.
+
+Preserved comparator tests found an existing missing `return` in interface-declaration filtering. Fixing it restored interface and circular-reference comparisons. Upstream had changed tag collection from an array to a Map histogram without updating all assertions; those assertions now test `has(tag)` and retain the same intended checks. No test was skipped or weakened. Test data `.d.ts` files containing intentionally incomplete declarations are excluded from production compilation, while parser tests still consume them unchanged.
+
+Build and Jest transformation use Node16 module semantics with `isolatedModules`; the full TypeScript build still enforces semantic type checking. An independent native TypeScript7 invocation checks the generated client. Current supported Node24 is enforced by engines, engine-strict and CI.
+
+Jalangi's browser/server dependencies were avoided by importing the coherent header/instrumentation/runtime subset at an exact upstream commit with Apache notices. Its parser remains Acorn7 (patched 7.4.1 alias) and its printer esotope1.4.5. Downlevel transpilation and source-map regression coverage address a small modern-syntax example; backend semantic limitations remain. No switch to NodeProf was made.
+
+Optional historical components are quarantined by omission, with provenance retained: Kafka asynchronous consistency runs, AST browser, reports, bulk download scripts, destructively clearing wrappers, old generated results and vendored dependencies. Existing source checkouts remain available and updated. The AST browser still contains shell injection; do not start its HTTP server until repaired. Kafka equivalence failures documented upstream have not been repaired or tested here.
+
+Additional research repositories found after initial inventory are assessed separately in the recovery record. Credential-dependent LLM generation and large historical evaluations are not part of the local smoke test. Missing dynamic thesis implementations and private security-alert access are explicit follow-up limits.

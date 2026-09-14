@@ -1,0 +1,23 @@
+{
+  "repository": "JSTYPELOG-Evaluation",
+  "commit": "cd798bfd4427aee0f56a2756190636a5deca9a0e",
+  "archive_sha256": "b23b5af6830250af7b9803e62df6d5afc798ff698c7d078c7a9ea0d40aa89e4b",
+  "members": 56456,
+  "uncompressed_bytes": 354680358,
+  "unsafe_path_members": 0,
+  "sample_paths": [
+    "evaluations",
+    "evaluations/1000_packages_without_es5_check",
+    "evaluations/1000_packages_without_es5_check/reproduction",
+    "evaluations/1000_packages_without_es5_check/reproduction/info.json",
+    "evaluations/1000_packages_without_es5_check/metrics",
+    "evaluations/1000_packages_without_es5_check/metrics/absolute_metrics.json",
+    "evaluations/1000_packages_without_es5_check/metrics/realtive_metrics.json",
+    "evaluations/1000_packages_without_es5_check/metrics/base_line_metrics.json",
+    "evaluations/1000_packages_without_es5_check/packages",
+    "evaluations/1000_packages_without_es5_check/packages/printer",
+    "evaluations/1000_packages_without_es5_check/packages/printer/data",
+    "evaluations/1000_packages_without_es5_check/packages/printer/data/data.json"
+  ],
+  "extracted_or_executed": false
+}

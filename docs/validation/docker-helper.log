@@ -1,0 +1,128 @@
+599c03f6f8108a3590241080e60850efb4530983ef1ae77ff8cf85c9346c5761
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+
+added 307 packages, and audited 314 packages in 5s
+
+found 0 vulnerabilities
+npm notice
+npm notice New major version of npm available! 11.19.0 -> 12.0.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.2
+npm notice To update run: npm install -g npm@12.0.2
+npm notice
+
+> typescript-runtime-analysis@0.1.0 check
+> npm run build && npm test && npm run smoke && npm run experiment
+
+
+> typescript-runtime-analysis@0.1.0 build
+> node node_modules/typescript/lib/tsc.js -p tsconfig.json
+
+
+> typescript-runtime-analysis@0.1.0 test
+> jest --runInBand && node --test tests/*.test.cjs
+
+PASS packages/declaration-compare/src/__tests__/comparator.test.ts (5.908 s)
+PASS packages/declaration-compare/src/comparison/__tests__/parametersComparison.test.ts
+PASS packages/declaration-compare/src/parser/__tests__/parser.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/ast/__tests__/buildAst.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/ast/helpers/__tests__/createTypeNode.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/builder/utils/__tests__/FunctionDeclarationCleaner.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/builder/__tests__/InterfaceDeclaration.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/dts/helpers/__tests__/createDTSType.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/ast/helpers/__tests__/createClassDeclaration.test.ts
+PASS packages/declaration-generator/src/runtime-info/parser/__tests__/RunTimeInfoParser.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/builder/utils/__tests__/InterfaceSubsetPrimitiveValidator.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/ast/helpers/__tests__/createFunctionDeclaration.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/dts/helpers/__tests__/createFunctionParameter.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/builder/__tests__/ArgumentDeclaration.test.ts
+PASS packages/declaration-generator/e2e/e2e.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/ast/helpers/__tests__/createInterfaceDeclaration.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/builder/__tests__/typescriptDeclarationBuilder.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/builder/__tests__/FunctionDeclaration.test.ts
+
+Test Suites: 18 passed, 18 total
+Tests:       110 passed, 110 total
+Snapshots:   0 total
+Time:        13.439 s
+Ran all test suites.
+✔ schema rejects unknown versions, malformed locations and missing provenance (5.962955ms)
+✔ package-aware baseline rejects leakage and abstains without package support (1.098033ms)
+✔ pattern extraction is deterministic and retains exact original locations (3.859221ms)
+✔ legacy extraction no longer accumulates observations across calls (0.941535ms)
+✔ trace merge is order-independent, deduplicates exact observations, and filters internal APIs (3.790097ms)
+✔ README extraction retains code and line provenance (0.196957ms)
+✔ modern syntax passes through the retained Jalangi backend with source maps (119.515348ms)
+✔ runtime collection fails explicitly when its observation limit is reached (112.690275ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 291.628383
+
+> typescript-runtime-analysis@0.1.0 smoke
+> node scripts/smoke.cjs
+
+{
+  "workflows": [
+    "runtime-to-declaration",
+    "README",
+    "package-tests",
+    "static/dynamic-patterns"
+  ],
+  "compiler": "6.0.3",
+  "nativeCompiler": "7.0.2",
+  "observations": {
+    "client": 7,
+    "README": 7,
+    "test": 10
+  },
+  "distributions": 2
+}
+
+> typescript-runtime-analysis@0.1.0 experiment
+> node scripts/experiment.cjs
+
+{
+  "purpose": "first-party synthetic pipeline demonstration; never publication evaluation",
+  "evidence": [
+    {
+      "configuration": "README-only",
+      "observations": 7,
+      "publicFunctions": 1,
+      "internalFunctions": 0,
+      "diagnostics": 0
+    },
+    {
+      "configuration": "tests-only",
+      "observations": 10,
+      "publicFunctions": 1,
+      "internalFunctions": 1,
+      "diagnostics": 0
+    },
+    {
+      "configuration": "union",
+      "observations": 17,
+      "publicFunctions": 1,
+      "internalFunctions": 1,
+      "diagnostics": 0
+    },
+    {
+      "configuration": "filtered-union",
+      "observations": 14,
+      "publicFunctions": 1,
+      "internalFunctions": 0,
+      "diagnostics": 1
+    }
+  ],
+  "patternEvaluation": {
+    "total": 4,
+    "answered": 2,
+    "accuracy": 0,
+    "coverage": 0.5
+  }
+}
+Successful clean Node24 validation. Artifacts: /Users/thiemann/Documents/Codex/2026-09-14/referenced-chatgpt-conversation-this-is-an/outputs/typescript-runtime-analysis/work/tra-check-37192-1789381001930

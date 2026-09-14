@@ -1,0 +1,77 @@
+{
+  "predictions": [
+    {
+      "package": "fixture-evaluation-string",
+      "version": "1.0.0",
+      "patternId": "binary:+:Identifier:Identifier",
+      "position": "left",
+      "type": "string",
+      "executionId": "31f1248fe1576f6220094ca8",
+      "source": {
+        "file": "module.js",
+        "line": 1,
+        "column": 48
+      },
+      "split": "test",
+      "predicted": "number",
+      "confidence": 1,
+      "supportPackages": 2
+    },
+    {
+      "package": "fixture-evaluation-string",
+      "version": "1.0.0",
+      "patternId": "binary:+:Identifier:Identifier",
+      "position": "right",
+      "type": "string",
+      "executionId": "31f1248fe1576f6220094ca8",
+      "source": {
+        "file": "module.js",
+        "line": 1,
+        "column": 48
+      },
+      "split": "test",
+      "predicted": "number",
+      "confidence": 1,
+      "supportPackages": 2
+    },
+    {
+      "package": "fixture-evaluation-product",
+      "version": "1.0.0",
+      "patternId": "binary:*:Identifier:Identifier",
+      "position": "left",
+      "type": "number",
+      "executionId": "5258e4738b7f0ff119a7df73",
+      "source": {
+        "file": "module.js",
+        "line": 1,
+        "column": 42
+      },
+      "split": "test",
+      "predicted": null,
+      "confidence": 0,
+      "supportPackages": 0
+    },
+    {
+      "package": "fixture-evaluation-product",
+      "version": "1.0.0",
+      "patternId": "binary:*:Identifier:Identifier",
+      "position": "right",
+      "type": "number",
+      "executionId": "5258e4738b7f0ff119a7df73",
+      "source": {
+        "file": "module.js",
+        "line": 1,
+        "column": 42
+      },
+      "split": "test",
+      "predicted": null,
+      "confidence": 0,
+      "supportPackages": 0
+    }
+  ],
+  "total": 4,
+  "answered": 2,
+  "correct": 0,
+  "accuracy": 0,
+  "coverage": 0.5
+}

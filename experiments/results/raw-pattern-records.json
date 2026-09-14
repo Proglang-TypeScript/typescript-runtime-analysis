@@ -1,0 +1,198 @@
+[
+  {
+    "package": "fixture-train-add",
+    "version": "1.0.0",
+    "patternId": "binary:+:Identifier:Identifier",
+    "position": "left",
+    "type": "number",
+    "executionId": "2741884b592a323dacaa24cf",
+    "source": {
+      "file": "module.js",
+      "line": 1,
+      "column": 42
+    },
+    "split": "train"
+  },
+  {
+    "package": "fixture-train-add",
+    "version": "1.0.0",
+    "patternId": "binary:+:Identifier:Identifier",
+    "position": "right",
+    "type": "number",
+    "executionId": "2741884b592a323dacaa24cf",
+    "source": {
+      "file": "module.js",
+      "line": 1,
+      "column": 42
+    },
+    "split": "train"
+  },
+  {
+    "package": "fixture-train-add",
+    "version": "1.0.0",
+    "patternId": "binary:+:Identifier:Identifier",
+    "position": "left",
+    "type": "number",
+    "executionId": "2741884b592a323dacaa24cf",
+    "source": {
+      "file": "module.js",
+      "line": 1,
+      "column": 42
+    },
+    "split": "train"
+  },
+  {
+    "package": "fixture-train-add",
+    "version": "1.0.0",
+    "patternId": "binary:+:Identifier:Identifier",
+    "position": "right",
+    "type": "number",
+    "executionId": "2741884b592a323dacaa24cf",
+    "source": {
+      "file": "module.js",
+      "line": 1,
+      "column": 42
+    },
+    "split": "train"
+  },
+  {
+    "package": "fixture-train-sum",
+    "version": "1.0.0",
+    "patternId": "binary:+:Identifier:Identifier",
+    "position": "left",
+    "type": "number",
+    "executionId": "1b43a89b55d8b391778fc07e",
+    "source": {
+      "file": "module.js",
+      "line": 1,
+      "column": 45
+    },
+    "split": "train"
+  },
+  {
+    "package": "fixture-train-sum",
+    "version": "1.0.0",
+    "patternId": "binary:+:Identifier:Identifier",
+    "position": "right",
+    "type": "number",
+    "executionId": "1b43a89b55d8b391778fc07e",
+    "source": {
+      "file": "module.js",
+      "line": 1,
+      "column": 45
+    },
+    "split": "train"
+  },
+  {
+    "package": "fixture-train-sum",
+    "version": "1.0.0",
+    "patternId": "binary:+:Identifier:Identifier",
+    "position": "left",
+    "type": "number",
+    "executionId": "1b43a89b55d8b391778fc07e",
+    "source": {
+      "file": "module.js",
+      "line": 1,
+      "column": 45
+    },
+    "split": "train"
+  },
+  {
+    "package": "fixture-train-sum",
+    "version": "1.0.0",
+    "patternId": "binary:+:Identifier:Identifier",
+    "position": "right",
+    "type": "number",
+    "executionId": "1b43a89b55d8b391778fc07e",
+    "source": {
+      "file": "module.js",
+      "line": 1,
+      "column": 45
+    },
+    "split": "train"
+  },
+  {
+    "package": "fixture-validation-add",
+    "version": "1.0.0",
+    "patternId": "binary:+:Identifier:Identifier",
+    "position": "left",
+    "type": "number",
+    "executionId": "8db0e5dc73b076f674d17dd2",
+    "source": {
+      "file": "module.js",
+      "line": 1,
+      "column": 43
+    },
+    "split": "validation"
+  },
+  {
+    "package": "fixture-validation-add",
+    "version": "1.0.0",
+    "patternId": "binary:+:Identifier:Identifier",
+    "position": "right",
+    "type": "number",
+    "executionId": "8db0e5dc73b076f674d17dd2",
+    "source": {
+      "file": "module.js",
+      "line": 1,
+      "column": 43
+    },
+    "split": "validation"
+  },
+  {
+    "package": "fixture-evaluation-string",
+    "version": "1.0.0",
+    "patternId": "binary:+:Identifier:Identifier",
+    "position": "left",
+    "type": "string",
+    "executionId": "31f1248fe1576f6220094ca8",
+    "source": {
+      "file": "module.js",
+      "line": 1,
+      "column": 48
+    },
+    "split": "test"
+  },
+  {
+    "package": "fixture-evaluation-string",
+    "version": "1.0.0",
+    "patternId": "binary:+:Identifier:Identifier",
+    "position": "right",
+    "type": "string",
+    "executionId": "31f1248fe1576f6220094ca8",
+    "source": {
+      "file": "module.js",
+      "line": 1,
+      "column": 48
+    },
+    "split": "test"
+  },
+  {
+    "package": "fixture-evaluation-product",
+    "version": "1.0.0",
+    "patternId": "binary:*:Identifier:Identifier",
+    "position": "left",
+    "type": "number",
+    "executionId": "5258e4738b7f0ff119a7df73",
+    "source": {
+      "file": "module.js",
+      "line": 1,
+      "column": 42
+    },
+    "split": "test"
+  },
+  {
+    "package": "fixture-evaluation-product",
+    "version": "1.0.0",
+    "patternId": "binary:*:Identifier:Identifier",
+    "position": "right",
+    "type": "number",
+    "executionId": "5258e4738b7f0ff119a7df73",
+    "source": {
+      "file": "module.js",
+      "line": 1,
+      "column": 42
+    },
+    "split": "test"
+  }
+]

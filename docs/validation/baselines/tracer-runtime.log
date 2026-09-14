@@ -1,0 +1,142 @@
+v16.20.2
+8.19.4
+
+CHECK install
+
+added 181 packages in 3s
+
+added 30 packages in 5s
+
+28 packages are looking for funding
+  run `npm fund` for details
+RESULT install 0
+
+CHECK setup
+RESULT setup 0
+
+CHECK runtime
+
+{
+    "functionId_1": {
+        "functionId": "functionId_1",
+        "functionName": "",
+        "isConstructor": true,
+        "args": {},
+        "returnTypeOfs": [
+            {
+                "typeOf": "",
+                "traceId": "trace__1"
+            }
+        ],
+        "functionIid": 105,
+        "requiredModule": "",
+        "isExported": false,
+        "constructedBy": ""
+    },
+    "functionId_3": {
+        "functionId": "functionId_3",
+        "functionName": "sum",
+        "isConstructor": false,
+        "args": {
+            "0": {
+                "argumentIndex": 0,
+                "argumentName": "a",
+                "argumentId": "581User5NUK254wdqm8Qx",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "traceId": "trace__2",
+                        "interactionId": "22cVHThelMcUewtc-0ryN",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "convertedTo",
+                        "traceId": "trace__2",
+                        "interactionId": "WIBvIGvY5bDODq-EQg1yO",
+                        "convertedTo": "number",
+                        "isNaN": false,
+                        "toPrimitive": null,
+                        "operator": "+",
+                        "originalTypeof": "number"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__2",
+                        "interactionId": "4lIf0GGCefMzsU57WAhSv",
+                        "leftType": "number",
+                        "rightType": "number",
+                        "leftIsNaN": false,
+                        "rightIsNan": false,
+                        "leftToPrimitiveType": "number",
+                        "rightToPrimitiveType": "number",
+                        "leftToPrimitiveIsNaN": false,
+                        "rightToPrimitiveIsNaN": false,
+                        "operator": "+",
+                        "operandForInteraction": "left"
+                    }
+                ]
+            },
+            "1": {
+                "argumentIndex": 1,
+                "argumentName": "b",
+                "argumentId": "VB0Of7-eXzAKJKwRoIZpn",
+                "interactions": [
+                    {
+                        "code": "inputValue",
+                        "traceId": "trace__2",
+                        "interactionId": "dcx_qQKRh8ulBobSHQZw5",
+                        "typeof": "number"
+                    },
+                    {
+                        "code": "convertedTo",
+                        "traceId": "trace__2",
+                        "interactionId": "N-ORIVn45U_nsiFOFBmAw",
+                        "convertedTo": "number",
+                        "isNaN": false,
+                        "toPrimitive": null,
+                        "operator": "+",
+                        "originalTypeof": "number"
+                    },
+                    {
+                        "code": "operator",
+                        "traceId": "trace__2",
+                        "interactionId": "Pd3u4JuIS4GwzqDtlSyvV",
+                        "leftType": "number",
+                        "rightType": "number",
+                        "leftIsNaN": false,
+                        "rightIsNan": false,
+                        "leftToPrimitiveType": "number",
+                        "rightToPrimitiveType": "number",
+                        "leftToPrimitiveIsNaN": false,
+                        "rightToPrimitiveIsNaN": false,
+                        "operator": "+",
+                        "operandForInteraction": "right"
+                    }
+                ]
+            }
+        },
+        "declarationEnclosingFunctionId": -1,
+        "returnTypeOfs": [
+            {
+                "typeOf": "number",
+                "traceId": "trace__2"
+            }
+        ],
+        "functionIid": 49,
+        "requiredModule": "",
+        "isExported": false,
+        "constructedBy": "functionId_1"
+    }
+}
+RESULT runtime 0
+npm notice 
+npm notice New major version of npm available! 8.19.4 -> 12.0.2
+npm notice Changelog: <https://github.com/npm/cli/releases/tag/v12.0.2>
+npm notice Run `npm install -g npm@12.0.2` to update!
+npm notice 
+npm WARN deprecated mkdirp@0.5.0: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
+npm WARN deprecated q@1.2.0: You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other.
+npm WARN deprecated 
+npm WARN deprecated (For a CapTP with native promises, see @endo/eventual-send and @endo/captp)
+npm WARN deprecated rimraf@2.6.3: Rimraf versions prior to v4 are no longer supported
+npm WARN deprecated datatables@1.10.6: This NPM package for DataTables has now been deprecated and the 'datatables.net' set of packages should be used in preference to this one. Please see the NPM installation guide for DataTables for more details: https://datatables.net/download/npm.

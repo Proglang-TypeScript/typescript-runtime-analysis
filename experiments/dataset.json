@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "purpose": "first-party synthetic pipeline demonstration; never publication evaluation",
+  "seed": 0,
+  "packages": [
+    {"name":"fixture-train-add","version":"1.0.0","split":"train","body":"return left + right;","calls":[[1,2],[3,4]]},
+    {"name":"fixture-train-sum","version":"1.0.0","split":"train","body":"var sum = left + right; return sum;","calls":[[5,6],[7,8]]},
+    {"name":"fixture-validation-add","version":"1.0.0","split":"validation","body":"return (left + right);","calls":[[9,10]]},
+    {"name":"fixture-evaluation-string","version":"1.0.0","split":"test","body":"var joined = left + right; return joined;","calls":[["a","b"]]},
+    {"name":"fixture-evaluation-product","version":"1.0.0","split":"test","body":"return left * right;","calls":[[2,3]]}
+  ]
+}

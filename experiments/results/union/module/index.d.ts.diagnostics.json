@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "module": "module",
+  "text": "export = Module;\ndeclare function Module(left: number, right: number): number;\n",
+  "provenance": [
+    {
+      "package": "tra-calculator-fixture",
+      "version": "1.0.0",
+      "repository": "local-fixture",
+      "commit": "uncommitted-fixture",
+      "evidence": "README",
+      "entryPoint": "readme.js",
+      "publicModule": "module",
+      "backend": "jalangi2",
+      "backendVersion": "bc879287b1678de6e3c423f5debe63207559525b",
+      "executionId": "5629ea82f4208d97d0d4a8ff"
+    },
+    {
+      "package": "tra-calculator-fixture",
+      "version": "1.0.0",
+      "repository": "local-fixture",
+      "commit": "uncommitted-fixture",
+      "evidence": "test",
+      "entryPoint": "test.js",
+      "publicModule": "module",
+      "backend": "jalangi2",
+      "backendVersion": "bc879287b1678de6e3c423f5debe63207559525b",
+      "executionId": "66c589fada628c85b481563a"
+    }
+  ],
+  "diagnostics": []
+}

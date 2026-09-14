@@ -1,0 +1,114 @@
+
+> typescript-runtime-analysis@0.1.0 check
+> npm run build && npm test && npm run smoke && npm run experiment
+
+
+> typescript-runtime-analysis@0.1.0 build
+> node node_modules/typescript/lib/tsc.js -p tsconfig.json
+
+
+> typescript-runtime-analysis@0.1.0 test
+> jest --runInBand && node --test tests/*.test.cjs
+
+✔ schema rejects unknown versions, malformed locations and missing provenance (6.966851ms)
+✔ package-aware baseline rejects leakage and abstains without package support (1.136878ms)
+✔ pattern extraction is deterministic and retains exact original locations (4.014718ms)
+✔ legacy extraction no longer accumulates observations across calls (0.871419ms)
+✔ trace merge is order-independent, deduplicates exact observations, and filters internal APIs (3.821009ms)
+✔ README extraction retains code and line provenance (0.181667ms)
+✔ modern syntax passes through the retained Jalangi backend with source maps (116.608212ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 178.17816
+
+> typescript-runtime-analysis@0.1.0 smoke
+> node scripts/smoke.cjs
+
+{
+  "workflows": [
+    "runtime-to-declaration",
+    "README",
+    "package-tests",
+    "static/dynamic-patterns"
+  ],
+  "compiler": "6.0.3",
+  "nativeCompiler": "7.0.2",
+  "observations": {
+    "client": 7,
+    "README": 7,
+    "test": 10
+  },
+  "distributions": 2
+}
+
+> typescript-runtime-analysis@0.1.0 experiment
+> node scripts/experiment.cjs
+
+{
+  "purpose": "first-party synthetic pipeline demonstration; never publication evaluation",
+  "evidence": [
+    {
+      "configuration": "README-only",
+      "observations": 7,
+      "publicFunctions": 1,
+      "internalFunctions": 0,
+      "diagnostics": 0
+    },
+    {
+      "configuration": "tests-only",
+      "observations": 10,
+      "publicFunctions": 1,
+      "internalFunctions": 1,
+      "diagnostics": 0
+    },
+    {
+      "configuration": "union",
+      "observations": 17,
+      "publicFunctions": 1,
+      "internalFunctions": 1,
+      "diagnostics": 0
+    },
+    {
+      "configuration": "filtered-union",
+      "observations": 14,
+      "publicFunctions": 1,
+      "internalFunctions": 0,
+      "diagnostics": 1
+    }
+  ],
+  "patternEvaluation": {
+    "total": 4,
+    "answered": 2,
+    "accuracy": 0,
+    "coverage": 0.5
+  }
+}
+PASS packages/declaration-compare/src/__tests__/comparator.test.ts (5.837 s)
+PASS packages/declaration-compare/src/comparison/__tests__/parametersComparison.test.ts
+PASS packages/declaration-compare/src/parser/__tests__/parser.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/ast/__tests__/buildAst.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/ast/helpers/__tests__/createTypeNode.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/builder/utils/__tests__/FunctionDeclarationCleaner.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/builder/__tests__/InterfaceDeclaration.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/dts/helpers/__tests__/createDTSType.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/ast/helpers/__tests__/createClassDeclaration.test.ts
+PASS packages/declaration-generator/src/runtime-info/parser/__tests__/RunTimeInfoParser.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/builder/utils/__tests__/InterfaceSubsetPrimitiveValidator.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/ast/helpers/__tests__/createFunctionDeclaration.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/dts/helpers/__tests__/createFunctionParameter.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/builder/__tests__/ArgumentDeclaration.test.ts
+PASS packages/declaration-generator/e2e/e2e.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/ast/helpers/__tests__/createInterfaceDeclaration.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/builder/__tests__/typescriptDeclarationBuilder.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/builder/__tests__/FunctionDeclaration.test.ts
+
+Test Suites: 18 passed, 18 total
+Tests:       110 passed, 110 total
+Snapshots:   0 total
+Time:        13.396 s
+Ran all test suites.

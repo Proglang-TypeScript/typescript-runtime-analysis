@@ -1,0 +1,41 @@
+{
+  "name": "typescript-runtime-analysis",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "build": "node node_modules/typescript/lib/tsc.js -p tsconfig.json",
+    "test": "jest --runInBand && node --test tests/*.test.cjs",
+    "smoke": "node scripts/smoke.cjs",
+    "cli": "node packages/cli/index.cjs",
+    "experiment": "node scripts/experiment.cjs",
+    "check": "npm run build && npm test && npm run smoke && npm run experiment"
+  },
+  "dependencies": {
+    "acorn": "8.18.0",
+    "acorn-legacy": "npm:acorn@7.4.1",
+    "acorn-walk": "8.3.5",
+    "ajv": "8.20.0",
+    "argparse": "3.0.2",
+    "command-line-args": "6.0.2",
+    "esotope": "1.4.5",
+    "nanoid": "6.0.1",
+    "object-hash": "3.0.0",
+    "source-map-js": "1.2.1",
+    "typescript": "6.0.3"
+  },
+  "devDependencies": {
+    "@types/command-line-args": "5.2.3",
+    "@types/jest": "30.0.0",
+    "@types/node": "24.13.4",
+    "@types/object-hash": "3.0.6",
+    "jest": "30.5.1",
+    "ts-jest": "29.4.12",
+    "typescript-native": "npm:typescript@7.0.2"
+  }
+}

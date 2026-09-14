@@ -1,0 +1,44 @@
+
+> typescript-runtime-analysis@0.1.0 test
+> jest --runInBand && node --test tests/*.test.cjs
+
+✔ schema rejects unknown versions, malformed locations and missing provenance (6.950063ms)
+✔ package-aware baseline rejects leakage and abstains without package support (1.132663ms)
+✔ pattern extraction is deterministic and retains exact original locations (3.531989ms)
+✔ legacy extraction no longer accumulates observations across calls (0.926205ms)
+✔ trace merge is order-independent, deduplicates exact observations, and filters internal APIs (4.461404ms)
+✔ README extraction retains code and line provenance (0.213166ms)
+✔ modern syntax passes through the retained Jalangi backend with source maps (116.255449ms)
+✔ runtime collection fails explicitly when its observation limit is reached (111.872003ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 293.034386
+PASS packages/declaration-compare/src/__tests__/comparator.test.ts (5.823 s)
+PASS packages/declaration-compare/src/comparison/__tests__/parametersComparison.test.ts
+PASS packages/declaration-compare/src/parser/__tests__/parser.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/ast/__tests__/buildAst.test.ts
+PASS packages/declaration-generator/e2e/e2e.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/builder/__tests__/InterfaceDeclaration.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/ast/helpers/__tests__/createInterfaceDeclaration.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/ast/helpers/__tests__/createClassDeclaration.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/ast/helpers/__tests__/createTypeNode.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/ast/helpers/__tests__/createFunctionDeclaration.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/builder/utils/__tests__/FunctionDeclarationCleaner.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/builder/__tests__/typescriptDeclarationBuilder.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/dts/helpers/__tests__/createDTSType.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/builder/utils/__tests__/InterfaceSubsetPrimitiveValidator.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/builder/__tests__/ArgumentDeclaration.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/dts/helpers/__tests__/createFunctionParameter.test.ts
+PASS packages/declaration-generator/src/typescript-declaration/builder/__tests__/FunctionDeclaration.test.ts
+PASS packages/declaration-generator/src/runtime-info/parser/__tests__/RunTimeInfoParser.test.ts
+
+Test Suites: 18 passed, 18 total
+Tests:       110 passed, 110 total
+Snapshots:   0 total
+Time:        13.217 s, estimated 14 s
+Ran all test suites.

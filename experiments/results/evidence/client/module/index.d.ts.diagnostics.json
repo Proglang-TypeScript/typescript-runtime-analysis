@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "module": "module",
+  "text": "export = Module;\ndeclare function Module(left: number, right: number): number;\n",
+  "provenance": [
+    {
+      "package": "tra-calculator-fixture",
+      "version": "1.0.0",
+      "repository": "local-fixture",
+      "commit": "uncommitted-fixture",
+      "evidence": "client",
+      "entryPoint": "client.js",
+      "publicModule": "module",
+      "backend": "jalangi2",
+      "backendVersion": "bc879287b1678de6e3c423f5debe63207559525b",
+      "executionId": "98d522a390a41839d10d6f46"
+    }
+  ],
+  "diagnostics": []
+}

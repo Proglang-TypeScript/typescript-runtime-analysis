@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "module": "module",
+  "text": "export = Module;\ndeclare function Module(left: number, right: number): number;\n",
+  "provenance": [
+    {
+      "package": "tra-calculator-fixture",
+      "version": "1.0.0",
+      "repository": "local-fixture",
+      "commit": "uncommitted-fixture",
+      "evidence": "test",
+      "entryPoint": "test.js",
+      "publicModule": "module",
+      "backend": "jalangi2",
+      "backendVersion": "bc879287b1678de6e3c423f5debe63207559525b",
+      "executionId": "66c589fada628c85b481563a"
+    }
+  ],
+  "diagnostics": [
+    {
+      "code": "FILTERED_INTERNAL_API",
+      "functionId": "functionId_3",
+      "message": "Excluded testOnlyCheck"
+    }
+  ]
+}

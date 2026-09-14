@@ -1,0 +1,30 @@
+[
+  {
+    "configuration": "README-only",
+    "observations": 7,
+    "publicFunctions": 1,
+    "internalFunctions": 0,
+    "diagnostics": 0
+  },
+  {
+    "configuration": "tests-only",
+    "observations": 10,
+    "publicFunctions": 1,
+    "internalFunctions": 1,
+    "diagnostics": 0
+  },
+  {
+    "configuration": "union",
+    "observations": 17,
+    "publicFunctions": 1,
+    "internalFunctions": 1,
+    "diagnostics": 0
+  },
+  {
+    "configuration": "filtered-union",
+    "observations": 14,
+    "publicFunctions": 1,
+    "internalFunctions": 0,
+    "diagnostics": 1
+  }
+]

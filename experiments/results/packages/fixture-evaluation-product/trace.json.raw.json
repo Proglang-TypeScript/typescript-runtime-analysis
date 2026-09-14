@@ -1,0 +1,115 @@
+{
+  "functions": {
+    "functionId_1": {
+      "functionId": "functionId_1",
+      "functionName": "calculate",
+      "isConstructor": false,
+      "args": {
+        "0": {
+          "argumentIndex": 0,
+          "argumentName": "left",
+          "argumentId": "SYuO1X3vBB7HQG8IdZ87E",
+          "interactions": [
+            {
+              "code": "inputValue",
+              "traceId": "trace__1",
+              "interactionId": "NHdj1TdbNu4PotqKNkBO7",
+              "typeof": "number"
+            },
+            {
+              "code": "operator",
+              "traceId": "trace__1",
+              "interactionId": "_gnVa2PHhNKmO2WhZWyaq",
+              "leftType": "number",
+              "rightType": "number",
+              "leftIsNaN": false,
+              "rightIsNan": false,
+              "leftToPrimitiveType": "number",
+              "rightToPrimitiveType": "number",
+              "leftToPrimitiveIsNaN": false,
+              "rightToPrimitiveIsNaN": false,
+              "operator": "*",
+              "operandForInteraction": "left"
+            }
+          ]
+        },
+        "1": {
+          "argumentIndex": 1,
+          "argumentName": "right",
+          "argumentId": "rqr6f5gM1SPLAmo1AdKZM",
+          "interactions": [
+            {
+              "code": "inputValue",
+              "traceId": "trace__1",
+              "interactionId": "Nb0SV6P_CvSTzk3wz_YQ5",
+              "typeof": "number"
+            },
+            {
+              "code": "operator",
+              "traceId": "trace__1",
+              "interactionId": "kfLNRZidX8H3f0RlVS3nl",
+              "leftType": "number",
+              "rightType": "number",
+              "leftIsNaN": false,
+              "rightIsNan": false,
+              "leftToPrimitiveType": "number",
+              "rightToPrimitiveType": "number",
+              "leftToPrimitiveIsNaN": false,
+              "rightToPrimitiveIsNaN": false,
+              "operator": "*",
+              "operandForInteraction": "right"
+            }
+          ]
+        }
+      },
+      "declarationEnclosingFunctionId": -1,
+      "returnTypeOfs": [
+        {
+          "typeOf": "number",
+          "traceId": "trace__1"
+        }
+      ],
+      "functionIid": 57,
+      "requiredModule": "./module",
+      "isExported": true,
+      "constructedBy": "",
+      "sourceLocation": {
+        "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/results/packages/fixture-evaluation-product/module.js",
+        "line": 2,
+        "column": 1
+      }
+    }
+  },
+  "patterns": [
+    {
+      "operator": "*",
+      "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/results/packages/fixture-evaluation-product/module.js",
+      "line": 2,
+      "column": 42,
+      "leftType": "number",
+      "rightType": "number"
+    }
+  ],
+  "sourceMaps": {
+    "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/results/packages/fixture-evaluation-product/client.js": {
+      "version": 3,
+      "file": "client.js",
+      "sourceRoot": "",
+      "sources": [
+        "client.js"
+      ],
+      "names": [],
+      "mappings": ";AAAA,IAAI,SAAS,GAAG,OAAO,CAAC,UAAU,CAAC,CAAC;AACpC,SAAS,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC"
+    },
+    "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/results/packages/fixture-evaluation-product/module.js": {
+      "version": 3,
+      "file": "module.js",
+      "sourceRoot": "",
+      "sources": [
+        "module.js"
+      ],
+      "names": [],
+      "mappings": ";AAAA,SAAS,SAAS,CAAC,IAAI,EAAE,KAAK,IAAI,OAAO,IAAI,GAAG,KAAK,CAAC,CAAC,CAAC;AACxD,MAAM,CAAC,OAAO,GAAG,SAAS,CAAC"
+    }
+  }
+}

@@ -1,0 +1,197 @@
+diff --git a/AST-Tree/public/path.txt b/AST-Tree/public/path.txt
+index d4c2d14..b852c12 100644
+--- a/AST-Tree/public/path.txt
++++ b/AST-Tree/public/path.txt
+@@ -1 +1 @@
+-../example_programs/calculation/calculate_pi.ts 
++../example_programs/with_output/print1.ts 
+diff --git a/AST-Tree/public/src/MyFunction.txt b/AST-Tree/public/src/MyFunction.txt
+index 9af699c..c205da2 100644
+--- a/AST-Tree/public/src/MyFunction.txt
++++ b/AST-Tree/public/src/MyFunction.txt
+@@ -1,20 +1,10 @@
+-export function calculate_pi(n: number) {
+-  /*
+-  A function that approaches pi and returns the appoximation of pi
++export function print1(count:number) {
++  /* Program which outputs the word 'Test' for a given number ('count').
+   */
+-  let ap_pi: number = 0;
+-
+-  for (let i = 1; i <= n; i++) {
+-      ap_pi += (1 / (i ** 2));
++  for (let i = 0; i < count; i++) {
++    console.log('Test');
+   }
+-  return (ap_pi * 6) ** 0.5;
+-}
+-export function vergleicheStrings(string1: string, string2: string): boolean {
+-  return string1 === string2;
+ }
+ 
+-//console.log("Die Annäherung von Pi ist: " + calculate_pi(-3)+ " bei der Eingabe: -3 muss rauskommen: 0.0");
+-//console.log("Die Annäherung von Pi ist: " + calculate_pi(1)+ " bei der Eingabe: 1 muss rauskommen: 2.44948");
+-//console.log("Die Annäherung von Pi ist: " + calculate_pi(7)+ " bei der Eingabe: 7 muss rauskommen: 3.01177");
+-//console.log("Die Annäherung von Pi ist: " + calculate_pi(1000)+ " bei der Eingabe: 1000 muss rauskommen: 3.14063");
+-//console.log("Die Annäherung von Pi ist: " + calculate_pi(10000)+ " bei der Eingabe: 10000 muss rauskommen: 3.14149");
++//console.log("Test 3 mal hintereinander:");
++//print1(3)
+\ No newline at end of file
+diff --git a/AST-Tree/public/src/treeData.json b/AST-Tree/public/src/treeData.json
+index f7150d9..f7effbc 100644
+--- a/AST-Tree/public/src/treeData.json
++++ b/AST-Tree/public/src/treeData.json
+@@ -1,6 +1,6 @@
+ [
+   {
+-    "name": "export function calculate_pi(n: number) ",
++    "name": "export function print1(count:number) ",
+     "type": "FunctionDeclaration",
+     "ast_tree": 0,
+     "identifier": false,
+@@ -14,21 +14,21 @@
+     "before_ast_number": 0
+   },
+   {
+-    "name": "calculate_pi",
+-    "type": "(n: number) => number",
++    "name": "print1",
++    "type": "(count: number) => void",
+     "ast_tree": 2,
+     "identifier": true,
+     "before_ast_number": 4
+   },
+   {
+-    "name": "n: number",
++    "name": "count:number",
+     "type": "Parameter",
+     "ast_tree": 4,
+     "identifier": false,
+     "before_ast_number": 2
+   },
+   {
+-    "name": "n",
++    "name": "count",
+     "type": "number",
+     "ast_tree": 6,
+     "identifier": true,
+@@ -42,35 +42,21 @@
+     "before_ast_number": 6
+   },
+   {
+-    "name": "let",
+-    "type": "LetKeyword",
+-    "ast_tree": 10,
++    "name": "for",
++    "type": "ForKeyword",
++    "ast_tree": 8,
+     "identifier": false,
+     "before_ast_number": 6
+   },
+   {
+-    "name": "ap_pi: number = 0",
+-    "type": "VariableDeclaration",
+-    "ast_tree": 12,
+-    "identifier": false,
+-    "before_ast_number": 10
+-  },
+-  {
+-    "name": "ap_pi",
+-    "type": "number",
+-    "ast_tree": 14,
+-    "identifier": true,
+-    "before_ast_number": 12
+-  },
+-  {
+-    "name": "for",
+-    "type": "ForKeyword",
+-    "ast_tree": 8,
++    "name": "let",
++    "type": "LetKeyword",
++    "ast_tree": 10,
+     "identifier": false,
+-    "before_ast_number": 14
++    "before_ast_number": 8
+   },
+   {
+-    "name": "i = 1",
++    "name": "i = 0",
+     "type": "VariableDeclaration",
+     "ast_tree": 12,
+     "identifier": false,
+@@ -84,66 +70,17 @@
+     "before_ast_number": 12
+   },
+   {
+-    "name": "return",
+-    "type": "ReturnKeyword",
+-    "ast_tree": 8,
+-    "identifier": false,
+-    "before_ast_number": 24
+-  },
+-  {
+-    "name": "export function vergleicheStrings(string1: string, string2: string): boolean ",
+-    "type": "FunctionDeclaration",
+-    "ast_tree": 0,
+-    "identifier": false,
+-    "before_ast_number": 14
+-  },
+-  {
+-    "name": "vergleicheStrings",
+-    "type": "(string1: string, string2: string) => boolean",
+-    "ast_tree": 2,
+-    "identifier": true,
+-    "before_ast_number": 4
+-  },
+-  {
+-    "name": "string1: string",
+-    "type": "Parameter",
+-    "ast_tree": 4,
+-    "identifier": false,
+-    "before_ast_number": 2
+-  },
+-  {
+-    "name": "string1",
+-    "type": "string",
+-    "ast_tree": 6,
++    "name": "console",
++    "type": "Console",
++    "ast_tree": 18,
+     "identifier": true,
+-    "before_ast_number": 4
+-  },
+-  {
+-    "name": "string",
+-    "type": "StringKeyword",
+-    "ast_tree": 6,
+-    "identifier": false,
+-    "before_ast_number": 6
+-  },
+-  {
+-    "name": "string2: string",
+-    "type": "Parameter",
+-    "ast_tree": 4,
+-    "identifier": false,
+-    "before_ast_number": 6
++    "before_ast_number": 10
+   },
+   {
+-    "name": "string2",
+-    "type": "string",
+-    "ast_tree": 6,
++    "name": "log",
++    "type": "{ (...data: any[]): void; (message?: any, ...optionalParams: any[]): void; }",
++    "ast_tree": 18,
+     "identifier": true,
+-    "before_ast_number": 4
+-  },
+-  {
+-    "name": "boolean",
+-    "type": "BooleanKeyword",
+-    "ast_tree": 2,
+-    "identifier": false,
+-    "before_ast_number": 6
++    "before_ast_number": 18
+   }
+ ]
+\ No newline at end of file

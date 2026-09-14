@@ -1,0 +1,43 @@
+{
+  "predictions": [
+    {
+      "package": "fixture-validation-add",
+      "version": "1.0.0",
+      "patternId": "binary:+:Identifier:Identifier",
+      "position": "left",
+      "type": "number",
+      "executionId": "8db0e5dc73b076f674d17dd2",
+      "source": {
+        "file": "module.js",
+        "line": 1,
+        "column": 43
+      },
+      "split": "validation",
+      "predicted": "number",
+      "confidence": 1,
+      "supportPackages": 2
+    },
+    {
+      "package": "fixture-validation-add",
+      "version": "1.0.0",
+      "patternId": "binary:+:Identifier:Identifier",
+      "position": "right",
+      "type": "number",
+      "executionId": "8db0e5dc73b076f674d17dd2",
+      "source": {
+        "file": "module.js",
+        "line": 1,
+        "column": 43
+      },
+      "split": "validation",
+      "predicted": "number",
+      "confidence": 1,
+      "supportPackages": 2
+    }
+  ],
+  "total": 2,
+  "answered": 2,
+  "correct": 2,
+  "accuracy": 1,
+  "coverage": 1
+}

@@ -1,0 +1,135 @@
+{
+  "functions": {
+    "functionId_1": {
+      "functionId": "functionId_1",
+      "functionName": "calculate",
+      "isConstructor": false,
+      "args": {
+        "0": {
+          "argumentIndex": 0,
+          "argumentName": "left",
+          "argumentId": "2gNRNi6705jaQYnmAB5xK",
+          "interactions": [
+            {
+              "code": "inputValue",
+              "traceId": "trace__1",
+              "interactionId": "PvE3QAQuyKmqCObzMOfRq",
+              "typeof": "string"
+            },
+            {
+              "code": "convertedTo",
+              "traceId": "trace__1",
+              "interactionId": "Dk71_67IK9tijyro9ukTJ",
+              "convertedTo": "string",
+              "isNaN": false,
+              "toPrimitive": null,
+              "operator": "+",
+              "originalTypeof": "string"
+            },
+            {
+              "code": "operator",
+              "traceId": "trace__1",
+              "interactionId": "4Sju9_Vp03B6rFfOzhqsU",
+              "leftType": "string",
+              "rightType": "string",
+              "leftIsNaN": true,
+              "rightIsNan": true,
+              "leftToPrimitiveType": "string",
+              "rightToPrimitiveType": "string",
+              "leftToPrimitiveIsNaN": true,
+              "rightToPrimitiveIsNaN": true,
+              "operator": "+",
+              "operandForInteraction": "left"
+            }
+          ]
+        },
+        "1": {
+          "argumentIndex": 1,
+          "argumentName": "right",
+          "argumentId": "ZkkbKHHwm562Qozure5Aw",
+          "interactions": [
+            {
+              "code": "inputValue",
+              "traceId": "trace__1",
+              "interactionId": "7MjSPEx7mFMtfWGx3Z5nF",
+              "typeof": "string"
+            },
+            {
+              "code": "convertedTo",
+              "traceId": "trace__1",
+              "interactionId": "dvsJ-2SGU9KamSMnzTTfs",
+              "convertedTo": "string",
+              "isNaN": false,
+              "toPrimitive": null,
+              "operator": "+",
+              "originalTypeof": "string"
+            },
+            {
+              "code": "operator",
+              "traceId": "trace__1",
+              "interactionId": "hRr7Rhk6xbldYc4dlQVzi",
+              "leftType": "string",
+              "rightType": "string",
+              "leftIsNaN": true,
+              "rightIsNan": true,
+              "leftToPrimitiveType": "string",
+              "rightToPrimitiveType": "string",
+              "leftToPrimitiveIsNaN": true,
+              "rightToPrimitiveIsNaN": true,
+              "operator": "+",
+              "operandForInteraction": "right"
+            }
+          ]
+        }
+      },
+      "declarationEnclosingFunctionId": -1,
+      "returnTypeOfs": [
+        {
+          "typeOf": "string",
+          "traceId": "trace__1"
+        }
+      ],
+      "functionIid": 81,
+      "requiredModule": "./module",
+      "isExported": true,
+      "constructedBy": "",
+      "sourceLocation": {
+        "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/results/packages/fixture-evaluation-string/module.js",
+        "line": 2,
+        "column": 1
+      }
+    }
+  },
+  "patterns": [
+    {
+      "operator": "+",
+      "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/results/packages/fixture-evaluation-string/module.js",
+      "line": 2,
+      "column": 48,
+      "leftType": "string",
+      "rightType": "string"
+    }
+  ],
+  "sourceMaps": {
+    "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/results/packages/fixture-evaluation-string/client.js": {
+      "version": 3,
+      "file": "client.js",
+      "sourceRoot": "",
+      "sources": [
+        "client.js"
+      ],
+      "names": [],
+      "mappings": ";AAAA,IAAI,SAAS,GAAG,OAAO,CAAC,UAAU,CAAC,CAAC;AACpC,SAAS,CAAC,GAAG,EAAE,GAAG,CAAC,CAAC"
+    },
+    "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/results/packages/fixture-evaluation-string/module.js": {
+      "version": 3,
+      "file": "module.js",
+      "sourceRoot": "",
+      "sources": [
+        "module.js"
+      ],
+      "names": [],
+      "mappings": ";AAAA,SAAS,SAAS,CAAC,IAAI,EAAE,KAAK,IAAI,IAAI,MAAM,GAAG,IAAI,GAAG,KAAK,CAAC,CAAC,OAAO,MAAM,CAAC,CAAC,CAAC;AAC7E,MAAM,CAAC,OAAO,GAAG,SAAS,CAAC"
+    }
+  }
+}
