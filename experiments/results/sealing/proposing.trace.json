@@ -1,0 +1,392 @@
+{
+  "schemaVersion": 1,
+  "provenance": {
+    "package": "tra-sealing-fixture",
+    "version": "1.0.0",
+    "repository": "local-fixture",
+    "commit": "uncommitted-fixture",
+    "evidence": "fixture",
+    "entryPoint": "inference.js",
+    "publicModule": "module",
+    "backend": "jalangi2",
+    "backendVersion": "bc879287b1678de6e3c423f5debe63207559525b",
+    "executionId": "4866aece669417215f88fc9e"
+  },
+  "observations": [
+    {
+      "functionId": "module.js:3:1:identity",
+      "functionName": "identity",
+      "position": "parameter",
+      "index": 0,
+      "type": "number",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "4866aece669417215f88fc9e",
+      "order": 0,
+      "public": true,
+      "interaction": {
+        "kind": "inputValue",
+        "code": "inputValue",
+        "traceId": "trace__1",
+        "typeof": "number"
+      }
+    },
+    {
+      "functionId": "module.js:3:1:identity",
+      "functionName": "identity",
+      "position": "parameter",
+      "index": 0,
+      "type": "string",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "4866aece669417215f88fc9e",
+      "order": 1,
+      "public": true,
+      "interaction": {
+        "kind": "inputValue",
+        "code": "inputValue",
+        "traceId": "trace__2",
+        "typeof": "string"
+      }
+    },
+    {
+      "functionId": "module.js:3:1:identity",
+      "functionName": "identity",
+      "position": "result",
+      "index": -1,
+      "type": "number",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "4866aece669417215f88fc9e",
+      "order": 2,
+      "public": true,
+      "interaction": {
+        "kind": "return",
+        "traceId": "trace__1"
+      }
+    },
+    {
+      "functionId": "module.js:3:1:identity",
+      "functionName": "identity",
+      "position": "result",
+      "index": -1,
+      "type": "string",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "4866aece669417215f88fc9e",
+      "order": 3,
+      "public": true,
+      "interaction": {
+        "kind": "return",
+        "traceId": "trace__2"
+      }
+    },
+    {
+      "functionId": "module.js:2:1:configure",
+      "functionName": "configure",
+      "position": "parameter",
+      "index": 0,
+      "type": "number",
+      "source": {
+        "file": "module.js",
+        "line": 2,
+        "column": 1
+      },
+      "executionId": "4866aece669417215f88fc9e",
+      "order": 4,
+      "public": true,
+      "interaction": {
+        "kind": "inputValue",
+        "code": "inputValue",
+        "traceId": "trace__3",
+        "typeof": "number"
+      }
+    },
+    {
+      "functionId": "module.js:2:1:configure",
+      "functionName": "configure",
+      "position": "parameter",
+      "index": 0,
+      "type": "string",
+      "source": {
+        "file": "module.js",
+        "line": 2,
+        "column": 1
+      },
+      "executionId": "4866aece669417215f88fc9e",
+      "order": 5,
+      "public": true,
+      "interaction": {
+        "kind": "inputValue",
+        "code": "inputValue",
+        "traceId": "trace__5",
+        "typeof": "string"
+      }
+    },
+    {
+      "functionId": "module.js:2:1:configure",
+      "functionName": "configure",
+      "position": "result",
+      "index": -1,
+      "type": "undefined",
+      "source": {
+        "file": "module.js",
+        "line": 2,
+        "column": 1
+      },
+      "executionId": "4866aece669417215f88fc9e",
+      "order": 6,
+      "public": true,
+      "interaction": {
+        "kind": "return",
+        "traceId": "trace__3"
+      }
+    },
+    {
+      "functionId": "module.js:2:1:configure",
+      "functionName": "configure",
+      "position": "result",
+      "index": -1,
+      "type": "undefined",
+      "source": {
+        "file": "module.js",
+        "line": 2,
+        "column": 1
+      },
+      "executionId": "4866aece669417215f88fc9e",
+      "order": 7,
+      "public": true,
+      "interaction": {
+        "kind": "return",
+        "traceId": "trace__5"
+      }
+    },
+    {
+      "functionId": "module.js:4:1:nonParametric",
+      "functionName": "nonParametric",
+      "position": "parameter",
+      "index": 0,
+      "type": "number",
+      "source": {
+        "file": "module.js",
+        "line": 4,
+        "column": 1
+      },
+      "executionId": "4866aece669417215f88fc9e",
+      "order": 8,
+      "public": true,
+      "interaction": {
+        "kind": "inputValue",
+        "code": "inputValue",
+        "traceId": "trace__4",
+        "typeof": "number"
+      }
+    },
+    {
+      "functionId": "module.js:4:1:nonParametric",
+      "functionName": "nonParametric",
+      "position": "parameter",
+      "index": 0,
+      "type": "string",
+      "source": {
+        "file": "module.js",
+        "line": 4,
+        "column": 1
+      },
+      "executionId": "4866aece669417215f88fc9e",
+      "order": 9,
+      "public": true,
+      "interaction": {
+        "kind": "inputValue",
+        "code": "inputValue",
+        "traceId": "trace__6",
+        "typeof": "string"
+      }
+    },
+    {
+      "functionId": "module.js:4:1:nonParametric",
+      "functionName": "nonParametric",
+      "position": "result",
+      "index": -1,
+      "type": "number",
+      "source": {
+        "file": "module.js",
+        "line": 4,
+        "column": 1
+      },
+      "executionId": "4866aece669417215f88fc9e",
+      "order": 10,
+      "public": true,
+      "interaction": {
+        "kind": "return",
+        "traceId": "trace__4"
+      }
+    },
+    {
+      "functionId": "module.js:4:1:nonParametric",
+      "functionName": "nonParametric",
+      "position": "result",
+      "index": -1,
+      "type": "string",
+      "source": {
+        "file": "module.js",
+        "line": 4,
+        "column": 1
+      },
+      "executionId": "4866aece669417215f88fc9e",
+      "order": 11,
+      "public": true,
+      "interaction": {
+        "kind": "return",
+        "traceId": "trace__6"
+      }
+    },
+    {
+      "functionId": "module.js:5:1:tagIdentity",
+      "functionName": "tagIdentity",
+      "position": "parameter",
+      "index": 0,
+      "type": "object",
+      "source": {
+        "file": "module.js",
+        "line": 5,
+        "column": 1
+      },
+      "executionId": "4866aece669417215f88fc9e",
+      "order": 12,
+      "public": true,
+      "interaction": {
+        "kind": "inputValue",
+        "code": "inputValue",
+        "traceId": "trace__7",
+        "typeof": "object"
+      }
+    },
+    {
+      "functionId": "module.js:5:1:tagIdentity",
+      "functionName": "tagIdentity",
+      "position": "parameter",
+      "index": 0,
+      "type": "unknown",
+      "source": {
+        "file": "module.js",
+        "line": 5,
+        "column": 1
+      },
+      "executionId": "4866aece669417215f88fc9e",
+      "order": 13,
+      "public": true,
+      "interaction": {
+        "kind": "getField",
+        "code": "getField",
+        "traceId": "trace__7",
+        "isComputed": false,
+        "isOpAssign": false,
+        "enclosingFunctionId": "functionId_7",
+        "followingInteractions": [],
+        "iid": 201,
+        "field": "tag",
+        "returnTypeOf": "string"
+      }
+    },
+    {
+      "functionId": "module.js:5:1:tagIdentity",
+      "functionName": "tagIdentity",
+      "position": "parameter",
+      "index": 0,
+      "type": "object",
+      "source": {
+        "file": "module.js",
+        "line": 5,
+        "column": 1
+      },
+      "executionId": "4866aece669417215f88fc9e",
+      "order": 14,
+      "public": true,
+      "interaction": {
+        "kind": "inputValue",
+        "code": "inputValue",
+        "traceId": "trace__8",
+        "typeof": "object"
+      }
+    },
+    {
+      "functionId": "module.js:5:1:tagIdentity",
+      "functionName": "tagIdentity",
+      "position": "parameter",
+      "index": 0,
+      "type": "unknown",
+      "source": {
+        "file": "module.js",
+        "line": 5,
+        "column": 1
+      },
+      "executionId": "4866aece669417215f88fc9e",
+      "order": 15,
+      "public": true,
+      "interaction": {
+        "kind": "getField",
+        "code": "getField",
+        "traceId": "trace__8",
+        "isComputed": false,
+        "isOpAssign": false,
+        "enclosingFunctionId": "functionId_7",
+        "followingInteractions": [],
+        "iid": 201,
+        "field": "tag",
+        "returnTypeOf": "string"
+      }
+    },
+    {
+      "functionId": "module.js:5:1:tagIdentity",
+      "functionName": "tagIdentity",
+      "position": "result",
+      "index": -1,
+      "type": "object",
+      "source": {
+        "file": "module.js",
+        "line": 5,
+        "column": 1
+      },
+      "executionId": "4866aece669417215f88fc9e",
+      "order": 16,
+      "public": true,
+      "interaction": {
+        "kind": "return",
+        "traceId": "trace__7"
+      }
+    },
+    {
+      "functionId": "module.js:5:1:tagIdentity",
+      "functionName": "tagIdentity",
+      "position": "result",
+      "index": -1,
+      "type": "object",
+      "source": {
+        "file": "module.js",
+        "line": 5,
+        "column": 1
+      },
+      "executionId": "4866aece669417215f88fc9e",
+      "order": 17,
+      "public": true,
+      "interaction": {
+        "kind": "return",
+        "traceId": "trace__8"
+      }
+    }
+  ],
+  "operators": []
+}

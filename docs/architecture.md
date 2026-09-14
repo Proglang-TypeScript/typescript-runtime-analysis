@@ -2,6 +2,8 @@
 
 ## Revised Track B
 
+Revision2 adds `packages/sealing`: a strict TypeScript polarity kernel, versioned trial JSON, conservative semantic preflight and bounded child worker. Real proposing invocation tuples feed identity hypotheses, diverse sealed challenges and evidence-backed constraint/overload refinements. The `seal` CLI exposes the same worker. `scripts/sealing-experiment.cjs` retains four baseline/configuration declarations, counterexamples/non-counted outcomes and separately frozen valid/invalid clients. See [the sealing contract](sealing.md) for fresh brands, callback polarity, six outcomes and the deliberately bounded/opaque JavaScript scope. Passive synthesis and the legacy trace contract below remain available unchanged.
+
 `runtime-tracer/invocation-analysis.cjs` optionally wraps the existing entry/exit callbacks without altering their returned semantics. It writes completed invocation tuples with bounded shallow value snapshots, per-execution identities, callback links and return/throw outcomes; the tracer maps them to original sources and validates a separate version1 sidecar. No tuples are guessed from the legacy aggregate format.
 
 `relational-signatures` is a strict TypeScript workspace consuming validated tuples, deduplicating exact observations and grouping fixed package/version/repository/commit/function identities. Equality and container-element relationships and literal-discriminated branches generate at most six candidate kinds; invocation/branch budgets and insufficient evidence cause explicit abstention. The CLI writes selected declarations and candidate/explanation diagnostics. Old declaration inference and static/dynamic pattern analysis are retained unchanged.

@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.invalid/typescript-runtime-analysis/sealing/v1",
+  "definitions": {
+    "summary": {
+      "type": "object", "additionalProperties": false, "required": ["type"],
+      "properties": {
+        "type": {"enum": ["number", "string", "boolean", "undefined", "null", "object", "array", "function", "symbol", "bigint"]},
+        "literal": {"anyOf": [{"type": "number"}, {"type": "string"}, {"type": "boolean"}, {"type": "null"}]}
+      }
+    },
+    "event": {
+      "type": "object", "additionalProperties": false, "required": ["kind", "code", "path"],
+      "properties": {
+        "kind": {"enum": ["seal", "unseal", "seal-violation", "inconclusive", "harness-failure"]},
+        "code": {"type": "string"}, "path": {"type": "string"},
+        "variable": {"type": "string"}, "property": {"type": "string"},
+        "polarity": {"enum": ["negative", "positive"]}
+      }
+    },
+    "trial": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schemaVersion", "trialId", "status", "code", "events", "concreteOutcome"],
+      "properties": {
+        "schemaVersion": {"const": 1}, "trialId": {"type": "string"},
+        "status": {"enum": ["passed", "seal-violation", "exception", "timeout", "inconclusive", "harness-failure"]},
+        "code": {"type": "string"}, "events": {"type": "array", "items": {"$ref": "#/definitions/event"}},
+        "concreteOutcome": {
+          "type": "object", "additionalProperties": false, "required": ["status"],
+          "properties": {
+            "status": {"enum": ["unknown", "not-run", "return", "exception"]},
+            "name": {"type": "string"}, "output": {"$ref": "#/definitions/summary"}
+          }
+        }, "output": {"$ref": "#/definitions/summary"}
+      }
+    }
+  }
+}

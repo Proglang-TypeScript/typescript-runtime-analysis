@@ -45,5 +45,7 @@ save('metadata.json', {purpose: dataset.purpose, seed: dataset.seed, node: proce
 save('evidence-summary.json', evidence);
 require('./aggregate.cjs').aggregate(directory);
 const relational = require('./relational-experiment.cjs').experiment();
+const sealing = require('./sealing-experiment.cjs').experiment();
+console.log(JSON.stringify({sealing}, null, 2));
 console.log(JSON.stringify({purpose: dataset.purpose, evidence, relationalClients: relational.clients.map(row => ({configuration: row.configuration, inferencePass: row.inference.pass, heldOutPass: row.heldOut.pass})), legacyPatternEvaluation: {total: evaluation.total, answered: evaluation.answered,
   accuracy: evaluation.accuracy, coverage: evaluation.coverage}}, null, 2));

@@ -1,0 +1,235 @@
+{
+  "functions": {
+    "functionId_1": {
+      "functionId": "functionId_1",
+      "functionName": "identity",
+      "isConstructor": false,
+      "args": {
+        "0": {
+          "argumentIndex": 0,
+          "argumentName": "value",
+          "argumentId": "oTHeynqDHMlBe4jLTvjDd",
+          "interactions": [
+            {
+              "code": "inputValue",
+              "traceId": "trace__1",
+              "interactionId": "fm8gRsX-kRJilEBq-UvPh",
+              "typeof": "number"
+            },
+            {
+              "code": "inputValue",
+              "traceId": "trace__2",
+              "interactionId": "OAtV50s419dQBvcDcly2P",
+              "typeof": "string"
+            }
+          ]
+        }
+      },
+      "declarationEnclosingFunctionId": -1,
+      "returnTypeOfs": [
+        {
+          "typeOf": "number",
+          "traceId": "trace__1"
+        },
+        {
+          "typeOf": "string",
+          "traceId": "trace__2"
+        }
+      ],
+      "functionIid": 121,
+      "requiredModule": "./module",
+      "isExported": false,
+      "constructedBy": "",
+      "sourceLocation": {
+        "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/sealing/module.js",
+        "line": 4,
+        "column": 1
+      }
+    },
+    "functionId_3": {
+      "functionId": "functionId_3",
+      "functionName": "configure",
+      "isConstructor": false,
+      "args": {
+        "0": {
+          "argumentIndex": 0,
+          "argumentName": "value",
+          "argumentId": "pIHXdH8ODbyYrHQiwQApC",
+          "interactions": [
+            {
+              "code": "inputValue",
+              "traceId": "trace__3",
+              "interactionId": "hePb4ZoyqD_drfJjmSmqA",
+              "typeof": "number"
+            },
+            {
+              "code": "inputValue",
+              "traceId": "trace__5",
+              "interactionId": "QkwQJJrZjAWnu6iTcZsFr",
+              "typeof": "string"
+            }
+          ]
+        }
+      },
+      "declarationEnclosingFunctionId": -1,
+      "returnTypeOfs": [
+        {
+          "typeOf": "undefined",
+          "traceId": "trace__3"
+        },
+        {
+          "typeOf": "undefined",
+          "traceId": "trace__5"
+        }
+      ],
+      "functionIid": 73,
+      "requiredModule": "./module",
+      "isExported": false,
+      "constructedBy": "",
+      "sourceLocation": {
+        "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/sealing/module.js",
+        "line": 3,
+        "column": 1
+      }
+    },
+    "functionId_5": {
+      "functionId": "functionId_5",
+      "functionName": "nonParametric",
+      "isConstructor": false,
+      "args": {
+        "0": {
+          "argumentIndex": 0,
+          "argumentName": "value",
+          "argumentId": "x4yF34Rq0Wn2clM6XEqEI",
+          "interactions": [
+            {
+              "code": "inputValue",
+              "traceId": "trace__4",
+              "interactionId": "qlXLEL04wn0eWIMRacHpl",
+              "typeof": "number"
+            },
+            {
+              "code": "inputValue",
+              "traceId": "trace__6",
+              "interactionId": "7RJIXVJqS3UiFprQqSPF5",
+              "typeof": "string"
+            }
+          ]
+        }
+      },
+      "declarationEnclosingFunctionId": -1,
+      "returnTypeOfs": [
+        {
+          "typeOf": "number",
+          "traceId": "trace__4"
+        },
+        {
+          "typeOf": "string",
+          "traceId": "trace__6"
+        }
+      ],
+      "functionIid": 169,
+      "requiredModule": "./module",
+      "isExported": false,
+      "constructedBy": "",
+      "sourceLocation": {
+        "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/sealing/module.js",
+        "line": 5,
+        "column": 1
+      }
+    },
+    "functionId_7": {
+      "functionId": "functionId_7",
+      "functionName": "tagIdentity",
+      "isConstructor": false,
+      "args": {
+        "0": {
+          "argumentIndex": 0,
+          "argumentName": "value",
+          "argumentId": "1Vb62xfSLhFFUvw4vut_V",
+          "interactions": [
+            {
+              "code": "inputValue",
+              "traceId": "trace__7",
+              "interactionId": "mraE2DvPPJ3KHqh89dIDy",
+              "typeof": "object"
+            },
+            {
+              "code": "getField",
+              "traceId": "trace__7",
+              "interactionId": "DJfgAETsE8Jc-0jy1iwZ8",
+              "isComputed": false,
+              "isOpAssign": false,
+              "enclosingFunctionId": "functionId_7",
+              "followingInteractions": [],
+              "iid": 201,
+              "field": "tag",
+              "returnTypeOf": "string"
+            },
+            {
+              "code": "inputValue",
+              "traceId": "trace__8",
+              "interactionId": "8TRTQazn8PFMUXrP-1zg_",
+              "typeof": "object"
+            },
+            {
+              "code": "getField",
+              "traceId": "trace__8",
+              "interactionId": "3Jo0_3VMEEH29wwbkMqMF",
+              "isComputed": false,
+              "isOpAssign": false,
+              "enclosingFunctionId": "functionId_7",
+              "followingInteractions": [],
+              "iid": 201,
+              "field": "tag",
+              "returnTypeOf": "string"
+            }
+          ]
+        }
+      },
+      "declarationEnclosingFunctionId": -1,
+      "returnTypeOfs": [
+        {
+          "typeOf": "object",
+          "traceId": "trace__7"
+        },
+        {
+          "typeOf": "object",
+          "traceId": "trace__8"
+        }
+      ],
+      "functionIid": 241,
+      "requiredModule": "./module",
+      "isExported": false,
+      "constructedBy": "",
+      "sourceLocation": {
+        "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/sealing/module.js",
+        "line": 6,
+        "column": 1
+      }
+    }
+  },
+  "patterns": [],
+  "sourceMaps": {
+    "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/sealing/inference.js": {
+      "version": 3,
+      "file": "inference.js",
+      "sourceRoot": "",
+      "sources": [
+        "inference.js"
+      ],
+      "names": [],
+      "mappings": ";AAAA,IAAM,GAAG,GAAG,OAAO,CAAC,UAAU,CAAC,CAAC;AAChC,GAAG,CAAC,QAAQ,CAAC,CAAC,CAAC,CAAC;AAChB,GAAG,CAAC,QAAQ,CAAC,MAAM,CAAC,CAAC;AACrB,GAAG,CAAC,SAAS,CAAC,CAAC,CAAC,CAAC;AACjB,GAAG,CAAC,aAAa,CAAC,CAAC,CAAC,CAAC;AACrB,GAAG,CAAC,SAAS,CAAC,MAAM,CAAC,CAAC;AACtB,GAAG,CAAC,aAAa,CAAC,MAAM,CAAC,CAAC;AAC1B,GAAG,CAAC,WAAW,CAAC,EAAC,GAAG,EAAE,MAAM,EAAC,CAAC,CAAC;AAC/B,GAAG,CAAC,WAAW,CAAC,EAAC,GAAG,EAAE,OAAO,EAAC,CAAC,CAAC"
+    },
+    "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/sealing/module.js": {
+      "version": 3,
+      "file": "module.js",
+      "sourceRoot": "",
+      "sources": [
+        "module.js"
+      ],
+      "names": [],
+      "mappings": ";AAAA,IAAI,QAAQ,GAAG,CAAC,CAAC;AACjB,SAAS,SAAS,CAAC,KAAK,IAAI,QAAQ,GAAG,KAAK,CAAC,CAAC,CAAC;AAC/C,SAAS,QAAQ,CAAC,KAAK,IAAI,OAAO,KAAK,CAAC,CAAC,CAAC;AAC1C,SAAS,aAAa,CAAC,KAAK,IAAI,OAAO,QAAQ,CAAC,CAAC,CAAC;AAClD,SAAS,WAAW,CAAC,KAAK,IAAI,KAAK,CAAC,GAAG,CAAC,CAAC,OAAO,KAAK,CAAC,CAAC,CAAC;AACxD,SAAS,gBAAgB,CAAC,KAAK,EAAE,QAAQ,IAAI,OAAO,QAAQ,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC;AACtE,SAAS,eAAe,CAAC,KAAK,IAAI,OAAO,OAAO,KAAK,KAAK,QAAQ,CAAC,CAAC,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjF,SAAS,MAAM,CAAC,KAAK,IAAI,OAAO,KAAK,GAAG,CAAC,CAAC,CAAC,CAAC;AAC5C,SAAS,KAAK,CAAC,KAAK,IAAI,OAAO,KAAK,KAAK,KAAK,CAAC,CAAC,CAAC;AACjD,SAAS,MAAM,CAAC,KAAK,IAAI,OAAO,KAAK,CAAC,OAAO,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC;AACvD,SAAS,SAAS,CAAC,KAAK,IAAI,OAAO,IAAI,CAAC,SAAS,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC;AAC3D,SAAS,cAAc,CAAC,KAAK,IAAI,OAAO,MAAM,CAAC,EAAE,CAAC,KAAK,EAAE,KAAK,CAAC,CAAC,CAAC,CAAC;AAClE,SAAS,OAAO,CAAC,KAAK,IAAI,OAAO,MAAM,CAAC,cAAc,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC;AAChE,SAAS,iBAAiB,CAAC,KAAK,IAAI,MAAM,IAAI,KAAK,CAAC,0BAA0B,CAAC,CAAC,CAAC,CAAC;AAClF,SAAS,WAAW,CAAC,KAAK,IAAI,OAAO,OAAO,KAAK,CAAC,CAAC,CAAC;AACpD,SAAS,eAAe,CAAC,KAAK,IAAI,IAAI,CAAC;IAAC,CAAC,KAAK,CAAC;AAAC,CAAC;AAAC,OAAO,KAAK,EAAE,CAAC,CAAA,CAAC,CAAC,OAAO,KAAK,CAAC,CAAC,CAAC;AAClF,SAAS,WAAW,CAAC,KAAK,IAAI,IAAI,CAAC;IAAC,KAAK,CAAC,GAAG,CAAC;AAAC,CAAC;AAAC,OAAO,KAAK,EAAE,CAAC,CAAA,CAAC,CAAC,OAAO,KAAK,CAAC,CAAC,CAAC;AACjF,MAAM,CAAC,OAAO,GAAG,EAAC,SAAS,WAAA,EAAE,QAAQ,UAAA,EAAE,aAAa,eAAA,EAAE,WAAW,aAAA,EAAE,gBAAgB,kBAAA,EAAE,eAAe,iBAAA,EAAE,MAAM,QAAA,EAAE,KAAK,OAAA,EAAE,MAAM,QAAA,EAAE,SAAS,WAAA,EAAE,cAAc,gBAAA,EAAE,OAAO,SAAA,EAAE,iBAAiB,mBAAA,EAAE,WAAW,aAAA,EAAE,eAAe,iBAAA,EAAE,WAAW,aAAA,EAAC,CAAC"
+    }
+  }
+}

@@ -3,9 +3,10 @@ const schema = require('./schema.json');
 const ajv = new Ajv({allErrors: true, strict: true});
 ajv.addSchema(schema, 'analysis');
 ajv.addSchema(require('./relational-schema.json'), 'relational');
+ajv.addSchema(require('../sealing/trial-schema.json'), 'sealing');
 
 function validate(kind, value) {
-  const check = ajv.getSchema(`analysis#/definitions/${kind}`) || ajv.getSchema(`relational#/definitions/${kind}`);
+  const check = ajv.getSchema(`analysis#/definitions/${kind}`) || ajv.getSchema(`relational#/definitions/${kind}`) || ajv.getSchema(`sealing#/definitions/${kind}`);
   if (!check) throw new Error(`Unknown schema: ${kind}`);
   if (!check(value)) throw new Error(`${kind}: ${ajv.errorsText(check.errors)}`);
   if (kind === 'invocationTrace') {

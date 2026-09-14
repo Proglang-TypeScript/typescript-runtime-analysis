@@ -1,0 +1,5 @@
+function,candidate,passed,violations,inconclusive,exceptions,timeouts,harness_failures
+identity,identity-generic,9,0,0,0,0,0
+nonParametric,identity-generic,0,9,0,0,0,0
+tagIdentity,identity-generic,0,1,6,2,0,0
+tagIdentity,constrained-generic,2,0,0,0,0,0

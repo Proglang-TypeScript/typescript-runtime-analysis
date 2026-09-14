@@ -2,6 +2,8 @@
 
 This is the initial recovery-phase snapshot, not current security or publication status. Subsequent authorized dependency migrations, commits and pushes supersede its statements about authentication, unchanged source graphs, viewer safety and absent upstream. See [current security/publication record](security-publication-report.md).
 
+Revision2 adds actively challenged first-order hypotheses, fresh polarity-directed seals, justified constraint refinement, classified counterexamples and independent valid/invalid clients. The supported Node24 check passes 143 tests, four smoke workflows and all retained/new experiments. Unsupported semantics remain inconclusive. See [the revision2 delta](revision-2-delta.md) and [sealing scope](sealing.md); exact-commit publication/audit verification accompanies the handoff.
+
 Recovery performed 2026-09-14 against `/Users/thiemann/git/typescript/codex-project-work-description.md`. Fresh repository: `/Users/thiemann/git/typescript/typescript-runtime-analysis` (initialized locally; no commits, remote, push or PR merge). A matching deliverable snapshot accompanies this record.
 
 ## What works

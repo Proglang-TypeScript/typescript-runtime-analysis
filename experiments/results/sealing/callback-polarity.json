@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "trialId": "ae5b2e3d-959c-4035-902c-3aca64cb80a0",
+  "status": "passed",
+  "code": "FRESH_SEAL_TRANSPORTED",
+  "events": [
+    {
+      "kind": "seal",
+      "code": "ALLOCATED_FRESH_BRAND",
+      "variable": "T",
+      "path": "argument:0",
+      "polarity": "negative"
+    },
+    {
+      "kind": "unseal",
+      "code": "CHECKED_FRESH_BRAND",
+      "variable": "T",
+      "path": "argument:1.argument:0",
+      "polarity": "positive"
+    },
+    {
+      "kind": "seal",
+      "code": "ALLOCATED_FRESH_BRAND",
+      "variable": "T",
+      "path": "argument:1.result",
+      "polarity": "negative"
+    },
+    {
+      "kind": "unseal",
+      "code": "CHECKED_FRESH_BRAND",
+      "variable": "T",
+      "path": "result",
+      "polarity": "positive"
+    }
+  ],
+  "concreteOutcome": {
+    "status": "return",
+    "output": {
+      "type": "number",
+      "literal": 7
+    }
+  },
+  "output": {
+    "type": "number",
+    "literal": 7
+  }
+}

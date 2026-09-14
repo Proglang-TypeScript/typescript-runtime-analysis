@@ -1,0 +1,208 @@
+[
+  {
+    "functionName": "primitiveBranch",
+    "result": {
+      "schemaVersion": 1,
+      "trialId": "8cac53f1-7467-40c5-ad1b-79ddcb78b950",
+      "status": "inconclusive",
+      "code": "CONTROL_FLOW_OBSERVABILITY",
+      "events": [
+        {
+          "kind": "seal",
+          "code": "ALLOCATED_FRESH_BRAND",
+          "variable": "T",
+          "path": "argument:0",
+          "polarity": "negative"
+        }
+      ],
+      "concreteOutcome": {
+        "status": "return",
+        "output": {
+          "type": "number",
+          "literal": 7
+        }
+      },
+      "output": {
+        "type": "number",
+        "literal": 7
+      }
+    }
+  },
+  {
+    "functionName": "coerce",
+    "result": {
+      "schemaVersion": 1,
+      "trialId": "5fdb6f72-e340-4f90-9fce-a6ad7ab3fe10",
+      "status": "inconclusive",
+      "code": "COERCION_OBSERVABILITY",
+      "events": [
+        {
+          "kind": "seal",
+          "code": "ALLOCATED_FRESH_BRAND",
+          "variable": "T",
+          "path": "argument:0",
+          "polarity": "negative"
+        },
+        {
+          "kind": "inconclusive",
+          "code": "COERCION_OBSERVABILITY",
+          "path": "argument:0"
+        }
+      ],
+      "concreteOutcome": {
+        "status": "return",
+        "output": {
+          "type": "number",
+          "literal": 7
+        }
+      },
+      "output": {
+        "type": "number",
+        "literal": 7
+      }
+    }
+  },
+  {
+    "functionName": "equal",
+    "result": {
+      "schemaVersion": 1,
+      "trialId": "b2a5b6ec-2051-4ad0-8174-55924e2edd91",
+      "status": "inconclusive",
+      "code": "EQUALITY_OBSERVABILITY",
+      "events": [
+        {
+          "kind": "seal",
+          "code": "ALLOCATED_FRESH_BRAND",
+          "variable": "T",
+          "path": "argument:0",
+          "polarity": "negative"
+        }
+      ],
+      "concreteOutcome": {
+        "status": "return",
+        "output": {
+          "type": "boolean",
+          "literal": true
+        }
+      },
+      "output": {
+        "type": "boolean",
+        "literal": true
+      }
+    }
+  },
+  {
+    "functionName": "native",
+    "result": {
+      "schemaVersion": 1,
+      "trialId": "c0a4198d-9950-4b92-9731-39c61a239e2e",
+      "status": "inconclusive",
+      "code": "UNSUPPORTED_NATIVE_OR_HELPER_CALL",
+      "events": [
+        {
+          "kind": "seal",
+          "code": "ALLOCATED_FRESH_BRAND",
+          "variable": "T",
+          "path": "argument:0",
+          "polarity": "negative"
+        }
+      ],
+      "concreteOutcome": {
+        "status": "return",
+        "output": {
+          "type": "boolean",
+          "literal": false
+        }
+      },
+      "output": {
+        "type": "boolean",
+        "literal": false
+      }
+    }
+  },
+  {
+    "functionName": "serialize",
+    "result": {
+      "schemaVersion": 1,
+      "trialId": "4d579670-9ff6-42d6-9613-3c9accf364ee",
+      "status": "inconclusive",
+      "code": "SERIALIZATION_OBSERVABILITY",
+      "events": [
+        {
+          "kind": "seal",
+          "code": "ALLOCATED_FRESH_BRAND",
+          "variable": "T",
+          "path": "argument:0",
+          "polarity": "negative"
+        }
+      ],
+      "concreteOutcome": {
+        "status": "return",
+        "output": {
+          "type": "string",
+          "literal": "7"
+        }
+      },
+      "output": {
+        "type": "string",
+        "literal": "7"
+      }
+    }
+  },
+  {
+    "functionName": "objectIdentity",
+    "result": {
+      "schemaVersion": 1,
+      "trialId": "e6f1f859-8d70-4571-9f3e-99bdbdb39abb",
+      "status": "inconclusive",
+      "code": "IDENTITY_OR_PROXY_OBSERVABILITY",
+      "events": [
+        {
+          "kind": "seal",
+          "code": "ALLOCATED_FRESH_BRAND",
+          "variable": "T",
+          "path": "argument:0",
+          "polarity": "negative"
+        }
+      ],
+      "concreteOutcome": {
+        "status": "return",
+        "output": {
+          "type": "boolean",
+          "literal": true
+        }
+      },
+      "output": {
+        "type": "boolean",
+        "literal": true
+      }
+    }
+  },
+  {
+    "functionName": "reflect",
+    "result": {
+      "schemaVersion": 1,
+      "trialId": "cdf74217-5c08-4081-bc43-528a4179e318",
+      "status": "inconclusive",
+      "code": "IDENTITY_OR_PROXY_OBSERVABILITY",
+      "events": [
+        {
+          "kind": "seal",
+          "code": "ALLOCATED_FRESH_BRAND",
+          "variable": "T",
+          "path": "argument:0",
+          "polarity": "negative"
+        }
+      ],
+      "concreteOutcome": {
+        "status": "return",
+        "output": {
+          "type": "object"
+        }
+      },
+      "output": {
+        "type": "object"
+      }
+    }
+  }
+]

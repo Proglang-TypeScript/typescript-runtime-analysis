@@ -28,8 +28,14 @@ try {
     fs.mkdirSync(path.dirname(output), {recursive: true});
     fs.writeFileSync(output, text || 'export {};\n');
     fs.writeFileSync(`${output}.diagnostics.json`, JSON.stringify(results, null, 2) + '\n');
+  } else if (command === 'seal') {
+    const result = require('../sealing/trials.cjs').trial(args[0], option('export', 'identity'), read(option('plan')), {trustedFixture: args.includes('--trusted-fixture'), timeoutMs: Number(option('timeout-ms', '3000'))});
+    const output = option('out', 'sealed-trial.json');
+    fs.mkdirSync(path.dirname(output), {recursive: true});
+    fs.writeFileSync(output, JSON.stringify(result, null, 2) + '\n');
+    console.log(JSON.stringify({status: result.status, code: result.code}));
   } else {
-    throw new Error('Usage: tra trace|generate|compare|patterns|synthesize|experiment. See README.md for options.');
+    throw new Error('Usage: tra trace|generate|compare|patterns|synthesize|seal|experiment. See README.md for options.');
   }
 } catch (error) {
   console.error(error.message);

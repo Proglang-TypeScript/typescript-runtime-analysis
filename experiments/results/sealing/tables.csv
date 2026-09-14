@@ -1,0 +1,5 @@
+configuration,valid_client_pass,invalid_client_rejected,valid_errors,invalid_errors
+component-union,0,1,5,2
+observation-overloads,0,1,4,1
+passive-relational,1,0,0,0
+sealing-refinement,1,1,0,1

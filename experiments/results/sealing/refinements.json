@@ -1,0 +1,611 @@
+[
+  {
+    "decision": "unchanged",
+    "reason": "No classified seal violation",
+    "candidate": {
+      "schemaVersion": 1,
+      "functionId": "module.js:3:1:identity",
+      "functionName": "identity",
+      "kind": "identity-generic",
+      "text": "export function identity<T>(arg0: T): T;\n",
+      "contract": {
+        "variables": {
+          "T": null
+        },
+        "parameters": [
+          {
+            "kind": "variable",
+            "name": "T"
+          }
+        ],
+        "result": {
+          "kind": "variable",
+          "name": "T"
+        }
+      },
+      "proposingInvocations": [
+        "4866aece669417215f88fc9e:0",
+        "4866aece669417215f88fc9e:1"
+      ],
+      "observations": [
+        {
+          "invocationId": "4866aece669417215f88fc9e:0",
+          "functionId": "module.js:3:1:identity",
+          "functionName": "identity",
+          "source": {
+            "file": "module.js",
+            "line": 3,
+            "column": 1
+          },
+          "executionId": "4866aece669417215f88fc9e",
+          "order": 0,
+          "public": true,
+          "arguments": [
+            {
+              "type": "number",
+              "valueId": "value:0",
+              "complete": true,
+              "literal": 1
+            }
+          ],
+          "receiver": {
+            "type": "object",
+            "valueId": "value:1",
+            "complete": true,
+            "properties": {
+              "callbackIdentity": {
+                "type": "function",
+                "valueId": "value:2",
+                "complete": true
+              },
+              "coerce": {
+                "type": "function",
+                "valueId": "value:3",
+                "complete": true
+              },
+              "configure": {
+                "type": "function",
+                "valueId": "value:4",
+                "complete": true
+              },
+              "equal": {
+                "type": "function",
+                "valueId": "value:5",
+                "complete": true
+              },
+              "identity": {
+                "type": "function",
+                "valueId": "value:6",
+                "complete": true
+              },
+              "inspectType": {
+                "type": "function",
+                "valueId": "value:7",
+                "complete": true
+              },
+              "native": {
+                "type": "function",
+                "valueId": "value:8",
+                "complete": true
+              },
+              "nonParametric": {
+                "type": "function",
+                "valueId": "value:9",
+                "complete": true
+              },
+              "objectIdentity": {
+                "type": "function",
+                "valueId": "value:10",
+                "complete": true
+              },
+              "ordinaryException": {
+                "type": "function",
+                "valueId": "value:11",
+                "complete": true
+              },
+              "primitiveBranch": {
+                "type": "function",
+                "valueId": "value:12",
+                "complete": true
+              },
+              "reflect": {
+                "type": "function",
+                "valueId": "value:13",
+                "complete": true
+              },
+              "serialize": {
+                "type": "function",
+                "valueId": "value:14",
+                "complete": true
+              },
+              "swallowCoercion": {
+                "type": "function",
+                "valueId": "value:15",
+                "complete": true
+              },
+              "swallowPeek": {
+                "type": "function",
+                "valueId": "value:16",
+                "complete": true
+              },
+              "tagIdentity": {
+                "type": "function",
+                "valueId": "value:17",
+                "complete": true
+              }
+            }
+          },
+          "result": {
+            "type": "number",
+            "valueId": "value:0",
+            "complete": true,
+            "literal": 1
+          },
+          "outcome": "return",
+          "parentInvocationId": null,
+          "callbacks": []
+        },
+        {
+          "invocationId": "4866aece669417215f88fc9e:1",
+          "functionId": "module.js:3:1:identity",
+          "functionName": "identity",
+          "source": {
+            "file": "module.js",
+            "line": 3,
+            "column": 1
+          },
+          "executionId": "4866aece669417215f88fc9e",
+          "order": 1,
+          "public": true,
+          "arguments": [
+            {
+              "type": "string",
+              "valueId": "value:18",
+              "complete": true,
+              "literal": "seen"
+            }
+          ],
+          "receiver": {
+            "type": "object",
+            "valueId": "value:1",
+            "complete": true,
+            "properties": {
+              "callbackIdentity": {
+                "type": "function",
+                "valueId": "value:2",
+                "complete": true
+              },
+              "coerce": {
+                "type": "function",
+                "valueId": "value:3",
+                "complete": true
+              },
+              "configure": {
+                "type": "function",
+                "valueId": "value:4",
+                "complete": true
+              },
+              "equal": {
+                "type": "function",
+                "valueId": "value:5",
+                "complete": true
+              },
+              "identity": {
+                "type": "function",
+                "valueId": "value:6",
+                "complete": true
+              },
+              "inspectType": {
+                "type": "function",
+                "valueId": "value:7",
+                "complete": true
+              },
+              "native": {
+                "type": "function",
+                "valueId": "value:8",
+                "complete": true
+              },
+              "nonParametric": {
+                "type": "function",
+                "valueId": "value:9",
+                "complete": true
+              },
+              "objectIdentity": {
+                "type": "function",
+                "valueId": "value:10",
+                "complete": true
+              },
+              "ordinaryException": {
+                "type": "function",
+                "valueId": "value:11",
+                "complete": true
+              },
+              "primitiveBranch": {
+                "type": "function",
+                "valueId": "value:12",
+                "complete": true
+              },
+              "reflect": {
+                "type": "function",
+                "valueId": "value:13",
+                "complete": true
+              },
+              "serialize": {
+                "type": "function",
+                "valueId": "value:14",
+                "complete": true
+              },
+              "swallowCoercion": {
+                "type": "function",
+                "valueId": "value:15",
+                "complete": true
+              },
+              "swallowPeek": {
+                "type": "function",
+                "valueId": "value:16",
+                "complete": true
+              },
+              "tagIdentity": {
+                "type": "function",
+                "valueId": "value:17",
+                "complete": true
+              }
+            }
+          },
+          "result": {
+            "type": "string",
+            "valueId": "value:18",
+            "complete": true,
+            "literal": "seen"
+          },
+          "outcome": "return",
+          "parentInvocationId": null,
+          "callbacks": []
+        }
+      ],
+      "provenance": {
+        "package": "tra-sealing-fixture",
+        "version": "1.0.0",
+        "repository": "local-fixture",
+        "commit": "uncommitted-fixture",
+        "evidence": "fixture",
+        "entryPoint": "inference.js",
+        "publicModule": "module",
+        "backend": "jalangi2",
+        "backendVersion": "bc879287b1678de6e3c423f5debe63207559525b",
+        "executionId": "4866aece669417215f88fc9e"
+      }
+    }
+  },
+  {
+    "decision": "overloads",
+    "reason": "Reject parametricity; shallow overloads retain all observed state/output types. These non-generic overloads are not sealing-validated or universally sound.",
+    "text": "export function nonParametric(arg0: unknown[]): number | string;\nexport function nonParametric(arg0: boolean): number | string;\nexport function nonParametric(arg0: null): number | string;\nexport function nonParametric(arg0: number): number | string;\nexport function nonParametric(arg0: object): number | string;\nexport function nonParametric(arg0: string): number | string;\nexport function nonParametric(arg0: undefined): number | string;\n",
+    "supportingInvocations": [
+      "4866aece669417215f88fc9e:3",
+      "4866aece669417215f88fc9e:5"
+    ],
+    "counterexampleTrials": [
+      "ac7f4e43-f8d2-441f-bee1-e81e957eee04",
+      "a9e828ad-ce47-4d2b-8fa0-746881258173",
+      "a1a938c1-248a-407a-ae77-a9fa16fd9ae3",
+      "94a5e623-b69d-4020-beb8-74f3013b1063",
+      "98a58479-6504-48c4-bddc-9651b075c058",
+      "81aad135-fe40-4bbf-8b00-9c686055496c",
+      "b371eb48-33b0-4ba2-afe9-37ce1a9ccf1b",
+      "46264184-95e7-4cfd-8c90-47230eff7ce8",
+      "8a85301d-9ccc-4fe3-8605-5bfb78309e8f"
+    ],
+    "validated": false
+  },
+  {
+    "decision": "constraint",
+    "reason": "Opaque property counterexample plus all proposing observations justify tag: string",
+    "candidate": {
+      "schemaVersion": 1,
+      "functionId": "module.js:5:1:tagIdentity",
+      "functionName": "tagIdentity",
+      "kind": "constrained-generic",
+      "text": "export function tagIdentity<T extends { tag: string }>(arg0: T): T;\n",
+      "contract": {
+        "variables": {
+          "T": {
+            "fields": {
+              "tag": "string"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "kind": "variable",
+            "name": "T"
+          }
+        ],
+        "result": {
+          "kind": "variable",
+          "name": "T"
+        }
+      },
+      "proposingInvocations": [
+        "4866aece669417215f88fc9e:6",
+        "4866aece669417215f88fc9e:7"
+      ],
+      "observations": [
+        {
+          "invocationId": "4866aece669417215f88fc9e:6",
+          "functionId": "module.js:5:1:tagIdentity",
+          "functionName": "tagIdentity",
+          "source": {
+            "file": "module.js",
+            "line": 5,
+            "column": 1
+          },
+          "executionId": "4866aece669417215f88fc9e",
+          "order": 6,
+          "public": true,
+          "arguments": [
+            {
+              "type": "object",
+              "valueId": "value:20",
+              "complete": true,
+              "properties": {
+                "tag": {
+                  "type": "string",
+                  "valueId": "value:21",
+                  "complete": true,
+                  "literal": "left"
+                }
+              }
+            }
+          ],
+          "receiver": {
+            "type": "object",
+            "valueId": "value:1",
+            "complete": true,
+            "properties": {
+              "callbackIdentity": {
+                "type": "function",
+                "valueId": "value:2",
+                "complete": true
+              },
+              "coerce": {
+                "type": "function",
+                "valueId": "value:3",
+                "complete": true
+              },
+              "configure": {
+                "type": "function",
+                "valueId": "value:4",
+                "complete": true
+              },
+              "equal": {
+                "type": "function",
+                "valueId": "value:5",
+                "complete": true
+              },
+              "identity": {
+                "type": "function",
+                "valueId": "value:6",
+                "complete": true
+              },
+              "inspectType": {
+                "type": "function",
+                "valueId": "value:7",
+                "complete": true
+              },
+              "native": {
+                "type": "function",
+                "valueId": "value:8",
+                "complete": true
+              },
+              "nonParametric": {
+                "type": "function",
+                "valueId": "value:9",
+                "complete": true
+              },
+              "objectIdentity": {
+                "type": "function",
+                "valueId": "value:10",
+                "complete": true
+              },
+              "ordinaryException": {
+                "type": "function",
+                "valueId": "value:11",
+                "complete": true
+              },
+              "primitiveBranch": {
+                "type": "function",
+                "valueId": "value:12",
+                "complete": true
+              },
+              "reflect": {
+                "type": "function",
+                "valueId": "value:13",
+                "complete": true
+              },
+              "serialize": {
+                "type": "function",
+                "valueId": "value:14",
+                "complete": true
+              },
+              "swallowCoercion": {
+                "type": "function",
+                "valueId": "value:15",
+                "complete": true
+              },
+              "swallowPeek": {
+                "type": "function",
+                "valueId": "value:16",
+                "complete": true
+              },
+              "tagIdentity": {
+                "type": "function",
+                "valueId": "value:17",
+                "complete": true
+              }
+            }
+          },
+          "result": {
+            "type": "object",
+            "valueId": "value:20",
+            "complete": true,
+            "properties": {
+              "tag": {
+                "type": "string",
+                "valueId": "value:21",
+                "complete": true,
+                "literal": "left"
+              }
+            }
+          },
+          "outcome": "return",
+          "parentInvocationId": null,
+          "callbacks": []
+        },
+        {
+          "invocationId": "4866aece669417215f88fc9e:7",
+          "functionId": "module.js:5:1:tagIdentity",
+          "functionName": "tagIdentity",
+          "source": {
+            "file": "module.js",
+            "line": 5,
+            "column": 1
+          },
+          "executionId": "4866aece669417215f88fc9e",
+          "order": 7,
+          "public": true,
+          "arguments": [
+            {
+              "type": "object",
+              "valueId": "value:22",
+              "complete": true,
+              "properties": {
+                "tag": {
+                  "type": "string",
+                  "valueId": "value:23",
+                  "complete": true,
+                  "literal": "right"
+                }
+              }
+            }
+          ],
+          "receiver": {
+            "type": "object",
+            "valueId": "value:1",
+            "complete": true,
+            "properties": {
+              "callbackIdentity": {
+                "type": "function",
+                "valueId": "value:2",
+                "complete": true
+              },
+              "coerce": {
+                "type": "function",
+                "valueId": "value:3",
+                "complete": true
+              },
+              "configure": {
+                "type": "function",
+                "valueId": "value:4",
+                "complete": true
+              },
+              "equal": {
+                "type": "function",
+                "valueId": "value:5",
+                "complete": true
+              },
+              "identity": {
+                "type": "function",
+                "valueId": "value:6",
+                "complete": true
+              },
+              "inspectType": {
+                "type": "function",
+                "valueId": "value:7",
+                "complete": true
+              },
+              "native": {
+                "type": "function",
+                "valueId": "value:8",
+                "complete": true
+              },
+              "nonParametric": {
+                "type": "function",
+                "valueId": "value:9",
+                "complete": true
+              },
+              "objectIdentity": {
+                "type": "function",
+                "valueId": "value:10",
+                "complete": true
+              },
+              "ordinaryException": {
+                "type": "function",
+                "valueId": "value:11",
+                "complete": true
+              },
+              "primitiveBranch": {
+                "type": "function",
+                "valueId": "value:12",
+                "complete": true
+              },
+              "reflect": {
+                "type": "function",
+                "valueId": "value:13",
+                "complete": true
+              },
+              "serialize": {
+                "type": "function",
+                "valueId": "value:14",
+                "complete": true
+              },
+              "swallowCoercion": {
+                "type": "function",
+                "valueId": "value:15",
+                "complete": true
+              },
+              "swallowPeek": {
+                "type": "function",
+                "valueId": "value:16",
+                "complete": true
+              },
+              "tagIdentity": {
+                "type": "function",
+                "valueId": "value:17",
+                "complete": true
+              }
+            }
+          },
+          "result": {
+            "type": "object",
+            "valueId": "value:22",
+            "complete": true,
+            "properties": {
+              "tag": {
+                "type": "string",
+                "valueId": "value:23",
+                "complete": true,
+                "literal": "right"
+              }
+            }
+          },
+          "outcome": "return",
+          "parentInvocationId": null,
+          "callbacks": []
+        }
+      ],
+      "provenance": {
+        "package": "tra-sealing-fixture",
+        "version": "1.0.0",
+        "repository": "local-fixture",
+        "commit": "uncommitted-fixture",
+        "evidence": "fixture",
+        "entryPoint": "inference.js",
+        "publicModule": "module",
+        "backend": "jalangi2",
+        "backendVersion": "bc879287b1678de6e3c423f5debe63207559525b",
+        "executionId": "4866aece669417215f88fc9e"
+      }
+    }
+  }
+]

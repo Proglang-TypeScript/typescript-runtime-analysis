@@ -1,0 +1,3901 @@
+{
+  "purpose": "Known first-party synthetic fixtures; not publication evaluation or universal soundness",
+  "clients": [
+    {
+      "configuration": "component-union",
+      "valid": {
+        "pass": false,
+        "diagnostics": [
+          {
+            "code": 2322,
+            "message": "Type 'string | number' is not assignable to type '{ fresh: boolean; }'.\n  Type 'string' is not assignable to type '{ fresh: boolean; }'."
+          },
+          {
+            "code": 2345,
+            "message": "Argument of type '{ fresh: boolean; }' is not assignable to parameter of type 'string | number'."
+          },
+          {
+            "code": 2322,
+            "message": "Type 'string | number' is not assignable to type 'boolean'.\n  Type 'string' is not assignable to type 'boolean'."
+          },
+          {
+            "code": 2345,
+            "message": "Argument of type 'boolean' is not assignable to parameter of type 'string | number'."
+          },
+          {
+            "code": 2739,
+            "message": "Type '{}' is missing the following properties from type '{ tag: string; extra: number; }': tag, extra"
+          }
+        ]
+      },
+      "invalid": {
+        "pass": false,
+        "diagnostics": [
+          {
+            "code": 2322,
+            "message": "Type 'string | number' is not assignable to type 'boolean'.\n  Type 'string' is not assignable to type 'boolean'."
+          },
+          {
+            "code": 2345,
+            "message": "Argument of type 'boolean' is not assignable to parameter of type 'string | number'."
+          }
+        ]
+      }
+    },
+    {
+      "configuration": "observation-overloads",
+      "valid": {
+        "pass": false,
+        "diagnostics": [
+          {
+            "code": 2769,
+            "message": "No overload matches this call.\n  Overload 1 of 2, '(arg0: \"seen\"): string', gave the following error.\n    Argument of type '{ fresh: boolean; }' is not assignable to parameter of type '\"seen\"'.\n  Overload 2 of 2, '(arg0: 1): number', gave the following error.\n    Argument of type '{ fresh: boolean; }' is not assignable to parameter of type '1'."
+          },
+          {
+            "code": 2769,
+            "message": "No overload matches this call.\n  Overload 1 of 2, '(arg0: \"seen\"): string', gave the following error.\n    Argument of type 'false' is not assignable to parameter of type '\"seen\"'.\n  Overload 2 of 2, '(arg0: 1): number', gave the following error.\n    Argument of type 'false' is not assignable to parameter of type '1'."
+          },
+          {
+            "code": 2769,
+            "message": "No overload matches this call.\n  Overload 1 of 2, '(arg0: \"seen\"): string', gave the following error.\n    Argument of type '\"new input\"' is not assignable to parameter of type '\"seen\"'.\n  Overload 2 of 2, '(arg0: 1): number', gave the following error.\n    Argument of type '\"new input\"' is not assignable to parameter of type '1'."
+          },
+          {
+            "code": 2739,
+            "message": "Type '{}' is missing the following properties from type '{ tag: string; extra: number; }': tag, extra"
+          }
+        ]
+      },
+      "invalid": {
+        "pass": false,
+        "diagnostics": [
+          {
+            "code": 2769,
+            "message": "No overload matches this call.\n  Overload 1 of 2, '(arg0: \"seen\"): string', gave the following error.\n    Argument of type 'false' is not assignable to parameter of type '\"seen\"'.\n  Overload 2 of 2, '(arg0: 1): number', gave the following error.\n    Argument of type 'false' is not assignable to parameter of type '1'."
+          }
+        ]
+      }
+    },
+    {
+      "configuration": "passive-relational",
+      "valid": {
+        "pass": true,
+        "diagnostics": []
+      },
+      "invalid": {
+        "pass": true,
+        "diagnostics": []
+      }
+    },
+    {
+      "configuration": "sealing-refinement",
+      "valid": {
+        "pass": true,
+        "diagnostics": [],
+        "native": {
+          "exit": 0,
+          "diagnostics": ""
+        }
+      },
+      "invalid": {
+        "pass": false,
+        "diagnostics": [
+          {
+            "code": 2322,
+            "message": "Type 'string | number' is not assignable to type 'boolean'.\n  Type 'string' is not assignable to type 'boolean'."
+          }
+        ]
+      }
+    }
+  ],
+  "constraintInvalid": {
+    "pass": false,
+    "diagnostics": [
+      {
+        "code": 2322,
+        "message": "Type 'number' is not assignable to type 'string'."
+      },
+      {
+        "code": 2353,
+        "message": "Object literal may only specify known properties, and 'missing' does not exist in type '{ tag: string; }'."
+      }
+    ]
+  },
+  "validation": [
+    {
+      "candidate": {
+        "schemaVersion": 1,
+        "functionId": "module.js:3:1:identity",
+        "functionName": "identity",
+        "kind": "identity-generic",
+        "text": "export function identity<T>(arg0: T): T;\n",
+        "contract": {
+          "variables": {
+            "T": null
+          },
+          "parameters": [
+            {
+              "kind": "variable",
+              "name": "T"
+            }
+          ],
+          "result": {
+            "kind": "variable",
+            "name": "T"
+          }
+        },
+        "proposingInvocations": [
+          "4866aece669417215f88fc9e:0",
+          "4866aece669417215f88fc9e:1"
+        ],
+        "observations": [
+          {
+            "invocationId": "4866aece669417215f88fc9e:0",
+            "functionId": "module.js:3:1:identity",
+            "functionName": "identity",
+            "source": {
+              "file": "module.js",
+              "line": 3,
+              "column": 1
+            },
+            "executionId": "4866aece669417215f88fc9e",
+            "order": 0,
+            "public": true,
+            "arguments": [
+              {
+                "type": "number",
+                "valueId": "value:0",
+                "complete": true,
+                "literal": 1
+              }
+            ],
+            "receiver": {
+              "type": "object",
+              "valueId": "value:1",
+              "complete": true,
+              "properties": {
+                "callbackIdentity": {
+                  "type": "function",
+                  "valueId": "value:2",
+                  "complete": true
+                },
+                "coerce": {
+                  "type": "function",
+                  "valueId": "value:3",
+                  "complete": true
+                },
+                "configure": {
+                  "type": "function",
+                  "valueId": "value:4",
+                  "complete": true
+                },
+                "equal": {
+                  "type": "function",
+                  "valueId": "value:5",
+                  "complete": true
+                },
+                "identity": {
+                  "type": "function",
+                  "valueId": "value:6",
+                  "complete": true
+                },
+                "inspectType": {
+                  "type": "function",
+                  "valueId": "value:7",
+                  "complete": true
+                },
+                "native": {
+                  "type": "function",
+                  "valueId": "value:8",
+                  "complete": true
+                },
+                "nonParametric": {
+                  "type": "function",
+                  "valueId": "value:9",
+                  "complete": true
+                },
+                "objectIdentity": {
+                  "type": "function",
+                  "valueId": "value:10",
+                  "complete": true
+                },
+                "ordinaryException": {
+                  "type": "function",
+                  "valueId": "value:11",
+                  "complete": true
+                },
+                "primitiveBranch": {
+                  "type": "function",
+                  "valueId": "value:12",
+                  "complete": true
+                },
+                "reflect": {
+                  "type": "function",
+                  "valueId": "value:13",
+                  "complete": true
+                },
+                "serialize": {
+                  "type": "function",
+                  "valueId": "value:14",
+                  "complete": true
+                },
+                "swallowCoercion": {
+                  "type": "function",
+                  "valueId": "value:15",
+                  "complete": true
+                },
+                "swallowPeek": {
+                  "type": "function",
+                  "valueId": "value:16",
+                  "complete": true
+                },
+                "tagIdentity": {
+                  "type": "function",
+                  "valueId": "value:17",
+                  "complete": true
+                }
+              }
+            },
+            "result": {
+              "type": "number",
+              "valueId": "value:0",
+              "complete": true,
+              "literal": 1
+            },
+            "outcome": "return",
+            "parentInvocationId": null,
+            "callbacks": []
+          },
+          {
+            "invocationId": "4866aece669417215f88fc9e:1",
+            "functionId": "module.js:3:1:identity",
+            "functionName": "identity",
+            "source": {
+              "file": "module.js",
+              "line": 3,
+              "column": 1
+            },
+            "executionId": "4866aece669417215f88fc9e",
+            "order": 1,
+            "public": true,
+            "arguments": [
+              {
+                "type": "string",
+                "valueId": "value:18",
+                "complete": true,
+                "literal": "seen"
+              }
+            ],
+            "receiver": {
+              "type": "object",
+              "valueId": "value:1",
+              "complete": true,
+              "properties": {
+                "callbackIdentity": {
+                  "type": "function",
+                  "valueId": "value:2",
+                  "complete": true
+                },
+                "coerce": {
+                  "type": "function",
+                  "valueId": "value:3",
+                  "complete": true
+                },
+                "configure": {
+                  "type": "function",
+                  "valueId": "value:4",
+                  "complete": true
+                },
+                "equal": {
+                  "type": "function",
+                  "valueId": "value:5",
+                  "complete": true
+                },
+                "identity": {
+                  "type": "function",
+                  "valueId": "value:6",
+                  "complete": true
+                },
+                "inspectType": {
+                  "type": "function",
+                  "valueId": "value:7",
+                  "complete": true
+                },
+                "native": {
+                  "type": "function",
+                  "valueId": "value:8",
+                  "complete": true
+                },
+                "nonParametric": {
+                  "type": "function",
+                  "valueId": "value:9",
+                  "complete": true
+                },
+                "objectIdentity": {
+                  "type": "function",
+                  "valueId": "value:10",
+                  "complete": true
+                },
+                "ordinaryException": {
+                  "type": "function",
+                  "valueId": "value:11",
+                  "complete": true
+                },
+                "primitiveBranch": {
+                  "type": "function",
+                  "valueId": "value:12",
+                  "complete": true
+                },
+                "reflect": {
+                  "type": "function",
+                  "valueId": "value:13",
+                  "complete": true
+                },
+                "serialize": {
+                  "type": "function",
+                  "valueId": "value:14",
+                  "complete": true
+                },
+                "swallowCoercion": {
+                  "type": "function",
+                  "valueId": "value:15",
+                  "complete": true
+                },
+                "swallowPeek": {
+                  "type": "function",
+                  "valueId": "value:16",
+                  "complete": true
+                },
+                "tagIdentity": {
+                  "type": "function",
+                  "valueId": "value:17",
+                  "complete": true
+                }
+              }
+            },
+            "result": {
+              "type": "string",
+              "valueId": "value:18",
+              "complete": true,
+              "literal": "seen"
+            },
+            "outcome": "return",
+            "parentInvocationId": null,
+            "callbacks": []
+          }
+        ],
+        "provenance": {
+          "package": "tra-sealing-fixture",
+          "version": "1.0.0",
+          "repository": "local-fixture",
+          "commit": "uncommitted-fixture",
+          "evidence": "fixture",
+          "entryPoint": "inference.js",
+          "publicModule": "module",
+          "backend": "jalangi2",
+          "backendVersion": "bc879287b1678de6e3c423f5debe63207559525b",
+          "executionId": "4866aece669417215f88fc9e"
+        }
+      },
+      "verdict": "validated-on-supported-trials",
+      "trials": [
+        {
+          "input": {
+            "family": "number",
+            "value": 1
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "30a70307-8c44-47bf-8012-14b3d12babe5",
+            "status": "passed",
+            "code": "FRESH_SEAL_TRANSPORTED",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "unseal",
+                "code": "CHECKED_FRESH_BRAND",
+                "variable": "T",
+                "path": "result",
+                "polarity": "positive"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "number",
+                "literal": 1
+              }
+            },
+            "output": {
+              "type": "number",
+              "literal": 1
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "number",
+            "value": 17
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "c334f73e-2569-4b10-8671-202abc9850c5",
+            "status": "passed",
+            "code": "FRESH_SEAL_TRANSPORTED",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "unseal",
+                "code": "CHECKED_FRESH_BRAND",
+                "variable": "T",
+                "path": "result",
+                "polarity": "positive"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "number",
+                "literal": 17
+              }
+            },
+            "output": {
+              "type": "number",
+              "literal": 17
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "string",
+            "value": "seen"
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "8e671e45-6a6b-494e-a409-c30f26e09eb0",
+            "status": "passed",
+            "code": "FRESH_SEAL_TRANSPORTED",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "unseal",
+                "code": "CHECKED_FRESH_BRAND",
+                "variable": "T",
+                "path": "result",
+                "polarity": "positive"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "string",
+                "literal": "seen"
+              }
+            },
+            "output": {
+              "type": "string",
+              "literal": "seen"
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "string",
+            "value": "challenge"
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "60485d8f-384c-40a4-9a87-a7ac6c62f449",
+            "status": "passed",
+            "code": "FRESH_SEAL_TRANSPORTED",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "unseal",
+                "code": "CHECKED_FRESH_BRAND",
+                "variable": "T",
+                "path": "result",
+                "polarity": "positive"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "string",
+                "literal": "challenge"
+              }
+            },
+            "output": {
+              "type": "string",
+              "literal": "challenge"
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "boolean",
+            "value": false
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "b95919c7-1969-4699-b499-26c68234cbc3",
+            "status": "passed",
+            "code": "FRESH_SEAL_TRANSPORTED",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "unseal",
+                "code": "CHECKED_FRESH_BRAND",
+                "variable": "T",
+                "path": "result",
+                "polarity": "positive"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "boolean",
+                "literal": false
+              }
+            },
+            "output": {
+              "type": "boolean",
+              "literal": false
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "null",
+            "value": null
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "00601165-7207-40b3-9e1d-f706d906ef93",
+            "status": "passed",
+            "code": "FRESH_SEAL_TRANSPORTED",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "unseal",
+                "code": "CHECKED_FRESH_BRAND",
+                "variable": "T",
+                "path": "result",
+                "polarity": "positive"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "null",
+                "literal": null
+              }
+            },
+            "output": {
+              "type": "null",
+              "literal": null
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "undefined"
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "c8c13d00-aa0e-4fde-86ce-8468bd03098a",
+            "status": "passed",
+            "code": "FRESH_SEAL_TRANSPORTED",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "unseal",
+                "code": "CHECKED_FRESH_BRAND",
+                "variable": "T",
+                "path": "result",
+                "polarity": "positive"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "undefined"
+              }
+            },
+            "output": {
+              "type": "undefined"
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "object",
+            "value": {
+              "tag": "challenge"
+            }
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "5ff775a5-58ab-4c8a-be15-cf51aafafc60",
+            "status": "passed",
+            "code": "FRESH_SEAL_TRANSPORTED",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "unseal",
+                "code": "CHECKED_FRESH_BRAND",
+                "variable": "T",
+                "path": "result",
+                "polarity": "positive"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "object"
+              }
+            },
+            "output": {
+              "type": "object"
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "array",
+            "value": [
+              1,
+              2
+            ]
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "b4bdc108-9133-4773-b8c8-90f3b50a4f63",
+            "status": "passed",
+            "code": "FRESH_SEAL_TRANSPORTED",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "unseal",
+                "code": "CHECKED_FRESH_BRAND",
+                "variable": "T",
+                "path": "result",
+                "polarity": "positive"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "array"
+              }
+            },
+            "output": {
+              "type": "array"
+            }
+          }
+        }
+      ],
+      "counterexamples": [],
+      "inconclusive": []
+    },
+    {
+      "candidate": {
+        "schemaVersion": 1,
+        "functionId": "module.js:4:1:nonParametric",
+        "functionName": "nonParametric",
+        "kind": "identity-generic",
+        "text": "export function nonParametric<T>(arg0: T): T;\n",
+        "contract": {
+          "variables": {
+            "T": null
+          },
+          "parameters": [
+            {
+              "kind": "variable",
+              "name": "T"
+            }
+          ],
+          "result": {
+            "kind": "variable",
+            "name": "T"
+          }
+        },
+        "proposingInvocations": [
+          "4866aece669417215f88fc9e:3",
+          "4866aece669417215f88fc9e:5"
+        ],
+        "observations": [
+          {
+            "invocationId": "4866aece669417215f88fc9e:3",
+            "functionId": "module.js:4:1:nonParametric",
+            "functionName": "nonParametric",
+            "source": {
+              "file": "module.js",
+              "line": 4,
+              "column": 1
+            },
+            "executionId": "4866aece669417215f88fc9e",
+            "order": 3,
+            "public": true,
+            "arguments": [
+              {
+                "type": "number",
+                "valueId": "value:0",
+                "complete": true,
+                "literal": 1
+              }
+            ],
+            "receiver": {
+              "type": "object",
+              "valueId": "value:1",
+              "complete": true,
+              "properties": {
+                "callbackIdentity": {
+                  "type": "function",
+                  "valueId": "value:2",
+                  "complete": true
+                },
+                "coerce": {
+                  "type": "function",
+                  "valueId": "value:3",
+                  "complete": true
+                },
+                "configure": {
+                  "type": "function",
+                  "valueId": "value:4",
+                  "complete": true
+                },
+                "equal": {
+                  "type": "function",
+                  "valueId": "value:5",
+                  "complete": true
+                },
+                "identity": {
+                  "type": "function",
+                  "valueId": "value:6",
+                  "complete": true
+                },
+                "inspectType": {
+                  "type": "function",
+                  "valueId": "value:7",
+                  "complete": true
+                },
+                "native": {
+                  "type": "function",
+                  "valueId": "value:8",
+                  "complete": true
+                },
+                "nonParametric": {
+                  "type": "function",
+                  "valueId": "value:9",
+                  "complete": true
+                },
+                "objectIdentity": {
+                  "type": "function",
+                  "valueId": "value:10",
+                  "complete": true
+                },
+                "ordinaryException": {
+                  "type": "function",
+                  "valueId": "value:11",
+                  "complete": true
+                },
+                "primitiveBranch": {
+                  "type": "function",
+                  "valueId": "value:12",
+                  "complete": true
+                },
+                "reflect": {
+                  "type": "function",
+                  "valueId": "value:13",
+                  "complete": true
+                },
+                "serialize": {
+                  "type": "function",
+                  "valueId": "value:14",
+                  "complete": true
+                },
+                "swallowCoercion": {
+                  "type": "function",
+                  "valueId": "value:15",
+                  "complete": true
+                },
+                "swallowPeek": {
+                  "type": "function",
+                  "valueId": "value:16",
+                  "complete": true
+                },
+                "tagIdentity": {
+                  "type": "function",
+                  "valueId": "value:17",
+                  "complete": true
+                }
+              }
+            },
+            "result": {
+              "type": "number",
+              "valueId": "value:0",
+              "complete": true,
+              "literal": 1
+            },
+            "outcome": "return",
+            "parentInvocationId": null,
+            "callbacks": []
+          },
+          {
+            "invocationId": "4866aece669417215f88fc9e:5",
+            "functionId": "module.js:4:1:nonParametric",
+            "functionName": "nonParametric",
+            "source": {
+              "file": "module.js",
+              "line": 4,
+              "column": 1
+            },
+            "executionId": "4866aece669417215f88fc9e",
+            "order": 5,
+            "public": true,
+            "arguments": [
+              {
+                "type": "string",
+                "valueId": "value:18",
+                "complete": true,
+                "literal": "seen"
+              }
+            ],
+            "receiver": {
+              "type": "object",
+              "valueId": "value:1",
+              "complete": true,
+              "properties": {
+                "callbackIdentity": {
+                  "type": "function",
+                  "valueId": "value:2",
+                  "complete": true
+                },
+                "coerce": {
+                  "type": "function",
+                  "valueId": "value:3",
+                  "complete": true
+                },
+                "configure": {
+                  "type": "function",
+                  "valueId": "value:4",
+                  "complete": true
+                },
+                "equal": {
+                  "type": "function",
+                  "valueId": "value:5",
+                  "complete": true
+                },
+                "identity": {
+                  "type": "function",
+                  "valueId": "value:6",
+                  "complete": true
+                },
+                "inspectType": {
+                  "type": "function",
+                  "valueId": "value:7",
+                  "complete": true
+                },
+                "native": {
+                  "type": "function",
+                  "valueId": "value:8",
+                  "complete": true
+                },
+                "nonParametric": {
+                  "type": "function",
+                  "valueId": "value:9",
+                  "complete": true
+                },
+                "objectIdentity": {
+                  "type": "function",
+                  "valueId": "value:10",
+                  "complete": true
+                },
+                "ordinaryException": {
+                  "type": "function",
+                  "valueId": "value:11",
+                  "complete": true
+                },
+                "primitiveBranch": {
+                  "type": "function",
+                  "valueId": "value:12",
+                  "complete": true
+                },
+                "reflect": {
+                  "type": "function",
+                  "valueId": "value:13",
+                  "complete": true
+                },
+                "serialize": {
+                  "type": "function",
+                  "valueId": "value:14",
+                  "complete": true
+                },
+                "swallowCoercion": {
+                  "type": "function",
+                  "valueId": "value:15",
+                  "complete": true
+                },
+                "swallowPeek": {
+                  "type": "function",
+                  "valueId": "value:16",
+                  "complete": true
+                },
+                "tagIdentity": {
+                  "type": "function",
+                  "valueId": "value:17",
+                  "complete": true
+                }
+              }
+            },
+            "result": {
+              "type": "string",
+              "valueId": "value:18",
+              "complete": true,
+              "literal": "seen"
+            },
+            "outcome": "return",
+            "parentInvocationId": null,
+            "callbacks": []
+          }
+        ],
+        "provenance": {
+          "package": "tra-sealing-fixture",
+          "version": "1.0.0",
+          "repository": "local-fixture",
+          "commit": "uncommitted-fixture",
+          "evidence": "fixture",
+          "entryPoint": "inference.js",
+          "publicModule": "module",
+          "backend": "jalangi2",
+          "backendVersion": "bc879287b1678de6e3c423f5debe63207559525b",
+          "executionId": "4866aece669417215f88fc9e"
+        }
+      },
+      "verdict": "rejected",
+      "trials": [
+        {
+          "input": {
+            "family": "number",
+            "value": 1
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "ac7f4e43-f8d2-441f-bee1-e81e957eee04",
+            "status": "seal-violation",
+            "code": "MISSING_OR_WRONG_SEAL",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "seal-violation",
+                "code": "MISSING_OR_WRONG_SEAL",
+                "path": "result"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "number",
+                "literal": 1
+              }
+            },
+            "output": {
+              "type": "number",
+              "literal": 1
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "number",
+            "value": 17
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "a9e828ad-ce47-4d2b-8fa0-746881258173",
+            "status": "seal-violation",
+            "code": "MISSING_OR_WRONG_SEAL",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "seal-violation",
+                "code": "MISSING_OR_WRONG_SEAL",
+                "path": "result"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "number",
+                "literal": 1
+              }
+            },
+            "output": {
+              "type": "number",
+              "literal": 1
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "string",
+            "value": "seen"
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "a1a938c1-248a-407a-ae77-a9fa16fd9ae3",
+            "status": "seal-violation",
+            "code": "MISSING_OR_WRONG_SEAL",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "seal-violation",
+                "code": "MISSING_OR_WRONG_SEAL",
+                "path": "result"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "number",
+                "literal": 1
+              }
+            },
+            "output": {
+              "type": "number",
+              "literal": 1
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "string",
+            "value": "challenge"
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "94a5e623-b69d-4020-beb8-74f3013b1063",
+            "status": "seal-violation",
+            "code": "MISSING_OR_WRONG_SEAL",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "seal-violation",
+                "code": "MISSING_OR_WRONG_SEAL",
+                "path": "result"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "number",
+                "literal": 1
+              }
+            },
+            "output": {
+              "type": "number",
+              "literal": 1
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "boolean",
+            "value": false
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "98a58479-6504-48c4-bddc-9651b075c058",
+            "status": "seal-violation",
+            "code": "MISSING_OR_WRONG_SEAL",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "seal-violation",
+                "code": "MISSING_OR_WRONG_SEAL",
+                "path": "result"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "number",
+                "literal": 1
+              }
+            },
+            "output": {
+              "type": "number",
+              "literal": 1
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "null",
+            "value": null
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "81aad135-fe40-4bbf-8b00-9c686055496c",
+            "status": "seal-violation",
+            "code": "MISSING_OR_WRONG_SEAL",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "seal-violation",
+                "code": "MISSING_OR_WRONG_SEAL",
+                "path": "result"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "number",
+                "literal": 1
+              }
+            },
+            "output": {
+              "type": "number",
+              "literal": 1
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "undefined"
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "b371eb48-33b0-4ba2-afe9-37ce1a9ccf1b",
+            "status": "seal-violation",
+            "code": "MISSING_OR_WRONG_SEAL",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "seal-violation",
+                "code": "MISSING_OR_WRONG_SEAL",
+                "path": "result"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "number",
+                "literal": 1
+              }
+            },
+            "output": {
+              "type": "number",
+              "literal": 1
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "object",
+            "value": {
+              "tag": "challenge"
+            }
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "46264184-95e7-4cfd-8c90-47230eff7ce8",
+            "status": "seal-violation",
+            "code": "MISSING_OR_WRONG_SEAL",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "seal-violation",
+                "code": "MISSING_OR_WRONG_SEAL",
+                "path": "result"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "number",
+                "literal": 1
+              }
+            },
+            "output": {
+              "type": "number",
+              "literal": 1
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "array",
+            "value": [
+              1,
+              2
+            ]
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "8a85301d-9ccc-4fe3-8605-5bfb78309e8f",
+            "status": "seal-violation",
+            "code": "MISSING_OR_WRONG_SEAL",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "seal-violation",
+                "code": "MISSING_OR_WRONG_SEAL",
+                "path": "result"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "number",
+                "literal": 1
+              }
+            },
+            "output": {
+              "type": "number",
+              "literal": 1
+            }
+          }
+        }
+      ],
+      "counterexamples": [
+        {
+          "input": {
+            "family": "number",
+            "value": 1
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "ac7f4e43-f8d2-441f-bee1-e81e957eee04",
+            "status": "seal-violation",
+            "code": "MISSING_OR_WRONG_SEAL",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "seal-violation",
+                "code": "MISSING_OR_WRONG_SEAL",
+                "path": "result"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "number",
+                "literal": 1
+              }
+            },
+            "output": {
+              "type": "number",
+              "literal": 1
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "number",
+            "value": 17
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "a9e828ad-ce47-4d2b-8fa0-746881258173",
+            "status": "seal-violation",
+            "code": "MISSING_OR_WRONG_SEAL",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "seal-violation",
+                "code": "MISSING_OR_WRONG_SEAL",
+                "path": "result"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "number",
+                "literal": 1
+              }
+            },
+            "output": {
+              "type": "number",
+              "literal": 1
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "string",
+            "value": "seen"
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "a1a938c1-248a-407a-ae77-a9fa16fd9ae3",
+            "status": "seal-violation",
+            "code": "MISSING_OR_WRONG_SEAL",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "seal-violation",
+                "code": "MISSING_OR_WRONG_SEAL",
+                "path": "result"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "number",
+                "literal": 1
+              }
+            },
+            "output": {
+              "type": "number",
+              "literal": 1
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "string",
+            "value": "challenge"
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "94a5e623-b69d-4020-beb8-74f3013b1063",
+            "status": "seal-violation",
+            "code": "MISSING_OR_WRONG_SEAL",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "seal-violation",
+                "code": "MISSING_OR_WRONG_SEAL",
+                "path": "result"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "number",
+                "literal": 1
+              }
+            },
+            "output": {
+              "type": "number",
+              "literal": 1
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "boolean",
+            "value": false
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "98a58479-6504-48c4-bddc-9651b075c058",
+            "status": "seal-violation",
+            "code": "MISSING_OR_WRONG_SEAL",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "seal-violation",
+                "code": "MISSING_OR_WRONG_SEAL",
+                "path": "result"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "number",
+                "literal": 1
+              }
+            },
+            "output": {
+              "type": "number",
+              "literal": 1
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "null",
+            "value": null
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "81aad135-fe40-4bbf-8b00-9c686055496c",
+            "status": "seal-violation",
+            "code": "MISSING_OR_WRONG_SEAL",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "seal-violation",
+                "code": "MISSING_OR_WRONG_SEAL",
+                "path": "result"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "number",
+                "literal": 1
+              }
+            },
+            "output": {
+              "type": "number",
+              "literal": 1
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "undefined"
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "b371eb48-33b0-4ba2-afe9-37ce1a9ccf1b",
+            "status": "seal-violation",
+            "code": "MISSING_OR_WRONG_SEAL",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "seal-violation",
+                "code": "MISSING_OR_WRONG_SEAL",
+                "path": "result"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "number",
+                "literal": 1
+              }
+            },
+            "output": {
+              "type": "number",
+              "literal": 1
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "object",
+            "value": {
+              "tag": "challenge"
+            }
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "46264184-95e7-4cfd-8c90-47230eff7ce8",
+            "status": "seal-violation",
+            "code": "MISSING_OR_WRONG_SEAL",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "seal-violation",
+                "code": "MISSING_OR_WRONG_SEAL",
+                "path": "result"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "number",
+                "literal": 1
+              }
+            },
+            "output": {
+              "type": "number",
+              "literal": 1
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "array",
+            "value": [
+              1,
+              2
+            ]
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "8a85301d-9ccc-4fe3-8605-5bfb78309e8f",
+            "status": "seal-violation",
+            "code": "MISSING_OR_WRONG_SEAL",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "seal-violation",
+                "code": "MISSING_OR_WRONG_SEAL",
+                "path": "result"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "number",
+                "literal": 1
+              }
+            },
+            "output": {
+              "type": "number",
+              "literal": 1
+            }
+          }
+        }
+      ],
+      "inconclusive": []
+    },
+    {
+      "candidate": {
+        "schemaVersion": 1,
+        "functionId": "module.js:5:1:tagIdentity",
+        "functionName": "tagIdentity",
+        "kind": "identity-generic",
+        "text": "export function tagIdentity<T>(arg0: T): T;\n",
+        "contract": {
+          "variables": {
+            "T": null
+          },
+          "parameters": [
+            {
+              "kind": "variable",
+              "name": "T"
+            }
+          ],
+          "result": {
+            "kind": "variable",
+            "name": "T"
+          }
+        },
+        "proposingInvocations": [
+          "4866aece669417215f88fc9e:6",
+          "4866aece669417215f88fc9e:7"
+        ],
+        "observations": [
+          {
+            "invocationId": "4866aece669417215f88fc9e:6",
+            "functionId": "module.js:5:1:tagIdentity",
+            "functionName": "tagIdentity",
+            "source": {
+              "file": "module.js",
+              "line": 5,
+              "column": 1
+            },
+            "executionId": "4866aece669417215f88fc9e",
+            "order": 6,
+            "public": true,
+            "arguments": [
+              {
+                "type": "object",
+                "valueId": "value:20",
+                "complete": true,
+                "properties": {
+                  "tag": {
+                    "type": "string",
+                    "valueId": "value:21",
+                    "complete": true,
+                    "literal": "left"
+                  }
+                }
+              }
+            ],
+            "receiver": {
+              "type": "object",
+              "valueId": "value:1",
+              "complete": true,
+              "properties": {
+                "callbackIdentity": {
+                  "type": "function",
+                  "valueId": "value:2",
+                  "complete": true
+                },
+                "coerce": {
+                  "type": "function",
+                  "valueId": "value:3",
+                  "complete": true
+                },
+                "configure": {
+                  "type": "function",
+                  "valueId": "value:4",
+                  "complete": true
+                },
+                "equal": {
+                  "type": "function",
+                  "valueId": "value:5",
+                  "complete": true
+                },
+                "identity": {
+                  "type": "function",
+                  "valueId": "value:6",
+                  "complete": true
+                },
+                "inspectType": {
+                  "type": "function",
+                  "valueId": "value:7",
+                  "complete": true
+                },
+                "native": {
+                  "type": "function",
+                  "valueId": "value:8",
+                  "complete": true
+                },
+                "nonParametric": {
+                  "type": "function",
+                  "valueId": "value:9",
+                  "complete": true
+                },
+                "objectIdentity": {
+                  "type": "function",
+                  "valueId": "value:10",
+                  "complete": true
+                },
+                "ordinaryException": {
+                  "type": "function",
+                  "valueId": "value:11",
+                  "complete": true
+                },
+                "primitiveBranch": {
+                  "type": "function",
+                  "valueId": "value:12",
+                  "complete": true
+                },
+                "reflect": {
+                  "type": "function",
+                  "valueId": "value:13",
+                  "complete": true
+                },
+                "serialize": {
+                  "type": "function",
+                  "valueId": "value:14",
+                  "complete": true
+                },
+                "swallowCoercion": {
+                  "type": "function",
+                  "valueId": "value:15",
+                  "complete": true
+                },
+                "swallowPeek": {
+                  "type": "function",
+                  "valueId": "value:16",
+                  "complete": true
+                },
+                "tagIdentity": {
+                  "type": "function",
+                  "valueId": "value:17",
+                  "complete": true
+                }
+              }
+            },
+            "result": {
+              "type": "object",
+              "valueId": "value:20",
+              "complete": true,
+              "properties": {
+                "tag": {
+                  "type": "string",
+                  "valueId": "value:21",
+                  "complete": true,
+                  "literal": "left"
+                }
+              }
+            },
+            "outcome": "return",
+            "parentInvocationId": null,
+            "callbacks": []
+          },
+          {
+            "invocationId": "4866aece669417215f88fc9e:7",
+            "functionId": "module.js:5:1:tagIdentity",
+            "functionName": "tagIdentity",
+            "source": {
+              "file": "module.js",
+              "line": 5,
+              "column": 1
+            },
+            "executionId": "4866aece669417215f88fc9e",
+            "order": 7,
+            "public": true,
+            "arguments": [
+              {
+                "type": "object",
+                "valueId": "value:22",
+                "complete": true,
+                "properties": {
+                  "tag": {
+                    "type": "string",
+                    "valueId": "value:23",
+                    "complete": true,
+                    "literal": "right"
+                  }
+                }
+              }
+            ],
+            "receiver": {
+              "type": "object",
+              "valueId": "value:1",
+              "complete": true,
+              "properties": {
+                "callbackIdentity": {
+                  "type": "function",
+                  "valueId": "value:2",
+                  "complete": true
+                },
+                "coerce": {
+                  "type": "function",
+                  "valueId": "value:3",
+                  "complete": true
+                },
+                "configure": {
+                  "type": "function",
+                  "valueId": "value:4",
+                  "complete": true
+                },
+                "equal": {
+                  "type": "function",
+                  "valueId": "value:5",
+                  "complete": true
+                },
+                "identity": {
+                  "type": "function",
+                  "valueId": "value:6",
+                  "complete": true
+                },
+                "inspectType": {
+                  "type": "function",
+                  "valueId": "value:7",
+                  "complete": true
+                },
+                "native": {
+                  "type": "function",
+                  "valueId": "value:8",
+                  "complete": true
+                },
+                "nonParametric": {
+                  "type": "function",
+                  "valueId": "value:9",
+                  "complete": true
+                },
+                "objectIdentity": {
+                  "type": "function",
+                  "valueId": "value:10",
+                  "complete": true
+                },
+                "ordinaryException": {
+                  "type": "function",
+                  "valueId": "value:11",
+                  "complete": true
+                },
+                "primitiveBranch": {
+                  "type": "function",
+                  "valueId": "value:12",
+                  "complete": true
+                },
+                "reflect": {
+                  "type": "function",
+                  "valueId": "value:13",
+                  "complete": true
+                },
+                "serialize": {
+                  "type": "function",
+                  "valueId": "value:14",
+                  "complete": true
+                },
+                "swallowCoercion": {
+                  "type": "function",
+                  "valueId": "value:15",
+                  "complete": true
+                },
+                "swallowPeek": {
+                  "type": "function",
+                  "valueId": "value:16",
+                  "complete": true
+                },
+                "tagIdentity": {
+                  "type": "function",
+                  "valueId": "value:17",
+                  "complete": true
+                }
+              }
+            },
+            "result": {
+              "type": "object",
+              "valueId": "value:22",
+              "complete": true,
+              "properties": {
+                "tag": {
+                  "type": "string",
+                  "valueId": "value:23",
+                  "complete": true,
+                  "literal": "right"
+                }
+              }
+            },
+            "outcome": "return",
+            "parentInvocationId": null,
+            "callbacks": []
+          }
+        ],
+        "provenance": {
+          "package": "tra-sealing-fixture",
+          "version": "1.0.0",
+          "repository": "local-fixture",
+          "commit": "uncommitted-fixture",
+          "evidence": "fixture",
+          "entryPoint": "inference.js",
+          "publicModule": "module",
+          "backend": "jalangi2",
+          "backendVersion": "bc879287b1678de6e3c423f5debe63207559525b",
+          "executionId": "4866aece669417215f88fc9e"
+        }
+      },
+      "verdict": "rejected",
+      "trials": [
+        {
+          "input": {
+            "family": "number",
+            "value": 1
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "72bb2131-b0f0-4ea3-9e36-dbcbae8e313b",
+            "status": "inconclusive",
+            "code": "PRIMITIVE_OR_CONTAINER_PROPERTY_WRAPPING",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "inconclusive",
+                "code": "PRIMITIVE_OR_CONTAINER_PROPERTY_WRAPPING",
+                "path": "argument:0"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "number",
+                "literal": 1
+              }
+            },
+            "output": {
+              "type": "number",
+              "literal": 1
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "number",
+            "value": 17
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "12a7f304-aebf-469a-8df4-e83c367f5c22",
+            "status": "inconclusive",
+            "code": "PRIMITIVE_OR_CONTAINER_PROPERTY_WRAPPING",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "inconclusive",
+                "code": "PRIMITIVE_OR_CONTAINER_PROPERTY_WRAPPING",
+                "path": "argument:0"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "number",
+                "literal": 17
+              }
+            },
+            "output": {
+              "type": "number",
+              "literal": 17
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "string",
+            "value": "seen"
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "a913b8ea-43a9-45de-a7fe-84294fcf1543",
+            "status": "inconclusive",
+            "code": "PRIMITIVE_OR_CONTAINER_PROPERTY_WRAPPING",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "inconclusive",
+                "code": "PRIMITIVE_OR_CONTAINER_PROPERTY_WRAPPING",
+                "path": "argument:0"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "string",
+                "literal": "seen"
+              }
+            },
+            "output": {
+              "type": "string",
+              "literal": "seen"
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "string",
+            "value": "challenge"
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "6df4374e-aacd-4a8b-8b29-e0007be603d4",
+            "status": "inconclusive",
+            "code": "PRIMITIVE_OR_CONTAINER_PROPERTY_WRAPPING",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "inconclusive",
+                "code": "PRIMITIVE_OR_CONTAINER_PROPERTY_WRAPPING",
+                "path": "argument:0"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "string",
+                "literal": "challenge"
+              }
+            },
+            "output": {
+              "type": "string",
+              "literal": "challenge"
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "boolean",
+            "value": false
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "0f9aedb9-e9f0-45d6-8f27-aeb25df91c6b",
+            "status": "inconclusive",
+            "code": "PRIMITIVE_OR_CONTAINER_PROPERTY_WRAPPING",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "inconclusive",
+                "code": "PRIMITIVE_OR_CONTAINER_PROPERTY_WRAPPING",
+                "path": "argument:0"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "boolean",
+                "literal": false
+              }
+            },
+            "output": {
+              "type": "boolean",
+              "literal": false
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "null",
+            "value": null
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "7abe6edf-5637-41bc-8500-87fc46ec1ad8",
+            "status": "exception",
+            "code": "ORDINARY_CONCRETE_EXCEPTION",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "exception",
+              "name": "TypeError"
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "undefined"
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "10811356-dff0-4bd6-8ea8-5eccfdfdaa58",
+            "status": "exception",
+            "code": "ORDINARY_CONCRETE_EXCEPTION",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "exception",
+              "name": "TypeError"
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "object",
+            "value": {
+              "tag": "challenge"
+            }
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "d3d8f1bf-2d5a-4910-b8a3-1c4437560e04",
+            "status": "seal-violation",
+            "code": "OPAQUE_PROPERTY_ACCESS",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "seal-violation",
+                "code": "OPAQUE_PROPERTY_ACCESS",
+                "path": "argument:0",
+                "property": "tag"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "object"
+              }
+            },
+            "output": {
+              "type": "object"
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "array",
+            "value": [
+              1,
+              2
+            ]
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "4c6ca0b7-83e2-4a9a-8250-a74c00f2811a",
+            "status": "inconclusive",
+            "code": "PRIMITIVE_OR_CONTAINER_PROPERTY_WRAPPING",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "inconclusive",
+                "code": "PRIMITIVE_OR_CONTAINER_PROPERTY_WRAPPING",
+                "path": "argument:0"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "array"
+              }
+            },
+            "output": {
+              "type": "array"
+            }
+          }
+        }
+      ],
+      "counterexamples": [
+        {
+          "input": {
+            "family": "object",
+            "value": {
+              "tag": "challenge"
+            }
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "d3d8f1bf-2d5a-4910-b8a3-1c4437560e04",
+            "status": "seal-violation",
+            "code": "OPAQUE_PROPERTY_ACCESS",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "seal-violation",
+                "code": "OPAQUE_PROPERTY_ACCESS",
+                "path": "argument:0",
+                "property": "tag"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "object"
+              }
+            },
+            "output": {
+              "type": "object"
+            }
+          }
+        }
+      ],
+      "inconclusive": [
+        {
+          "input": {
+            "family": "number",
+            "value": 1
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "72bb2131-b0f0-4ea3-9e36-dbcbae8e313b",
+            "status": "inconclusive",
+            "code": "PRIMITIVE_OR_CONTAINER_PROPERTY_WRAPPING",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "inconclusive",
+                "code": "PRIMITIVE_OR_CONTAINER_PROPERTY_WRAPPING",
+                "path": "argument:0"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "number",
+                "literal": 1
+              }
+            },
+            "output": {
+              "type": "number",
+              "literal": 1
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "number",
+            "value": 17
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "12a7f304-aebf-469a-8df4-e83c367f5c22",
+            "status": "inconclusive",
+            "code": "PRIMITIVE_OR_CONTAINER_PROPERTY_WRAPPING",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "inconclusive",
+                "code": "PRIMITIVE_OR_CONTAINER_PROPERTY_WRAPPING",
+                "path": "argument:0"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "number",
+                "literal": 17
+              }
+            },
+            "output": {
+              "type": "number",
+              "literal": 17
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "string",
+            "value": "seen"
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "a913b8ea-43a9-45de-a7fe-84294fcf1543",
+            "status": "inconclusive",
+            "code": "PRIMITIVE_OR_CONTAINER_PROPERTY_WRAPPING",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "inconclusive",
+                "code": "PRIMITIVE_OR_CONTAINER_PROPERTY_WRAPPING",
+                "path": "argument:0"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "string",
+                "literal": "seen"
+              }
+            },
+            "output": {
+              "type": "string",
+              "literal": "seen"
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "string",
+            "value": "challenge"
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "6df4374e-aacd-4a8b-8b29-e0007be603d4",
+            "status": "inconclusive",
+            "code": "PRIMITIVE_OR_CONTAINER_PROPERTY_WRAPPING",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "inconclusive",
+                "code": "PRIMITIVE_OR_CONTAINER_PROPERTY_WRAPPING",
+                "path": "argument:0"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "string",
+                "literal": "challenge"
+              }
+            },
+            "output": {
+              "type": "string",
+              "literal": "challenge"
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "boolean",
+            "value": false
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "0f9aedb9-e9f0-45d6-8f27-aeb25df91c6b",
+            "status": "inconclusive",
+            "code": "PRIMITIVE_OR_CONTAINER_PROPERTY_WRAPPING",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "inconclusive",
+                "code": "PRIMITIVE_OR_CONTAINER_PROPERTY_WRAPPING",
+                "path": "argument:0"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "boolean",
+                "literal": false
+              }
+            },
+            "output": {
+              "type": "boolean",
+              "literal": false
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "null",
+            "value": null
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "7abe6edf-5637-41bc-8500-87fc46ec1ad8",
+            "status": "exception",
+            "code": "ORDINARY_CONCRETE_EXCEPTION",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "exception",
+              "name": "TypeError"
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "undefined"
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "10811356-dff0-4bd6-8ea8-5eccfdfdaa58",
+            "status": "exception",
+            "code": "ORDINARY_CONCRETE_EXCEPTION",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "exception",
+              "name": "TypeError"
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "array",
+            "value": [
+              1,
+              2
+            ]
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "4c6ca0b7-83e2-4a9a-8250-a74c00f2811a",
+            "status": "inconclusive",
+            "code": "PRIMITIVE_OR_CONTAINER_PROPERTY_WRAPPING",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "inconclusive",
+                "code": "PRIMITIVE_OR_CONTAINER_PROPERTY_WRAPPING",
+                "path": "argument:0"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "array"
+              }
+            },
+            "output": {
+              "type": "array"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "schemaVersion": 1,
+        "functionId": "module.js:5:1:tagIdentity",
+        "functionName": "tagIdentity",
+        "kind": "constrained-generic",
+        "text": "export function tagIdentity<T extends { tag: string }>(arg0: T): T;\n",
+        "contract": {
+          "variables": {
+            "T": {
+              "fields": {
+                "tag": "string"
+              }
+            }
+          },
+          "parameters": [
+            {
+              "kind": "variable",
+              "name": "T"
+            }
+          ],
+          "result": {
+            "kind": "variable",
+            "name": "T"
+          }
+        },
+        "proposingInvocations": [
+          "4866aece669417215f88fc9e:6",
+          "4866aece669417215f88fc9e:7"
+        ],
+        "observations": [
+          {
+            "invocationId": "4866aece669417215f88fc9e:6",
+            "functionId": "module.js:5:1:tagIdentity",
+            "functionName": "tagIdentity",
+            "source": {
+              "file": "module.js",
+              "line": 5,
+              "column": 1
+            },
+            "executionId": "4866aece669417215f88fc9e",
+            "order": 6,
+            "public": true,
+            "arguments": [
+              {
+                "type": "object",
+                "valueId": "value:20",
+                "complete": true,
+                "properties": {
+                  "tag": {
+                    "type": "string",
+                    "valueId": "value:21",
+                    "complete": true,
+                    "literal": "left"
+                  }
+                }
+              }
+            ],
+            "receiver": {
+              "type": "object",
+              "valueId": "value:1",
+              "complete": true,
+              "properties": {
+                "callbackIdentity": {
+                  "type": "function",
+                  "valueId": "value:2",
+                  "complete": true
+                },
+                "coerce": {
+                  "type": "function",
+                  "valueId": "value:3",
+                  "complete": true
+                },
+                "configure": {
+                  "type": "function",
+                  "valueId": "value:4",
+                  "complete": true
+                },
+                "equal": {
+                  "type": "function",
+                  "valueId": "value:5",
+                  "complete": true
+                },
+                "identity": {
+                  "type": "function",
+                  "valueId": "value:6",
+                  "complete": true
+                },
+                "inspectType": {
+                  "type": "function",
+                  "valueId": "value:7",
+                  "complete": true
+                },
+                "native": {
+                  "type": "function",
+                  "valueId": "value:8",
+                  "complete": true
+                },
+                "nonParametric": {
+                  "type": "function",
+                  "valueId": "value:9",
+                  "complete": true
+                },
+                "objectIdentity": {
+                  "type": "function",
+                  "valueId": "value:10",
+                  "complete": true
+                },
+                "ordinaryException": {
+                  "type": "function",
+                  "valueId": "value:11",
+                  "complete": true
+                },
+                "primitiveBranch": {
+                  "type": "function",
+                  "valueId": "value:12",
+                  "complete": true
+                },
+                "reflect": {
+                  "type": "function",
+                  "valueId": "value:13",
+                  "complete": true
+                },
+                "serialize": {
+                  "type": "function",
+                  "valueId": "value:14",
+                  "complete": true
+                },
+                "swallowCoercion": {
+                  "type": "function",
+                  "valueId": "value:15",
+                  "complete": true
+                },
+                "swallowPeek": {
+                  "type": "function",
+                  "valueId": "value:16",
+                  "complete": true
+                },
+                "tagIdentity": {
+                  "type": "function",
+                  "valueId": "value:17",
+                  "complete": true
+                }
+              }
+            },
+            "result": {
+              "type": "object",
+              "valueId": "value:20",
+              "complete": true,
+              "properties": {
+                "tag": {
+                  "type": "string",
+                  "valueId": "value:21",
+                  "complete": true,
+                  "literal": "left"
+                }
+              }
+            },
+            "outcome": "return",
+            "parentInvocationId": null,
+            "callbacks": []
+          },
+          {
+            "invocationId": "4866aece669417215f88fc9e:7",
+            "functionId": "module.js:5:1:tagIdentity",
+            "functionName": "tagIdentity",
+            "source": {
+              "file": "module.js",
+              "line": 5,
+              "column": 1
+            },
+            "executionId": "4866aece669417215f88fc9e",
+            "order": 7,
+            "public": true,
+            "arguments": [
+              {
+                "type": "object",
+                "valueId": "value:22",
+                "complete": true,
+                "properties": {
+                  "tag": {
+                    "type": "string",
+                    "valueId": "value:23",
+                    "complete": true,
+                    "literal": "right"
+                  }
+                }
+              }
+            ],
+            "receiver": {
+              "type": "object",
+              "valueId": "value:1",
+              "complete": true,
+              "properties": {
+                "callbackIdentity": {
+                  "type": "function",
+                  "valueId": "value:2",
+                  "complete": true
+                },
+                "coerce": {
+                  "type": "function",
+                  "valueId": "value:3",
+                  "complete": true
+                },
+                "configure": {
+                  "type": "function",
+                  "valueId": "value:4",
+                  "complete": true
+                },
+                "equal": {
+                  "type": "function",
+                  "valueId": "value:5",
+                  "complete": true
+                },
+                "identity": {
+                  "type": "function",
+                  "valueId": "value:6",
+                  "complete": true
+                },
+                "inspectType": {
+                  "type": "function",
+                  "valueId": "value:7",
+                  "complete": true
+                },
+                "native": {
+                  "type": "function",
+                  "valueId": "value:8",
+                  "complete": true
+                },
+                "nonParametric": {
+                  "type": "function",
+                  "valueId": "value:9",
+                  "complete": true
+                },
+                "objectIdentity": {
+                  "type": "function",
+                  "valueId": "value:10",
+                  "complete": true
+                },
+                "ordinaryException": {
+                  "type": "function",
+                  "valueId": "value:11",
+                  "complete": true
+                },
+                "primitiveBranch": {
+                  "type": "function",
+                  "valueId": "value:12",
+                  "complete": true
+                },
+                "reflect": {
+                  "type": "function",
+                  "valueId": "value:13",
+                  "complete": true
+                },
+                "serialize": {
+                  "type": "function",
+                  "valueId": "value:14",
+                  "complete": true
+                },
+                "swallowCoercion": {
+                  "type": "function",
+                  "valueId": "value:15",
+                  "complete": true
+                },
+                "swallowPeek": {
+                  "type": "function",
+                  "valueId": "value:16",
+                  "complete": true
+                },
+                "tagIdentity": {
+                  "type": "function",
+                  "valueId": "value:17",
+                  "complete": true
+                }
+              }
+            },
+            "result": {
+              "type": "object",
+              "valueId": "value:22",
+              "complete": true,
+              "properties": {
+                "tag": {
+                  "type": "string",
+                  "valueId": "value:23",
+                  "complete": true,
+                  "literal": "right"
+                }
+              }
+            },
+            "outcome": "return",
+            "parentInvocationId": null,
+            "callbacks": []
+          }
+        ],
+        "provenance": {
+          "package": "tra-sealing-fixture",
+          "version": "1.0.0",
+          "repository": "local-fixture",
+          "commit": "uncommitted-fixture",
+          "evidence": "fixture",
+          "entryPoint": "inference.js",
+          "publicModule": "module",
+          "backend": "jalangi2",
+          "backendVersion": "bc879287b1678de6e3c423f5debe63207559525b",
+          "executionId": "4866aece669417215f88fc9e"
+        }
+      },
+      "verdict": "validated-on-supported-trials",
+      "trials": [
+        {
+          "input": {
+            "family": "object",
+            "value": {
+              "tag": "challenge"
+            }
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "ef93ee6a-1867-4cf8-b46a-8309d7f33ae9",
+            "status": "passed",
+            "code": "FRESH_SEAL_TRANSPORTED",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "unseal",
+                "code": "CHECKED_FRESH_BRAND",
+                "variable": "T",
+                "path": "result",
+                "polarity": "positive"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "object"
+              }
+            },
+            "output": {
+              "type": "object"
+            }
+          }
+        },
+        {
+          "input": {
+            "family": "object",
+            "value": {
+              "tag": "different",
+              "extra": 1
+            }
+          },
+          "result": {
+            "schemaVersion": 1,
+            "trialId": "699b8a9d-0536-4dcf-a6b9-1e4b3f3592f2",
+            "status": "passed",
+            "code": "FRESH_SEAL_TRANSPORTED",
+            "events": [
+              {
+                "kind": "seal",
+                "code": "ALLOCATED_FRESH_BRAND",
+                "variable": "T",
+                "path": "argument:0",
+                "polarity": "negative"
+              },
+              {
+                "kind": "unseal",
+                "code": "CHECKED_FRESH_BRAND",
+                "variable": "T",
+                "path": "result",
+                "polarity": "positive"
+              }
+            ],
+            "concreteOutcome": {
+              "status": "return",
+              "output": {
+                "type": "object"
+              }
+            },
+            "output": {
+              "type": "object"
+            }
+          }
+        }
+      ],
+      "counterexamples": [],
+      "inconclusive": []
+    }
+  ],
+  "callback": {
+    "schemaVersion": 1,
+    "trialId": "ae5b2e3d-959c-4035-902c-3aca64cb80a0",
+    "status": "passed",
+    "code": "FRESH_SEAL_TRANSPORTED",
+    "events": [
+      {
+        "kind": "seal",
+        "code": "ALLOCATED_FRESH_BRAND",
+        "variable": "T",
+        "path": "argument:0",
+        "polarity": "negative"
+      },
+      {
+        "kind": "unseal",
+        "code": "CHECKED_FRESH_BRAND",
+        "variable": "T",
+        "path": "argument:1.argument:0",
+        "polarity": "positive"
+      },
+      {
+        "kind": "seal",
+        "code": "ALLOCATED_FRESH_BRAND",
+        "variable": "T",
+        "path": "argument:1.result",
+        "polarity": "negative"
+      },
+      {
+        "kind": "unseal",
+        "code": "CHECKED_FRESH_BRAND",
+        "variable": "T",
+        "path": "result",
+        "polarity": "positive"
+      }
+    ],
+    "concreteOutcome": {
+      "status": "return",
+      "output": {
+        "type": "number",
+        "literal": 7
+      }
+    },
+    "output": {
+      "type": "number",
+      "literal": 7
+    }
+  },
+  "unsupported": [
+    {
+      "functionName": "primitiveBranch",
+      "result": {
+        "schemaVersion": 1,
+        "trialId": "8cac53f1-7467-40c5-ad1b-79ddcb78b950",
+        "status": "inconclusive",
+        "code": "CONTROL_FLOW_OBSERVABILITY",
+        "events": [
+          {
+            "kind": "seal",
+            "code": "ALLOCATED_FRESH_BRAND",
+            "variable": "T",
+            "path": "argument:0",
+            "polarity": "negative"
+          }
+        ],
+        "concreteOutcome": {
+          "status": "return",
+          "output": {
+            "type": "number",
+            "literal": 7
+          }
+        },
+        "output": {
+          "type": "number",
+          "literal": 7
+        }
+      }
+    },
+    {
+      "functionName": "coerce",
+      "result": {
+        "schemaVersion": 1,
+        "trialId": "5fdb6f72-e340-4f90-9fce-a6ad7ab3fe10",
+        "status": "inconclusive",
+        "code": "COERCION_OBSERVABILITY",
+        "events": [
+          {
+            "kind": "seal",
+            "code": "ALLOCATED_FRESH_BRAND",
+            "variable": "T",
+            "path": "argument:0",
+            "polarity": "negative"
+          },
+          {
+            "kind": "inconclusive",
+            "code": "COERCION_OBSERVABILITY",
+            "path": "argument:0"
+          }
+        ],
+        "concreteOutcome": {
+          "status": "return",
+          "output": {
+            "type": "number",
+            "literal": 7
+          }
+        },
+        "output": {
+          "type": "number",
+          "literal": 7
+        }
+      }
+    },
+    {
+      "functionName": "equal",
+      "result": {
+        "schemaVersion": 1,
+        "trialId": "b2a5b6ec-2051-4ad0-8174-55924e2edd91",
+        "status": "inconclusive",
+        "code": "EQUALITY_OBSERVABILITY",
+        "events": [
+          {
+            "kind": "seal",
+            "code": "ALLOCATED_FRESH_BRAND",
+            "variable": "T",
+            "path": "argument:0",
+            "polarity": "negative"
+          }
+        ],
+        "concreteOutcome": {
+          "status": "return",
+          "output": {
+            "type": "boolean",
+            "literal": true
+          }
+        },
+        "output": {
+          "type": "boolean",
+          "literal": true
+        }
+      }
+    },
+    {
+      "functionName": "native",
+      "result": {
+        "schemaVersion": 1,
+        "trialId": "c0a4198d-9950-4b92-9731-39c61a239e2e",
+        "status": "inconclusive",
+        "code": "UNSUPPORTED_NATIVE_OR_HELPER_CALL",
+        "events": [
+          {
+            "kind": "seal",
+            "code": "ALLOCATED_FRESH_BRAND",
+            "variable": "T",
+            "path": "argument:0",
+            "polarity": "negative"
+          }
+        ],
+        "concreteOutcome": {
+          "status": "return",
+          "output": {
+            "type": "boolean",
+            "literal": false
+          }
+        },
+        "output": {
+          "type": "boolean",
+          "literal": false
+        }
+      }
+    },
+    {
+      "functionName": "serialize",
+      "result": {
+        "schemaVersion": 1,
+        "trialId": "4d579670-9ff6-42d6-9613-3c9accf364ee",
+        "status": "inconclusive",
+        "code": "SERIALIZATION_OBSERVABILITY",
+        "events": [
+          {
+            "kind": "seal",
+            "code": "ALLOCATED_FRESH_BRAND",
+            "variable": "T",
+            "path": "argument:0",
+            "polarity": "negative"
+          }
+        ],
+        "concreteOutcome": {
+          "status": "return",
+          "output": {
+            "type": "string",
+            "literal": "7"
+          }
+        },
+        "output": {
+          "type": "string",
+          "literal": "7"
+        }
+      }
+    },
+    {
+      "functionName": "objectIdentity",
+      "result": {
+        "schemaVersion": 1,
+        "trialId": "e6f1f859-8d70-4571-9f3e-99bdbdb39abb",
+        "status": "inconclusive",
+        "code": "IDENTITY_OR_PROXY_OBSERVABILITY",
+        "events": [
+          {
+            "kind": "seal",
+            "code": "ALLOCATED_FRESH_BRAND",
+            "variable": "T",
+            "path": "argument:0",
+            "polarity": "negative"
+          }
+        ],
+        "concreteOutcome": {
+          "status": "return",
+          "output": {
+            "type": "boolean",
+            "literal": true
+          }
+        },
+        "output": {
+          "type": "boolean",
+          "literal": true
+        }
+      }
+    },
+    {
+      "functionName": "reflect",
+      "result": {
+        "schemaVersion": 1,
+        "trialId": "cdf74217-5c08-4081-bc43-528a4179e318",
+        "status": "inconclusive",
+        "code": "IDENTITY_OR_PROXY_OBSERVABILITY",
+        "events": [
+          {
+            "kind": "seal",
+            "code": "ALLOCATED_FRESH_BRAND",
+            "variable": "T",
+            "path": "argument:0",
+            "polarity": "negative"
+          }
+        ],
+        "concreteOutcome": {
+          "status": "return",
+          "output": {
+            "type": "object"
+          }
+        },
+        "output": {
+          "type": "object"
+        }
+      }
+    }
+  ],
+  "refinementDecisions": [
+    {
+      "decision": "unchanged",
+      "reason": "No classified seal violation",
+      "candidate": {
+        "schemaVersion": 1,
+        "functionId": "module.js:3:1:identity",
+        "functionName": "identity",
+        "kind": "identity-generic",
+        "text": "export function identity<T>(arg0: T): T;\n",
+        "contract": {
+          "variables": {
+            "T": null
+          },
+          "parameters": [
+            {
+              "kind": "variable",
+              "name": "T"
+            }
+          ],
+          "result": {
+            "kind": "variable",
+            "name": "T"
+          }
+        },
+        "proposingInvocations": [
+          "4866aece669417215f88fc9e:0",
+          "4866aece669417215f88fc9e:1"
+        ],
+        "observations": [
+          {
+            "invocationId": "4866aece669417215f88fc9e:0",
+            "functionId": "module.js:3:1:identity",
+            "functionName": "identity",
+            "source": {
+              "file": "module.js",
+              "line": 3,
+              "column": 1
+            },
+            "executionId": "4866aece669417215f88fc9e",
+            "order": 0,
+            "public": true,
+            "arguments": [
+              {
+                "type": "number",
+                "valueId": "value:0",
+                "complete": true,
+                "literal": 1
+              }
+            ],
+            "receiver": {
+              "type": "object",
+              "valueId": "value:1",
+              "complete": true,
+              "properties": {
+                "callbackIdentity": {
+                  "type": "function",
+                  "valueId": "value:2",
+                  "complete": true
+                },
+                "coerce": {
+                  "type": "function",
+                  "valueId": "value:3",
+                  "complete": true
+                },
+                "configure": {
+                  "type": "function",
+                  "valueId": "value:4",
+                  "complete": true
+                },
+                "equal": {
+                  "type": "function",
+                  "valueId": "value:5",
+                  "complete": true
+                },
+                "identity": {
+                  "type": "function",
+                  "valueId": "value:6",
+                  "complete": true
+                },
+                "inspectType": {
+                  "type": "function",
+                  "valueId": "value:7",
+                  "complete": true
+                },
+                "native": {
+                  "type": "function",
+                  "valueId": "value:8",
+                  "complete": true
+                },
+                "nonParametric": {
+                  "type": "function",
+                  "valueId": "value:9",
+                  "complete": true
+                },
+                "objectIdentity": {
+                  "type": "function",
+                  "valueId": "value:10",
+                  "complete": true
+                },
+                "ordinaryException": {
+                  "type": "function",
+                  "valueId": "value:11",
+                  "complete": true
+                },
+                "primitiveBranch": {
+                  "type": "function",
+                  "valueId": "value:12",
+                  "complete": true
+                },
+                "reflect": {
+                  "type": "function",
+                  "valueId": "value:13",
+                  "complete": true
+                },
+                "serialize": {
+                  "type": "function",
+                  "valueId": "value:14",
+                  "complete": true
+                },
+                "swallowCoercion": {
+                  "type": "function",
+                  "valueId": "value:15",
+                  "complete": true
+                },
+                "swallowPeek": {
+                  "type": "function",
+                  "valueId": "value:16",
+                  "complete": true
+                },
+                "tagIdentity": {
+                  "type": "function",
+                  "valueId": "value:17",
+                  "complete": true
+                }
+              }
+            },
+            "result": {
+              "type": "number",
+              "valueId": "value:0",
+              "complete": true,
+              "literal": 1
+            },
+            "outcome": "return",
+            "parentInvocationId": null,
+            "callbacks": []
+          },
+          {
+            "invocationId": "4866aece669417215f88fc9e:1",
+            "functionId": "module.js:3:1:identity",
+            "functionName": "identity",
+            "source": {
+              "file": "module.js",
+              "line": 3,
+              "column": 1
+            },
+            "executionId": "4866aece669417215f88fc9e",
+            "order": 1,
+            "public": true,
+            "arguments": [
+              {
+                "type": "string",
+                "valueId": "value:18",
+                "complete": true,
+                "literal": "seen"
+              }
+            ],
+            "receiver": {
+              "type": "object",
+              "valueId": "value:1",
+              "complete": true,
+              "properties": {
+                "callbackIdentity": {
+                  "type": "function",
+                  "valueId": "value:2",
+                  "complete": true
+                },
+                "coerce": {
+                  "type": "function",
+                  "valueId": "value:3",
+                  "complete": true
+                },
+                "configure": {
+                  "type": "function",
+                  "valueId": "value:4",
+                  "complete": true
+                },
+                "equal": {
+                  "type": "function",
+                  "valueId": "value:5",
+                  "complete": true
+                },
+                "identity": {
+                  "type": "function",
+                  "valueId": "value:6",
+                  "complete": true
+                },
+                "inspectType": {
+                  "type": "function",
+                  "valueId": "value:7",
+                  "complete": true
+                },
+                "native": {
+                  "type": "function",
+                  "valueId": "value:8",
+                  "complete": true
+                },
+                "nonParametric": {
+                  "type": "function",
+                  "valueId": "value:9",
+                  "complete": true
+                },
+                "objectIdentity": {
+                  "type": "function",
+                  "valueId": "value:10",
+                  "complete": true
+                },
+                "ordinaryException": {
+                  "type": "function",
+                  "valueId": "value:11",
+                  "complete": true
+                },
+                "primitiveBranch": {
+                  "type": "function",
+                  "valueId": "value:12",
+                  "complete": true
+                },
+                "reflect": {
+                  "type": "function",
+                  "valueId": "value:13",
+                  "complete": true
+                },
+                "serialize": {
+                  "type": "function",
+                  "valueId": "value:14",
+                  "complete": true
+                },
+                "swallowCoercion": {
+                  "type": "function",
+                  "valueId": "value:15",
+                  "complete": true
+                },
+                "swallowPeek": {
+                  "type": "function",
+                  "valueId": "value:16",
+                  "complete": true
+                },
+                "tagIdentity": {
+                  "type": "function",
+                  "valueId": "value:17",
+                  "complete": true
+                }
+              }
+            },
+            "result": {
+              "type": "string",
+              "valueId": "value:18",
+              "complete": true,
+              "literal": "seen"
+            },
+            "outcome": "return",
+            "parentInvocationId": null,
+            "callbacks": []
+          }
+        ],
+        "provenance": {
+          "package": "tra-sealing-fixture",
+          "version": "1.0.0",
+          "repository": "local-fixture",
+          "commit": "uncommitted-fixture",
+          "evidence": "fixture",
+          "entryPoint": "inference.js",
+          "publicModule": "module",
+          "backend": "jalangi2",
+          "backendVersion": "bc879287b1678de6e3c423f5debe63207559525b",
+          "executionId": "4866aece669417215f88fc9e"
+        }
+      }
+    },
+    {
+      "decision": "overloads",
+      "reason": "Reject parametricity; shallow overloads retain all observed state/output types. These non-generic overloads are not sealing-validated or universally sound.",
+      "text": "export function nonParametric(arg0: unknown[]): number | string;\nexport function nonParametric(arg0: boolean): number | string;\nexport function nonParametric(arg0: null): number | string;\nexport function nonParametric(arg0: number): number | string;\nexport function nonParametric(arg0: object): number | string;\nexport function nonParametric(arg0: string): number | string;\nexport function nonParametric(arg0: undefined): number | string;\n",
+      "supportingInvocations": [
+        "4866aece669417215f88fc9e:3",
+        "4866aece669417215f88fc9e:5"
+      ],
+      "counterexampleTrials": [
+        "ac7f4e43-f8d2-441f-bee1-e81e957eee04",
+        "a9e828ad-ce47-4d2b-8fa0-746881258173",
+        "a1a938c1-248a-407a-ae77-a9fa16fd9ae3",
+        "94a5e623-b69d-4020-beb8-74f3013b1063",
+        "98a58479-6504-48c4-bddc-9651b075c058",
+        "81aad135-fe40-4bbf-8b00-9c686055496c",
+        "b371eb48-33b0-4ba2-afe9-37ce1a9ccf1b",
+        "46264184-95e7-4cfd-8c90-47230eff7ce8",
+        "8a85301d-9ccc-4fe3-8605-5bfb78309e8f"
+      ],
+      "validated": false
+    },
+    {
+      "decision": "constraint",
+      "reason": "Opaque property counterexample plus all proposing observations justify tag: string",
+      "candidate": {
+        "schemaVersion": 1,
+        "functionId": "module.js:5:1:tagIdentity",
+        "functionName": "tagIdentity",
+        "kind": "constrained-generic",
+        "text": "export function tagIdentity<T extends { tag: string }>(arg0: T): T;\n",
+        "contract": {
+          "variables": {
+            "T": {
+              "fields": {
+                "tag": "string"
+              }
+            }
+          },
+          "parameters": [
+            {
+              "kind": "variable",
+              "name": "T"
+            }
+          ],
+          "result": {
+            "kind": "variable",
+            "name": "T"
+          }
+        },
+        "proposingInvocations": [
+          "4866aece669417215f88fc9e:6",
+          "4866aece669417215f88fc9e:7"
+        ],
+        "observations": [
+          {
+            "invocationId": "4866aece669417215f88fc9e:6",
+            "functionId": "module.js:5:1:tagIdentity",
+            "functionName": "tagIdentity",
+            "source": {
+              "file": "module.js",
+              "line": 5,
+              "column": 1
+            },
+            "executionId": "4866aece669417215f88fc9e",
+            "order": 6,
+            "public": true,
+            "arguments": [
+              {
+                "type": "object",
+                "valueId": "value:20",
+                "complete": true,
+                "properties": {
+                  "tag": {
+                    "type": "string",
+                    "valueId": "value:21",
+                    "complete": true,
+                    "literal": "left"
+                  }
+                }
+              }
+            ],
+            "receiver": {
+              "type": "object",
+              "valueId": "value:1",
+              "complete": true,
+              "properties": {
+                "callbackIdentity": {
+                  "type": "function",
+                  "valueId": "value:2",
+                  "complete": true
+                },
+                "coerce": {
+                  "type": "function",
+                  "valueId": "value:3",
+                  "complete": true
+                },
+                "configure": {
+                  "type": "function",
+                  "valueId": "value:4",
+                  "complete": true
+                },
+                "equal": {
+                  "type": "function",
+                  "valueId": "value:5",
+                  "complete": true
+                },
+                "identity": {
+                  "type": "function",
+                  "valueId": "value:6",
+                  "complete": true
+                },
+                "inspectType": {
+                  "type": "function",
+                  "valueId": "value:7",
+                  "complete": true
+                },
+                "native": {
+                  "type": "function",
+                  "valueId": "value:8",
+                  "complete": true
+                },
+                "nonParametric": {
+                  "type": "function",
+                  "valueId": "value:9",
+                  "complete": true
+                },
+                "objectIdentity": {
+                  "type": "function",
+                  "valueId": "value:10",
+                  "complete": true
+                },
+                "ordinaryException": {
+                  "type": "function",
+                  "valueId": "value:11",
+                  "complete": true
+                },
+                "primitiveBranch": {
+                  "type": "function",
+                  "valueId": "value:12",
+                  "complete": true
+                },
+                "reflect": {
+                  "type": "function",
+                  "valueId": "value:13",
+                  "complete": true
+                },
+                "serialize": {
+                  "type": "function",
+                  "valueId": "value:14",
+                  "complete": true
+                },
+                "swallowCoercion": {
+                  "type": "function",
+                  "valueId": "value:15",
+                  "complete": true
+                },
+                "swallowPeek": {
+                  "type": "function",
+                  "valueId": "value:16",
+                  "complete": true
+                },
+                "tagIdentity": {
+                  "type": "function",
+                  "valueId": "value:17",
+                  "complete": true
+                }
+              }
+            },
+            "result": {
+              "type": "object",
+              "valueId": "value:20",
+              "complete": true,
+              "properties": {
+                "tag": {
+                  "type": "string",
+                  "valueId": "value:21",
+                  "complete": true,
+                  "literal": "left"
+                }
+              }
+            },
+            "outcome": "return",
+            "parentInvocationId": null,
+            "callbacks": []
+          },
+          {
+            "invocationId": "4866aece669417215f88fc9e:7",
+            "functionId": "module.js:5:1:tagIdentity",
+            "functionName": "tagIdentity",
+            "source": {
+              "file": "module.js",
+              "line": 5,
+              "column": 1
+            },
+            "executionId": "4866aece669417215f88fc9e",
+            "order": 7,
+            "public": true,
+            "arguments": [
+              {
+                "type": "object",
+                "valueId": "value:22",
+                "complete": true,
+                "properties": {
+                  "tag": {
+                    "type": "string",
+                    "valueId": "value:23",
+                    "complete": true,
+                    "literal": "right"
+                  }
+                }
+              }
+            ],
+            "receiver": {
+              "type": "object",
+              "valueId": "value:1",
+              "complete": true,
+              "properties": {
+                "callbackIdentity": {
+                  "type": "function",
+                  "valueId": "value:2",
+                  "complete": true
+                },
+                "coerce": {
+                  "type": "function",
+                  "valueId": "value:3",
+                  "complete": true
+                },
+                "configure": {
+                  "type": "function",
+                  "valueId": "value:4",
+                  "complete": true
+                },
+                "equal": {
+                  "type": "function",
+                  "valueId": "value:5",
+                  "complete": true
+                },
+                "identity": {
+                  "type": "function",
+                  "valueId": "value:6",
+                  "complete": true
+                },
+                "inspectType": {
+                  "type": "function",
+                  "valueId": "value:7",
+                  "complete": true
+                },
+                "native": {
+                  "type": "function",
+                  "valueId": "value:8",
+                  "complete": true
+                },
+                "nonParametric": {
+                  "type": "function",
+                  "valueId": "value:9",
+                  "complete": true
+                },
+                "objectIdentity": {
+                  "type": "function",
+                  "valueId": "value:10",
+                  "complete": true
+                },
+                "ordinaryException": {
+                  "type": "function",
+                  "valueId": "value:11",
+                  "complete": true
+                },
+                "primitiveBranch": {
+                  "type": "function",
+                  "valueId": "value:12",
+                  "complete": true
+                },
+                "reflect": {
+                  "type": "function",
+                  "valueId": "value:13",
+                  "complete": true
+                },
+                "serialize": {
+                  "type": "function",
+                  "valueId": "value:14",
+                  "complete": true
+                },
+                "swallowCoercion": {
+                  "type": "function",
+                  "valueId": "value:15",
+                  "complete": true
+                },
+                "swallowPeek": {
+                  "type": "function",
+                  "valueId": "value:16",
+                  "complete": true
+                },
+                "tagIdentity": {
+                  "type": "function",
+                  "valueId": "value:17",
+                  "complete": true
+                }
+              }
+            },
+            "result": {
+              "type": "object",
+              "valueId": "value:22",
+              "complete": true,
+              "properties": {
+                "tag": {
+                  "type": "string",
+                  "valueId": "value:23",
+                  "complete": true,
+                  "literal": "right"
+                }
+              }
+            },
+            "outcome": "return",
+            "parentInvocationId": null,
+            "callbacks": []
+          }
+        ],
+        "provenance": {
+          "package": "tra-sealing-fixture",
+          "version": "1.0.0",
+          "repository": "local-fixture",
+          "commit": "uncommitted-fixture",
+          "evidence": "fixture",
+          "entryPoint": "inference.js",
+          "publicModule": "module",
+          "backend": "jalangi2",
+          "backendVersion": "bc879287b1678de6e3c423f5debe63207559525b",
+          "executionId": "4866aece669417215f88fc9e"
+        }
+      }
+    }
+  ],
+  "heldOutUsedForProposalOrRefinement": false
+}

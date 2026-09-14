@@ -1,0 +1,979 @@
+{
+  "schemaVersion": 1,
+  "provenance": {
+    "package": "tra-sealing-fixture",
+    "version": "1.0.0",
+    "repository": "local-fixture",
+    "commit": "uncommitted-fixture",
+    "evidence": "fixture",
+    "entryPoint": "inference.js",
+    "publicModule": "module",
+    "backend": "jalangi2",
+    "backendVersion": "bc879287b1678de6e3c423f5debe63207559525b",
+    "executionId": "4866aece669417215f88fc9e"
+  },
+  "invocations": [
+    {
+      "invocationId": "4866aece669417215f88fc9e:0",
+      "functionId": "module.js:3:1:identity",
+      "functionName": "identity",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "4866aece669417215f88fc9e",
+      "order": 0,
+      "public": true,
+      "arguments": [
+        {
+          "type": "number",
+          "valueId": "value:0",
+          "complete": true,
+          "literal": 1
+        }
+      ],
+      "receiver": {
+        "type": "object",
+        "valueId": "value:1",
+        "complete": true,
+        "properties": {
+          "callbackIdentity": {
+            "type": "function",
+            "valueId": "value:2",
+            "complete": true
+          },
+          "coerce": {
+            "type": "function",
+            "valueId": "value:3",
+            "complete": true
+          },
+          "configure": {
+            "type": "function",
+            "valueId": "value:4",
+            "complete": true
+          },
+          "equal": {
+            "type": "function",
+            "valueId": "value:5",
+            "complete": true
+          },
+          "identity": {
+            "type": "function",
+            "valueId": "value:6",
+            "complete": true
+          },
+          "inspectType": {
+            "type": "function",
+            "valueId": "value:7",
+            "complete": true
+          },
+          "native": {
+            "type": "function",
+            "valueId": "value:8",
+            "complete": true
+          },
+          "nonParametric": {
+            "type": "function",
+            "valueId": "value:9",
+            "complete": true
+          },
+          "objectIdentity": {
+            "type": "function",
+            "valueId": "value:10",
+            "complete": true
+          },
+          "ordinaryException": {
+            "type": "function",
+            "valueId": "value:11",
+            "complete": true
+          },
+          "primitiveBranch": {
+            "type": "function",
+            "valueId": "value:12",
+            "complete": true
+          },
+          "reflect": {
+            "type": "function",
+            "valueId": "value:13",
+            "complete": true
+          },
+          "serialize": {
+            "type": "function",
+            "valueId": "value:14",
+            "complete": true
+          },
+          "swallowCoercion": {
+            "type": "function",
+            "valueId": "value:15",
+            "complete": true
+          },
+          "swallowPeek": {
+            "type": "function",
+            "valueId": "value:16",
+            "complete": true
+          },
+          "tagIdentity": {
+            "type": "function",
+            "valueId": "value:17",
+            "complete": true
+          }
+        }
+      },
+      "result": {
+        "type": "number",
+        "valueId": "value:0",
+        "complete": true,
+        "literal": 1
+      },
+      "outcome": "return",
+      "parentInvocationId": null,
+      "callbacks": []
+    },
+    {
+      "invocationId": "4866aece669417215f88fc9e:1",
+      "functionId": "module.js:3:1:identity",
+      "functionName": "identity",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "4866aece669417215f88fc9e",
+      "order": 1,
+      "public": true,
+      "arguments": [
+        {
+          "type": "string",
+          "valueId": "value:18",
+          "complete": true,
+          "literal": "seen"
+        }
+      ],
+      "receiver": {
+        "type": "object",
+        "valueId": "value:1",
+        "complete": true,
+        "properties": {
+          "callbackIdentity": {
+            "type": "function",
+            "valueId": "value:2",
+            "complete": true
+          },
+          "coerce": {
+            "type": "function",
+            "valueId": "value:3",
+            "complete": true
+          },
+          "configure": {
+            "type": "function",
+            "valueId": "value:4",
+            "complete": true
+          },
+          "equal": {
+            "type": "function",
+            "valueId": "value:5",
+            "complete": true
+          },
+          "identity": {
+            "type": "function",
+            "valueId": "value:6",
+            "complete": true
+          },
+          "inspectType": {
+            "type": "function",
+            "valueId": "value:7",
+            "complete": true
+          },
+          "native": {
+            "type": "function",
+            "valueId": "value:8",
+            "complete": true
+          },
+          "nonParametric": {
+            "type": "function",
+            "valueId": "value:9",
+            "complete": true
+          },
+          "objectIdentity": {
+            "type": "function",
+            "valueId": "value:10",
+            "complete": true
+          },
+          "ordinaryException": {
+            "type": "function",
+            "valueId": "value:11",
+            "complete": true
+          },
+          "primitiveBranch": {
+            "type": "function",
+            "valueId": "value:12",
+            "complete": true
+          },
+          "reflect": {
+            "type": "function",
+            "valueId": "value:13",
+            "complete": true
+          },
+          "serialize": {
+            "type": "function",
+            "valueId": "value:14",
+            "complete": true
+          },
+          "swallowCoercion": {
+            "type": "function",
+            "valueId": "value:15",
+            "complete": true
+          },
+          "swallowPeek": {
+            "type": "function",
+            "valueId": "value:16",
+            "complete": true
+          },
+          "tagIdentity": {
+            "type": "function",
+            "valueId": "value:17",
+            "complete": true
+          }
+        }
+      },
+      "result": {
+        "type": "string",
+        "valueId": "value:18",
+        "complete": true,
+        "literal": "seen"
+      },
+      "outcome": "return",
+      "parentInvocationId": null,
+      "callbacks": []
+    },
+    {
+      "invocationId": "4866aece669417215f88fc9e:2",
+      "functionId": "module.js:2:1:configure",
+      "functionName": "configure",
+      "source": {
+        "file": "module.js",
+        "line": 2,
+        "column": 1
+      },
+      "executionId": "4866aece669417215f88fc9e",
+      "order": 2,
+      "public": true,
+      "arguments": [
+        {
+          "type": "number",
+          "valueId": "value:0",
+          "complete": true,
+          "literal": 1
+        }
+      ],
+      "receiver": {
+        "type": "object",
+        "valueId": "value:1",
+        "complete": true,
+        "properties": {
+          "callbackIdentity": {
+            "type": "function",
+            "valueId": "value:2",
+            "complete": true
+          },
+          "coerce": {
+            "type": "function",
+            "valueId": "value:3",
+            "complete": true
+          },
+          "configure": {
+            "type": "function",
+            "valueId": "value:4",
+            "complete": true
+          },
+          "equal": {
+            "type": "function",
+            "valueId": "value:5",
+            "complete": true
+          },
+          "identity": {
+            "type": "function",
+            "valueId": "value:6",
+            "complete": true
+          },
+          "inspectType": {
+            "type": "function",
+            "valueId": "value:7",
+            "complete": true
+          },
+          "native": {
+            "type": "function",
+            "valueId": "value:8",
+            "complete": true
+          },
+          "nonParametric": {
+            "type": "function",
+            "valueId": "value:9",
+            "complete": true
+          },
+          "objectIdentity": {
+            "type": "function",
+            "valueId": "value:10",
+            "complete": true
+          },
+          "ordinaryException": {
+            "type": "function",
+            "valueId": "value:11",
+            "complete": true
+          },
+          "primitiveBranch": {
+            "type": "function",
+            "valueId": "value:12",
+            "complete": true
+          },
+          "reflect": {
+            "type": "function",
+            "valueId": "value:13",
+            "complete": true
+          },
+          "serialize": {
+            "type": "function",
+            "valueId": "value:14",
+            "complete": true
+          },
+          "swallowCoercion": {
+            "type": "function",
+            "valueId": "value:15",
+            "complete": true
+          },
+          "swallowPeek": {
+            "type": "function",
+            "valueId": "value:16",
+            "complete": true
+          },
+          "tagIdentity": {
+            "type": "function",
+            "valueId": "value:17",
+            "complete": true
+          }
+        }
+      },
+      "result": {
+        "type": "undefined",
+        "valueId": "value:19",
+        "complete": true
+      },
+      "outcome": "return",
+      "parentInvocationId": null,
+      "callbacks": []
+    },
+    {
+      "invocationId": "4866aece669417215f88fc9e:3",
+      "functionId": "module.js:4:1:nonParametric",
+      "functionName": "nonParametric",
+      "source": {
+        "file": "module.js",
+        "line": 4,
+        "column": 1
+      },
+      "executionId": "4866aece669417215f88fc9e",
+      "order": 3,
+      "public": true,
+      "arguments": [
+        {
+          "type": "number",
+          "valueId": "value:0",
+          "complete": true,
+          "literal": 1
+        }
+      ],
+      "receiver": {
+        "type": "object",
+        "valueId": "value:1",
+        "complete": true,
+        "properties": {
+          "callbackIdentity": {
+            "type": "function",
+            "valueId": "value:2",
+            "complete": true
+          },
+          "coerce": {
+            "type": "function",
+            "valueId": "value:3",
+            "complete": true
+          },
+          "configure": {
+            "type": "function",
+            "valueId": "value:4",
+            "complete": true
+          },
+          "equal": {
+            "type": "function",
+            "valueId": "value:5",
+            "complete": true
+          },
+          "identity": {
+            "type": "function",
+            "valueId": "value:6",
+            "complete": true
+          },
+          "inspectType": {
+            "type": "function",
+            "valueId": "value:7",
+            "complete": true
+          },
+          "native": {
+            "type": "function",
+            "valueId": "value:8",
+            "complete": true
+          },
+          "nonParametric": {
+            "type": "function",
+            "valueId": "value:9",
+            "complete": true
+          },
+          "objectIdentity": {
+            "type": "function",
+            "valueId": "value:10",
+            "complete": true
+          },
+          "ordinaryException": {
+            "type": "function",
+            "valueId": "value:11",
+            "complete": true
+          },
+          "primitiveBranch": {
+            "type": "function",
+            "valueId": "value:12",
+            "complete": true
+          },
+          "reflect": {
+            "type": "function",
+            "valueId": "value:13",
+            "complete": true
+          },
+          "serialize": {
+            "type": "function",
+            "valueId": "value:14",
+            "complete": true
+          },
+          "swallowCoercion": {
+            "type": "function",
+            "valueId": "value:15",
+            "complete": true
+          },
+          "swallowPeek": {
+            "type": "function",
+            "valueId": "value:16",
+            "complete": true
+          },
+          "tagIdentity": {
+            "type": "function",
+            "valueId": "value:17",
+            "complete": true
+          }
+        }
+      },
+      "result": {
+        "type": "number",
+        "valueId": "value:0",
+        "complete": true,
+        "literal": 1
+      },
+      "outcome": "return",
+      "parentInvocationId": null,
+      "callbacks": []
+    },
+    {
+      "invocationId": "4866aece669417215f88fc9e:4",
+      "functionId": "module.js:2:1:configure",
+      "functionName": "configure",
+      "source": {
+        "file": "module.js",
+        "line": 2,
+        "column": 1
+      },
+      "executionId": "4866aece669417215f88fc9e",
+      "order": 4,
+      "public": true,
+      "arguments": [
+        {
+          "type": "string",
+          "valueId": "value:18",
+          "complete": true,
+          "literal": "seen"
+        }
+      ],
+      "receiver": {
+        "type": "object",
+        "valueId": "value:1",
+        "complete": true,
+        "properties": {
+          "callbackIdentity": {
+            "type": "function",
+            "valueId": "value:2",
+            "complete": true
+          },
+          "coerce": {
+            "type": "function",
+            "valueId": "value:3",
+            "complete": true
+          },
+          "configure": {
+            "type": "function",
+            "valueId": "value:4",
+            "complete": true
+          },
+          "equal": {
+            "type": "function",
+            "valueId": "value:5",
+            "complete": true
+          },
+          "identity": {
+            "type": "function",
+            "valueId": "value:6",
+            "complete": true
+          },
+          "inspectType": {
+            "type": "function",
+            "valueId": "value:7",
+            "complete": true
+          },
+          "native": {
+            "type": "function",
+            "valueId": "value:8",
+            "complete": true
+          },
+          "nonParametric": {
+            "type": "function",
+            "valueId": "value:9",
+            "complete": true
+          },
+          "objectIdentity": {
+            "type": "function",
+            "valueId": "value:10",
+            "complete": true
+          },
+          "ordinaryException": {
+            "type": "function",
+            "valueId": "value:11",
+            "complete": true
+          },
+          "primitiveBranch": {
+            "type": "function",
+            "valueId": "value:12",
+            "complete": true
+          },
+          "reflect": {
+            "type": "function",
+            "valueId": "value:13",
+            "complete": true
+          },
+          "serialize": {
+            "type": "function",
+            "valueId": "value:14",
+            "complete": true
+          },
+          "swallowCoercion": {
+            "type": "function",
+            "valueId": "value:15",
+            "complete": true
+          },
+          "swallowPeek": {
+            "type": "function",
+            "valueId": "value:16",
+            "complete": true
+          },
+          "tagIdentity": {
+            "type": "function",
+            "valueId": "value:17",
+            "complete": true
+          }
+        }
+      },
+      "result": {
+        "type": "undefined",
+        "valueId": "value:19",
+        "complete": true
+      },
+      "outcome": "return",
+      "parentInvocationId": null,
+      "callbacks": []
+    },
+    {
+      "invocationId": "4866aece669417215f88fc9e:5",
+      "functionId": "module.js:4:1:nonParametric",
+      "functionName": "nonParametric",
+      "source": {
+        "file": "module.js",
+        "line": 4,
+        "column": 1
+      },
+      "executionId": "4866aece669417215f88fc9e",
+      "order": 5,
+      "public": true,
+      "arguments": [
+        {
+          "type": "string",
+          "valueId": "value:18",
+          "complete": true,
+          "literal": "seen"
+        }
+      ],
+      "receiver": {
+        "type": "object",
+        "valueId": "value:1",
+        "complete": true,
+        "properties": {
+          "callbackIdentity": {
+            "type": "function",
+            "valueId": "value:2",
+            "complete": true
+          },
+          "coerce": {
+            "type": "function",
+            "valueId": "value:3",
+            "complete": true
+          },
+          "configure": {
+            "type": "function",
+            "valueId": "value:4",
+            "complete": true
+          },
+          "equal": {
+            "type": "function",
+            "valueId": "value:5",
+            "complete": true
+          },
+          "identity": {
+            "type": "function",
+            "valueId": "value:6",
+            "complete": true
+          },
+          "inspectType": {
+            "type": "function",
+            "valueId": "value:7",
+            "complete": true
+          },
+          "native": {
+            "type": "function",
+            "valueId": "value:8",
+            "complete": true
+          },
+          "nonParametric": {
+            "type": "function",
+            "valueId": "value:9",
+            "complete": true
+          },
+          "objectIdentity": {
+            "type": "function",
+            "valueId": "value:10",
+            "complete": true
+          },
+          "ordinaryException": {
+            "type": "function",
+            "valueId": "value:11",
+            "complete": true
+          },
+          "primitiveBranch": {
+            "type": "function",
+            "valueId": "value:12",
+            "complete": true
+          },
+          "reflect": {
+            "type": "function",
+            "valueId": "value:13",
+            "complete": true
+          },
+          "serialize": {
+            "type": "function",
+            "valueId": "value:14",
+            "complete": true
+          },
+          "swallowCoercion": {
+            "type": "function",
+            "valueId": "value:15",
+            "complete": true
+          },
+          "swallowPeek": {
+            "type": "function",
+            "valueId": "value:16",
+            "complete": true
+          },
+          "tagIdentity": {
+            "type": "function",
+            "valueId": "value:17",
+            "complete": true
+          }
+        }
+      },
+      "result": {
+        "type": "string",
+        "valueId": "value:18",
+        "complete": true,
+        "literal": "seen"
+      },
+      "outcome": "return",
+      "parentInvocationId": null,
+      "callbacks": []
+    },
+    {
+      "invocationId": "4866aece669417215f88fc9e:6",
+      "functionId": "module.js:5:1:tagIdentity",
+      "functionName": "tagIdentity",
+      "source": {
+        "file": "module.js",
+        "line": 5,
+        "column": 1
+      },
+      "executionId": "4866aece669417215f88fc9e",
+      "order": 6,
+      "public": true,
+      "arguments": [
+        {
+          "type": "object",
+          "valueId": "value:20",
+          "complete": true,
+          "properties": {
+            "tag": {
+              "type": "string",
+              "valueId": "value:21",
+              "complete": true,
+              "literal": "left"
+            }
+          }
+        }
+      ],
+      "receiver": {
+        "type": "object",
+        "valueId": "value:1",
+        "complete": true,
+        "properties": {
+          "callbackIdentity": {
+            "type": "function",
+            "valueId": "value:2",
+            "complete": true
+          },
+          "coerce": {
+            "type": "function",
+            "valueId": "value:3",
+            "complete": true
+          },
+          "configure": {
+            "type": "function",
+            "valueId": "value:4",
+            "complete": true
+          },
+          "equal": {
+            "type": "function",
+            "valueId": "value:5",
+            "complete": true
+          },
+          "identity": {
+            "type": "function",
+            "valueId": "value:6",
+            "complete": true
+          },
+          "inspectType": {
+            "type": "function",
+            "valueId": "value:7",
+            "complete": true
+          },
+          "native": {
+            "type": "function",
+            "valueId": "value:8",
+            "complete": true
+          },
+          "nonParametric": {
+            "type": "function",
+            "valueId": "value:9",
+            "complete": true
+          },
+          "objectIdentity": {
+            "type": "function",
+            "valueId": "value:10",
+            "complete": true
+          },
+          "ordinaryException": {
+            "type": "function",
+            "valueId": "value:11",
+            "complete": true
+          },
+          "primitiveBranch": {
+            "type": "function",
+            "valueId": "value:12",
+            "complete": true
+          },
+          "reflect": {
+            "type": "function",
+            "valueId": "value:13",
+            "complete": true
+          },
+          "serialize": {
+            "type": "function",
+            "valueId": "value:14",
+            "complete": true
+          },
+          "swallowCoercion": {
+            "type": "function",
+            "valueId": "value:15",
+            "complete": true
+          },
+          "swallowPeek": {
+            "type": "function",
+            "valueId": "value:16",
+            "complete": true
+          },
+          "tagIdentity": {
+            "type": "function",
+            "valueId": "value:17",
+            "complete": true
+          }
+        }
+      },
+      "result": {
+        "type": "object",
+        "valueId": "value:20",
+        "complete": true,
+        "properties": {
+          "tag": {
+            "type": "string",
+            "valueId": "value:21",
+            "complete": true,
+            "literal": "left"
+          }
+        }
+      },
+      "outcome": "return",
+      "parentInvocationId": null,
+      "callbacks": []
+    },
+    {
+      "invocationId": "4866aece669417215f88fc9e:7",
+      "functionId": "module.js:5:1:tagIdentity",
+      "functionName": "tagIdentity",
+      "source": {
+        "file": "module.js",
+        "line": 5,
+        "column": 1
+      },
+      "executionId": "4866aece669417215f88fc9e",
+      "order": 7,
+      "public": true,
+      "arguments": [
+        {
+          "type": "object",
+          "valueId": "value:22",
+          "complete": true,
+          "properties": {
+            "tag": {
+              "type": "string",
+              "valueId": "value:23",
+              "complete": true,
+              "literal": "right"
+            }
+          }
+        }
+      ],
+      "receiver": {
+        "type": "object",
+        "valueId": "value:1",
+        "complete": true,
+        "properties": {
+          "callbackIdentity": {
+            "type": "function",
+            "valueId": "value:2",
+            "complete": true
+          },
+          "coerce": {
+            "type": "function",
+            "valueId": "value:3",
+            "complete": true
+          },
+          "configure": {
+            "type": "function",
+            "valueId": "value:4",
+            "complete": true
+          },
+          "equal": {
+            "type": "function",
+            "valueId": "value:5",
+            "complete": true
+          },
+          "identity": {
+            "type": "function",
+            "valueId": "value:6",
+            "complete": true
+          },
+          "inspectType": {
+            "type": "function",
+            "valueId": "value:7",
+            "complete": true
+          },
+          "native": {
+            "type": "function",
+            "valueId": "value:8",
+            "complete": true
+          },
+          "nonParametric": {
+            "type": "function",
+            "valueId": "value:9",
+            "complete": true
+          },
+          "objectIdentity": {
+            "type": "function",
+            "valueId": "value:10",
+            "complete": true
+          },
+          "ordinaryException": {
+            "type": "function",
+            "valueId": "value:11",
+            "complete": true
+          },
+          "primitiveBranch": {
+            "type": "function",
+            "valueId": "value:12",
+            "complete": true
+          },
+          "reflect": {
+            "type": "function",
+            "valueId": "value:13",
+            "complete": true
+          },
+          "serialize": {
+            "type": "function",
+            "valueId": "value:14",
+            "complete": true
+          },
+          "swallowCoercion": {
+            "type": "function",
+            "valueId": "value:15",
+            "complete": true
+          },
+          "swallowPeek": {
+            "type": "function",
+            "valueId": "value:16",
+            "complete": true
+          },
+          "tagIdentity": {
+            "type": "function",
+            "valueId": "value:17",
+            "complete": true
+          }
+        }
+      },
+      "result": {
+        "type": "object",
+        "valueId": "value:22",
+        "complete": true,
+        "properties": {
+          "tag": {
+            "type": "string",
+            "valueId": "value:23",
+            "complete": true,
+            "literal": "right"
+          }
+        }
+      },
+      "outcome": "return",
+      "parentInvocationId": null,
+      "callbacks": []
+    }
+  ]
+}

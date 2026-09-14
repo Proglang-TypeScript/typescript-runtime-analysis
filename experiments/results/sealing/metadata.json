@@ -1,0 +1,20 @@
+{
+  "node": "v24.21.0",
+  "compiler": "6.0.3",
+  "nativeCompiler": "7.0.2",
+  "seed": 0,
+  "limits": {
+    "trialTimeoutMs": 3000,
+    "workerHeapMb": 128,
+    "maxInvocations": 128
+  },
+  "sourceHashes": {
+    "module.js": "4dc1e73fcebd36c47dbf82ec4bf24d0691ffc4e4c253646ada0d34f9d6886e0c",
+    "inference.js": "9654747503e7367b7560cfa3eebe56c71d11b6da6b1d8f0fe8920362582ce8ce",
+    "held-out-valid.ts": "a775c2e430e5b93f463d125b72e20ca95ac164e31d813cf9c0e1ba1bd883f1a5",
+    "held-out-invalid.ts": "8c7351efc8c1018b6a5574594214dc1bd219fbb6d63d960f49c11be223437257",
+    "constraint-invalid.ts": "66c93eed2470c6decb3011d04c8935d12475b1a5f5f08fae1c45eb99ceb89463"
+  },
+  "supportScope": "Opaque first-order transport and shallow readonly string-field constraint; observability preflight conservative",
+  "heldOutPolicy": "Only proposing observations/sealed challenges drive refinement; typing clients evaluation-only"
+}
