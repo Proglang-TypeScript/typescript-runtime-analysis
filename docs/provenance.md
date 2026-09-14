@@ -1,6 +1,6 @@
 # Provenance and migration mapping
 
-No original Git history was rewritten. Inspection clones retain full history. The local consolidated import is intentionally uncommitted. Every imported file remains attributed by its repository license and any file notices. New glue is owner-controlled pending a license decision.
+No original Git history was rewritten. Inspection clones retain full history. The consolidated import is committed and published to the private organization upstream. Every imported file remains attributed by its repository license and any file notices. New glue is owner-controlled pending a license decision. The source revisions below document recovery provenance; subsequent maintained heads and publication are listed in the [security/publication record](security-publication-report.md).
 
 | Source | Exact inspected commit | License / authors | Decision |
 |---|---|---|---|
@@ -17,7 +17,7 @@ No original Git history was rewritten. Inspection clones retain full history. Th
 | [ts-declaration-file-generator-service](https://github.com/Proglang-TypeScript/ts-declaration-file-generator-service) | `8fe9ebeb28957bd6a2b898794a41e402650dfda9` | MIT License /  / Copyright (c) - 2019 - Fernando Francisco Cristiani / ; 28	Fernando Cristiani;      1	Programming Languages Uni Freiburg | Omitted shell/Docker orchestration; replaced by file-based CLI |
 | [ts-visitors](https://github.com/Proglang-TypeScript/ts-visitors) | `2e037f86613d8db4d86de1f686d247955cace457` | BSD 3-Clause License /  / Copyright (c) 2021, Programming Languages Uni Freiburg / All rights reserved.; 3	Fernando Cristiani;      1	Programming Languages Uni Freiburg | Not imported: typed-visitor teaching/prototype examples, not declaration backend |
 
-Original optional concrete-types remains at `3d79335996e0a36bc6d7affff02b2f269be5e581` (BSD-3-Clause, Natalie Abels and contributors), omitted because its HTTP path-to-shell endpoint is unsafe and the viewer is not needed. dts-generate-results remains at `937a89a919814372cae8ea424d88edd8f7eaf87f` (MIT, Fernando Cristiani and contributors), retained as a historical data source without copying generated/vendored output. tsd-generation-report remains at `972335ae7cdf6778e62feec260579374bc2c4bc0` (CC0), retained as a report and prior-method reference.
+The optional concrete-types recovery baseline was `3d79335996e0a36bc6d7affff02b2f269be5e581` (BSD-3-Clause, Natalie Abels and contributors). The viewer is not needed by the consolidation; its separate repository has since been independently modernized and its unsafe endpoint repaired and tested. dts-generate-results remains at `937a89a919814372cae8ea424d88edd8f7eaf87f` (MIT, Fernando Cristiani and contributors), retained as a historical data source without copying generated/vendored output. tsd-generation-report remains at `972335ae7cdf6778e62feec260579374bc2c4bc0` (CC0), retained as a report and prior-method reference.
 
 The adapted Jalangi command is also derived from the tracer repository’s jalangi-commands/jalangi.js and carries its original Samsung Apache-2.0 header and author notices. The vendor subset excludes browser UIs, proxy/server code, tests, binaries and dependencies; patched Acorn7/esotope are registry dependencies.
 
