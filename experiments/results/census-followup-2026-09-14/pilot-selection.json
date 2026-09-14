@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "censusIdentity": "8235039d24e334ab26863f6a87cb8f828ff91f75dbfbe01bcf9d2a9cd4f7dcf0",
+  "role": "Development-only pilot, never untouched held-out evaluation.",
+  "nominalPackages": 3,
+  "exercisedExports": 5,
+  "independentSourceFamiliesVerified": false,
+  "origins": [
+    {
+      "package": "prelude-ls",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/gkz/prelude-ls.git"
+      },
+      "sourceCommit": "d69be8fd8a682321ba24eced17caf3a1b8ca73b8",
+      "sourceFamilyAssessment": "Distinct nominal repository origins; deeper ancestry/copying/family independence still needs independent review."
+    },
+    {
+      "package": "transducers-js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/cognitect/npm-transducers-js.git"
+      },
+      "sourceCommit": "1e0d3fa425987b9a02a34142b135e5a03a5ccb30",
+      "sourceFamilyAssessment": "Distinct nominal repository origins; deeper ancestry/copying/family independence still needs independent review."
+    },
+    {
+      "package": "underscore",
+      "repository": {
+        "url": "git://github.com/jashkenas/underscore.git",
+        "type": "git"
+      },
+      "sourceCommit": "4a4019e00beb2c42eda20c05f375a35983b748f0",
+      "sourceFamilyAssessment": "Distinct nominal repository origins; deeper ancestry/copying/family independence still needs independent review."
+    }
+  ],
+  "records": [
+    {
+      "package": "prelude-ls",
+      "version": "1.1.2",
+      "export": "id",
+      "exportId": "19eea96df292fb3db2a37ae8ad6c3f13469169b24476adf8926f2148f2643dae",
+      "declarationId": "8e66a5c18b5d8e8fbd600f7a8e46b3ed9f7257b10de63a62cf3d2b55dfa89527",
+      "source": {
+        "file": "types/prelude-ls/index.d.ts",
+        "start": 115,
+        "line": 4,
+        "column": 5
+      },
+      "classes": [
+        "identity"
+      ],
+      "declarationReview": "Single-agent source/constraint/export and actual-runtime-source inspection; no enclosing generic, explicit value binding, compiler-diagnostic-free package under census configuration.",
+      "recipe": "pilot-evidence/prelude-ls/pilot.cjs",
+      "ordinaryCases": [
+        "object-reference",
+        "number"
+      ],
+      "assertionsPassed": 2,
+      "boundaryObservation": null,
+      "heldOut": false
+    },
+    {
+      "package": "prelude-ls",
+      "version": "1.1.2",
+      "export": "head",
+      "exportId": "8d85c833564ba788894642031318a1fbef2854a9f8530000c70be05fb93e14b4",
+      "declarationId": "ce57966a4ae0849bdf0310c4a3b85516c81734983335c15d6018b867ba7045ef",
+      "source": {
+        "file": "types/prelude-ls/index.d.ts",
+        "start": 1269,
+        "line": 25,
+        "column": 5
+      },
+      "classes": [
+        "container-element"
+      ],
+      "declarationReview": "Single-agent source/constraint/export and actual-runtime-source inspection; no enclosing generic, explicit value binding, compiler-diagnostic-free package under census configuration.",
+      "recipe": "pilot-evidence/prelude-ls/pilot.cjs",
+      "ordinaryCases": [
+        "nonempty-object-array",
+        "nonempty-number-array"
+      ],
+      "assertionsPassed": 2,
+      "boundaryObservation": "head([]) returns undefined although the declaration result is A; nonempty precondition required for selected recipe",
+      "heldOut": false
+    },
+    {
+      "package": "prelude-ls",
+      "version": "1.1.2",
+      "export": "reverse",
+      "exportId": "efbfd971f9e6c2586dccf6625a49ec462485bd1296e885a8eb19670454c9e060",
+      "declarationId": "076155eecab40333c9d6abcf90d16c6b22fe477ec6d2f45082bb818a0161188b",
+      "source": {
+        "file": "types/prelude-ls/index.d.ts",
+        "start": 1488,
+        "line": 30,
+        "column": 5
+      },
+      "classes": [
+        "overload-or-discriminated"
+      ],
+      "declarationReview": "Single-agent source/constraint/export and actual-runtime-source inspection; no enclosing generic, explicit value binding, compiler-diagnostic-free package under census configuration.",
+      "recipe": "pilot-evidence/prelude-ls/pilot.cjs",
+      "ordinaryCases": [
+        "object-array-element-references",
+        "empty-array"
+      ],
+      "assertionsPassed": 4,
+      "boundaryObservation": null,
+      "heldOut": false
+    },
+    {
+      "package": "transducers-js",
+      "version": "0.4.174",
+      "export": "identity",
+      "exportId": "f95ea215b05738492a0daaa8267a05366beb72e6637b96e38de3beae3fdd27d0",
+      "declarationId": "07983f4e722924738cf930108008c1061dcbbe9b0df3705e7748d3de5c16a3ca",
+      "source": {
+        "file": "types/transducers-js/index.d.ts",
+        "start": 2531,
+        "line": 67,
+        "column": 1
+      },
+      "classes": [
+        "identity"
+      ],
+      "declarationReview": "Single-agent source/constraint/export and actual-runtime-source inspection; no enclosing generic, explicit value binding, compiler-diagnostic-free package under census configuration.",
+      "recipe": "pilot-evidence/transducers-js/pilot.cjs",
+      "ordinaryCases": [
+        "object-reference",
+        "number",
+        "null"
+      ],
+      "assertionsPassed": 3,
+      "boundaryObservation": null,
+      "heldOut": false
+    },
+    {
+      "package": "underscore",
+      "version": "1.13.8",
+      "export": "identity",
+      "exportId": "dedbadb448e2d1d0819142dd755cbb8e7eacb67ccbc00026724f5b175e8f0fee",
+      "declarationId": "65c1653eb12eacecae06eb98d5d74f6bad6577a9d119ae1fa92ff1c162c2ea58",
+      "source": {
+        "file": "types/underscore/index.d.ts",
+        "start": 145727,
+        "line": 4010,
+        "column": 9
+      },
+      "classes": [
+        "identity"
+      ],
+      "declarationReview": "Single-agent source/constraint/export and actual-runtime-source inspection; no enclosing generic, explicit value binding, compiler-diagnostic-free package under census configuration.",
+      "recipe": "pilot-evidence/underscore/pilot.cjs",
+      "ordinaryCases": [
+        "object-reference",
+        "array-reference",
+        "number",
+        "null"
+      ],
+      "assertionsPassed": 4,
+      "boundaryObservation": null,
+      "heldOut": false
+    }
+  ]
+}

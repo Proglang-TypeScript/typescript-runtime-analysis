@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "provenance": {
+    "package": "tra-pilot-underscore",
+    "version": "0.0.0",
+    "repository": "local-fixture",
+    "commit": "uncommitted-fixture",
+    "evidence": "test",
+    "entryPoint": "pilot.cjs",
+    "publicModule": "module",
+    "backend": "jalangi2",
+    "backendVersion": "bc879287b1678de6e3c423f5debe63207559525b",
+    "executionId": "02da160d96f6536802368ea0"
+  },
+  "observations": [],
+  "operators": [
+    {
+      "operator": "+",
+      "source": {
+        "file": "pilot.cjs",
+        "line": 11,
+        "column": 13
+      },
+      "leftType": "string",
+      "rightType": "string",
+      "executionId": "02da160d96f6536802368ea0",
+      "order": 0
+    }
+  ]
+}

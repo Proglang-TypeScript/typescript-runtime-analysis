@@ -1,0 +1,43 @@
+{
+  "publicationBase": "2aa7db845931b6fb09e798b4f0d5c6fa062c7cdc",
+  "implementationChangesUncommitted": true,
+  "captureStateBasis": "Source hashes were captured before follow-up publication; the uncommitted flag is historical, not current branch status.",
+  "files": [
+    {
+      "file": "scripts/census.cjs",
+      "sha256": "a404095fc79b5104dac783328eaba01df0168441df013d47b6b8d8d2c1aedbed"
+    },
+    {
+      "file": "scripts/census-snapshot.cjs",
+      "sha256": "77c3b6732f2e8cd7231ac4f62a99f25daa252ed26813eb9309ff351bdfeffccd"
+    },
+    {
+      "file": "scripts/run-isolated.cjs",
+      "sha256": "95e6fb5d8f49b55c58a34f1486ab7e8748cee01151db26d6991be592c35ef82e"
+    },
+    {
+      "file": "packages/generic-api-census/index.cjs",
+      "sha256": "c08bde1cc5b52e93fda006513a517a818c4017ace6b09975d7d9996aa1a1f13c"
+    },
+    {
+      "file": "packages/generic-api-census/polarity.cjs",
+      "sha256": "59709dc41b6c5ff489b9adc40eaf11675529372996955258c455bb873dbb2d87"
+    },
+    {
+      "file": "packages/generic-api-census/runtime-assessment.cjs",
+      "sha256": "c9b1095edb8ebb227fa09979bdd7358804f29619f9924d5be83fd10c693e408a"
+    },
+    {
+      "file": "packages/runtime-tracer/index.cjs",
+      "sha256": "5b110f2c1d404b247fb97e62cc007a395537c749c16ef727dece00034dd57986"
+    },
+    {
+      "file": "packages/cli/index.cjs",
+      "sha256": "823a0993c2ce7e7d6b44dff9feaa5b844acb3b855e31beac2ceb794e1ecaca2e"
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "0e3564f3fa8e14f166b723f00538f194e6bf788e9cc1cd03491aab06032bc939"
+    }
+  ]
+}

@@ -47,7 +47,7 @@ The budget is measured with a monotonic clock from the start of each invocation 
 
 If the time limit is reached with packages remaining, input/software validation runs and `checkpoint.json` records the census identity, state, invocation command/budget/elapsed time, and processed/successful/failed/pending packages. Completed shards remain in `packages/`. The command exits normally, with exit code zero unless extraction failures occurred. A timed checkpoint is not a completed census; final summary tables and the review queue are deferred until every selected package has been processed. Extraction completion also writes `checkpoint.json`.
 
-Each package worker has a 1 GB V8 heap, a two-minute deadline and a 64 MB output cap. Extraction failures remain explicit failure shards, rather than being interpreted as packages without callable APIs. Compiler diagnostics are recorded separately from worker failures.
+Each package worker has a 1 GB V8 heap, a two-minute deadline and an explicit 256 MB file-output cap, with temporary-file transport and a separate 1 MB diagnostic log cap. The original baseline used a 64 MB stdout pipe. Recursive namespace alias cycles are inventoried and cut on the current ancestor path without discarding independent aliases. Extraction failures remain explicit failure shards, rather than being interpreted as packages without callable APIs. Compiler diagnostics are recorded separately from worker failures. New rules/transport require a fresh census identity and output directory; the original full run stays preserved.
 
 ## Complete resume commands
 
@@ -116,6 +116,8 @@ npm run census:runtime -- --out work/census --catalog work/census-availability/c
 Review records require known review IDs, a status, reviewer and notes. Runtime records are separate from declaration rows and retain success, load/exercise failure, unsupported and unassessed statuses. A type-only export cannot directly count as executable. Positive records need reviewed successful execution, not merely loading or obtaining npm metadata. See the detailed census documentation for the exact input formats and receipt requirements.
 
 ## Validation and outstanding study work
+
+The later [corpus follow-up report](docs/census-followup.md) records publication of the compact full baseline, recovery of 19 failed packages, diagnostic priorities, the single-agent 40-item review and five actual ordinary pilot APIs. The repaired full corpus and independent human/family validation are still pending; the initial timed-checkpoint and smoke records below remain historical.
 
 Timed-checkpoint support was validated with 110 preserved Jest assertions plus 54 Node tests: **164 passed, zero failed**. Added tests cover fractional/invalid budgets, clean package-boundary stops, changed-budget resume, identical uninterrupted results, stale shard/configuration rejection, preserved review inputs and failed-worker retries. An actual offline d3-array/underscore CLI run stopped after d3-array and resumed to successful two-package aggregation.
 

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "publicationBase": "2aa7db845931b6fb09e798b4f0d5c6fa062c7cdc",
+  "baselineBundleCommittedAndPushedFirst": true,
+  "baselineCi": {
+    "id": 34876754823,
+    "conclusion": "success"
+  },
+  "followupCommitCreated": false,
+  "followupPushed": false,
+  "publicationStatusBasis": "Historical evidence capture before publication; the subsequent explicit commit/push request authorizes publication, verified separately for the exact commit.",
+  "baselineCensusIdentity": "8235039d24e334ab26863f6a87cb8f828ff91f75dbfbe01bcf9d2a9cd4f7dcf0",
+  "supplementalCensusIdentity": "801ea8c72bb329317b4ac446555936bb5c13973ecef0edb4d45433ee544c2a5e",
+  "fullRepairedCensusRun": false,
+  "baselineMetadataAndAll8680ShardHashesUnchanged": true,
+  "recoveredPackages": 19,
+  "remainingPackages": [
+    "go",
+    "beyonk__gdpr-cookie-consent-banner"
+  ],
+  "reviews": {
+    "pending": 0,
+    "agree": 31,
+    "false-classification": 4,
+    "ambiguous": 5,
+    "excluded": 0
+  },
+  "reviewBasis": "Single AI-assisted source audit; independent human validation pending",
+  "localTests": {
+    "passed": 168,
+    "failed": 0
+  },
+  "pilotAuditsKnownVulnerabilities": {
+    "prelude-ls": 0,
+    "underscore": 0,
+    "transducers-js": 0
+  },
+  "ordinaryExercisedExports": 5,
+  "nominalPilotPackages": 3,
+  "sourceFamiliesIndependentlyVerified": false,
+  "activeSealingRun": false,
+  "resumableBundle": false,
+  "rawSupplementalDirectory": "work/census-remediation-reviewed",
+  "rawSourceTreesAndInstalledDependenciesExcluded": true
+}

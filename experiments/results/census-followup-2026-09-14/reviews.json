@@ -1,0 +1,1093 @@
+{
+  "identity": "8235039d24e334ab26863f6a87cb8f828ff91f75dbfbe01bcf9d2a9cd4f7dcf0",
+  "basis": "Single AI-assisted source/context review; independent human reviewers remain required. Agreement concerns the bounded classification, not runtime execution or parametricity.",
+  "records": [
+    {
+      "reviewId": "63cabd8f7b6c1062aae4044dfdf74613269f94ad73908d929bfab54f1df1d4c9",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "ClientBase.query has bounded T in the queryStream parameter and result; the identity-position tag agrees. PoolClient inherits it. Stream submission is not a pure identity contract or prepared replay recipe.",
+      "evidence": {
+        "sourceFileSha256": "67f3d03f61a43f045851624e52ec438803ecf5d2247660f208bd9bcadb6ff298",
+        "source": {
+          "file": "types/pg/index.d.ts",
+          "start": 7504,
+          "line": 251,
+          "column": 5
+        },
+        "enclosing": [
+          {
+            "kind": "ClassDeclaration",
+            "name": "ClientBase",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/pg/index.d.ts#L251"
+      }
+    },
+    {
+      "reviewId": "4795f611fa57943130ea2138af8c05fd0af4b1a997746a6fd02cb997d2b1be56",
+      "status": "ambiguous",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "The stream.addAbortSignal source is bounded T-to-T, but this long constructor/namespace path is not independently verified as an actual fs-extra-promise-es6 runtime export. Shape is plausible; export/receiver correspondence remains ambiguous.",
+      "evidence": {
+        "sourceFileSha256": "5b26c4dd672d88336bb929787c9bfb55119e80ba89ec6dc923da1c063892843e",
+        "source": {
+          "file": "types/node/stream.d.ts",
+          "start": 69948,
+          "line": 1349,
+          "column": 9
+        },
+        "enclosing": [
+          {
+            "kind": "ModuleDeclaration",
+            "name": "Stream",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "\"node:stream\"",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/node/stream.d.ts#L1349"
+      }
+    },
+    {
+      "reviewId": "47ae3023f92b002d3b0bcecea90fd2092bd23656e840d0b466581d66bc0dd784",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "Matrix4.toArray retains bounded TArray in an optional target argument and result. Positional identity agrees; default allocation and numeric writes mean this is not freely generic identity or a safe opaque-value pilot.",
+      "evidence": {
+        "sourceFileSha256": "c6edcb1486e08b2fbbd82be383556f395b648aa12eb4b459d79cc1ae761c28c6",
+        "source": {
+          "file": "types/three/src/math/Matrix4.d.ts",
+          "start": 19178,
+          "line": 505,
+          "column": 5
+        },
+        "enclosing": [
+          {
+            "kind": "ClassDeclaration",
+            "name": "Matrix4",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/three/src/math/Matrix4.d.ts#L505"
+      }
+    },
+    {
+      "reviewId": "c29a25686390259a0c2b4a79fbba43e8a3d6e3045231593b75c6cdd422eaeab4",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "Stream.pipe accepts and returns the same bounded destination T; positional identity agrees. The enclosing response types and receiver/setup require runtime review; no executable claim is made.",
+      "evidence": {
+        "sourceFileSha256": "5b26c4dd672d88336bb929787c9bfb55119e80ba89ec6dc923da1c063892843e",
+        "source": {
+          "file": "types/node/stream.d.ts",
+          "start": 403,
+          "line": 11,
+          "column": 9
+        },
+        "enclosing": [
+          {
+            "kind": "ClassDeclaration",
+            "name": "Stream",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "\"node:stream\"",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/node/stream.d.ts#L11"
+      }
+    },
+    {
+      "reviewId": "558e1ed9b2f429bcd48259ad31c26dfba259594bc03545e730938c6bff1f408a",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "Component.addChild has T in a union argument and result, so the documented positional identity tag agrees. String input can create a component; this is not an exact unconstrained T-to-T sealing contract.",
+      "evidence": {
+        "sourceFileSha256": "c6575c2574e63c9e213163468274981299be2c9d4b8b69f5204779eb82369fbb",
+        "source": {
+          "file": "types/video.js/index.d.ts",
+          "start": 41215,
+          "line": 1309,
+          "column": 9
+        },
+        "enclosing": [
+          {
+            "kind": "InterfaceDeclaration",
+            "name": "Component",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "videojs",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/video.js/index.d.ts#L1309"
+      }
+    },
+    {
+      "reviewId": "75578e6d063ee49cfdc49cc069aa050663ae687212e3147d56a8fa78de1ccdfc",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "VError.errorFromList accepts T[] and returns a union containing T. Container-element tag agrees as a union projection, not proof that every result is an input element; MultiError and null branches need recipes.",
+      "evidence": {
+        "sourceFileSha256": "62ba45a86b9a31eb84ea03ae0b9e800a507d980c1f38dcec6528f10078cfdedd",
+        "source": {
+          "file": "types/verror/index.d.ts",
+          "start": 908,
+          "line": 23,
+          "column": 5
+        },
+        "enclosing": [
+          {
+            "kind": "ClassDeclaration",
+            "name": "VError",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/verror/index.d.ts#L23"
+      }
+    },
+    {
+      "reviewId": "b53c146c84ac93a808c5c7d02aa6a6e821f1949d979b6549db5f5419ab8cdaf3",
+      "status": "ambiguous",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "defaultsDeep uses rest arguments T[], not a single ordinary array argument. The container-element label is ambiguous for runtime transport; the existing rest-parameter unsupported reason correctly excludes first-order replay.",
+      "evidence": {
+        "sourceFileSha256": "fc33537c4e24b87ebaa3b1580eb8e41775209ec234706f19353f719fb39535ee",
+        "source": {
+          "file": "types/frctl__fractal/index.d.ts",
+          "start": 28387,
+          "line": 705,
+          "column": 5
+        },
+        "enclosing": [
+          {
+            "kind": "ModuleDeclaration",
+            "name": "utils",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/frctl__fractal/index.d.ts#L705"
+      }
+    },
+    {
+      "reviewId": "47fe36a3fcd4c6bf22185783eab724b3bd38ae7786ad1adbf4762933ded54793",
+      "status": "ambiguous",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "numeric.min mixes direct matrices, scalar unions and rest arrays. The container-element label comes from the rest branch, not an unambiguous ordinary container-element API; keep overload/rest/context ambiguity.",
+      "evidence": {
+        "sourceFileSha256": "f6c4772aef23c239ce16829815f8b4c35135a95ec603e3fdd02d67edb3f6f575",
+        "source": {
+          "file": "types/numeric/index.d.ts",
+          "start": 27246,
+          "line": 869,
+          "column": 5
+        },
+        "enclosing": [
+          {
+            "kind": "InterfaceDeclaration",
+            "name": "Numeric",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/numeric/index.d.ts#L869"
+      }
+    },
+    {
+      "reviewId": "9e477b353706bd82d70720d036f2ce0a89ef04fbbf846fb5857f4557bb1628b5",
+      "status": "false-classification",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "Injectable expands to a function or an array of injection names/functions. T is the invoked callback result, not an array element returned by invoke. The container-element tag is an overbroad projection of nested array paths; higher-order is the meaningful category.",
+      "evidence": {
+        "sourceFileSha256": "39e615985dd0dc2a0e3c2bfbb1d9979f813fd9d12ffc885a0ffbccdcef07c03f",
+        "source": {
+          "file": "types/angular/index.d.ts",
+          "start": 112926,
+          "line": 2452,
+          "column": 13
+        },
+        "enclosing": [
+          {
+            "kind": "InterfaceDeclaration",
+            "name": "IInjectorService",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "auto",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "angular",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/angular/index.d.ts#L2452"
+      }
+    },
+    {
+      "reviewId": "9b0d279d1f07d377bb00bccbe5ea837de6d5a6b00442da982b33d67c155f05e0",
+      "status": "ambiguous",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "defined has a rest T[] signature and an any overload. It selects among positional arguments, so container-element interpretation is ambiguous despite correct negative/positive occurrences; existing rest exclusion must remain.",
+      "evidence": {
+        "sourceFileSha256": "a2d6b4ba5cee04ed1532ff08dd8d051437747b7ac78462b4be32bfb6c657cfa3",
+        "source": {
+          "file": "types/defined/index.d.ts",
+          "start": 19,
+          "line": 3,
+          "column": 1
+        },
+        "enclosing": [],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/defined/index.d.ts#L3"
+      }
+    },
+    {
+      "reviewId": "17d7ce8ccdc6e92a985afc722295da941941d7645c73462ab3810ffbc9ebd558",
+      "status": "false-classification",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "reduceRight returns T, not T[]. The positive array occurrence is a callback parameter (array: T[]); labelling this value-to-container is a false top-level transport classification. The callback polarity itself is correct.",
+      "evidence": {
+        "sourceFileSha256": "edad483a2612a19afff16e60201c4c21b998b84dfdabcd2b0aba0776bf511ebf",
+        "source": {
+          "file": "types/winjs/index.d.ts",
+          "start": 32851,
+          "line": 626,
+          "column": 9
+        },
+        "enclosing": [
+          {
+            "kind": "ClassDeclaration",
+            "name": "List",
+            "parameters": [
+              "T"
+            ]
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "Binding",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "WinJS",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/winjs/index.d.ts#L626"
+      }
+    },
+    {
+      "reviewId": "87ecfd975bb4c79860245bf1d04766421a8559642a428752c187a637589d0b63",
+      "status": "false-classification",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "queue returns a queue of callbacks, not a container of the element T. The positive array path in the retained evidence is nested inside a callback parameter of newQueue; value-to-container is a false direct-transport classification and unsupported alias/member context remains.",
+      "evidence": {
+        "sourceFileSha256": "962062d19c1fd46b0551f077a0681f31926da718eaa31cfaf88886b40d706e03",
+        "source": {
+          "file": "types/jquery/JQueryStatic.d.ts",
+          "start": 424134,
+          "line": 13290,
+          "column": 5
+        },
+        "enclosing": [
+          {
+            "kind": "InterfaceDeclaration",
+            "name": "JQueryStatic",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/jquery/JQueryStatic.d.ts#L13290"
+      }
+    },
+    {
+      "reviewId": "033aed923bc6974ce00d3c26b49ac87d3ec72c3651b751835b0c6c1582077695",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "LoDashStatic.fill has value: T and result T[], so value-to-container agrees. The declaration is a type-only interface member here; actual lodash.fill mapping, array mutation and other overloads require separate runtime review.",
+      "evidence": {
+        "sourceFileSha256": "40de86ced5175a6ffe84a52abe6ac59ac0efbc604a5975a8c6476c3ddc682ff1",
+        "source": {
+          "file": "types/lodash/common/array.d.ts",
+          "start": 12773,
+          "line": 349,
+          "column": 9
+        },
+        "enclosing": [
+          {
+            "kind": "InterfaceDeclaration",
+            "name": "LoDashStatic",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "\"../index\"",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/lodash/common/array.d.ts#L349"
+      }
+    },
+    {
+      "reviewId": "6f445b09055276f0f9f1c2d88c28fbeccafca67741f05f7962a778ded9bc884e",
+      "status": "false-classification",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "QueryCollection.reduce returns T, not T[]. Its positive array occurrence belongs to the reducer callback array parameter; value-to-container is a false top-level transport classification.",
+      "evidence": {
+        "sourceFileSha256": "edad483a2612a19afff16e60201c4c21b998b84dfdabcd2b0aba0776bf511ebf",
+        "source": {
+          "file": "types/winjs/index.d.ts",
+          "start": 447408,
+          "line": 10091,
+          "column": 9
+        },
+        "enclosing": [
+          {
+            "kind": "ClassDeclaration",
+            "name": "QueryCollection",
+            "parameters": [
+              "T"
+            ]
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "Utilities",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "WinJS",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/winjs/index.d.ts#L10091"
+      }
+    },
+    {
+      "reviewId": "f3b83a8c3d204eaef602a7812d11a542eaca5989878a02b272ab1f4c212e5847",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "scanr has memo B and result B[] plus a curried reducer. Value-to-container agrees at the outer argument/result level and higher-order remains a separate nonexclusive tag; no arbitrary callback replay claim.",
+      "evidence": {
+        "sourceFileSha256": "3c0b63f579ac2d711ff2d74b3430791f8122648948945d628dfd57ed0342eca5",
+        "source": {
+          "file": "types/prelude-ls/index.d.ts",
+          "start": 5906,
+          "line": 94,
+          "column": 5
+        },
+        "enclosing": [
+          {
+            "kind": "ModuleDeclaration",
+            "name": "PreludeLS",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/prelude-ls/index.d.ts#L94"
+      }
+    },
+    {
+      "reviewId": "addb9982e00be4806077d5ceb8881d26b3e37e3d4b0370624615e77011907185",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "TState occurs negatively in state and in the nested continuation parameter within action, with different outer argument indices. Multiple-arguments agrees with the documented occurrence-index rule, but this is higher-order scheduling, not two direct T-valued inputs.",
+      "evidence": {
+        "sourceFileSha256": "d49d881fd42b1bbf97e52e1045dab923ea8c899ea27734f1e565f9ac461b3e7f",
+        "source": {
+          "file": "types/rx-lite/index.d.ts",
+          "start": 4985,
+          "line": 152,
+          "column": 9
+        },
+        "enclosing": [
+          {
+            "kind": "InterfaceDeclaration",
+            "name": "IScheduler",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "Rx",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/rx-lite/index.d.ts#L152"
+      }
+    },
+    {
+      "reviewId": "5c4293cea93060b20b8fc235127ed2877bda2918e62691c8dbdc96e07bd99ddf",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "reduce has negative T in callback result and initial seed at different outer argument indices; multiple-arguments agrees under the occurrence-index rule. Promise<T> result variance remains unknown and runtime stream/async replay is unprepared.",
+      "evidence": {
+        "sourceFileSha256": "5b26c4dd672d88336bb929787c9bfb55119e80ba89ec6dc923da1c063892843e",
+        "source": {
+          "file": "types/node/stream.d.ts",
+          "start": 32698,
+          "line": 632,
+          "column": 13
+        },
+        "enclosing": [
+          {
+            "kind": "ClassDeclaration",
+            "name": "Readable",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "Stream",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "\"node:stream\"",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/node/stream.d.ts#L632"
+      }
+    },
+    {
+      "reviewId": "660d04e11afd959793ed020509dbd99fd2555e0faf6b642fe17659686399d410",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "scheduleRecursiveWithState carries TState in state and nested continuation parameters under action. Multiple-arguments agrees under the occurrence-index rule; higher-order scheduling/setup excludes a first-order pilot.",
+      "evidence": {
+        "sourceFileSha256": "d49d881fd42b1bbf97e52e1045dab923ea8c899ea27734f1e565f9ac461b3e7f",
+        "source": {
+          "file": "types/rx-lite/index.d.ts",
+          "start": 4655,
+          "line": 144,
+          "column": 9
+        },
+        "enclosing": [
+          {
+            "kind": "InterfaceDeclaration",
+            "name": "IScheduler",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "Rx",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/rx-lite/index.d.ts#L144"
+      }
+    },
+    {
+      "reviewId": "bf2bd27eec4013cd71d6660ea05f705a6cb26c1e6a5e242dc9b95eb7cdfbadd4",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "generateWithRelativeTime distributes TState across initialState and several callback boundaries; multiple-arguments agrees under the occurrence-index rule. Observable<TResult> is not a prepared synchronous runtime recipe.",
+      "evidence": {
+        "sourceFileSha256": "2c87e6b7b0156137f2d91d726d03f7f26984e79c9c1ab985ca1120d001eaf4a4",
+        "source": {
+          "file": "types/rx-lite-time/index.d.ts",
+          "start": 2514,
+          "line": 45,
+          "column": 9
+        },
+        "enclosing": [
+          {
+            "kind": "InterfaceDeclaration",
+            "name": "ObservableStatic",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "Rx",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/rx-lite-time/index.d.ts#L45"
+      }
+    },
+    {
+      "reviewId": "59649bb1b26667238bf5efc1e6b023528536edf3e810ead942982c7e41d60549",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "Observable.reduce carries TAcc negatively in accumulator result and seed; multiple-arguments agrees under the occurrence-index rule. Enclosing T and unknown Observable variance prevent interpreting this as an unconstrained first-order export.",
+      "evidence": {
+        "sourceFileSha256": "c83107db57871a34d2120485cbae16c92261860fafb23bcf1839df77c43aae26",
+        "source": {
+          "file": "types/rx-lite-aggregates/index.d.ts",
+          "start": 374,
+          "line": 10,
+          "column": 9
+        },
+        "enclosing": [
+          {
+            "kind": "InterfaceDeclaration",
+            "name": "Observable",
+            "parameters": [
+              "T"
+            ]
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "Rx",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/rx-lite-aggregates/index.d.ts#L10"
+      }
+    },
+    {
+      "reviewId": "10aa6d9433bd18ab8cbba6c8ad5b285fb892c8ff9d3d46c4aaa99bc42488cb04",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "VError.errorFromList explicitly bounds T by Error. Constrained-generic agrees; union/null/aggregate branches are preserved and no pure container-element contract is assumed.",
+      "evidence": {
+        "sourceFileSha256": "62ba45a86b9a31eb84ea03ae0b9e800a507d980c1f38dcec6528f10078cfdedd",
+        "source": {
+          "file": "types/verror/index.d.ts",
+          "start": 908,
+          "line": 23,
+          "column": 5
+        },
+        "enclosing": [
+          {
+            "kind": "ClassDeclaration",
+            "name": "VError",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/verror/index.d.ts#L23"
+      }
+    },
+    {
+      "reviewId": "d8f4a414c515e63e34ea75268487d59af1f62ee2a3bfa49c65e3c06bdc074912",
+      "status": "ambiguous",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "addAbortSignal explicitly bounds T by stream families, but the HttpDuplex.PassThrough.Readable export chain is not independently established as a docker-modem runtime path. Classification shape is supported; export correspondence is ambiguous.",
+      "evidence": {
+        "sourceFileSha256": "5b26c4dd672d88336bb929787c9bfb55119e80ba89ec6dc923da1c063892843e",
+        "source": {
+          "file": "types/node/stream.d.ts",
+          "start": 69948,
+          "line": 1349,
+          "column": 9
+        },
+        "enclosing": [
+          {
+            "kind": "ModuleDeclaration",
+            "name": "Stream",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "\"node:stream\"",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/node/stream.d.ts#L1349"
+      }
+    },
+    {
+      "reviewId": "a4c036bcb90ea50674cb7746b9d26573a9d3be8fb633ca66486c16ab0b50e2f9",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "flow bounds A by any[] and uses A/R variables across callback boundaries; constrained-generic agrees. Rest/callback forms remain unsupported for a first-order recipe.",
+      "evidence": {
+        "sourceFileSha256": "df996e25faa505f85aeb294d15ebe61b399cf1d1e49959cdfaf2cc0815c203f9",
+        "source": {
+          "file": "types/lodash/common/util.d.ts",
+          "start": 6476,
+          "line": 180,
+          "column": 9
+        },
+        "enclosing": [
+          {
+            "kind": "InterfaceDeclaration",
+            "name": "LoDashStatic",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "\"../index\"",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/lodash/common/util.d.ts#L180"
+      }
+    },
+    {
+      "reviewId": "4b7d1480a163109bada3a5d77cce4a9fee9d59ad302dafad990ad7b5f8f2f971",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "Stream.pipe explicitly bounds T by NodeJS.WritableStream; constrained-generic agrees. Receiver, destination construction and side effects require separate runtime review.",
+      "evidence": {
+        "sourceFileSha256": "5b26c4dd672d88336bb929787c9bfb55119e80ba89ec6dc923da1c063892843e",
+        "source": {
+          "file": "types/node/stream.d.ts",
+          "start": 403,
+          "line": 11,
+          "column": 9
+        },
+        "enclosing": [
+          {
+            "kind": "ClassDeclaration",
+            "name": "Stream",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "\"node:stream\"",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/node/stream.d.ts#L11"
+      }
+    },
+    {
+      "reviewId": "e1700e049d93c9efbf45e016e16033023023a0fd9ccd60f9c53bed656382a652",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "jiff.clone explicitly bounds T by JSONValue and source documentation states deep copying legal JSON. Constrained-generic agrees; preserving a formal type is not preserving reference identity or arbitrary opaque objects.",
+      "evidence": {
+        "sourceFileSha256": "63fdbdab7b16410df103a9f186eddabd6cd853690607ca34c873944c2cab0892",
+        "source": {
+          "file": "types/jiff/index.d.ts",
+          "start": 1472,
+          "line": 39,
+          "column": 5
+        },
+        "enclosing": [],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/jiff/index.d.ts#L39"
+      }
+    },
+    {
+      "reviewId": "10a9ae08c4dde024426fdc50508383e41ecd1bd9e8bd468e8aa8e230c79769c8",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "schedulePeriodicWithState contains a callback (state: TState) => TState, whose parameter flips and result preserves the surrounding negative polarity. Higher-order agrees; timers/scheduler setup are not prepared.",
+      "evidence": {
+        "sourceFileSha256": "d49d881fd42b1bbf97e52e1045dab923ea8c899ea27734f1e565f9ac461b3e7f",
+        "source": {
+          "file": "types/rx-lite/index.d.ts",
+          "start": 5678,
+          "line": 168,
+          "column": 9
+        },
+        "enclosing": [
+          {
+            "kind": "InterfaceDeclaration",
+            "name": "IScheduler",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "Rx",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/rx-lite/index.d.ts#L168"
+      }
+    },
+    {
+      "reviewId": "9506cb9f236d59fe2db1de0fb05b46ba4071764e3a43ddf34b586a95d987364b",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "scheduleRecursiveWithAbsoluteAndState contains nested action continuations; recursive polarity flips support higher-order. Timing, recursive completion and receiver setup still require reviewed recipes.",
+      "evidence": {
+        "sourceFileSha256": "d49d881fd42b1bbf97e52e1045dab923ea8c899ea27734f1e565f9ac461b3e7f",
+        "source": {
+          "file": "types/rx-lite/index.d.ts",
+          "start": 4985,
+          "line": 152,
+          "column": 9
+        },
+        "enclosing": [
+          {
+            "kind": "InterfaceDeclaration",
+            "name": "IScheduler",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "Rx",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/rx-lite/index.d.ts#L152"
+      }
+    },
+    {
+      "reviewId": "564772bb2d039f16069704741a606ce85c714a37036d411135d2d1b15687ca5e",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "readv has a callback returning buffers: TBuffers and direct buffers input. Higher-order agrees with recursive function-boundary polarity. File descriptors, constrained buffer views and async completion remain outside the pilot.",
+      "evidence": {
+        "sourceFileSha256": "9d37b8a9678efbcdf38238b59ce8e6f7db70aba1a516f3a4a671a301dbacfb3d",
+        "source": {
+          "file": "types/node/fs.d.ts",
+          "start": 190828,
+          "line": 4479,
+          "column": 5
+        },
+        "enclosing": [
+          {
+            "kind": "ModuleDeclaration",
+            "name": "\"node:fs\"",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/node/fs.d.ts#L4479"
+      }
+    },
+    {
+      "reviewId": "266366f79db51851ed42512fd8818189f6c0ed53d6fec093470a714c0b2659f5",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "Enumerable.aggregate has a TAccumulate seed and a callback mapping accumulator/item to TAccumulate. Higher-order agrees; enclosing element T and receiver iteration need runtime review.",
+      "evidence": {
+        "sourceFileSha256": "390579f9384d27b4b2ad1b584f391b33478d5ad781a94c72c6ed60302062f499",
+        "source": {
+          "file": "types/multiplexjs/index.d.ts",
+          "start": 54548,
+          "line": 1348,
+          "column": 9
+        },
+        "enclosing": [
+          {
+            "kind": "InterfaceDeclaration",
+            "name": "Enumerable",
+            "parameters": [
+              "T"
+            ]
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "multiplex",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/multiplexjs/index.d.ts#L1348"
+      }
+    },
+    {
+      "reviewId": "2eefc864f9c0fe8f1102349bd4396ca183ebd7960b7d487273aebd498f3c1701",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "contains has a comparer callback involving enclosing T and own TOther. Higher-order agrees even though result Observable<boolean> has unknown variance; it is not an ordinary relational return-value pilot.",
+      "evidence": {
+        "sourceFileSha256": "c83107db57871a34d2120485cbae16c92261860fafb23bcf1839df77c43aae26",
+        "source": {
+          "file": "types/rx-lite-aggregates/index.d.ts",
+          "start": 1080,
+          "line": 25,
+          "column": 9
+        },
+        "enclosing": [
+          {
+            "kind": "InterfaceDeclaration",
+            "name": "Observable",
+            "parameters": [
+              "T"
+            ]
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "Rx",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/rx-lite-aggregates/index.d.ts#L25"
+      }
+    },
+    {
+      "reviewId": "05e1ba5a3faa5df0fb5fea7bd4e0592889340e5ebf13f8e40c40c24d5c1297ee",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "Observable.publish has zero-argument and selector overloads in the neighboring source. Overload-or-discriminated agrees even without an own generic on this particular signature; this does not establish a relational candidate.",
+      "evidence": {
+        "sourceFileSha256": "f2fd176887a12ed680f6e6748044cd7e56785920ff0e612a2ea18fab4c332e78",
+        "source": {
+          "file": "types/rx-core-binding/index.d.ts",
+          "start": 1651,
+          "line": 63,
+          "column": 9
+        },
+        "enclosing": [
+          {
+            "kind": "InterfaceDeclaration",
+            "name": "Observable",
+            "parameters": [
+              "T"
+            ]
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "Rx",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/rx-core-binding/index.d.ts#L63"
+      }
+    },
+    {
+      "reviewId": "77b8e36ec54a1f1fe4d81e1c3a4b57e3da28aba56bb9acb528dbe110bb396a4f",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "Matrix4.makeTranslation has vector and numeric overloads in the neighboring source. Overload-or-discriminated agrees; this return type remains unsupported for sealing.",
+      "evidence": {
+        "sourceFileSha256": "c6edcb1486e08b2fbbd82be383556f395b648aa12eb4b459d79cc1ae761c28c6",
+        "source": {
+          "file": "types/three/src/math/Matrix4.d.ts",
+          "start": 12126,
+          "line": 346,
+          "column": 5
+        },
+        "enclosing": [
+          {
+            "kind": "ClassDeclaration",
+            "name": "Matrix4",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/three/src/math/Matrix4.d.ts#L346"
+      }
+    },
+    {
+      "reviewId": "c9efc096f2afd365b3c129e806de7d98ad534273d3d7827c311cff45f945f8b5",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "Player.width has setter width(number): void and getter width(): number. Overload-or-discriminated agrees; nested player_ reachability does not certify a concrete runtime chain.",
+      "evidence": {
+        "sourceFileSha256": "c6575c2574e63c9e213163468274981299be2c9d4b8b69f5204779eb82369fbb",
+        "source": {
+          "file": "types/video.js/index.d.ts",
+          "start": 231339,
+          "line": 7208,
+          "column": 5
+        },
+        "enclosing": [
+          {
+            "kind": "InterfaceDeclaration",
+            "name": "VideoJsPlayer",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/video.js/index.d.ts#L7208"
+      }
+    },
+    {
+      "reviewId": "8d391f90f9d81081bd0ea542b1bb2d185ba785f629791a3289731396d24b9dc9",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "Buffer.write has encoding/offset/length overloads in the neighboring source. Overload-or-discriminated agrees; the sshpk buffer value/path is not an independently validated package-specific API family.",
+      "evidence": {
+        "sourceFileSha256": "575aa163c4c32e5b82e0e99b1f9f80806e1d78bfa259706e05139251c022277b",
+        "source": {
+          "file": "types/node/buffer.d.ts",
+          "start": 10532,
+          "line": 238,
+          "column": 13
+        },
+        "enclosing": [
+          {
+            "kind": "InterfaceDeclaration",
+            "name": "Buffer",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "global",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "\"node:buffer\"",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/node/buffer.d.ts#L238"
+      }
+    },
+    {
+      "reviewId": "dc9b076e2a8b5e46be1f903d714593ea915e87f004954ea934cd42d45c25682e",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "Writable.end has several neighboring overloads. Overload-or-discriminated agrees; this receiver result and async callback/stream teardown are outside prepared first-order replay.",
+      "evidence": {
+        "sourceFileSha256": "5b26c4dd672d88336bb929787c9bfb55119e80ba89ec6dc923da1c063892843e",
+        "source": {
+          "file": "types/node/stream.d.ts",
+          "start": 50858,
+          "line": 974,
+          "column": 13
+        },
+        "enclosing": [
+          {
+            "kind": "ClassDeclaration",
+            "name": "Writable",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "Stream",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "\"node:stream\"",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/node/stream.d.ts#L974"
+      }
+    },
+    {
+      "reviewId": "a978b8db510941fdea639b60c2617fb2cba2753f6a59d7dc29a2f00c57e2b504",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "Buffer.swap16 has no relational generic and returns this; unsupported agrees. Mutation and receiver identity are not a generic T transport candidate.",
+      "evidence": {
+        "sourceFileSha256": "575aa163c4c32e5b82e0e99b1f9f80806e1d78bfa259706e05139251c022277b",
+        "source": {
+          "file": "types/node/buffer.d.ts",
+          "start": 49523,
+          "line": 1102,
+          "column": 13
+        },
+        "enclosing": [
+          {
+            "kind": "InterfaceDeclaration",
+            "name": "Buffer",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "global",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "\"node:buffer\"",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/node/buffer.d.ts#L1102"
+      }
+    },
+    {
+      "reviewId": "3a5d6d3baea6aedf84b72f05376e48c054954e20e334e7be36c651d4ca869589",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "lodash.reduce List<T> expands through ArrayLike<T>, whose variance is deliberately unknown, and the callback is higher-order. Unsupported agrees; do not silently infer both polarities for the list occurrence.",
+      "evidence": {
+        "sourceFileSha256": "fcf79300e5257a23ed3bacaa6861d7c645139c6f7ece134d15e6669447e5e6db",
+        "source": {
+          "file": "types/lodash/common/collection.d.ts",
+          "start": 51835,
+          "line": 1455,
+          "column": 9
+        },
+        "enclosing": [
+          {
+            "kind": "InterfaceDeclaration",
+            "name": "LoDashStatic",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "\"../index\"",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/lodash/common/collection.d.ts#L1455"
+      }
+    },
+    {
+      "reviewId": "e120340f26d3fe390a82de31e828ea7c193ee1bff4c900d30cef6e483bd6b1df",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "removeLabel has no type parameter and returns any. Unsupported/no-supported-relational-variable agrees; being a public method is not evidence of a generic candidate.",
+      "evidence": {
+        "sourceFileSha256": "a4cb76c6f4b8356d14d6cf5c05e1e3fbc74007b160a00f6511a8c39295f08c42",
+        "source": {
+          "file": "types/blessed/index.d.ts",
+          "start": 53729,
+          "line": 1888,
+          "column": 9
+        },
+        "enclosing": [
+          {
+            "kind": "ClassDeclaration",
+            "name": "BlessedElement",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "Widgets",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/blessed/index.d.ts#L1888"
+      }
+    },
+    {
+      "reviewId": "a79e5dd978db73676c2f1f190845bbade00c053ec0e6fde962f744a83e40e6dc",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "description has no generic and returns string. Unsupported/no-supported-relational-variable agrees; it is a non-generic control.",
+      "evidence": {
+        "sourceFileSha256": "c6575c2574e63c9e213163468274981299be2c9d4b8b69f5204779eb82369fbb",
+        "source": {
+          "file": "types/video.js/index.d.ts",
+          "start": 126682,
+          "line": 3761,
+          "column": 9
+        },
+        "enclosing": [
+          {
+            "kind": "InterfaceDeclaration",
+            "name": "ModalDialog",
+            "parameters": []
+          },
+          {
+            "kind": "ModuleDeclaration",
+            "name": "videojs",
+            "parameters": []
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/video.js/index.d.ts#L3761"
+      }
+    },
+    {
+      "reviewId": "8d9cfdd4260bfd1964903dbf74f3c53b80505a1b38695866d2ad8e5ece63fcd5",
+      "status": "agree",
+      "reviewer": "Codex single-agent source audit (not independent human validation)",
+      "notes": "getOuterBindingIdentifierPaths returns a Record of NodePath identifiers/arrays without a relational own generic in the signature. Record mapped syntax and NodePath variance are outside the supported fragment; unsupported agrees.",
+      "evidence": {
+        "sourceFileSha256": "13b77ab19ef7aadd86a1e54f2f08ea23a6d74e102909e3c00d31f231ed040f62",
+        "source": {
+          "file": "types/babel__traverse/index.d.ts",
+          "start": 27054,
+          "line": 769,
+          "column": 5
+        },
+        "enclosing": [
+          {
+            "kind": "ClassDeclaration",
+            "name": "NodePath",
+            "parameters": [
+              "T = Node"
+            ]
+          }
+        ],
+        "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/babel__traverse/index.d.ts#L769"
+      }
+    }
+  ]
+}

@@ -79,12 +79,13 @@ function analyzeSignature(node, checker, {overloaded = false, kind = 'function'}
   const relational = [...bindings.keys()].filter(name => occurrences.some(row => row.variable === name && row.polarity === 'negative') && occurrences.some(row => row.variable === name && row.polarity === 'positive'));
   const tags = new Set();
   const direct = row => row.route.every(step => step === 'alias' || step === 'union');
+  const outerArray = row => row.route.includes('array') && row.route.every(step => ['alias', 'union', 'array'].includes(step));
   for (const name of relational) {
     const negative = occurrences.filter(row => row.variable === name && row.polarity === 'negative');
     const positive = occurrences.filter(row => row.variable === name && row.polarity === 'positive');
     if (negative.some(direct) && positive.some(direct)) tags.add('identity');
-    if (negative.some(row => row.route.includes('array')) && positive.some(direct)) tags.add('container-element');
-    if (negative.some(direct) && positive.some(row => row.route.includes('array'))) tags.add('value-to-container');
+    if (negative.some(outerArray) && positive.some(direct)) tags.add('container-element');
+    if (negative.some(direct) && positive.some(outerArray)) tags.add('value-to-container');
     if (new Set(negative.map(row => row.argument).filter(index => index !== null)).size > 1) tags.add('multiple-arguments');
     if (bindings.get(name).constraint) tags.add('constrained-generic');
     if ([...negative, ...positive].some(row => row.route.some(step => step.startsWith('function-')))) tags.add('higher-order');

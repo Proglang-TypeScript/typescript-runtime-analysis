@@ -64,7 +64,19 @@ function aggregate(directory) {
   fs.writeFileSync(path.join(directory, 'summary.csv'), 'metric,count\n' + Object.entries(summary.counts).filter(([, value]) => typeof value === 'number').map(([name, value]) => `${name},${value}`).join('\n') + '\n' + Object.entries(summary.counts.classes).map(([name, value]) => `${name},${value}`).join('\n') + '\n');
   return summary;
 }
-function run({arguments: runArgs = args, inspectSnapshot = inspect, extractWorker = (root, name) => spawnSync(process.execPath, ['--max-old-space-size=1024', __filename, 'extract', root, name], {encoding: 'utf8', timeout: 120000, maxBuffer: 64 * 1024 * 1024, env: {PATH: process.env.PATH, TZ: 'UTC'}}), now = () => performance.now()} = {}) {
+function extractWorker(root, name, directory) {
+  const file = path.join(directory, 'packages', name + '.worker.json');
+  try {
+    const result = spawnSync(process.execPath, ['--max-old-space-size=1024', __filename, 'extract', root, name, file], {encoding: 'utf8', timeout: 120000, maxBuffer: 1024 * 1024, env: {PATH: process.env.PATH, TZ: 'UTC'}});
+    if (result.status === 0 && !result.error) {
+      if (fs.statSync(file).size > 256 * 1024 * 1024) throw new Error('Worker shard exceeds the explicit 256 MB file limit');
+      result.stdout = fs.readFileSync(file, 'utf8');
+    }
+    return result;
+  } catch (error) {return {status: 1, error};}
+  finally {fs.rmSync(file, {force: true});}
+}
+function run({arguments: runArgs = args, inspectSnapshot = inspect, extractWorker: worker = extractWorker, now = () => performance.now()} = {}) {
   const started = now();
   const option = (name, fallback) => {const index = runArgs.indexOf('--' + name); return index < 0 ? fallback : runArgs[index + 1];};
   const hours = timeLimitHours(runArgs.includes('--time-limit-hours') ? option('time-limit-hours', null) ?? null : undefined);
@@ -80,7 +92,7 @@ function run({arguments: runArgs = args, inspectSnapshot = inspect, extractWorke
   const identity = hash(JSON.stringify({provenance, selection, compiler, implementation: implementationHash(), reviewSize, seed: 0}));
   if (fs.existsSync(directory) && fs.readdirSync(directory).length) {
     if (!runArgs.includes('--resume') || read(path.join(directory, 'run.json')).identity !== identity) throw new Error('Existing output is not this exact census; use --resume or a fresh directory');
-  } else {fs.mkdirSync(path.join(directory, 'packages'), {recursive: true}); write(directory, 'run.json', {schemaVersion: 1, identity, provenance, selection, compiler, implementation: implementationHash(), seed: 0, reviewSize, command: process.argv.slice(2), workerLimits: {heapMb: 1024, timeoutMs: 120000, outputBytes: 64 * 1024 * 1024}});}
+  } else {fs.mkdirSync(path.join(directory, 'packages'), {recursive: true}); write(directory, 'run.json', {schemaVersion: 1, identity, provenance, selection, compiler, implementation: implementationHash(), seed: 0, reviewSize, command: process.argv.slice(2), workerLimits: {heapMb: 1024, timeoutMs: 120000, outputBytes: 256 * 1024 * 1024, transport: 'temporary-file', logBytes: 1024 * 1024}});}
   const processed = [];
   const successful = [];
   const failures = [];
@@ -98,7 +110,7 @@ function run({arguments: runArgs = args, inspectSnapshot = inspect, extractWorke
     let data;
     if (cached?.package.status.startsWith('extracted')) data = cached;
     else {
-      const result = extractWorker(root, name);
+      const result = worker(root, name, directory);
       try {if (result.status !== 0 || result.error) throw result.error || new Error(result.stderr); data = JSON.parse(result.stdout); if (!validate({schemaVersion: 1, identity, ...data})) throw new Error('Invalid worker census shard');}
       catch (error) {data = {package: {directory: name, status: 'extraction-failed', runtimeAvailability: 'not-assessed', runtimeExecution: 'not-assessed', failure: result.error?.code || 'WORKER_FAILURE', diagnostics: [String(error.message).slice(0, 2000)]}, rows: []};}
       write(path.dirname(file), path.basename(file), {schemaVersion: 1, identity, ...data});
@@ -124,7 +136,13 @@ if (require.main === module) {
   try {
     if (command === 'prepare') console.log(JSON.stringify(prepare(option('out', 'work/definitelytyped'), args.includes('--smoke')), null, 2));
     else if (command === 'run') run();
-    else if (command === 'extract') process.stdout.write(JSON.stringify(analyzePackage(args[0], args[1])));
+    else if (command === 'extract') {
+      const data = JSON.stringify(analyzePackage(args[0], args[1]));
+      if (args[2]) {
+        if (Buffer.byteLength(data) > 256 * 1024 * 1024) throw new Error('Worker shard exceeds the explicit 256 MB file limit');
+        fs.writeFileSync(args[2], data);
+      } else process.stdout.write(data);
+    }
     else if (command === 'aggregate') console.log(JSON.stringify(aggregate(path.resolve(option('out', 'work/census'))).counts, null, 2));
     else if (command === 'review') {
       const directory = path.resolve(option('out', 'work/census'));
@@ -153,4 +171,4 @@ if (require.main === module) {
     } else throw new Error('Expected prepare, run, aggregate, review or runtime');
   } catch (error) {console.error(error.message); process.exitCode = 1;}
 }
-module.exports = {aggregate, implementationHash, run, timeLimitHours};
+module.exports = {aggregate, implementationHash, run, timeLimitHours, extractWorker};

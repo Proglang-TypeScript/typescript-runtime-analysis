@@ -1,0 +1,5 @@
+{
+  "node": "v24.21.0",
+  "stdout": "CENSUS_PILOT_RESULT={\"package\":\"transducers-js\",\"version\":\"0.4.174\",\"outcome\":\"returned\",\"calls\":[{\"export\":\"identity\",\"cases\":[\"object-reference\",\"number\",\"null\"],\"assertionsPassed\":3}]}\n",
+  "durationLimitMs": 30000
+}

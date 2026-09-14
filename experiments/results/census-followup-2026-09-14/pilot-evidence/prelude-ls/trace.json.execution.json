@@ -1,0 +1,5 @@
+{
+  "node": "v24.21.0",
+  "stdout": "CENSUS_PILOT_RESULT={\"package\":\"prelude-ls\",\"version\":\"1.1.2\",\"outcome\":\"returned\",\"calls\":[{\"export\":\"id\",\"cases\":[\"object-reference\",\"number\"],\"assertionsPassed\":2},{\"export\":\"head\",\"cases\":[\"nonempty-object-array\",\"nonempty-number-array\"],\"assertionsPassed\":2,\"boundaryObservation\":\"head([]) returns undefined although the declaration result is A; nonempty precondition required for selected recipe\"},{\"export\":\"reverse\",\"cases\":[\"object-array-element-references\",\"empty-array\"],\"assertionsPassed\":4}]}\n",
+  "durationLimitMs": 30000
+}

@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "started": "2026-09-14T17:52:51.223Z",
+  "package": {
+    "name": "transducers-js",
+    "version": "0.4.174",
+    "integrity": "sha512-MwhBNx6TDMrS/pfCa24YzCfC1+W3LcFC0YoF5XNpuZC1pEjuGLP2B0iMt/bYO3rnClhd3dN3c3Ko4+JhOBLoLw=="
+  },
+  "isolationProfile": "run-isolated-v1",
+  "command": [
+    "/Users/thiemann/Documents/Codex/2026-09-14/referenced-chatgpt-conversation-this-is-an/work/runtime/node-v24.21.0-darwin-arm64/bin/node",
+    "/Users/thiemann/git/typescript/typescript-runtime-analysis/scripts/run-isolated.cjs",
+    "/Users/thiemann/git/typescript/typescript-runtime-analysis/work/phase2-pilots/transducers-js",
+    "pilot.cjs",
+    "/Users/thiemann/git/typescript/typescript-runtime-analysis/work/phase2-pilot-execution/transducers-js"
+  ],
+  "containerImage": "node@sha256:2fe369e969550cde8e867afc3fe370b260140cab4a23d467074295b42163d553",
+  "runnerExitCode": 0,
+  "error": null,
+  "stdout": "",
+  "stderr": "",
+  "sourcesUnchanged": true,
+  "sourceInventory": [
+    {
+      "file": "dependency-audit.json",
+      "sha256": "846fc260eb0bf70e6b21419d4cab9fcc61c224c7362324d4cbc8aebf8355f9bd"
+    },
+    {
+      "file": "node_modules/.package-lock.json",
+      "sha256": "d3621255f6c411eaab9ae49a8cfbc0a89075c57cf0844aaec6f0e4d7b004c01b"
+    },
+    {
+      "file": "node_modules/transducers-js/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "file": "node_modules/transducers-js/package.json",
+      "sha256": "35df24a2179e158715e174be1c4f0fcc7eae9d300da5840bd13f2142a98a5ec7"
+    },
+    {
+      "file": "node_modules/transducers-js/README.md",
+      "sha256": "c1af71346f2bbcb7983d61e8b369dd8af703babc1a5e6a3fc4eb8e184b02168f"
+    },
+    {
+      "file": "node_modules/transducers-js/src/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "node_modules/transducers-js/src/com/cognitect/transducers_amd.js",
+      "sha256": "973742e199a3d56f8266a9a2b15025ec608c4db1f47636afb62cf5245d96bd02"
+    },
+    {
+      "file": "node_modules/transducers-js/src/com/cognitect/transducers.js",
+      "sha256": "fcd50c03fab756ff0fdd960bb9d7ec7c8b19cfa7f402667b4a306f3b191439a9"
+    },
+    {
+      "file": "node_modules/transducers-js/transducers.js",
+      "sha256": "eb3e3f8288c89b5e22cb945658d3b0a190b7adb10718da8d8e3f8c705f32036d"
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "e62f2e2682932fa1838f6e1320aba16c1617c0d51e925e6b9b3f97768d1faabf"
+    },
+    {
+      "file": "package.json",
+      "sha256": "c68cbe9382166a6e33ab6738eb654eac11ba4c8c6ba86b400a9aa4373739ed38"
+    },
+    {
+      "file": "pilot.cjs",
+      "sha256": "8116d0d2eb55fc2deeda21c8f276d133e2b4e519b36d7ffd657dd235831510bf"
+    },
+    {
+      "file": "preparation.json",
+      "sha256": "70d234f3fc00c11b06015ccca8e79305cb856a496d34d9971939fc5507c4120d"
+    }
+  ],
+  "traceExecutionSha256": "552272271639c49c9d1fd8dc3af25e0789cff28a159745c840e3f37dd36345a7",
+  "observedOutcome": "returned",
+  "observations": {
+    "package": "transducers-js",
+    "version": "0.4.174",
+    "outcome": "returned",
+    "calls": [
+      {
+        "export": "identity",
+        "cases": [
+          "object-reference",
+          "number",
+          "null"
+        ],
+        "assertionsPassed": 3
+      }
+    ]
+  },
+  "basis": "Actual ordinary calls with finite explicit assertions in the existing network-disabled container runner. Dependencies execute uninstrumented from node_modules; trace provenance names the first-party client wrapper, while package versions and locks identify the external callee. This is not active sealing or universal parametricity proof."
+}

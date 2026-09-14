@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "started": "2026-09-14T17:52:50.874Z",
+  "package": {
+    "name": "prelude-ls",
+    "version": "1.1.2",
+    "integrity": "sha512-ESF23V4SKG6lVSGZgYNpbsiaAkdab6ZgOxe52p7+Kid3W3u3bxR4Vfd/o21dmN7jSt0IwgZ4v5MUd26FEtXE9w=="
+  },
+  "isolationProfile": "run-isolated-v1",
+  "command": [
+    "/Users/thiemann/Documents/Codex/2026-09-14/referenced-chatgpt-conversation-this-is-an/work/runtime/node-v24.21.0-darwin-arm64/bin/node",
+    "/Users/thiemann/git/typescript/typescript-runtime-analysis/scripts/run-isolated.cjs",
+    "/Users/thiemann/git/typescript/typescript-runtime-analysis/work/phase2-pilots/prelude-ls",
+    "pilot.cjs",
+    "/Users/thiemann/git/typescript/typescript-runtime-analysis/work/phase2-pilot-execution/prelude-ls"
+  ],
+  "containerImage": "node@sha256:2fe369e969550cde8e867afc3fe370b260140cab4a23d467074295b42163d553",
+  "runnerExitCode": 0,
+  "error": null,
+  "stdout": "",
+  "stderr": "",
+  "sourcesUnchanged": true,
+  "sourceInventory": [
+    {
+      "file": "dependency-audit.json",
+      "sha256": "846fc260eb0bf70e6b21419d4cab9fcc61c224c7362324d4cbc8aebf8355f9bd"
+    },
+    {
+      "file": "node_modules/.package-lock.json",
+      "sha256": "4125626a2f0d075b06fbd871bb111978dd8947352a74094e9085ecb563969046"
+    },
+    {
+      "file": "node_modules/prelude-ls/CHANGELOG.md",
+      "sha256": "f66ef7032103a611c85aaad4d9cbdfec8cae99581010ab831dbfb2005e31d4f9"
+    },
+    {
+      "file": "node_modules/prelude-ls/lib/Func.js",
+      "sha256": "8404f67c761acc6245d7fddbff21d0f9103bd9258531a5a530bca2dad211b6ea"
+    },
+    {
+      "file": "node_modules/prelude-ls/lib/index.js",
+      "sha256": "f37cd1cd235875af8522b5db82ca627caf6aa5bae059b0634db3b870f9ea3202"
+    },
+    {
+      "file": "node_modules/prelude-ls/lib/List.js",
+      "sha256": "818ceab728da74d6efcfcd7a2201b581c3006325cccca706355d899d0e8c5172"
+    },
+    {
+      "file": "node_modules/prelude-ls/lib/Num.js",
+      "sha256": "3f53901fd326725bbd65228e4d7a309396c7be8a652f2c61eb37fcb4461ac692"
+    },
+    {
+      "file": "node_modules/prelude-ls/lib/Obj.js",
+      "sha256": "476415e8724b7d2001a851ad445257e6824f06eed42924a1f17d199a195d8731"
+    },
+    {
+      "file": "node_modules/prelude-ls/lib/Str.js",
+      "sha256": "be9d8199dff1a8e575ab1562cc4c286a81f56b90b8db50e41641a7bd10e2b167"
+    },
+    {
+      "file": "node_modules/prelude-ls/LICENSE",
+      "sha256": "b9eb082c39fe245e38793699074c394c43a722c51fce031c3c165cb92a31035c"
+    },
+    {
+      "file": "node_modules/prelude-ls/package.json",
+      "sha256": "c2a1312722412d288eb76011cd71ef0ac6f33d230f3ee52319be72dad5b0d167"
+    },
+    {
+      "file": "node_modules/prelude-ls/README.md",
+      "sha256": "22e826aa1a63821df6e369012401a79ee5b0952cc0320fcede801d6fdf50ea67"
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "9f1c6717f53b366fc9c107fdb95b433855e177982c2c9599a083bfb2750f18d8"
+    },
+    {
+      "file": "package.json",
+      "sha256": "9bc9520189cbb942d84c0905457dcf78bec8a0ddeca1af2f52154e8708f1455d"
+    },
+    {
+      "file": "pilot.cjs",
+      "sha256": "f28f29b0abddab23b8403d71c9e098e900f702c41483c6145473a0dade372541"
+    },
+    {
+      "file": "preparation.json",
+      "sha256": "69f86f283a73e05ec97766f8f510f847f494985d814b0467e08d15523d27b048"
+    }
+  ],
+  "traceExecutionSha256": "f5bea4cdda4a5d37e16580a23862f70903197528c240082b8c85847f4be36d1d",
+  "observedOutcome": "returned",
+  "observations": {
+    "package": "prelude-ls",
+    "version": "1.1.2",
+    "outcome": "returned",
+    "calls": [
+      {
+        "export": "id",
+        "cases": [
+          "object-reference",
+          "number"
+        ],
+        "assertionsPassed": 2
+      },
+      {
+        "export": "head",
+        "cases": [
+          "nonempty-object-array",
+          "nonempty-number-array"
+        ],
+        "assertionsPassed": 2,
+        "boundaryObservation": "head([]) returns undefined although the declaration result is A; nonempty precondition required for selected recipe"
+      },
+      {
+        "export": "reverse",
+        "cases": [
+          "object-array-element-references",
+          "empty-array"
+        ],
+        "assertionsPassed": 4
+      }
+    ]
+  },
+  "basis": "Actual ordinary calls with finite explicit assertions in the existing network-disabled container runner. Dependencies execute uninstrumented from node_modules; trace provenance names the first-party client wrapper, while package versions and locks identify the external callee. This is not active sealing or universal parametricity proof."
+}

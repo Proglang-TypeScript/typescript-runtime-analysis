@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "provenance": {
+    "package": "tra-pilot-prelude-ls",
+    "version": "0.0.0",
+    "repository": "local-fixture",
+    "commit": "uncommitted-fixture",
+    "evidence": "test",
+    "entryPoint": "pilot.cjs",
+    "publicModule": "module",
+    "backend": "jalangi2",
+    "backendVersion": "bc879287b1678de6e3c423f5debe63207559525b",
+    "executionId": "37909599ae857830cc477ec3"
+  },
+  "observations": [],
+  "operators": [
+    {
+      "operator": "+",
+      "source": {
+        "file": "pilot.cjs",
+        "line": 17,
+        "column": 13
+      },
+      "leftType": "string",
+      "rightType": "string",
+      "executionId": "37909599ae857830cc477ec3",
+      "order": 0
+    }
+  ]
+}

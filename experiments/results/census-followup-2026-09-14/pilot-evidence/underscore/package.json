@@ -1,0 +1,8 @@
+{
+  "name": "tra-pilot-underscore",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "underscore": "1.13.8"
+  }
+}

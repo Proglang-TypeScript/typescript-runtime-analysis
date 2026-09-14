@@ -1,0 +1,11 @@
+var assert = require('node:assert/strict');
+var metadata = require('underscore/package.json');
+var library = require('underscore');
+assert.equal(metadata.version, '1.13.8');
+var value = {label: 'pilot-object'};
+var array = [value, 7];
+assert.equal(library.identity(value), value);
+assert.equal(library.identity(array), array);
+assert.equal(library.identity(7), 7);
+assert.equal(library.identity(null), null);
+console.log('CENSUS_PILOT_RESULT=' + JSON.stringify({package: 'underscore', version: metadata.version, outcome: 'returned', calls: [{export: 'identity', cases: ['object-reference', 'array-reference', 'number', 'null'], assertionsPassed: 4}]}));

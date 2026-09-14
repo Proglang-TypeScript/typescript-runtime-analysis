@@ -1,0 +1,67 @@
+{
+  "records": [
+    {
+      "reviewId": "9e477b353706bd82d70720d036f2ce0a89ef04fbbf846fb5857f4557bb1628b5",
+      "package": "angular",
+      "source": {
+        "file": "types/angular/index.d.ts",
+        "start": 112926,
+        "line": 2452,
+        "column": 13
+      },
+      "baselineCategory": "container-element",
+      "repairedClasses": [
+        "higher-order"
+      ]
+    },
+    {
+      "reviewId": "17d7ce8ccdc6e92a985afc722295da941941d7645c73462ab3810ffbc9ebd558",
+      "package": "winjs",
+      "source": {
+        "file": "types/winjs/index.d.ts",
+        "start": 32851,
+        "line": 626,
+        "column": 9
+      },
+      "baselineCategory": "value-to-container",
+      "repairedClasses": [
+        "identity",
+        "multiple-arguments",
+        "higher-order"
+      ]
+    },
+    {
+      "reviewId": "87ecfd975bb4c79860245bf1d04766421a8559642a428752c187a637589d0b63",
+      "package": "jquery",
+      "source": {
+        "file": "types/jquery/JQueryStatic.d.ts",
+        "start": 424134,
+        "line": 13290,
+        "column": 5
+      },
+      "baselineCategory": "value-to-container",
+      "repairedClasses": [
+        "constrained-generic",
+        "higher-order",
+        "unsupported"
+      ]
+    },
+    {
+      "reviewId": "6f445b09055276f0f9f1c2d88c28fbeccafca67741f05f7962a778ded9bc884e",
+      "package": "winjs",
+      "source": {
+        "file": "types/winjs/index.d.ts",
+        "start": 447408,
+        "line": 10091,
+        "column": 9
+      },
+      "baselineCategory": "value-to-container",
+      "repairedClasses": [
+        "identity",
+        "multiple-arguments",
+        "higher-order",
+        "overload-or-discriminated"
+      ]
+    }
+  ]
+}

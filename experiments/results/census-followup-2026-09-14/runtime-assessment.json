@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "censusIdentity": "8235039d24e334ab26863f6a87cb8f828ff91f75dbfbe01bcf9d2a9cd4f7dcf0",
+  "counts": {
+    "reviewed-loaded-and-exercised": 5,
+    "load-failed": 0,
+    "exercise-failed": 0,
+    "unsupported": 0,
+    "not-assessed": 894009
+  },
+  "verifiedExecutableExports": 5,
+  "nominalRuntimePackagesWithVerifiedExports": 3,
+  "basis": "Review-attested execution; identity, artifact hashes and catalogue binding checked. Isolation/result claims still require source/receipt inspection, not automatic proof. Package-family independence is not established."
+}

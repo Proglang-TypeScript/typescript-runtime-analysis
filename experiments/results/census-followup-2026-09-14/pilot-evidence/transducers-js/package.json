@@ -1,0 +1,8 @@
+{
+  "name": "tra-pilot-transducers-js",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "transducers-js": "0.4.174"
+  }
+}

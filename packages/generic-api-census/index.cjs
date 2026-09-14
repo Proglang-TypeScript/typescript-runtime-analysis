@@ -105,11 +105,15 @@ function analyzePackage(root, directory, entryOption) {
       if (depth < 2 && !checker.getSignaturesOfType(memberType, ts.SignatureKind.Call).length && memberType.flags & ts.TypeFlags.Object) members(memberType, memberPath, runtimeBinding, depth + 1);
     }
   }
-  function walk(symbol, exportPath, rootExpression, inheritedBinding) {
+  function walk(symbol, exportPath, rootExpression, inheritedBinding, ancestors = new Set()) {
     if (++visitedExports > 100000) throw new Error(`Export traversal budget exceeded: ${directory}`);
     const typeOnlyAlias = (symbol.declarations || []).some(node => ts.isExportSpecifier(node) && (node.isTypeOnly || node.parent.parent.isTypeOnly));
     if (symbol.flags & ts.SymbolFlags.Alias) symbol = checker.getAliasedSymbol(symbol);
-    const key = exportPath.join('.') + ':' + symbol.name + ':' + symbol.declarations?.[0]?.pos;
+    if (ancestors.has(symbol)) {
+      packageRecord.exclusions.push({reason: 'recursive-namespace-alias', exportPath, moduleSpecifier});
+      return;
+    }
+    const key = moduleSpecifier + ':' + exportPath.join('.') + ':' + symbol.name + ':' + symbol.declarations?.[0]?.pos;
     if (seen.has(key)) return;
     if (exportPath.length > 16) throw new Error(`Namespace traversal depth exceeded: ${directory}`);
     seen.add(key);
@@ -129,7 +133,10 @@ function analyzePackage(root, directory, entryOption) {
       members(instance, exportPath, symbol.flags & ts.SymbolFlags.Class && binding !== 'type-only' ? 'instance' : 'type-only', 0);
     }
     if (symbol.flags & ts.SymbolFlags.Value && (!(symbol.flags & ts.SymbolFlags.Module) || rootExpression && valueType.symbol !== symbol)) members(valueType, exportPath, binding, 0);
-    if (symbol.flags & ts.SymbolFlags.Module) for (const child of checker.getExportsOfModule(symbol)) walk(child, [...exportPath, child.name], null, binding);
+    if (symbol.flags & ts.SymbolFlags.Module) {
+      const nested = new Set([...ancestors, symbol]);
+      for (const child of checker.getExportsOfModule(symbol)) walk(child, [...exportPath, child.name], null, binding, nested);
+    }
   }
   const exportEquals = source.statements.find(statement => ts.isExportAssignment(statement) && statement.isExportEquals);
   if (exportEquals) {

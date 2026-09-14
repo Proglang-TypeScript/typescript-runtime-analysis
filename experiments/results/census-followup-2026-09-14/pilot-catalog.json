@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "identity": "85c4765d7f3457a86328cdc3cadd107f671148161808bd4c51daf1fef605a8de",
+  "censusIdentity": "8235039d24e334ab26863f6a87cb8f828ff91f75dbfbe01bcf9d2a9cd4f7dcf0",
+  "implementation": "4d84d8e2da4e8263071e21531885abf47c1642a535c9fe9fbcbabf3a082acb61",
+  "node": "v24.21.0",
+  "provenance": {
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+    "commit": "455254aa7204192e7f7fbe50266d2313cefdf6c9",
+    "scope": "full",
+    "pinnedCorpusPackages": 8680
+  },
+  "registry": "https://registry.npmjs.org",
+  "queriedOn": "2026-09-14T17:47:53.411Z",
+  "entries": [
+    {
+      "directory": "prelude-ls",
+      "declarationVersion": "1.1.9999",
+      "matchingPolicy": "latest-stable-in-declaration-major-minor-line",
+      "name": "prelude-ls",
+      "version": "1.1.2",
+      "tarball": "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.1.2.tgz",
+      "integrity": "sha512-ESF23V4SKG6lVSGZgYNpbsiaAkdab6ZgOxe52p7+Kid3W3u3bxR4Vfd/o21dmN7jSt0IwgZ4v5MUd26FEtXE9w==",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/gkz/prelude-ls.git"
+      },
+      "sourceCommit": "d69be8fd8a682321ba24eced17caf3a1b8ca73b8",
+      "status": "metadata-available",
+      "runtimeExecution": "not-assessed"
+    },
+    {
+      "directory": "transducers-js",
+      "declarationVersion": "0.4.9999",
+      "matchingPolicy": "latest-stable-in-declaration-major-minor-line",
+      "name": "transducers-js",
+      "version": "0.4.174",
+      "tarball": "https://registry.npmjs.org/transducers-js/-/transducers-js-0.4.174.tgz",
+      "integrity": "sha512-MwhBNx6TDMrS/pfCa24YzCfC1+W3LcFC0YoF5XNpuZC1pEjuGLP2B0iMt/bYO3rnClhd3dN3c3Ko4+JhOBLoLw==",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/cognitect/npm-transducers-js.git"
+      },
+      "sourceCommit": "1e0d3fa425987b9a02a34142b135e5a03a5ccb30",
+      "status": "metadata-available",
+      "runtimeExecution": "not-assessed"
+    },
+    {
+      "directory": "underscore",
+      "declarationVersion": "1.13.9999",
+      "matchingPolicy": "latest-stable-in-declaration-major-minor-line",
+      "name": "underscore",
+      "version": "1.13.8",
+      "tarball": "https://registry.npmjs.org/underscore/-/underscore-1.13.8.tgz",
+      "integrity": "sha512-DXtD3ZtEQzc7M8m4cXotyHR+FAS18C64asBYY5vqZexfYryNNnDc02W4hKg3rdQuqOYas1jkseX0+nZXjTXnvQ==",
+      "repository": {
+        "url": "git://github.com/jashkenas/underscore.git",
+        "type": "git"
+      },
+      "sourceCommit": "4a4019e00beb2c42eda20c05f375a35983b748f0",
+      "status": "metadata-available",
+      "runtimeExecution": "not-assessed"
+    }
+  ],
+  "counts": {
+    "selectedDeclarationPackages": 3,
+    "obtainableRuntimePackages": 3,
+    "verifiedExecutableExports": 0,
+    "runtimeAssessment": "not-assessed"
+  },
+  "scope": "Metadata only: no tarballs downloaded, lifecycle scripts run, packages installed or exports executed"
+}

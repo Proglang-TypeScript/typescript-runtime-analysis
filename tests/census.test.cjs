@@ -7,7 +7,7 @@ const ts = require('typescript');
 const Ajv = require('ajv');
 const {analyzeSignature, analyzePackage, census, summarize, entryPoints} = require('../packages/generic-api-census/index.cjs');
 const {sample, assess} = require('../packages/generic-api-census/review.cjs');
-const {aggregate, run, timeLimitHours} = require('../scripts/census.cjs');
+const {aggregate, run, timeLimitHours, extractWorker} = require('../scripts/census.cjs');
 const {selectVersion, selector, verifyMetadata} = require('../packages/generic-api-census/availability.cjs');
 const {assessRuntime} = require('../packages/generic-api-census/runtime-assessment.cjs');
 const classify = text => analyzeSignature(ts.createSourceFile('fixture.d.ts', text, ts.ScriptTarget.Latest, true).statements[0]);
@@ -76,6 +76,17 @@ test('unknown variance and complex types are unknown, not fabricated bipolar evi
   assert.ok(unknown.occurrences.some(row => row.polarity === 'unknown'));
   assert.equal(classify('declare function get<T>(value:keyof T):T;').bothPolarities, false);
   assert.ok(classify('declare function get<T>(value:T):T extends string ? T : never;').classes.includes('unsupported'));
+});
+test('container transport classes do not mistake nested callback array positions for outer containers', () => {
+  const reducer = classify('declare function reduce<T>(fn:(array:T[])=>T, initial:T):T;');
+  assert.ok(reducer.classes.includes('higher-order'));
+  assert.ok(!reducer.classes.includes('value-to-container'));
+  const invoke = classify('declare function invoke<T>(functions:Array<()=>T>):T;');
+  assert.ok(invoke.classes.includes('higher-order'));
+  assert.ok(!invoke.classes.includes('container-element'));
+  const queue = classify('declare function queue<T>(value:T,callbacks:Array<(element:T)=>void>):void;');
+  assert.ok(queue.classes.includes('higher-order'));
+  assert.ok(!queue.classes.includes('value-to-container'));
 });
 test('export extraction includes callable types, public methods, constructors and nested aliases', () => {
   const result = analyzePackage(directory, 'demo');
@@ -225,6 +236,36 @@ test('time limit accepts fractional hours and rejects missing, zero, negative an
   assert.equal(timeLimitHours('0.5'), 0.5);
   for (const value of [null, '', ' ', '0', '-1', 'NaN', 'Infinity', '1e308', '--resume']) assert.throws(() => timeLimitHours(value), /finite positive/);
   assert.throws(() => run({arguments: ['--time-limit-hours']}), /finite positive/);
+});
+test('recursive namespace aliases stop at their cycle while independent public aliases survive', () => {
+  fs.mkdirSync(path.join(directory, 'types/recursive'), {recursive: true});
+  fs.writeFileSync(path.join(directory, 'types/recursive/index.d.ts'), 'export namespace api { export function id<T>(value:T):T; export import self = api; } export import other = api;');
+  const result = analyzePackage(directory, 'recursive');
+  assert.ok(result.rows.some(row => row.exportPath.join('.') === 'api.id'));
+  assert.ok(result.rows.some(row => row.exportPath.join('.') === 'other.id'));
+  assert.ok(!result.rows.some(row => row.exportPath.includes('self')));
+  assert.ok(result.package.exclusions.some(row => row.reason === 'recursive-namespace-alias'));
+});
+test('same-named ambient exports at equal source offsets remain distinct across module specifiers', () => {
+  fs.mkdirSync(path.join(directory, 'types/ambient-collision'), {recursive: true});
+  fs.writeFileSync(path.join(directory, 'types/ambient-collision/index.d.ts'), '/// <reference path="first.d.ts" />\n/// <reference path="other.d.ts" />\n');
+  fs.writeFileSync(path.join(directory, 'types/ambient-collision/first.d.ts'), 'declare module "first" { export function id<T>(value:T):T; }');
+  fs.writeFileSync(path.join(directory, 'types/ambient-collision/other.d.ts'), 'declare module "other" { export function id<T>(value:T):T; }');
+  const result = analyzePackage(directory, 'ambient-collision');
+  assert.equal(result.rows.length, 2);
+  assert.deepEqual(result.rows.map(row => row.moduleSpecifier).sort(), ['first', 'other']);
+});
+test('file-backed worker extraction retains schema data and cleans temporary output on success and failure', context => {
+  const output = fs.mkdtempSync(path.join(os.tmpdir(), 'tra-file-worker-'));
+  context.after(() => fs.rmSync(output, {recursive: true, force: true}));
+  fs.mkdirSync(path.join(output, 'packages'));
+  const result = extractWorker(directory, 'demo', output);
+  assert.equal(result.status, 0, result.stderr);
+  assert.deepEqual(JSON.parse(result.stdout), analyzePackage(directory, 'demo'));
+  assert.equal(fs.existsSync(path.join(output, 'packages/demo.worker.json')), false);
+  const failed = extractWorker(directory, 'demo', path.join(output, 'missing'));
+  assert.notEqual(failed.status, 0);
+  assert.equal(fs.existsSync(path.join(output, 'packages/demo.worker.json')), false);
 });
 test('timed census saves a complete shard, then resumes with a different budget and identical final results', context => {
   const workspace = fs.mkdtempSync(path.join(os.tmpdir(), 'tra-timed-'));

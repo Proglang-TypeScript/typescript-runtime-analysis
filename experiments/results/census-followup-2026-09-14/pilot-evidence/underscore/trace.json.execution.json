@@ -1,0 +1,5 @@
+{
+  "node": "v24.21.0",
+  "stdout": "CENSUS_PILOT_RESULT={\"package\":\"underscore\",\"version\":\"1.13.8\",\"outcome\":\"returned\",\"calls\":[{\"export\":\"identity\",\"cases\":[\"object-reference\",\"array-reference\",\"number\",\"null\"],\"assertionsPassed\":4}]}\n",
+  "durationLimitMs": 30000
+}

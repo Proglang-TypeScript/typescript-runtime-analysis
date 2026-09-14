@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "identity": "8235039d24e334ab26863f6a87cb8f828ff91f75dbfbe01bcf9d2a9cd4f7dcf0",
+  "counts": {
+    "pending": 0,
+    "agree": 31,
+    "false-classification": 4,
+    "ambiguous": 5,
+    "excluded": 0
+  }
+}

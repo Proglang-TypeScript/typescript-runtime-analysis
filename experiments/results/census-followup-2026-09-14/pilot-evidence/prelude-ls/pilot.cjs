@@ -1,0 +1,17 @@
+var assert = require('node:assert/strict');
+var metadata = require('prelude-ls/package.json');
+var library = require('prelude-ls');
+assert.equal(metadata.version, '1.1.2');
+var first = {label: 'first'};
+var second = {label: 'second'};
+assert.equal(library.id(first), first);
+assert.equal(library.id(7), 7);
+assert.equal(library.head([first, second]), first);
+assert.equal(library.head([7, 9]), 7);
+var reversed = library.reverse([first, second]);
+assert.equal(reversed.length, 2);
+assert.equal(reversed[0], second);
+assert.equal(reversed[1], first);
+assert.deepEqual(library.reverse([]), []);
+assert.equal(library.head([]), undefined);
+console.log('CENSUS_PILOT_RESULT=' + JSON.stringify({package: 'prelude-ls', version: metadata.version, outcome: 'returned', calls: [{export: 'id', cases: ['object-reference', 'number'], assertionsPassed: 2}, {export: 'head', cases: ['nonempty-object-array', 'nonempty-number-array'], assertionsPassed: 2, boundaryObservation: 'head([]) returns undefined although the declaration result is A; nonempty precondition required for selected recipe'}, {export: 'reverse', cases: ['object-array-element-references', 'empty-array'], assertionsPassed: 4}]}));

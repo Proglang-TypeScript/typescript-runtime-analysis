@@ -1,0 +1,331 @@
+{
+  "baselineIdentity": "8235039d24e334ab26863f6a87cb8f828ff91f75dbfbe01bcf9d2a9cd4f7dcf0",
+  "supplementalIdentity": "801ea8c72bb329317b4ac446555936bb5c13973ecef0edb4d45433ee544c2a5e",
+  "recoveredPackages": 19,
+  "remainingFailurePackages": 2,
+  "subsetOnly": true,
+  "records": [
+    {
+      "package": "aframe",
+      "baselineStatus": "extraction-failed",
+      "baselineFailure": "ENOBUFS",
+      "baselineDiagnostics": [
+        "spawnSync /opt/homebrew/Cellar/node@24/24.21.0/bin/node ENOBUFS"
+      ],
+      "supplementalStatus": "extracted",
+      "supplementalFailure": null,
+      "supplementalDiagnosticCount": 0,
+      "recursiveAliasesExcluded": 0,
+      "missingDeclaredEntries": [],
+      "extractedRows": 61881,
+      "remainingFailureDiagnostics": []
+    },
+    {
+      "package": "aws-sdk2-types",
+      "baselineStatus": "extraction-failed",
+      "baselineFailure": "WORKER_FAILURE",
+      "baselineDiagnostics": [
+        "Namespace traversal depth exceeded: aws-sdk2-types\n"
+      ],
+      "supplementalStatus": "extracted-with-diagnostics",
+      "supplementalFailure": null,
+      "supplementalDiagnosticCount": 5,
+      "recursiveAliasesExcluded": 6,
+      "missingDeclaredEntries": [],
+      "extractedRows": 1841,
+      "remainingFailureDiagnostics": []
+    },
+    {
+      "package": "babel__register",
+      "baselineStatus": "extraction-failed",
+      "baselineFailure": "WORKER_FAILURE",
+      "baselineDiagnostics": [
+        "Namespace traversal depth exceeded: babel__register\n"
+      ],
+      "supplementalStatus": "extracted-with-diagnostics",
+      "supplementalFailure": null,
+      "supplementalDiagnosticCount": 8,
+      "recursiveAliasesExcluded": 1,
+      "missingDeclaredEntries": [],
+      "extractedRows": 1,
+      "remainingFailureDiagnostics": []
+    },
+    {
+      "package": "beyonk__gdpr-cookie-consent-banner",
+      "baselineStatus": "missing-entry",
+      "baselineFailure": null,
+      "baselineDiagnostics": [],
+      "supplementalStatus": "missing-entry",
+      "supplementalFailure": null,
+      "supplementalDiagnosticCount": 0,
+      "recursiveAliasesExcluded": 0,
+      "missingDeclaredEntries": [
+        {
+          "entry": "types/beyonk__gdpr-cookie-consent-banner/esm/index.d.ts",
+          "subpath": "",
+          "condition": "exports/import",
+          "status": "missing-entry"
+        }
+      ],
+      "extractedRows": 2,
+      "remainingFailureDiagnostics": []
+    },
+    {
+      "package": "dom-css",
+      "baselineStatus": "extraction-failed",
+      "baselineFailure": "WORKER_FAILURE",
+      "baselineDiagnostics": [
+        "Namespace traversal depth exceeded: dom-css\n"
+      ],
+      "supplementalStatus": "extracted",
+      "supplementalFailure": null,
+      "supplementalDiagnosticCount": 0,
+      "recursiveAliasesExcluded": 1,
+      "missingDeclaredEntries": [],
+      "extractedRows": 4,
+      "remainingFailureDiagnostics": []
+    },
+    {
+      "package": "dynogels",
+      "baselineStatus": "extraction-failed",
+      "baselineFailure": "WORKER_FAILURE",
+      "baselineDiagnostics": [
+        "Namespace traversal depth exceeded: dynogels\n"
+      ],
+      "supplementalStatus": "extracted-with-diagnostics",
+      "supplementalFailure": null,
+      "supplementalDiagnosticCount": 6,
+      "recursiveAliasesExcluded": 6,
+      "missingDeclaredEntries": [],
+      "extractedRows": 1974,
+      "remainingFailureDiagnostics": []
+    },
+    {
+      "package": "frisby",
+      "baselineStatus": "extraction-failed",
+      "baselineFailure": "WORKER_FAILURE",
+      "baselineDiagnostics": [
+        "Namespace traversal depth exceeded: frisby\n"
+      ],
+      "supplementalStatus": "extracted-with-diagnostics",
+      "supplementalFailure": null,
+      "supplementalDiagnosticCount": 7,
+      "recursiveAliasesExcluded": 1,
+      "missingDeclaredEntries": [],
+      "extractedRows": 227,
+      "remainingFailureDiagnostics": []
+    },
+    {
+      "package": "go",
+      "baselineStatus": "extraction-failed",
+      "baselineFailure": "ENOBUFS",
+      "baselineDiagnostics": [
+        "spawnSync /opt/homebrew/Cellar/node@24/24.21.0/bin/node ENOBUFS"
+      ],
+      "supplementalStatus": "extraction-failed",
+      "supplementalFailure": "WORKER_FAILURE",
+      "supplementalDiagnosticCount": 0,
+      "recursiveAliasesExcluded": 0,
+      "missingDeclaredEntries": [],
+      "extractedRows": 0,
+      "remainingFailureDiagnostics": [
+        "Worker shard exceeds the explicit 256 MB file limit\n"
+      ]
+    },
+    {
+      "package": "iv-viewer",
+      "baselineStatus": "extraction-failed",
+      "baselineFailure": "WORKER_FAILURE",
+      "baselineDiagnostics": [
+        "Namespace traversal depth exceeded: iv-viewer\n"
+      ],
+      "supplementalStatus": "extracted",
+      "supplementalFailure": null,
+      "supplementalDiagnosticCount": 0,
+      "recursiveAliasesExcluded": 1,
+      "missingDeclaredEntries": [],
+      "extractedRows": 24,
+      "remainingFailureDiagnostics": []
+    },
+    {
+      "package": "k6",
+      "baselineStatus": "extraction-failed",
+      "baselineFailure": "WORKER_FAILURE",
+      "baselineDiagnostics": [
+        "Namespace traversal depth exceeded: k6\n"
+      ],
+      "supplementalStatus": "extracted",
+      "supplementalFailure": null,
+      "supplementalDiagnosticCount": 0,
+      "recursiveAliasesExcluded": 9,
+      "missingDeclaredEntries": [],
+      "extractedRows": 3105,
+      "remainingFailureDiagnostics": []
+    },
+    {
+      "package": "node",
+      "baselineStatus": "extraction-failed",
+      "baselineFailure": "WORKER_FAILURE",
+      "baselineDiagnostics": [
+        "Namespace traversal depth exceeded: node\n"
+      ],
+      "supplementalStatus": "extracted-with-diagnostics",
+      "supplementalFailure": null,
+      "supplementalDiagnosticCount": 5,
+      "recursiveAliasesExcluded": 38,
+      "missingDeclaredEntries": [],
+      "extractedRows": 165988,
+      "remainingFailureDiagnostics": []
+    },
+    {
+      "package": "node-fetch",
+      "baselineStatus": "extraction-failed",
+      "baselineFailure": "WORKER_FAILURE",
+      "baselineDiagnostics": [
+        "Namespace traversal depth exceeded: node-fetch\n"
+      ],
+      "supplementalStatus": "extracted-with-diagnostics",
+      "supplementalFailure": null,
+      "supplementalDiagnosticCount": 6,
+      "recursiveAliasesExcluded": 1,
+      "missingDeclaredEntries": [],
+      "extractedRows": 146,
+      "remainingFailureDiagnostics": []
+    },
+    {
+      "package": "nums2words-bg",
+      "baselineStatus": "extraction-failed",
+      "baselineFailure": "WORKER_FAILURE",
+      "baselineDiagnostics": [
+        "Namespace traversal depth exceeded: nums2words-bg\n"
+      ],
+      "supplementalStatus": "extracted",
+      "supplementalFailure": null,
+      "supplementalDiagnosticCount": 0,
+      "recursiveAliasesExcluded": 1,
+      "missingDeclaredEntries": [],
+      "extractedRows": 4,
+      "remainingFailureDiagnostics": []
+    },
+    {
+      "package": "openui5",
+      "baselineStatus": "extraction-failed",
+      "baselineFailure": "ENOBUFS",
+      "baselineDiagnostics": [
+        "spawnSync /opt/homebrew/Cellar/node@24/24.21.0/bin/node ENOBUFS"
+      ],
+      "supplementalStatus": "extracted",
+      "supplementalFailure": null,
+      "supplementalDiagnosticCount": 0,
+      "recursiveAliasesExcluded": 0,
+      "missingDeclaredEntries": [],
+      "extractedRows": 152898,
+      "remainingFailureDiagnostics": []
+    },
+    {
+      "package": "ottomated__passport-streamlabs",
+      "baselineStatus": "extraction-failed",
+      "baselineFailure": "WORKER_FAILURE",
+      "baselineDiagnostics": [
+        "Namespace traversal depth exceeded: ottomated__passport-streamlabs\n"
+      ],
+      "supplementalStatus": "extracted-with-diagnostics",
+      "supplementalFailure": null,
+      "supplementalDiagnosticCount": 5,
+      "recursiveAliasesExcluded": 1,
+      "missingDeclaredEntries": [],
+      "extractedRows": 22,
+      "remainingFailureDiagnostics": []
+    },
+    {
+      "package": "ottomated__passport-twitch",
+      "baselineStatus": "extraction-failed",
+      "baselineFailure": "WORKER_FAILURE",
+      "baselineDiagnostics": [
+        "Namespace traversal depth exceeded: ottomated__passport-twitch\n"
+      ],
+      "supplementalStatus": "extracted-with-diagnostics",
+      "supplementalFailure": null,
+      "supplementalDiagnosticCount": 5,
+      "recursiveAliasesExcluded": 1,
+      "missingDeclaredEntries": [],
+      "extractedRows": 22,
+      "remainingFailureDiagnostics": []
+    },
+    {
+      "package": "passport-auth0",
+      "baselineStatus": "extraction-failed",
+      "baselineFailure": "WORKER_FAILURE",
+      "baselineDiagnostics": [
+        "Namespace traversal depth exceeded: passport-auth0\n"
+      ],
+      "supplementalStatus": "extracted-with-diagnostics",
+      "supplementalFailure": null,
+      "supplementalDiagnosticCount": 5,
+      "recursiveAliasesExcluded": 1,
+      "missingDeclaredEntries": [],
+      "extractedRows": 14,
+      "remainingFailureDiagnostics": []
+    },
+    {
+      "package": "passport-discord",
+      "baselineStatus": "extraction-failed",
+      "baselineFailure": "WORKER_FAILURE",
+      "baselineDiagnostics": [
+        "Namespace traversal depth exceeded: passport-discord\n"
+      ],
+      "supplementalStatus": "extracted-with-diagnostics",
+      "supplementalFailure": null,
+      "supplementalDiagnosticCount": 5,
+      "recursiveAliasesExcluded": 1,
+      "missingDeclaredEntries": [],
+      "extractedRows": 22,
+      "remainingFailureDiagnostics": []
+    },
+    {
+      "package": "passport-github",
+      "baselineStatus": "extraction-failed",
+      "baselineFailure": "WORKER_FAILURE",
+      "baselineDiagnostics": [
+        "Namespace traversal depth exceeded: passport-github\n"
+      ],
+      "supplementalStatus": "extracted-with-diagnostics",
+      "supplementalFailure": null,
+      "supplementalDiagnosticCount": 5,
+      "recursiveAliasesExcluded": 1,
+      "missingDeclaredEntries": [],
+      "extractedRows": 20,
+      "remainingFailureDiagnostics": []
+    },
+    {
+      "package": "vimeo__player",
+      "baselineStatus": "extraction-failed",
+      "baselineFailure": "WORKER_FAILURE",
+      "baselineDiagnostics": [
+        "Namespace traversal depth exceeded: vimeo__player\n"
+      ],
+      "supplementalStatus": "extracted",
+      "supplementalFailure": null,
+      "supplementalDiagnosticCount": 0,
+      "recursiveAliasesExcluded": 1,
+      "missingDeclaredEntries": [],
+      "extractedRows": 118,
+      "remainingFailureDiagnostics": []
+    },
+    {
+      "package": "yeoman-assert",
+      "baselineStatus": "extraction-failed",
+      "baselineFailure": "WORKER_FAILURE",
+      "baselineDiagnostics": [
+        "Namespace traversal depth exceeded: yeoman-assert\n"
+      ],
+      "supplementalStatus": "extracted-with-diagnostics",
+      "supplementalFailure": null,
+      "supplementalDiagnosticCount": 5,
+      "recursiveAliasesExcluded": 1,
+      "missingDeclaredEntries": [],
+      "extractedRows": 236,
+      "remainingFailureDiagnostics": []
+    }
+  ]
+}

@@ -34,7 +34,11 @@ Next two weeks: first run/review the full phase2 census with frozen unit/unknown
 
 Publication is authorized by the subsequent explicit request to commit this preparation on a new branch and push it. The change scope is the census workspace/scripts/tests/input pin, feasibility/census documentation and new development smoke evidence; older tracked results are unchanged. Publication and remote CI verification are recorded separately from study results.
 
-## Completed infrastructure validation
+## Subsequent corpus follow-up
+
+The compact 8,680-package full-corpus baseline was published separately as `2aa7db8`, with remote CI passing. Failure remediation, diagnostic assessment, 40 explicitly single-agent source reviews and five actual ordinary pilot executions across three nominal packages are recorded in [the follow-up report](census-followup.md). The follow-up recovered 19 of 21 failures in a fresh subset run; the repaired full census, two remaining failure cases, independent human/family validation and active sealing remain pending. Initial smoke validation below is historical and is not a claim that these new study gates are satisfied.
+
+## Completed initial infrastructure validation
 
 Canonical-checkout clean install, build and complete check succeeded on Node24.21.0/npm12.0.2: 110 preserved assertions +33 prior regressions +18 census tests =161 passed, zero failed; four smoke workflows and all retained sealing/relational/Track A/pattern experiments pass their stated assertions. Live full dependency audit reports zero advisories, including development dependencies. The lockfile only adds an internal workspace link/dependency record; existing external versions are unchanged.
 

@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "censusIdentity": "8235039d24e334ab26863f6a87cb8f828ff91f75dbfbe01bcf9d2a9cd4f7dcf0",
+  "basis": "Actual ordinary development pilot execution and single-agent receipt review; not independent human validation or active sealing.",
+  "records": [
+    {
+      "exportId": "19eea96df292fb3db2a37ae8ad6c3f13469169b24476adf8926f2148f2643dae",
+      "status": "reviewed-loaded-and-exercised",
+      "reviewer": "Codex single-agent source/recipe/actual-receipt audit (independent human review pending)",
+      "notes": "Actual finite ordinary calls with assertions, exact lock/integrity and unchanged sources in the network-disabled existing runner; not active sealing, universal correctness or family-independence certification.",
+      "package": {
+        "name": "prelude-ls",
+        "version": "1.1.2",
+        "integrity": "sha512-ESF23V4SKG6lVSGZgYNpbsiaAkdab6ZgOxe52p7+Kid3W3u3bxR4Vfd/o21dmN7jSt0IwgZ4v5MUd26FEtXE9w=="
+      },
+      "isolationProfile": "run-isolated-v1",
+      "runnerExitCode": 0,
+      "observedOutcome": "returned",
+      "evidence": [
+        {
+          "kind": "dependency-lock",
+          "path": "pilot-evidence/prelude-ls/package-lock.json",
+          "sha256": "9f1c6717f53b366fc9c107fdb95b433855e177982c2c9599a083bfb2750f18d8"
+        },
+        {
+          "kind": "invocation-recipe",
+          "path": "pilot-evidence/prelude-ls/pilot.cjs",
+          "sha256": "f28f29b0abddab23b8403d71c9e098e900f702c41483c6145473a0dade372541"
+        },
+        {
+          "kind": "execution",
+          "path": "pilot-evidence/prelude-ls/execution.json",
+          "sha256": "0bcbff08be45c7dee0023aed094d50bd85b9f6ad0a9cb24ed9bea2d28119a7ac"
+        }
+      ]
+    },
+    {
+      "exportId": "8d85c833564ba788894642031318a1fbef2854a9f8530000c70be05fb93e14b4",
+      "status": "reviewed-loaded-and-exercised",
+      "reviewer": "Codex single-agent source/recipe/actual-receipt audit (independent human review pending)",
+      "notes": "Actual finite ordinary calls with assertions, exact lock/integrity and unchanged sources in the network-disabled existing runner; not active sealing, universal correctness or family-independence certification. Boundary: head([]) returns undefined although the declaration result is A; nonempty precondition required for selected recipe",
+      "package": {
+        "name": "prelude-ls",
+        "version": "1.1.2",
+        "integrity": "sha512-ESF23V4SKG6lVSGZgYNpbsiaAkdab6ZgOxe52p7+Kid3W3u3bxR4Vfd/o21dmN7jSt0IwgZ4v5MUd26FEtXE9w=="
+      },
+      "isolationProfile": "run-isolated-v1",
+      "runnerExitCode": 0,
+      "observedOutcome": "returned",
+      "evidence": [
+        {
+          "kind": "dependency-lock",
+          "path": "pilot-evidence/prelude-ls/package-lock.json",
+          "sha256": "9f1c6717f53b366fc9c107fdb95b433855e177982c2c9599a083bfb2750f18d8"
+        },
+        {
+          "kind": "invocation-recipe",
+          "path": "pilot-evidence/prelude-ls/pilot.cjs",
+          "sha256": "f28f29b0abddab23b8403d71c9e098e900f702c41483c6145473a0dade372541"
+        },
+        {
+          "kind": "execution",
+          "path": "pilot-evidence/prelude-ls/execution.json",
+          "sha256": "0bcbff08be45c7dee0023aed094d50bd85b9f6ad0a9cb24ed9bea2d28119a7ac"
+        }
+      ]
+    },
+    {
+      "exportId": "efbfd971f9e6c2586dccf6625a49ec462485bd1296e885a8eb19670454c9e060",
+      "status": "reviewed-loaded-and-exercised",
+      "reviewer": "Codex single-agent source/recipe/actual-receipt audit (independent human review pending)",
+      "notes": "Actual finite ordinary calls with assertions, exact lock/integrity and unchanged sources in the network-disabled existing runner; not active sealing, universal correctness or family-independence certification.",
+      "package": {
+        "name": "prelude-ls",
+        "version": "1.1.2",
+        "integrity": "sha512-ESF23V4SKG6lVSGZgYNpbsiaAkdab6ZgOxe52p7+Kid3W3u3bxR4Vfd/o21dmN7jSt0IwgZ4v5MUd26FEtXE9w=="
+      },
+      "isolationProfile": "run-isolated-v1",
+      "runnerExitCode": 0,
+      "observedOutcome": "returned",
+      "evidence": [
+        {
+          "kind": "dependency-lock",
+          "path": "pilot-evidence/prelude-ls/package-lock.json",
+          "sha256": "9f1c6717f53b366fc9c107fdb95b433855e177982c2c9599a083bfb2750f18d8"
+        },
+        {
+          "kind": "invocation-recipe",
+          "path": "pilot-evidence/prelude-ls/pilot.cjs",
+          "sha256": "f28f29b0abddab23b8403d71c9e098e900f702c41483c6145473a0dade372541"
+        },
+        {
+          "kind": "execution",
+          "path": "pilot-evidence/prelude-ls/execution.json",
+          "sha256": "0bcbff08be45c7dee0023aed094d50bd85b9f6ad0a9cb24ed9bea2d28119a7ac"
+        }
+      ]
+    },
+    {
+      "exportId": "f95ea215b05738492a0daaa8267a05366beb72e6637b96e38de3beae3fdd27d0",
+      "status": "reviewed-loaded-and-exercised",
+      "reviewer": "Codex single-agent source/recipe/actual-receipt audit (independent human review pending)",
+      "notes": "Actual finite ordinary calls with assertions, exact lock/integrity and unchanged sources in the network-disabled existing runner; not active sealing, universal correctness or family-independence certification.",
+      "package": {
+        "name": "transducers-js",
+        "version": "0.4.174",
+        "integrity": "sha512-MwhBNx6TDMrS/pfCa24YzCfC1+W3LcFC0YoF5XNpuZC1pEjuGLP2B0iMt/bYO3rnClhd3dN3c3Ko4+JhOBLoLw=="
+      },
+      "isolationProfile": "run-isolated-v1",
+      "runnerExitCode": 0,
+      "observedOutcome": "returned",
+      "evidence": [
+        {
+          "kind": "dependency-lock",
+          "path": "pilot-evidence/transducers-js/package-lock.json",
+          "sha256": "e62f2e2682932fa1838f6e1320aba16c1617c0d51e925e6b9b3f97768d1faabf"
+        },
+        {
+          "kind": "invocation-recipe",
+          "path": "pilot-evidence/transducers-js/pilot.cjs",
+          "sha256": "8116d0d2eb55fc2deeda21c8f276d133e2b4e519b36d7ffd657dd235831510bf"
+        },
+        {
+          "kind": "execution",
+          "path": "pilot-evidence/transducers-js/execution.json",
+          "sha256": "b0e0ac172f1d5913a31595e057a2e5f947ecc228c78e51cb756ed64e5e27a5ac"
+        }
+      ]
+    },
+    {
+      "exportId": "dedbadb448e2d1d0819142dd755cbb8e7eacb67ccbc00026724f5b175e8f0fee",
+      "status": "reviewed-loaded-and-exercised",
+      "reviewer": "Codex single-agent source/recipe/actual-receipt audit (independent human review pending)",
+      "notes": "Actual finite ordinary calls with assertions, exact lock/integrity and unchanged sources in the network-disabled existing runner; not active sealing, universal correctness or family-independence certification.",
+      "package": {
+        "name": "underscore",
+        "version": "1.13.8",
+        "integrity": "sha512-DXtD3ZtEQzc7M8m4cXotyHR+FAS18C64asBYY5vqZexfYryNNnDc02W4hKg3rdQuqOYas1jkseX0+nZXjTXnvQ=="
+      },
+      "isolationProfile": "run-isolated-v1",
+      "runnerExitCode": 0,
+      "observedOutcome": "returned",
+      "evidence": [
+        {
+          "kind": "dependency-lock",
+          "path": "pilot-evidence/underscore/package-lock.json",
+          "sha256": "9b958db754e01d6efeb7ec4cc37ba625fa868294d466a459c8f131b0d78caf76"
+        },
+        {
+          "kind": "invocation-recipe",
+          "path": "pilot-evidence/underscore/pilot.cjs",
+          "sha256": "56246df09728a749c28c8c3758d5731eef3c83122185d38558e3767d006475df"
+        },
+        {
+          "kind": "execution",
+          "path": "pilot-evidence/underscore/execution.json",
+          "sha256": "8de20faf9f6bfd46d2eb03124abf8553775000fc9c7b609fac3233d0f055a482"
+        }
+      ]
+    }
+  ]
+}
