@@ -5,7 +5,7 @@ function aggregate(directory = path.resolve(__dirname, '../experiments/results')
   const evaluation = JSON.parse(fs.readFileSync(path.join(directory, 'evaluation.json'), 'utf8'));
   const lines = ['track,configuration,observations,public_functions,internal_functions,answered,total,accuracy,coverage'];
   for (const row of evidence) lines.push(`A,${row.configuration},${row.observations},${row.publicFunctions},${row.internalFunctions},,,,`);
-  lines.push(`B,frequency,,,,${evaluation.answered},${evaluation.total},${evaluation.accuracy ?? ''},${evaluation.coverage}`);
+  lines.push(`legacy-pattern,frequency,,,,${evaluation.answered},${evaluation.total},${evaluation.accuracy ?? ''},${evaluation.coverage}`);
   fs.writeFileSync(path.join(directory, 'tables.csv'), lines.join('\n') + '\n');
 }
 if (require.main === module) aggregate(process.argv[2]);

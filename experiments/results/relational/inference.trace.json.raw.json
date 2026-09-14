@@ -1,0 +1,636 @@
+{
+  "functions": {
+    "functionId_1": {
+      "functionId": "functionId_1",
+      "functionName": "identity",
+      "isConstructor": false,
+      "args": {
+        "0": {
+          "argumentIndex": 0,
+          "argumentName": "value",
+          "argumentId": "easXndDDlNeEn_ep-XWpo",
+          "interactions": [
+            {
+              "code": "inputValue",
+              "traceId": "trace__1",
+              "interactionId": "IWbEs_nWUPEz7-osIn3U9",
+              "typeof": "number"
+            },
+            {
+              "code": "inputValue",
+              "traceId": "trace__2",
+              "interactionId": "p1XFFNTlqHE2EGnvjKQpe",
+              "typeof": "string"
+            }
+          ]
+        }
+      },
+      "declarationEnclosingFunctionId": -1,
+      "returnTypeOfs": [
+        {
+          "typeOf": "number",
+          "traceId": "trace__1"
+        },
+        {
+          "typeOf": "string",
+          "traceId": "trace__2"
+        }
+      ],
+      "functionIid": 49,
+      "requiredModule": "./module",
+      "isExported": false,
+      "constructedBy": "",
+      "sourceLocation": {
+        "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/relational-signatures/module.js",
+        "line": 2,
+        "column": 1
+      }
+    },
+    "functionId_3": {
+      "functionId": "functionId_3",
+      "functionName": "first",
+      "isConstructor": false,
+      "args": {
+        "0": {
+          "argumentIndex": 0,
+          "argumentName": "values",
+          "argumentId": "jnZ2joFJPhyx86CEKwQxG",
+          "interactions": [
+            {
+              "code": "inputValue",
+              "traceId": "trace__3",
+              "interactionId": "1r7IEEaEIjlPJz3Z0bXDE",
+              "typeof": "array"
+            },
+            {
+              "code": "getField",
+              "traceId": "trace__3",
+              "interactionId": "IaMl6TOtPKkshrwO71BuX",
+              "isComputed": true,
+              "isOpAssign": false,
+              "enclosingFunctionId": "functionId_3",
+              "followingInteractions": [],
+              "iid": 89,
+              "field": 0,
+              "returnTypeOf": "number"
+            },
+            {
+              "code": "inputValue",
+              "traceId": "trace__4",
+              "interactionId": "lEHZXXMwAzKwmyUCIRDXI",
+              "typeof": "array"
+            },
+            {
+              "code": "getField",
+              "traceId": "trace__4",
+              "interactionId": "_6LAQwV4-bZD9Dim_Ws04",
+              "isComputed": true,
+              "isOpAssign": false,
+              "enclosingFunctionId": "functionId_3",
+              "followingInteractions": [],
+              "iid": 89,
+              "field": 0,
+              "returnTypeOf": "string"
+            }
+          ]
+        }
+      },
+      "declarationEnclosingFunctionId": -1,
+      "returnTypeOfs": [
+        {
+          "typeOf": "number",
+          "traceId": "trace__3"
+        },
+        {
+          "typeOf": "string",
+          "traceId": "trace__4"
+        }
+      ],
+      "functionIid": 113,
+      "requiredModule": "./module",
+      "isExported": false,
+      "constructedBy": "",
+      "sourceLocation": {
+        "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/relational-signatures/module.js",
+        "line": 3,
+        "column": 1
+      }
+    },
+    "functionId_5": {
+      "functionId": "functionId_5",
+      "functionName": "convert",
+      "isConstructor": false,
+      "args": {
+        "0": {
+          "argumentIndex": 0,
+          "argumentName": "kind",
+          "argumentId": "j7_UphiSkfalJXulGRa21",
+          "interactions": [
+            {
+              "code": "inputValue",
+              "traceId": "trace__5",
+              "interactionId": "Cd8kfF45B9L9Yr06CFKjF",
+              "typeof": "string"
+            },
+            {
+              "code": "operator",
+              "traceId": "trace__5",
+              "interactionId": "8whLWWWMBuMNYbGMuhBdw",
+              "leftType": "string",
+              "rightType": "string",
+              "leftIsNaN": true,
+              "rightIsNan": true,
+              "leftToPrimitiveType": "string",
+              "rightToPrimitiveType": "string",
+              "leftToPrimitiveIsNaN": true,
+              "rightToPrimitiveIsNaN": true,
+              "operator": "===",
+              "operandForInteraction": "left"
+            },
+            {
+              "code": "inputValue",
+              "traceId": "trace__7",
+              "interactionId": "4G6xgCz__BnXjEQef6AWK",
+              "typeof": "string"
+            },
+            {
+              "code": "operator",
+              "traceId": "trace__7",
+              "interactionId": "UIRmTwRUDhVpOXIyWoVuW",
+              "leftType": "string",
+              "rightType": "string",
+              "leftIsNaN": true,
+              "rightIsNan": true,
+              "leftToPrimitiveType": "string",
+              "rightToPrimitiveType": "string",
+              "leftToPrimitiveIsNaN": true,
+              "rightToPrimitiveIsNaN": true,
+              "operator": "===",
+              "operandForInteraction": "left"
+            },
+            {
+              "code": "inputValue",
+              "traceId": "trace__8",
+              "interactionId": "4veZ8BV75zCV8MNWfv09w",
+              "typeof": "string"
+            },
+            {
+              "code": "operator",
+              "traceId": "trace__8",
+              "interactionId": "6u9sULgIdECMAc3W2HrOZ",
+              "leftType": "string",
+              "rightType": "string",
+              "leftIsNaN": true,
+              "rightIsNan": true,
+              "leftToPrimitiveType": "string",
+              "rightToPrimitiveType": "string",
+              "leftToPrimitiveIsNaN": true,
+              "rightToPrimitiveIsNaN": true,
+              "operator": "===",
+              "operandForInteraction": "left"
+            },
+            {
+              "code": "operator",
+              "traceId": "trace__8",
+              "interactionId": "fHloE2i1UrWlE9LkPeaHx",
+              "leftType": "string",
+              "rightType": "string",
+              "leftIsNaN": true,
+              "rightIsNan": true,
+              "leftToPrimitiveType": "string",
+              "rightToPrimitiveType": "string",
+              "leftToPrimitiveIsNaN": true,
+              "rightToPrimitiveIsNaN": true,
+              "operator": "===",
+              "operandForInteraction": "left"
+            },
+            {
+              "code": "inputValue",
+              "traceId": "trace__10",
+              "interactionId": "vc7jIlotGrBhlIB6WFMzf",
+              "typeof": "string"
+            },
+            {
+              "code": "operator",
+              "traceId": "trace__10",
+              "interactionId": "_LRdYY8AYTYMbFV7GiAx1",
+              "leftType": "string",
+              "rightType": "string",
+              "leftIsNaN": true,
+              "rightIsNan": true,
+              "leftToPrimitiveType": "string",
+              "rightToPrimitiveType": "string",
+              "leftToPrimitiveIsNaN": true,
+              "rightToPrimitiveIsNaN": true,
+              "operator": "===",
+              "operandForInteraction": "left"
+            },
+            {
+              "code": "operator",
+              "traceId": "trace__10",
+              "interactionId": "ZM64o7IiVGrm_S0X2sYDR",
+              "leftType": "string",
+              "rightType": "string",
+              "leftIsNaN": true,
+              "rightIsNan": true,
+              "leftToPrimitiveType": "string",
+              "rightToPrimitiveType": "string",
+              "leftToPrimitiveIsNaN": true,
+              "rightToPrimitiveIsNaN": true,
+              "operator": "===",
+              "operandForInteraction": "left"
+            }
+          ]
+        },
+        "1": {
+          "argumentIndex": 1,
+          "argumentName": "value",
+          "argumentId": "U56FT7gI1AuY_rDn9PYDH",
+          "interactions": [
+            {
+              "code": "inputValue",
+              "traceId": "trace__5",
+              "interactionId": "c2nmmFFhsbmGqpq6AXVNQ",
+              "typeof": "string"
+            },
+            {
+              "code": "usedAsArgument",
+              "traceId": "trace__5",
+              "interactionId": "MR70B6SnPUVQaKN1bD0LT",
+              "enclosingFunctionId": "functionId_5",
+              "targetFunctionId": "functionId_7",
+              "traceIdInTargetFunction": "trace__6",
+              "argumentIndexInTargetFunction": "0"
+            },
+            {
+              "code": "inputValue",
+              "traceId": "trace__7",
+              "interactionId": "RCyo9nyHMpK44prHEFbJb",
+              "typeof": "string"
+            },
+            {
+              "code": "usedAsArgument",
+              "traceId": "trace__7",
+              "interactionId": "IwY0fQIZdaEsv9cR8JlUr",
+              "enclosingFunctionId": "functionId_5",
+              "targetFunctionId": "functionId_7",
+              "traceIdInTargetFunction": "trace__6",
+              "argumentIndexInTargetFunction": "0"
+            },
+            {
+              "code": "inputValue",
+              "traceId": "trace__8",
+              "interactionId": "AgpHV592kqL3faXJqFMlZ",
+              "typeof": "number"
+            },
+            {
+              "code": "usedAsArgument",
+              "traceId": "trace__8",
+              "interactionId": "pOA117r_EsSA_V3x4yanB",
+              "enclosingFunctionId": "functionId_5",
+              "targetFunctionId": "functionId_9",
+              "traceIdInTargetFunction": "trace__9",
+              "argumentIndexInTargetFunction": "0"
+            },
+            {
+              "code": "inputValue",
+              "traceId": "trace__10",
+              "interactionId": "sUjkSwgHrswWa_pKnf6ie",
+              "typeof": "number"
+            },
+            {
+              "code": "usedAsArgument",
+              "traceId": "trace__10",
+              "interactionId": "GqS3wgICtJjHjJyo_6J2A",
+              "enclosingFunctionId": "functionId_5",
+              "targetFunctionId": "functionId_9",
+              "traceIdInTargetFunction": "trace__9",
+              "argumentIndexInTargetFunction": "0"
+            }
+          ]
+        }
+      },
+      "declarationEnclosingFunctionId": -1,
+      "returnTypeOfs": [
+        {
+          "typeOf": "number",
+          "traceId": "trace__5"
+        },
+        {
+          "typeOf": "number",
+          "traceId": "trace__7"
+        },
+        {
+          "typeOf": "string",
+          "traceId": "trace__8"
+        },
+        {
+          "typeOf": "string",
+          "traceId": "trace__10"
+        }
+      ],
+      "functionIid": 289,
+      "requiredModule": "./module",
+      "isExported": false,
+      "constructedBy": "",
+      "sourceLocation": {
+        "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/relational-signatures/module.js",
+        "line": 4,
+        "column": 1
+      }
+    },
+    "functionId_7": {
+      "functionId": "functionId_7",
+      "functionName": "Number",
+      "isConstructor": false,
+      "args": {},
+      "returnTypeOfs": [
+        {
+          "typeOf": "number",
+          "traceId": "trace__4"
+        },
+        {
+          "typeOf": "number",
+          "traceId": "trace__5"
+        }
+      ],
+      "requiredModule": "",
+      "isExported": false,
+      "constructedBy": ""
+    },
+    "functionId_9": {
+      "functionId": "functionId_9",
+      "functionName": "String",
+      "isConstructor": false,
+      "args": {},
+      "returnTypeOfs": [
+        {
+          "typeOf": "string",
+          "traceId": "trace__7"
+        },
+        {
+          "typeOf": "string",
+          "traceId": "trace__8"
+        }
+      ],
+      "requiredModule": "",
+      "isExported": false,
+      "constructedBy": ""
+    },
+    "functionId_11": {
+      "functionId": "functionId_11",
+      "functionName": "apply",
+      "isConstructor": false,
+      "args": {
+        "0": {
+          "argumentIndex": 0,
+          "argumentName": "value",
+          "argumentId": "fwGu4YvnZbbtWwsY8sw3V",
+          "interactions": [
+            {
+              "code": "inputValue",
+              "traceId": "trace__11",
+              "interactionId": "xLXYa2N0Fa8A68zHzySOF",
+              "typeof": "number"
+            },
+            {
+              "code": "usedAsArgument",
+              "traceId": "trace__11",
+              "interactionId": "OGW-MM2AygcwYaYT9er_u",
+              "enclosingFunctionId": "functionId_11",
+              "targetFunctionId": "functionId_13",
+              "traceIdInTargetFunction": "trace__12",
+              "argumentIndexInTargetFunction": "0"
+            }
+          ]
+        },
+        "1": {
+          "argumentIndex": 1,
+          "argumentName": "callback",
+          "argumentId": "bTzauJc9UJ6KwRui5Y6Ev",
+          "interactions": [
+            {
+              "code": "inputValue",
+              "traceId": "trace__11",
+              "interactionId": "jAG06YJfBLSSHr_AY2IdF",
+              "typeof": "function",
+              "functionId": "functionId_13"
+            }
+          ]
+        }
+      },
+      "declarationEnclosingFunctionId": -1,
+      "returnTypeOfs": [
+        {
+          "typeOf": "number",
+          "traceId": "trace__11"
+        }
+      ],
+      "functionIid": 361,
+      "requiredModule": "./module",
+      "isExported": false,
+      "constructedBy": "",
+      "sourceLocation": {
+        "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/relational-signatures/module.js",
+        "line": 11,
+        "column": 1
+      }
+    },
+    "functionId_13": {
+      "functionId": "functionId_13",
+      "functionName": "increment",
+      "isConstructor": false,
+      "args": {
+        "0": {
+          "argumentIndex": 0,
+          "argumentName": "value",
+          "argumentId": "AM6trBGsSB6Mpa2KtLt8O",
+          "interactions": [
+            {
+              "code": "inputValue",
+              "traceId": "trace__12",
+              "interactionId": "kbLyKSCtqYL73HeIzYY7S",
+              "typeof": "number"
+            },
+            {
+              "code": "convertedTo",
+              "traceId": "trace__12",
+              "interactionId": "p_6agCUqpejv9uOqNQ6D0",
+              "convertedTo": "number",
+              "isNaN": false,
+              "toPrimitive": null,
+              "operator": "+",
+              "originalTypeof": "number"
+            },
+            {
+              "code": "operator",
+              "traceId": "trace__12",
+              "interactionId": "_QyoHzJ2rsGbXPBpSB9UK",
+              "leftType": "number",
+              "rightType": "number",
+              "leftIsNaN": false,
+              "rightIsNan": false,
+              "leftToPrimitiveType": "number",
+              "rightToPrimitiveType": "number",
+              "leftToPrimitiveIsNaN": false,
+              "rightToPrimitiveIsNaN": false,
+              "operator": "+",
+              "operandForInteraction": "left"
+            }
+          ]
+        }
+      },
+      "declarationEnclosingFunctionId": "functionId_11",
+      "returnTypeOfs": [
+        {
+          "typeOf": "number",
+          "traceId": "trace__12",
+          "declarationTraceId": "trace__11"
+        }
+      ],
+      "functionIid": 433,
+      "requiredModule": "",
+      "isExported": false,
+      "constructedBy": "",
+      "sourceLocation": {
+        "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/relational-signatures/inference.js",
+        "line": 11,
+        "column": 14
+      }
+    },
+    "functionId_15": {
+      "functionId": "functionId_15",
+      "functionName": "fail",
+      "isConstructor": false,
+      "args": {
+        "0": {
+          "argumentIndex": 0,
+          "argumentName": "value",
+          "argumentId": "fN_MIanLXAI17vSBsApzy",
+          "interactions": [
+            {
+              "code": "inputValue",
+              "traceId": "trace__13",
+              "interactionId": "p9i_NsEw5fhVcM9DYPz2n",
+              "typeof": "number"
+            }
+          ]
+        }
+      },
+      "declarationEnclosingFunctionId": -1,
+      "returnTypeOfs": [],
+      "functionIid": 433,
+      "requiredModule": "./module",
+      "isExported": false,
+      "constructedBy": "",
+      "sourceLocation": {
+        "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/relational-signatures/module.js",
+        "line": 12,
+        "column": 1
+      }
+    },
+    "functionId_17": {
+      "functionId": "functionId_17",
+      "functionName": "Error",
+      "isConstructor": true,
+      "args": {},
+      "returnTypeOfs": [
+        {
+          "typeOf": "Error",
+          "traceId": "trace__11"
+        }
+      ],
+      "requiredModule": "",
+      "isExported": false,
+      "constructedBy": ""
+    }
+  },
+  "patterns": [
+    {
+      "operator": "===",
+      "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/relational-signatures/module.js",
+      "line": 5,
+      "column": 9,
+      "leftType": "string",
+      "rightType": "string"
+    },
+    {
+      "operator": "===",
+      "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/relational-signatures/module.js",
+      "line": 5,
+      "column": 9,
+      "leftType": "string",
+      "rightType": "string"
+    },
+    {
+      "operator": "===",
+      "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/relational-signatures/module.js",
+      "line": 5,
+      "column": 9,
+      "leftType": "string",
+      "rightType": "string"
+    },
+    {
+      "operator": "===",
+      "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/relational-signatures/module.js",
+      "line": 7,
+      "column": 9,
+      "leftType": "string",
+      "rightType": "string"
+    },
+    {
+      "operator": "===",
+      "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/relational-signatures/module.js",
+      "line": 5,
+      "column": 9,
+      "leftType": "string",
+      "rightType": "string"
+    },
+    {
+      "operator": "===",
+      "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/relational-signatures/module.js",
+      "line": 7,
+      "column": 9,
+      "leftType": "string",
+      "rightType": "string"
+    },
+    {
+      "operator": "+",
+      "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/relational-signatures/inference.js",
+      "line": 11,
+      "column": 49,
+      "leftType": "number",
+      "rightType": "number"
+    },
+    {
+      "operator": "instanceof",
+      "file": "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/relational-signatures/inference.js",
+      "line": 16,
+      "column": 11,
+      "leftType": "Error",
+      "rightType": "function"
+    }
+  ],
+  "sourceMaps": {
+    "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/relational-signatures/inference.js": {
+      "version": 3,
+      "file": "inference.js",
+      "sourceRoot": "",
+      "sources": [
+        "inference.js"
+      ],
+      "names": [],
+      "mappings": ";AAAA,IAAM,GAAG,GAAG,OAAO,CAAC,UAAU,CAAC,CAAC;AAChC,GAAG,CAAC,QAAQ,CAAC,CAAC,CAAC,CAAC;AAChB,GAAG,CAAC,QAAQ,CAAC,MAAM,CAAC,CAAC;AACrB,GAAG,CAAC,KAAK,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC;AAClB,GAAG,CAAC,KAAK,CAAC,CAAC,GAAG,EAAE,GAAG,CAAC,CAAC,CAAC;AACtB,GAAG,CAAC,OAAO,CAAC,QAAQ,EAAE,GAAG,CAAC,CAAC;AAC3B,GAAG,CAAC,OAAO,CAAC,QAAQ,EAAE,GAAG,CAAC,CAAC;AAC3B,GAAG,CAAC,OAAO,CAAC,QAAQ,EAAE,CAAC,CAAC,CAAC;AACzB,GAAG,CAAC,OAAO,CAAC,QAAQ,EAAE,CAAC,CAAC,CAAC;AACzB,GAAG,CAAC,KAAK,CAAC,CAAC,EAAE,SAAS,SAAS,CAAC,KAAK,IAAI,OAAO,KAAK,GAAG,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9D,IAAI,CAAC;IAAC,GAAG,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC;AAAC,CAAC;AAAC,OAAO,KAAK,EAAE,CAAC;IAAC,IAAI,CAAC,CAAC,KAAK,YAAY,KAAK,CAAC;QAAE,MAAM,KAAK,CAAC;AAAC,CAAC"
+    },
+    "/Users/thiemann/git/typescript/typescript-runtime-analysis/experiments/relational-signatures/module.js": {
+      "version": 3,
+      "file": "module.js",
+      "sourceRoot": "",
+      "sources": [
+        "module.js"
+      ],
+      "names": [],
+      "mappings": ";AAAA,SAAS,QAAQ,CAAC,KAAK,IAAI,OAAO,KAAK,CAAC,CAAC,CAAC;AAC1C,SAAS,KAAK,CAAC,MAAM,IAAI,OAAO,MAAM,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5C,SAAS,OAAO,CAAC,IAAI,EAAE,KAAK;IAC1B,IAAI,IAAI,KAAK,QAAQ;QAAE,OAAO,MAAM,CAAC,KAAK,CAAC,CAAC;IAC5C,IAAI,IAAI,KAAK,QAAQ;QAAE,OAAO,MAAM,CAAC,KAAK,CAAC,CAAC;IAC5C,MAAM,IAAI,KAAK,CAAC,0BAA0B,CAAC,CAAC;AAC9C,CAAC;AACD,SAAS,KAAK,CAAC,KAAK,EAAE,QAAQ,IAAI,OAAO,QAAQ,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC;AAC3D,SAAS,IAAI,CAAC,KAAK,IAAI,MAAM,IAAI,KAAK,CAAC,iBAAiB,CAAC,CAAC,CAAC,CAAC;AAC5D,MAAM,CAAC,OAAO,GAAG,EAAC,QAAQ,UAAA,EAAE,KAAK,OAAA,EAAE,OAAO,SAAA,EAAE,KAAK,OAAA,EAAE,IAAI,MAAA,EAAC,CAAC"
+    }
+  }
+}

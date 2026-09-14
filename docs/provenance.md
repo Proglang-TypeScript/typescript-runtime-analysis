@@ -1,5 +1,9 @@
 # Provenance and migration mapping
 
+## Revised Track B additions
+
+The invocation sidecar collector, strict TypeScript relational-signatures workspace, first-party relational fixtures, client-evaluation/table runner and revision documentation are new owner-controlled glue under the same pending-license decision as the other recovery glue; they are not imports from an additional thesis repository. Existing Jalangi callbacks, licenses and source attribution remain preserved. The exact original/revised specifications and diff are retained in docs/specifications; docs/revision-delta.md records the implementation and validation mapping.
+
 No original Git history was rewritten. Inspection clones retain full history. The consolidated import is committed and published to the private organization upstream. Every imported file remains attributed by its repository license and any file notices. New glue is owner-controlled pending a license decision. The source revisions below document recovery provenance; subsequent maintained heads and publication are listed in the [security/publication record](security-publication-report.md).
 
 | Source | Exact inspected commit | License / authors | Decision |

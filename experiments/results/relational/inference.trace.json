@@ -1,0 +1,1051 @@
+{
+  "schemaVersion": 1,
+  "provenance": {
+    "package": "tra-relational-fixture",
+    "version": "1.0.0",
+    "repository": "checked-in-first-party-fixture",
+    "commit": "synthetic-v1",
+    "evidence": "README",
+    "entryPoint": "inference.js",
+    "publicModule": "module",
+    "backend": "jalangi2",
+    "backendVersion": "bc879287b1678de6e3c423f5debe63207559525b",
+    "executionId": "b7b4dd14a93bae2c6f954267"
+  },
+  "observations": [
+    {
+      "functionId": "module.js:1:1:identity",
+      "functionName": "identity",
+      "position": "parameter",
+      "index": 0,
+      "type": "number",
+      "source": {
+        "file": "module.js",
+        "line": 1,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 0,
+      "public": true,
+      "interaction": {
+        "kind": "inputValue",
+        "code": "inputValue",
+        "traceId": "trace__1",
+        "typeof": "number"
+      }
+    },
+    {
+      "functionId": "module.js:1:1:identity",
+      "functionName": "identity",
+      "position": "parameter",
+      "index": 0,
+      "type": "string",
+      "source": {
+        "file": "module.js",
+        "line": 1,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 1,
+      "public": true,
+      "interaction": {
+        "kind": "inputValue",
+        "code": "inputValue",
+        "traceId": "trace__2",
+        "typeof": "string"
+      }
+    },
+    {
+      "functionId": "module.js:1:1:identity",
+      "functionName": "identity",
+      "position": "result",
+      "index": -1,
+      "type": "number",
+      "source": {
+        "file": "module.js",
+        "line": 1,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 2,
+      "public": true,
+      "interaction": {
+        "kind": "return",
+        "traceId": "trace__1"
+      }
+    },
+    {
+      "functionId": "module.js:1:1:identity",
+      "functionName": "identity",
+      "position": "result",
+      "index": -1,
+      "type": "string",
+      "source": {
+        "file": "module.js",
+        "line": 1,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 3,
+      "public": true,
+      "interaction": {
+        "kind": "return",
+        "traceId": "trace__2"
+      }
+    },
+    {
+      "functionId": "module.js:2:1:first",
+      "functionName": "first",
+      "position": "parameter",
+      "index": 0,
+      "type": "array",
+      "source": {
+        "file": "module.js",
+        "line": 2,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 4,
+      "public": true,
+      "interaction": {
+        "kind": "inputValue",
+        "code": "inputValue",
+        "traceId": "trace__3",
+        "typeof": "array"
+      }
+    },
+    {
+      "functionId": "module.js:2:1:first",
+      "functionName": "first",
+      "position": "parameter",
+      "index": 0,
+      "type": "unknown",
+      "source": {
+        "file": "module.js",
+        "line": 2,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 5,
+      "public": true,
+      "interaction": {
+        "kind": "getField",
+        "code": "getField",
+        "traceId": "trace__3",
+        "isComputed": true,
+        "isOpAssign": false,
+        "enclosingFunctionId": "functionId_3",
+        "followingInteractions": [],
+        "iid": 89,
+        "field": 0,
+        "returnTypeOf": "number"
+      }
+    },
+    {
+      "functionId": "module.js:2:1:first",
+      "functionName": "first",
+      "position": "parameter",
+      "index": 0,
+      "type": "array",
+      "source": {
+        "file": "module.js",
+        "line": 2,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 6,
+      "public": true,
+      "interaction": {
+        "kind": "inputValue",
+        "code": "inputValue",
+        "traceId": "trace__4",
+        "typeof": "array"
+      }
+    },
+    {
+      "functionId": "module.js:2:1:first",
+      "functionName": "first",
+      "position": "parameter",
+      "index": 0,
+      "type": "unknown",
+      "source": {
+        "file": "module.js",
+        "line": 2,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 7,
+      "public": true,
+      "interaction": {
+        "kind": "getField",
+        "code": "getField",
+        "traceId": "trace__4",
+        "isComputed": true,
+        "isOpAssign": false,
+        "enclosingFunctionId": "functionId_3",
+        "followingInteractions": [],
+        "iid": 89,
+        "field": 0,
+        "returnTypeOf": "string"
+      }
+    },
+    {
+      "functionId": "module.js:2:1:first",
+      "functionName": "first",
+      "position": "result",
+      "index": -1,
+      "type": "number",
+      "source": {
+        "file": "module.js",
+        "line": 2,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 8,
+      "public": true,
+      "interaction": {
+        "kind": "return",
+        "traceId": "trace__3"
+      }
+    },
+    {
+      "functionId": "module.js:2:1:first",
+      "functionName": "first",
+      "position": "result",
+      "index": -1,
+      "type": "string",
+      "source": {
+        "file": "module.js",
+        "line": 2,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 9,
+      "public": true,
+      "interaction": {
+        "kind": "return",
+        "traceId": "trace__4"
+      }
+    },
+    {
+      "functionId": "module.js:3:1:convert",
+      "functionName": "convert",
+      "position": "parameter",
+      "index": 0,
+      "type": "string",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 10,
+      "public": true,
+      "interaction": {
+        "kind": "inputValue",
+        "code": "inputValue",
+        "traceId": "trace__5",
+        "typeof": "string"
+      }
+    },
+    {
+      "functionId": "module.js:3:1:convert",
+      "functionName": "convert",
+      "position": "parameter",
+      "index": 0,
+      "type": "unknown",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 11,
+      "public": true,
+      "interaction": {
+        "kind": "operator",
+        "code": "operator",
+        "traceId": "trace__5",
+        "leftType": "string",
+        "rightType": "string",
+        "leftIsNaN": true,
+        "rightIsNan": true,
+        "leftToPrimitiveType": "string",
+        "rightToPrimitiveType": "string",
+        "leftToPrimitiveIsNaN": true,
+        "rightToPrimitiveIsNaN": true,
+        "operator": "===",
+        "operandForInteraction": "left"
+      }
+    },
+    {
+      "functionId": "module.js:3:1:convert",
+      "functionName": "convert",
+      "position": "parameter",
+      "index": 0,
+      "type": "string",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 12,
+      "public": true,
+      "interaction": {
+        "kind": "inputValue",
+        "code": "inputValue",
+        "traceId": "trace__7",
+        "typeof": "string"
+      }
+    },
+    {
+      "functionId": "module.js:3:1:convert",
+      "functionName": "convert",
+      "position": "parameter",
+      "index": 0,
+      "type": "unknown",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 13,
+      "public": true,
+      "interaction": {
+        "kind": "operator",
+        "code": "operator",
+        "traceId": "trace__7",
+        "leftType": "string",
+        "rightType": "string",
+        "leftIsNaN": true,
+        "rightIsNan": true,
+        "leftToPrimitiveType": "string",
+        "rightToPrimitiveType": "string",
+        "leftToPrimitiveIsNaN": true,
+        "rightToPrimitiveIsNaN": true,
+        "operator": "===",
+        "operandForInteraction": "left"
+      }
+    },
+    {
+      "functionId": "module.js:3:1:convert",
+      "functionName": "convert",
+      "position": "parameter",
+      "index": 0,
+      "type": "string",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 14,
+      "public": true,
+      "interaction": {
+        "kind": "inputValue",
+        "code": "inputValue",
+        "traceId": "trace__8",
+        "typeof": "string"
+      }
+    },
+    {
+      "functionId": "module.js:3:1:convert",
+      "functionName": "convert",
+      "position": "parameter",
+      "index": 0,
+      "type": "unknown",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 15,
+      "public": true,
+      "interaction": {
+        "kind": "operator",
+        "code": "operator",
+        "traceId": "trace__8",
+        "leftType": "string",
+        "rightType": "string",
+        "leftIsNaN": true,
+        "rightIsNan": true,
+        "leftToPrimitiveType": "string",
+        "rightToPrimitiveType": "string",
+        "leftToPrimitiveIsNaN": true,
+        "rightToPrimitiveIsNaN": true,
+        "operator": "===",
+        "operandForInteraction": "left"
+      }
+    },
+    {
+      "functionId": "module.js:3:1:convert",
+      "functionName": "convert",
+      "position": "parameter",
+      "index": 0,
+      "type": "unknown",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 16,
+      "public": true,
+      "interaction": {
+        "kind": "operator",
+        "code": "operator",
+        "traceId": "trace__8",
+        "leftType": "string",
+        "rightType": "string",
+        "leftIsNaN": true,
+        "rightIsNan": true,
+        "leftToPrimitiveType": "string",
+        "rightToPrimitiveType": "string",
+        "leftToPrimitiveIsNaN": true,
+        "rightToPrimitiveIsNaN": true,
+        "operator": "===",
+        "operandForInteraction": "left"
+      }
+    },
+    {
+      "functionId": "module.js:3:1:convert",
+      "functionName": "convert",
+      "position": "parameter",
+      "index": 0,
+      "type": "string",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 17,
+      "public": true,
+      "interaction": {
+        "kind": "inputValue",
+        "code": "inputValue",
+        "traceId": "trace__10",
+        "typeof": "string"
+      }
+    },
+    {
+      "functionId": "module.js:3:1:convert",
+      "functionName": "convert",
+      "position": "parameter",
+      "index": 0,
+      "type": "unknown",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 18,
+      "public": true,
+      "interaction": {
+        "kind": "operator",
+        "code": "operator",
+        "traceId": "trace__10",
+        "leftType": "string",
+        "rightType": "string",
+        "leftIsNaN": true,
+        "rightIsNan": true,
+        "leftToPrimitiveType": "string",
+        "rightToPrimitiveType": "string",
+        "leftToPrimitiveIsNaN": true,
+        "rightToPrimitiveIsNaN": true,
+        "operator": "===",
+        "operandForInteraction": "left"
+      }
+    },
+    {
+      "functionId": "module.js:3:1:convert",
+      "functionName": "convert",
+      "position": "parameter",
+      "index": 0,
+      "type": "unknown",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 19,
+      "public": true,
+      "interaction": {
+        "kind": "operator",
+        "code": "operator",
+        "traceId": "trace__10",
+        "leftType": "string",
+        "rightType": "string",
+        "leftIsNaN": true,
+        "rightIsNan": true,
+        "leftToPrimitiveType": "string",
+        "rightToPrimitiveType": "string",
+        "leftToPrimitiveIsNaN": true,
+        "rightToPrimitiveIsNaN": true,
+        "operator": "===",
+        "operandForInteraction": "left"
+      }
+    },
+    {
+      "functionId": "module.js:3:1:convert",
+      "functionName": "convert",
+      "position": "parameter",
+      "index": 1,
+      "type": "string",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 20,
+      "public": true,
+      "interaction": {
+        "kind": "inputValue",
+        "code": "inputValue",
+        "traceId": "trace__5",
+        "typeof": "string"
+      }
+    },
+    {
+      "functionId": "module.js:3:1:convert",
+      "functionName": "convert",
+      "position": "parameter",
+      "index": 1,
+      "type": "unknown",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 21,
+      "public": true,
+      "interaction": {
+        "kind": "usedAsArgument",
+        "code": "usedAsArgument",
+        "traceId": "trace__5",
+        "enclosingFunctionId": "functionId_5",
+        "targetFunctionId": "functionId_7",
+        "traceIdInTargetFunction": "trace__6",
+        "argumentIndexInTargetFunction": "0"
+      }
+    },
+    {
+      "functionId": "module.js:3:1:convert",
+      "functionName": "convert",
+      "position": "parameter",
+      "index": 1,
+      "type": "string",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 22,
+      "public": true,
+      "interaction": {
+        "kind": "inputValue",
+        "code": "inputValue",
+        "traceId": "trace__7",
+        "typeof": "string"
+      }
+    },
+    {
+      "functionId": "module.js:3:1:convert",
+      "functionName": "convert",
+      "position": "parameter",
+      "index": 1,
+      "type": "unknown",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 23,
+      "public": true,
+      "interaction": {
+        "kind": "usedAsArgument",
+        "code": "usedAsArgument",
+        "traceId": "trace__7",
+        "enclosingFunctionId": "functionId_5",
+        "targetFunctionId": "functionId_7",
+        "traceIdInTargetFunction": "trace__6",
+        "argumentIndexInTargetFunction": "0"
+      }
+    },
+    {
+      "functionId": "module.js:3:1:convert",
+      "functionName": "convert",
+      "position": "parameter",
+      "index": 1,
+      "type": "number",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 24,
+      "public": true,
+      "interaction": {
+        "kind": "inputValue",
+        "code": "inputValue",
+        "traceId": "trace__8",
+        "typeof": "number"
+      }
+    },
+    {
+      "functionId": "module.js:3:1:convert",
+      "functionName": "convert",
+      "position": "parameter",
+      "index": 1,
+      "type": "unknown",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 25,
+      "public": true,
+      "interaction": {
+        "kind": "usedAsArgument",
+        "code": "usedAsArgument",
+        "traceId": "trace__8",
+        "enclosingFunctionId": "functionId_5",
+        "targetFunctionId": "functionId_9",
+        "traceIdInTargetFunction": "trace__9",
+        "argumentIndexInTargetFunction": "0"
+      }
+    },
+    {
+      "functionId": "module.js:3:1:convert",
+      "functionName": "convert",
+      "position": "parameter",
+      "index": 1,
+      "type": "number",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 26,
+      "public": true,
+      "interaction": {
+        "kind": "inputValue",
+        "code": "inputValue",
+        "traceId": "trace__10",
+        "typeof": "number"
+      }
+    },
+    {
+      "functionId": "module.js:3:1:convert",
+      "functionName": "convert",
+      "position": "parameter",
+      "index": 1,
+      "type": "unknown",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 27,
+      "public": true,
+      "interaction": {
+        "kind": "usedAsArgument",
+        "code": "usedAsArgument",
+        "traceId": "trace__10",
+        "enclosingFunctionId": "functionId_5",
+        "targetFunctionId": "functionId_9",
+        "traceIdInTargetFunction": "trace__9",
+        "argumentIndexInTargetFunction": "0"
+      }
+    },
+    {
+      "functionId": "module.js:3:1:convert",
+      "functionName": "convert",
+      "position": "result",
+      "index": -1,
+      "type": "number",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 28,
+      "public": true,
+      "interaction": {
+        "kind": "return",
+        "traceId": "trace__5"
+      }
+    },
+    {
+      "functionId": "module.js:3:1:convert",
+      "functionName": "convert",
+      "position": "result",
+      "index": -1,
+      "type": "number",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 29,
+      "public": true,
+      "interaction": {
+        "kind": "return",
+        "traceId": "trace__7"
+      }
+    },
+    {
+      "functionId": "module.js:3:1:convert",
+      "functionName": "convert",
+      "position": "result",
+      "index": -1,
+      "type": "string",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 30,
+      "public": true,
+      "interaction": {
+        "kind": "return",
+        "traceId": "trace__8"
+      }
+    },
+    {
+      "functionId": "module.js:3:1:convert",
+      "functionName": "convert",
+      "position": "result",
+      "index": -1,
+      "type": "string",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 31,
+      "public": true,
+      "interaction": {
+        "kind": "return",
+        "traceId": "trace__10"
+      }
+    },
+    {
+      "functionId": "module.js:8:1:apply",
+      "functionName": "apply",
+      "position": "parameter",
+      "index": 0,
+      "type": "number",
+      "source": {
+        "file": "module.js",
+        "line": 8,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 32,
+      "public": true,
+      "interaction": {
+        "kind": "inputValue",
+        "code": "inputValue",
+        "traceId": "trace__11",
+        "typeof": "number"
+      }
+    },
+    {
+      "functionId": "module.js:8:1:apply",
+      "functionName": "apply",
+      "position": "parameter",
+      "index": 0,
+      "type": "unknown",
+      "source": {
+        "file": "module.js",
+        "line": 8,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 33,
+      "public": true,
+      "interaction": {
+        "kind": "usedAsArgument",
+        "code": "usedAsArgument",
+        "traceId": "trace__11",
+        "enclosingFunctionId": "functionId_11",
+        "targetFunctionId": "functionId_13",
+        "traceIdInTargetFunction": "trace__12",
+        "argumentIndexInTargetFunction": "0"
+      }
+    },
+    {
+      "functionId": "module.js:8:1:apply",
+      "functionName": "apply",
+      "position": "parameter",
+      "index": 1,
+      "type": "function",
+      "source": {
+        "file": "module.js",
+        "line": 8,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 34,
+      "public": true,
+      "interaction": {
+        "kind": "inputValue",
+        "code": "inputValue",
+        "traceId": "trace__11",
+        "typeof": "function",
+        "functionId": "functionId_13"
+      }
+    },
+    {
+      "functionId": "module.js:8:1:apply",
+      "functionName": "apply",
+      "position": "result",
+      "index": -1,
+      "type": "number",
+      "source": {
+        "file": "module.js",
+        "line": 8,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 35,
+      "public": true,
+      "interaction": {
+        "kind": "return",
+        "traceId": "trace__11"
+      }
+    },
+    {
+      "functionId": "inference.js:10:14:increment",
+      "functionName": "increment",
+      "position": "parameter",
+      "index": 0,
+      "type": "number",
+      "source": {
+        "file": "inference.js",
+        "line": 10,
+        "column": 14
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 36,
+      "public": false,
+      "interaction": {
+        "kind": "inputValue",
+        "code": "inputValue",
+        "traceId": "trace__12",
+        "typeof": "number"
+      }
+    },
+    {
+      "functionId": "inference.js:10:14:increment",
+      "functionName": "increment",
+      "position": "parameter",
+      "index": 0,
+      "type": "unknown",
+      "source": {
+        "file": "inference.js",
+        "line": 10,
+        "column": 14
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 37,
+      "public": false,
+      "interaction": {
+        "kind": "convertedTo",
+        "code": "convertedTo",
+        "traceId": "trace__12",
+        "convertedTo": "number",
+        "isNaN": false,
+        "toPrimitive": null,
+        "operator": "+",
+        "originalTypeof": "number"
+      }
+    },
+    {
+      "functionId": "inference.js:10:14:increment",
+      "functionName": "increment",
+      "position": "parameter",
+      "index": 0,
+      "type": "unknown",
+      "source": {
+        "file": "inference.js",
+        "line": 10,
+        "column": 14
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 38,
+      "public": false,
+      "interaction": {
+        "kind": "operator",
+        "code": "operator",
+        "traceId": "trace__12",
+        "leftType": "number",
+        "rightType": "number",
+        "leftIsNaN": false,
+        "rightIsNan": false,
+        "leftToPrimitiveType": "number",
+        "rightToPrimitiveType": "number",
+        "leftToPrimitiveIsNaN": false,
+        "rightToPrimitiveIsNaN": false,
+        "operator": "+",
+        "operandForInteraction": "left"
+      }
+    },
+    {
+      "functionId": "inference.js:10:14:increment",
+      "functionName": "increment",
+      "position": "result",
+      "index": -1,
+      "type": "number",
+      "source": {
+        "file": "inference.js",
+        "line": 10,
+        "column": 14
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 39,
+      "public": false,
+      "interaction": {
+        "kind": "return",
+        "traceId": "trace__12"
+      }
+    },
+    {
+      "functionId": "module.js:9:1:fail",
+      "functionName": "fail",
+      "position": "parameter",
+      "index": 0,
+      "type": "number",
+      "source": {
+        "file": "module.js",
+        "line": 9,
+        "column": 1
+      },
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 40,
+      "public": true,
+      "interaction": {
+        "kind": "inputValue",
+        "code": "inputValue",
+        "traceId": "trace__13",
+        "typeof": "number"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "operator": "===",
+      "source": {
+        "file": "module.js",
+        "line": 4,
+        "column": 7
+      },
+      "leftType": "string",
+      "rightType": "string",
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 0
+    },
+    {
+      "operator": "===",
+      "source": {
+        "file": "module.js",
+        "line": 4,
+        "column": 7
+      },
+      "leftType": "string",
+      "rightType": "string",
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 1
+    },
+    {
+      "operator": "===",
+      "source": {
+        "file": "module.js",
+        "line": 4,
+        "column": 7
+      },
+      "leftType": "string",
+      "rightType": "string",
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 2
+    },
+    {
+      "operator": "===",
+      "source": {
+        "file": "module.js",
+        "line": 5,
+        "column": 7
+      },
+      "leftType": "string",
+      "rightType": "string",
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 3
+    },
+    {
+      "operator": "===",
+      "source": {
+        "file": "module.js",
+        "line": 4,
+        "column": 7
+      },
+      "leftType": "string",
+      "rightType": "string",
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 4
+    },
+    {
+      "operator": "===",
+      "source": {
+        "file": "module.js",
+        "line": 5,
+        "column": 7
+      },
+      "leftType": "string",
+      "rightType": "string",
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 5
+    },
+    {
+      "operator": "+",
+      "source": {
+        "file": "inference.js",
+        "line": 10,
+        "column": 49
+      },
+      "leftType": "number",
+      "rightType": "number",
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 6
+    },
+    {
+      "operator": "instanceof",
+      "source": {
+        "file": "inference.js",
+        "line": 11,
+        "column": 44
+      },
+      "leftType": "unknown",
+      "rightType": "function",
+      "executionId": "b7b4dd14a93bae2c6f954267",
+      "order": 7
+    }
+  ]
+}

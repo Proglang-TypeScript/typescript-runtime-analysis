@@ -31,10 +31,12 @@ function trace(entry, options) {
   if (!entry.startsWith(targetRoot + path.sep)) throw new Error('Entry point must be inside targetRoot');
   const temporary = fs.mkdtempSync(path.join(os.tmpdir(), 'tra-'));
   const rawFile = path.join(temporary, 'raw.json');
+  const invocationFile = path.join(temporary, 'invocations.json');
   try {
     const result = spawnSync(process.execPath, [path.join(__dirname, 'jalangi-command.cjs'), '--inlineSource', '--inlineIID',
-      ...analyses.flatMap(file => ['--analysis', path.join(__dirname, file)]), entry], {
-      cwd: temporary, env: {PATH: process.env.PATH, KAFKA_ENABLED: 'false', TRACE_WORK_DIR: temporary, TRACE_RAW_OUTPUT: rawFile, TRACE_TARGET_ROOT: targetRoot, TRACE_MAX_OBSERVATIONS: String(options.maxObservations || 100000)},
+      ...analyses.flatMap(file => ['--analysis', path.join(__dirname, file)]),
+      ...(options.captureInvocations ? ['--analysis', path.join(__dirname, 'invocation-analysis.cjs')] : []), entry], {
+      cwd: temporary, env: {PATH: process.env.PATH, KAFKA_ENABLED: 'false', TRACE_WORK_DIR: temporary, TRACE_RAW_OUTPUT: rawFile, TRACE_TARGET_ROOT: targetRoot, TRACE_MAX_OBSERVATIONS: String(options.maxObservations || 100000), ...(options.captureInvocations ? {TRACE_INVOCATIONS_OUTPUT: invocationFile} : {})},
       timeout: options.timeout || 30000, maxBuffer: 8 * 1024 * 1024, encoding: 'utf8',
     });
     if (result.error || result.status !== 0) throw new Error(`Instrumentation/execution failed: ${result.error?.message || result.stderr}`);
@@ -70,10 +72,27 @@ function trace(entry, options) {
     const operators = raw.patterns.map((operator, order) => ({operator: operator.operator, source: location(operator), leftType: shallow(operator.leftType),
       rightType: shallow(operator.rightType), executionId, order}));
     const envelope = validate('trace', {schemaVersion: 1, provenance, observations, operators});
+    let invocationTrace;
+    if (options.captureInvocations) {
+      const invocations = JSON.parse(fs.readFileSync(invocationFile, 'utf8')).map(frame => {
+        const container = raw.functions[frame.functionId];
+        if (!container?.sourceLocation) throw new Error('Invocation has no source location');
+        const source = location(container.sourceLocation);
+        const functionId = `${source.file}:${source.line}:${source.column}:${container.functionName}`;
+        const invocationId = call => `${executionId}:${call}`;
+        return {invocationId: invocationId(frame.call), functionId, functionName: container.functionName, source, executionId, order: frame.call,
+          public: Boolean(container.isExported || container.requiredModule === `./${provenance.publicModule}` || container.requiredModule === provenance.publicModule),
+          arguments: frame.arguments, receiver: frame.receiver, result: frame.result, outcome: frame.outcome,
+          parentInvocationId: frame.parent === null ? null : invocationId(frame.parent),
+          callbacks: frame.callbacks.map(callback => ({argumentIndex: callback.argumentIndex, invocationId: invocationId(callback.call)}))};
+      });
+      invocationTrace = validate('invocationTrace', {schemaVersion: 1, provenance, invocations});
+    }
     fs.mkdirSync(path.dirname(options.output), {recursive: true});
     fs.writeFileSync(options.output, JSON.stringify(envelope, null, 2) + '\n');
     fs.writeFileSync(`${options.output}.raw.json`, JSON.stringify(raw, null, 2) + '\n');
     fs.writeFileSync(`${options.output}.execution.json`, JSON.stringify({node: process.version, stdout: result.stdout, durationLimitMs: options.timeout || 30000}, null, 2) + '\n');
+    if (invocationTrace) fs.writeFileSync(`${options.output}.invocations.json`, JSON.stringify(invocationTrace, null, 2) + '\n');
     return envelope;
   } finally {
     fs.rmSync(temporary, {recursive: true, force: true});

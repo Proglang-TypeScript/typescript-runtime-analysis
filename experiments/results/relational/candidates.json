@@ -1,0 +1,200 @@
+[
+  {
+    "schemaVersion": 1,
+    "functionId": "tra-relational-fixture@1.0.0:checked-in-first-party-fixture:synthetic-v1:module.js:1:1:identity",
+    "functionName": "identity",
+    "selected": "identity-generic",
+    "candidates": [
+      {
+        "kind": "component-union",
+        "text": "export function identity(arg0: number | string): number | string;\n",
+        "supportingInvocations": [
+          "b7b4dd14a93bae2c6f954267:0",
+          "b7b4dd14a93bae2c6f954267:1"
+        ],
+        "relationships": [],
+        "reason": "Independent argument/result unions discard invocation correlations"
+      },
+      {
+        "kind": "observation-overloads",
+        "text": "export function identity(arg0: \"seen\"): string;\nexport function identity(arg0: 1): number;\n",
+        "supportingInvocations": [
+          "b7b4dd14a93bae2c6f954267:0",
+          "b7b4dd14a93bae2c6f954267:1"
+        ],
+        "relationships": [],
+        "reason": "One literal/shallow overload per distinct observed invocation; no extrapolation"
+      },
+      {
+        "kind": "identity-generic",
+        "text": "export function identity<T>(arg0: T): T;\n",
+        "supportingInvocations": [
+          "b7b4dd14a93bae2c6f954267:0",
+          "b7b4dd14a93bae2c6f954267:1"
+        ],
+        "relationships": [
+          {
+            "kind": "equality",
+            "from": "argument:0",
+            "to": "result"
+          }
+        ],
+        "reason": "Argument/result value equality across distinct types supports an identity-style candidate, not a proof of universal behavior"
+      }
+    ],
+    "diagnostics": []
+  },
+  {
+    "schemaVersion": 1,
+    "functionId": "tra-relational-fixture@1.0.0:checked-in-first-party-fixture:synthetic-v1:module.js:2:1:first",
+    "functionName": "first",
+    "selected": "element-generic",
+    "candidates": [
+      {
+        "kind": "component-union",
+        "text": "export function first(arg0: Array<number> | Array<string>): number | string;\n",
+        "supportingInvocations": [
+          "b7b4dd14a93bae2c6f954267:2",
+          "b7b4dd14a93bae2c6f954267:3"
+        ],
+        "relationships": [],
+        "reason": "Independent argument/result unions discard invocation correlations"
+      },
+      {
+        "kind": "observation-overloads",
+        "text": "export function first(arg0: Array<number>): number;\nexport function first(arg0: Array<string>): string;\n",
+        "supportingInvocations": [
+          "b7b4dd14a93bae2c6f954267:2",
+          "b7b4dd14a93bae2c6f954267:3"
+        ],
+        "relationships": [],
+        "reason": "One literal/shallow overload per distinct observed invocation; no extrapolation"
+      },
+      {
+        "kind": "element-generic",
+        "text": "export function first<T>(arg0: T[]): T;\n",
+        "supportingInvocations": [
+          "b7b4dd14a93bae2c6f954267:2",
+          "b7b4dd14a93bae2c6f954267:3"
+        ],
+        "relationships": [
+          {
+            "kind": "container-element",
+            "from": "argument:0.elements",
+            "to": "result"
+          }
+        ],
+        "reason": "Returned value matches an element of each complete non-empty observed container; empty containers are unsupported"
+      }
+    ],
+    "diagnostics": []
+  },
+  {
+    "schemaVersion": 1,
+    "functionId": "tra-relational-fixture@1.0.0:checked-in-first-party-fixture:synthetic-v1:module.js:3:1:convert",
+    "functionName": "convert",
+    "selected": "discriminated-overloads",
+    "candidates": [
+      {
+        "kind": "component-union",
+        "text": "export function convert(arg0: string, arg1: number | string): number | string;\n",
+        "supportingInvocations": [
+          "b7b4dd14a93bae2c6f954267:4",
+          "b7b4dd14a93bae2c6f954267:5",
+          "b7b4dd14a93bae2c6f954267:6",
+          "b7b4dd14a93bae2c6f954267:7"
+        ],
+        "relationships": [],
+        "reason": "Independent argument/result unions discard invocation correlations"
+      },
+      {
+        "kind": "observation-overloads",
+        "text": "export function convert(arg0: \"number\", arg1: \"1\"): number;\nexport function convert(arg0: \"number\", arg1: \"2\"): number;\nexport function convert(arg0: \"string\", arg1: 3): string;\nexport function convert(arg0: \"string\", arg1: 4): string;\n",
+        "supportingInvocations": [
+          "b7b4dd14a93bae2c6f954267:4",
+          "b7b4dd14a93bae2c6f954267:5",
+          "b7b4dd14a93bae2c6f954267:6",
+          "b7b4dd14a93bae2c6f954267:7"
+        ],
+        "relationships": [],
+        "reason": "One literal/shallow overload per distinct observed invocation; no extrapolation"
+      },
+      {
+        "kind": "discriminated-overloads",
+        "text": "export function convert(arg0: \"number\", arg1: string): number;\nexport function convert(arg0: \"string\", arg1: number): string;\n",
+        "supportingInvocations": [
+          "b7b4dd14a93bae2c6f954267:4",
+          "b7b4dd14a93bae2c6f954267:5",
+          "b7b4dd14a93bae2c6f954267:6",
+          "b7b4dd14a93bae2c6f954267:7"
+        ],
+        "relationships": [
+          {
+            "kind": "discriminant",
+            "from": "argument:0.literal",
+            "to": "arguments/result"
+          }
+        ],
+        "reason": "Shallow literal-discriminated branches retain observed argument/result associations"
+      },
+      {
+        "kind": "correlated-union",
+        "text": "export type ConvertInvocation = { arguments: [\"number\", string]; result: number } | { arguments: [\"string\", number]; result: string };\nexport function convert(...args: ConvertInvocation[\"arguments\"]): ConvertInvocation[\"result\"];\n",
+        "supportingInvocations": [
+          "b7b4dd14a93bae2c6f954267:4",
+          "b7b4dd14a93bae2c6f954267:5",
+          "b7b4dd14a93bae2c6f954267:6",
+          "b7b4dd14a93bae2c6f954267:7"
+        ],
+        "relationships": [
+          {
+            "kind": "discriminant",
+            "from": "argument:0.literal",
+            "to": "arguments/result"
+          }
+        ],
+        "reason": "Invocation union preserves tuple/result rows; projected function return is a union and deliberately loses call-site output precision"
+      }
+    ],
+    "diagnostics": []
+  },
+  {
+    "schemaVersion": 1,
+    "functionId": "tra-relational-fixture@1.0.0:checked-in-first-party-fixture:synthetic-v1:module.js:8:1:apply",
+    "functionName": "apply",
+    "selected": null,
+    "candidates": [
+      {
+        "kind": "component-union",
+        "text": "export function apply(arg0: number, arg1: ((...args: never[]) => unknown)): number;\n",
+        "supportingInvocations": [
+          "b7b4dd14a93bae2c6f954267:8"
+        ],
+        "relationships": [],
+        "reason": "Independent argument/result unions discard invocation correlations"
+      },
+      {
+        "kind": "observation-overloads",
+        "text": "export function apply(arg0: 5, arg1: ((...args: never[]) => unknown)): number;\n",
+        "supportingInvocations": [
+          "b7b4dd14a93bae2c6f954267:8"
+        ],
+        "relationships": [],
+        "reason": "One literal/shallow overload per distinct observed invocation; no extrapolation"
+      }
+    ],
+    "diagnostics": [
+      "Insufficient support, exceptional outcomes or callback inference outside this scaffold"
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "functionId": "tra-relational-fixture@1.0.0:checked-in-first-party-fixture:synthetic-v1:module.js:9:1:fail",
+    "functionName": "fail",
+    "selected": null,
+    "candidates": [],
+    "diagnostics": [
+      "No successful outcomes"
+    ]
+  }
+]

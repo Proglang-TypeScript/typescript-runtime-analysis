@@ -1,0 +1,40 @@
+{
+  "dataset": {
+    "schemaVersion": 1,
+    "purpose": "first-party synthetic relational pipeline demonstration; not publication evaluation",
+    "seed": 0,
+    "package": "tra-relational-fixture",
+    "version": "1.0.0",
+    "family": "synthetic-relations",
+    "inference": "inference.js",
+    "heldOut": "held-out.js",
+    "thresholds": {
+      "minSupport": 2,
+      "maxInvocations": 128,
+      "maxBranches": 8
+    },
+    "exclusions": [
+      "polymorphic callbacks",
+      "async/ESM",
+      "empty-container generalization",
+      "conditional/mapped types"
+    ]
+  },
+  "hashes": {
+    "module.js": "d2d4ee58d73e15cb8fed280e2a487e7099d8acf557a21ab5ae6136c5aa29e39a",
+    "inference.js": "0f866bee7e4ebbf116b9accb73d817587455e96908feb7ddc4fd1e7b212e5ac0",
+    "held-out.js": "16f0a44806ec5a1c8c840fec7dcc2472dcf6f3347b693751e4fa2dfd4ffa5d24",
+    "inference.ts": "b4e07db629d8aa10274f8e8ead3d591c026ebb9949da7832a3f9b455f818b16e",
+    "held-out.ts": "a03e9c63901b9411962c383afeb5dcaa72a5b3c0bf891b5da7d490d94bd31d53",
+    "rejected.ts": "ce9f41dbd768a447c1204584fbb10c21211bbf87acffa48f073477320b0d363d",
+    "dataset.json": "c9155a0399e1f97e7156b17a7157ccfe1aeab57e56ba27bd9edfd0c9c4f0497b"
+  },
+  "node": "v24.21.0",
+  "compiler": "6.0.3",
+  "nativeCompiler": "7.0.2",
+  "sourceRoles": {
+    "synthesis": "inference.js",
+    "evaluationOnly": "held-out.js"
+  },
+  "seed": 0
+}

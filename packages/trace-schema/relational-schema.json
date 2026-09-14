@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.invalid/typescript-runtime-analysis/relational/v1",
+  "definitions": {
+    "value": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "valueId", "complete"],
+      "allOf": [
+        {"if": {"properties": {"type": {"const": "string"}}}, "then": {"properties": {"literal": {"type": "string"}}}},
+        {"if": {"properties": {"type": {"const": "number"}}}, "then": {"properties": {"literal": {"type": "number"}}}},
+        {"if": {"properties": {"type": {"const": "boolean"}}}, "then": {"properties": {"literal": {"type": "boolean"}}}},
+        {"if": {"properties": {"type": {"const": "null"}}}, "then": {"properties": {"literal": {"type": "null"}}}}
+      ],
+      "properties": {
+        "type": {"$ref": "https://example.invalid/typescript-runtime-analysis/v1#/definitions/shallowType"},
+        "valueId": {"type": "string", "minLength": 1},
+        "complete": {"type": "boolean"},
+        "literal": {"anyOf": [{"type": "string", "maxLength": 128}, {"type": "number"}, {"type": "boolean"}, {"type": "null"}]},
+        "elements": {"type": "array", "maxItems": 16, "items": {"$ref": "#/definitions/value"}},
+        "properties": {"type": "object", "maxProperties": 16, "additionalProperties": {"$ref": "#/definitions/value"}}
+      }
+    },
+    "invocation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["invocationId", "functionId", "functionName", "source", "executionId", "order", "public", "arguments", "receiver", "result", "outcome", "callbacks", "parentInvocationId"],
+      "properties": {
+        "invocationId": {"type": "string", "minLength": 1},
+        "functionId": {"type": "string", "minLength": 1},
+        "functionName": {"type": "string"},
+        "source": {"$ref": "https://example.invalid/typescript-runtime-analysis/v1#/definitions/source"},
+        "executionId": {"type": "string"}, "order": {"type": "integer", "minimum": 0}, "public": {"type": "boolean"},
+        "arguments": {"type": "array", "maxItems": 16, "items": {"$ref": "#/definitions/value"}},
+        "receiver": {"$ref": "#/definitions/value"}, "result": {"$ref": "#/definitions/value"},
+        "outcome": {"enum": ["return", "throw"]},
+        "parentInvocationId": {"type": ["string", "null"]},
+        "callbacks": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["argumentIndex", "invocationId"], "properties": {"argumentIndex": {"type": "integer", "minimum": 0}, "invocationId": {"type": "string"}}}}
+      }
+    },
+    "invocationTrace": {
+      "type": "object", "additionalProperties": false, "required": ["schemaVersion", "provenance", "invocations"],
+      "properties": {
+        "schemaVersion": {"const": 1},
+        "provenance": {"$ref": "https://example.invalid/typescript-runtime-analysis/v1#/definitions/provenance"},
+        "invocations": {"type": "array", "items": {"$ref": "#/definitions/invocation"}}
+      }
+    },
+    "synthesis": {
+      "type": "object", "additionalProperties": false, "required": ["schemaVersion", "functionId", "functionName", "selected", "candidates", "diagnostics"],
+      "properties": {
+        "schemaVersion": {"const": 1}, "functionId": {"type": "string"}, "functionName": {"type": "string"}, "selected": {"type": ["string", "null"]},
+        "diagnostics": {"type": "array", "items": {"type": "string"}},
+        "candidates": {"type": "array", "maxItems": 16, "items": {
+          "type": "object", "additionalProperties": false, "required": ["kind", "text", "supportingInvocations", "relationships", "reason"],
+          "properties": {
+            "kind": {"enum": ["component-union", "observation-overloads", "identity-generic", "element-generic", "discriminated-overloads", "correlated-union"]},
+            "text": {"type": "string"}, "reason": {"type": "string"},
+            "supportingInvocations": {"type": "array", "items": {"type": "string"}},
+            "relationships": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["kind", "from", "to"], "properties": {"kind": {"enum": ["equality", "container-element", "discriminant"]}, "from": {"type": "string"}, "to": {"type": "string"}}}}
+          }
+        }}
+      }
+    }
+  }
+}

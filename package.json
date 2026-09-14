@@ -14,6 +14,7 @@
     "smoke": "node scripts/smoke.cjs",
     "cli": "node packages/cli/index.cjs",
     "experiment": "node scripts/experiment.cjs",
+    "experiment:relational": "node scripts/relational-experiment.cjs",
     "check": "npm run build && npm test && npm run smoke && npm run experiment"
   },
   "dependencies": {

@@ -3,4 +3,4 @@ A,README-only,7,1,0,,,,
 A,tests-only,10,1,1,,,,
 A,union,17,1,1,,,,
 A,filtered-union,14,1,0,,,,
-B,frequency,,,,2,4,0,0.5
+legacy-pattern,frequency,,,,2,4,0,0.5

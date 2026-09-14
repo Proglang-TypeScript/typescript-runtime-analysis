@@ -1,0 +1,37 @@
+--- codex-project-work-description.md
++++ codex-project-work-description-revised.md
+@@ -5,7 +5,7 @@
+ Recover the checked-out Proglang-TypeScript projects, bring the relevant software to a reproducible runnable state on a current development environment, and consolidate the maintained functionality into a fresh repository that can serve as the foundation for one of two four-to-five-month research projects intended to produce a peer-reviewed publication:
+ 
+ 1. combining runtime evidence from README examples and package tests to generate public TypeScript API declarations; or
+-2. predicting JavaScript types from code-pattern/type distributions learned across packages.
++2. synthesizing relational TypeScript signatures—generics, overloads, and correlated unions—from invocation-level runtime observations.
+ 
+ The work is not a wholesale rewrite. Preserve working behavior, experimental artifacts, attribution, licenses, and history wherever practical. Prefer small verified migrations over broad speculative redesigns. Repository recovery is enabling work: prioritize decisions that leave enough time for a controlled experiment, artifact, and submission-ready paper.
+ 
+@@ -268,18 +268,18 @@
+ 
+ Do not complete the research heuristics unless needed to establish that the architecture supports them.
+ 
+-### Track B scaffold: pattern prediction
++### Track B scaffold: relational signature synthesis
+ 
+ Implement or prepare interfaces for:
+ 
+-- deterministic pattern extraction;
+-- mapping runtime types to pattern variable positions;
+-- package-aware observation counts;
+-- train/validation/test splits by package;
+-- baseline predictors and evaluation metrics;
+-- abstention when confidence or support is insufficient.
++- retaining argument, receiver, result, callback, and outcome observations as one invocation tuple;
++- expressing equality and container-element relationships among signature positions;
++- generating bounded candidates for generics, discriminated overloads, and correlated unions;
++- comparing relational candidates with component-wise union and overload-per-observation baselines;
++- explaining the supporting invocations and abstaining when evidence is insufficient;
++- validating declarations with inference clients and separate held-out clients.
+ 
+-Do not introduce ML frameworks until a simple frequency baseline and package-split evaluation run end to end.
++Do not attempt full polymorphic inference or arbitrary TypeScript conditional and mapped types. First make identity-style generics and shallow discriminated overloads run end to end.
+ 
+ ## Testing and acceptance criteria

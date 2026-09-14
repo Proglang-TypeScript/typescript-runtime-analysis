@@ -1,0 +1,366 @@
+{
+  "schemaVersion": 1,
+  "provenance": {
+    "package": "tra-relational-fixture",
+    "version": "1.0.0",
+    "repository": "checked-in-first-party-fixture",
+    "commit": "synthetic-v1",
+    "evidence": "client",
+    "entryPoint": "held-out.js",
+    "publicModule": "module",
+    "backend": "jalangi2",
+    "backendVersion": "bc879287b1678de6e3c423f5debe63207559525b",
+    "executionId": "fc9ce38698adb6d23d1cf29c"
+  },
+  "invocations": [
+    {
+      "invocationId": "fc9ce38698adb6d23d1cf29c:0",
+      "functionId": "module.js:1:1:identity",
+      "functionName": "identity",
+      "source": {
+        "file": "module.js",
+        "line": 1,
+        "column": 1
+      },
+      "executionId": "fc9ce38698adb6d23d1cf29c",
+      "order": 0,
+      "public": true,
+      "arguments": [
+        {
+          "type": "boolean",
+          "valueId": "value:0",
+          "complete": true,
+          "literal": true
+        }
+      ],
+      "receiver": {
+        "type": "object",
+        "valueId": "value:1",
+        "complete": true,
+        "properties": {
+          "apply": {
+            "type": "function",
+            "valueId": "value:2",
+            "complete": true
+          },
+          "convert": {
+            "type": "function",
+            "valueId": "value:3",
+            "complete": true
+          },
+          "fail": {
+            "type": "function",
+            "valueId": "value:4",
+            "complete": true
+          },
+          "first": {
+            "type": "function",
+            "valueId": "value:5",
+            "complete": true
+          },
+          "identity": {
+            "type": "function",
+            "valueId": "value:6",
+            "complete": true
+          }
+        }
+      },
+      "result": {
+        "type": "boolean",
+        "valueId": "value:0",
+        "complete": true,
+        "literal": true
+      },
+      "outcome": "return",
+      "parentInvocationId": null,
+      "callbacks": []
+    },
+    {
+      "invocationId": "fc9ce38698adb6d23d1cf29c:1",
+      "functionId": "module.js:1:1:identity",
+      "functionName": "identity",
+      "source": {
+        "file": "module.js",
+        "line": 1,
+        "column": 1
+      },
+      "executionId": "fc9ce38698adb6d23d1cf29c",
+      "order": 1,
+      "public": true,
+      "arguments": [
+        {
+          "type": "object",
+          "valueId": "value:7",
+          "complete": true,
+          "properties": {
+            "fresh": {
+              "type": "boolean",
+              "valueId": "value:0",
+              "complete": true,
+              "literal": true
+            }
+          }
+        }
+      ],
+      "receiver": {
+        "type": "object",
+        "valueId": "value:1",
+        "complete": true,
+        "properties": {
+          "apply": {
+            "type": "function",
+            "valueId": "value:2",
+            "complete": true
+          },
+          "convert": {
+            "type": "function",
+            "valueId": "value:3",
+            "complete": true
+          },
+          "fail": {
+            "type": "function",
+            "valueId": "value:4",
+            "complete": true
+          },
+          "first": {
+            "type": "function",
+            "valueId": "value:5",
+            "complete": true
+          },
+          "identity": {
+            "type": "function",
+            "valueId": "value:6",
+            "complete": true
+          }
+        }
+      },
+      "result": {
+        "type": "object",
+        "valueId": "value:7",
+        "complete": true,
+        "properties": {
+          "fresh": {
+            "type": "boolean",
+            "valueId": "value:0",
+            "complete": true,
+            "literal": true
+          }
+        }
+      },
+      "outcome": "return",
+      "parentInvocationId": null,
+      "callbacks": []
+    },
+    {
+      "invocationId": "fc9ce38698adb6d23d1cf29c:2",
+      "functionId": "module.js:2:1:first",
+      "functionName": "first",
+      "source": {
+        "file": "module.js",
+        "line": 2,
+        "column": 1
+      },
+      "executionId": "fc9ce38698adb6d23d1cf29c",
+      "order": 2,
+      "public": true,
+      "arguments": [
+        {
+          "type": "array",
+          "valueId": "value:8",
+          "complete": true,
+          "elements": [
+            {
+              "type": "boolean",
+              "valueId": "value:9",
+              "complete": true,
+              "literal": false
+            },
+            {
+              "type": "boolean",
+              "valueId": "value:0",
+              "complete": true,
+              "literal": true
+            }
+          ]
+        }
+      ],
+      "receiver": {
+        "type": "object",
+        "valueId": "value:1",
+        "complete": true,
+        "properties": {
+          "apply": {
+            "type": "function",
+            "valueId": "value:2",
+            "complete": true
+          },
+          "convert": {
+            "type": "function",
+            "valueId": "value:3",
+            "complete": true
+          },
+          "fail": {
+            "type": "function",
+            "valueId": "value:4",
+            "complete": true
+          },
+          "first": {
+            "type": "function",
+            "valueId": "value:5",
+            "complete": true
+          },
+          "identity": {
+            "type": "function",
+            "valueId": "value:6",
+            "complete": true
+          }
+        }
+      },
+      "result": {
+        "type": "boolean",
+        "valueId": "value:9",
+        "complete": true,
+        "literal": false
+      },
+      "outcome": "return",
+      "parentInvocationId": null,
+      "callbacks": []
+    },
+    {
+      "invocationId": "fc9ce38698adb6d23d1cf29c:3",
+      "functionId": "module.js:3:1:convert",
+      "functionName": "convert",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "fc9ce38698adb6d23d1cf29c",
+      "order": 3,
+      "public": true,
+      "arguments": [
+        {
+          "type": "string",
+          "valueId": "value:10",
+          "complete": true,
+          "literal": "number"
+        },
+        {
+          "type": "string",
+          "valueId": "value:11",
+          "complete": true,
+          "literal": "7"
+        }
+      ],
+      "receiver": {
+        "type": "object",
+        "valueId": "value:1",
+        "complete": true,
+        "properties": {
+          "apply": {
+            "type": "function",
+            "valueId": "value:2",
+            "complete": true
+          },
+          "convert": {
+            "type": "function",
+            "valueId": "value:3",
+            "complete": true
+          },
+          "fail": {
+            "type": "function",
+            "valueId": "value:4",
+            "complete": true
+          },
+          "first": {
+            "type": "function",
+            "valueId": "value:5",
+            "complete": true
+          },
+          "identity": {
+            "type": "function",
+            "valueId": "value:6",
+            "complete": true
+          }
+        }
+      },
+      "result": {
+        "type": "number",
+        "valueId": "value:12",
+        "complete": true,
+        "literal": 7
+      },
+      "outcome": "return",
+      "parentInvocationId": null,
+      "callbacks": []
+    },
+    {
+      "invocationId": "fc9ce38698adb6d23d1cf29c:4",
+      "functionId": "module.js:3:1:convert",
+      "functionName": "convert",
+      "source": {
+        "file": "module.js",
+        "line": 3,
+        "column": 1
+      },
+      "executionId": "fc9ce38698adb6d23d1cf29c",
+      "order": 4,
+      "public": true,
+      "arguments": [
+        {
+          "type": "string",
+          "valueId": "value:13",
+          "complete": true,
+          "literal": "string"
+        },
+        {
+          "type": "number",
+          "valueId": "value:14",
+          "complete": true,
+          "literal": 8
+        }
+      ],
+      "receiver": {
+        "type": "object",
+        "valueId": "value:1",
+        "complete": true,
+        "properties": {
+          "apply": {
+            "type": "function",
+            "valueId": "value:2",
+            "complete": true
+          },
+          "convert": {
+            "type": "function",
+            "valueId": "value:3",
+            "complete": true
+          },
+          "fail": {
+            "type": "function",
+            "valueId": "value:4",
+            "complete": true
+          },
+          "first": {
+            "type": "function",
+            "valueId": "value:5",
+            "complete": true
+          },
+          "identity": {
+            "type": "function",
+            "valueId": "value:6",
+            "complete": true
+          }
+        }
+      },
+      "result": {
+        "type": "string",
+        "valueId": "value:15",
+        "complete": true,
+        "literal": "8"
+      },
+      "outcome": "return",
+      "parentInvocationId": null,
+      "callbacks": []
+    }
+  ]
+}

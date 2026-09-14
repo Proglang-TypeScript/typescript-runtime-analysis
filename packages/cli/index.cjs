@@ -8,7 +8,7 @@ try {
   if (command === 'trace') {
     require('../runtime-tracer/index.cjs').trace(args[0], {targetRoot: option('target-root'), output: option('out', 'trace.json'),
       package: option('package', 'fixture'), version: option('version', '0.0.0-fixture'), evidence: option('evidence', 'fixture'),
-      publicModule: option('module', 'module'), repository: option('repository'), commit: option('commit'), trustedFixture: args.includes('--trusted-fixture')});
+      publicModule: option('module', 'module'), repository: option('repository'), commit: option('commit'), trustedFixture: args.includes('--trusted-fixture'), captureInvocations: args.includes('--invocations')});
   } else if (command === 'generate') {
     const files = args.filter((argument, index) => !argument.startsWith('--') && (index === 0 || !args[index - 1].startsWith('--')));
     require('../declaration-generator/index.cjs').generate(files, {moduleName: option('module', 'module'), output: option('out', 'index.d.ts'), publicOnly: args.includes('--public-only')});
@@ -20,8 +20,16 @@ try {
     console.log(JSON.stringify(trace ? require('../pattern-analysis/index.cjs').distributions(require('../pattern-analysis/index.cjs').match(patterns, read(trace))) : patterns, null, 2));
   } else if (command === 'experiment') {
     require('../../scripts/experiment.cjs');
+  } else if (command === 'synthesize') {
+    const files = args.filter((argument, index) => !argument.startsWith('--') && (index === 0 || !args[index - 1].startsWith('--')));
+    const results = require('../relational-signatures/index.cjs').synthesize(files.map(read));
+    const output = option('out', 'relational.d.ts');
+    const text = results.map(result => result.candidates.find(candidate => candidate.kind === result.selected)?.text || '').join('\n');
+    fs.mkdirSync(path.dirname(output), {recursive: true});
+    fs.writeFileSync(output, text || 'export {};\n');
+    fs.writeFileSync(`${output}.diagnostics.json`, JSON.stringify(results, null, 2) + '\n');
   } else {
-    throw new Error('Usage: tra trace|generate|compare|patterns|experiment. See README.md for options.');
+    throw new Error('Usage: tra trace|generate|compare|patterns|synthesize|experiment. See README.md for options.');
   }
 } catch (error) {
   console.error(error.message);

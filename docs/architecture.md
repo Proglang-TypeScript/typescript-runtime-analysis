@@ -1,5 +1,13 @@
 # Architecture and contracts
 
+## Revised Track B
+
+`runtime-tracer/invocation-analysis.cjs` optionally wraps the existing entry/exit callbacks without altering their returned semantics. It writes completed invocation tuples with bounded shallow value snapshots, per-execution identities, callback links and return/throw outcomes; the tracer maps them to original sources and validates a separate version1 sidecar. No tuples are guessed from the legacy aggregate format.
+
+`relational-signatures` is a strict TypeScript workspace consuming validated tuples, deduplicating exact observations and grouping fixed package/version/repository/commit/function identities. Equality and container-element relationships and literal-discriminated branches generate at most six candidate kinds; invocation/branch budgets and insufficient evidence cause explicit abstention. The CLI writes selected declarations and candidate/explanation diagnostics. Old declaration inference and static/dynamic pattern analysis are retained unchanged.
+
+`scripts/relational-experiment.cjs` synthesizes from inference runs only, independently executes held-out first-party calls, checks separate inference/held-out typing clients and negative clients, saves raw evidence and candidate results, and generates relational CSV tables. This single-family synthetic fixture is infrastructure, not a leakage-free publication dataset. See the revised research protocol for family-split curation, invalid-call evaluation and statistical plans.
+
 The maintained pipeline is file-based: evidence entry point → TypeScript ES5 transpilation → Jalangi instrumentation → original runtime analysis callbacks → raw backend artifact and versioned observation envelope → original inference builder migrated to the supported compiler API → `.d.ts` and diagnostics → parser/comparator and independent compiler checks.
 
 `packages/runtime-tracer` loads the original analyses in their documented order. The loader instruments only target-root `.js` files, excluding `node_modules`; dependency and framework code still executes. It keeps instrumentation and maps in memory. Callback source locations are mapped back through the transpilation map. Function identity combines target-relative filename, original line/column and runtime function name. Native/unlocated function containers are omitted from normalized observations. Raw information is retained.

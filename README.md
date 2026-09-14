@@ -1,6 +1,6 @@
 # TypeScript runtime analysis
 
-Recovered Proglang-TypeScript runtime callbacks and declaration inference, a repaired declaration comparator, versioned JSON observations, and two reproducible research scaffolds.
+Recovered Proglang-TypeScript runtime callbacks and declaration inference, a repaired declaration comparator, versioned JSON observations, multi-source evidence and relational signature research scaffolds. Original pattern analysis remains available as a reference workflow.
 
 ## Install and validate
 
@@ -32,6 +32,9 @@ npm run cli -- compare work/module/index.d.ts work/module/index.d.ts
 npm run cli -- patterns experiments/fixtures/module.js --trace work/client.trace.json
 npm run experiment
 node scripts/aggregate.cjs
+npm run cli -- trace experiments/relational-signatures/inference.js --target-root experiments/relational-signatures --module module --package tra-relational-fixture --out work/inference.trace.json --trusted-fixture --invocations
+npm run cli -- synthesize work/inference.trace.json.invocations.json --out work/relational.d.ts
+npm run experiment:relational
 ```
 
 `--trusted-fixture` is an explicit assertion that code is a trusted first-party fixture. Never use it for downloaded packages. Each trace retains a validated envelope, a `.raw.json` backend artifact and `.execution.json` run metadata. Keep all three together; declaration generation consumes the raw sidecar. Unsupported evidence and conflicts are reported in the declaration's `.diagnostics.json` sidecar. Raw artifacts contain source-map metadata and may contain source paths; review before publication.
@@ -52,6 +55,10 @@ CommonJS is supported. The original Jalangi backend remains: TypeScript downleve
 
 ## Experiments and documentation
 
+Revised Track B retains one tuple per instrumented invocation, including arguments, receiver, result or thrown value, and synchronous callback links. `--invocations` writes an independently versioned `.invocations.json` sidecar; older component-wise traces cannot reconstruct tuples. The new workspace generates bounded identity/container-element generics, shallow discriminated overloads, correlated invocation unions, and two baselines, with supporting invocation IDs and explicit abstention diagnostics.
+
+`npm run experiment:relational` uses only inference invocations to synthesize signatures, then checks independent inference and held-out typing clients (API6 and native7). Raw inference/held-out runs, declarations, baseline failures, metadata/hashes and script-generated tables are saved under `experiments/results/relational`. Regenerate these tables with `node -e "require('./scripts/relational-experiment.cjs').aggregate('experiments/results/relational')"`. Synthetic client passes are not proof of universal soundness or publication-quality evaluation. Callbacks/throws are preserved but their polymorphic inference, arbitrary conditional/mapped types and full receiver/async semantics remain outside this bounded scaffold.
+
 `experiments/dataset.json` fixes synthetic package identities, versions, splits and seed. `experiments/results/` retains raw observations, declarations, metadata, predictions, exclusions, and generated CSV tables. Synthetic fixtures share conceptual code patterns and are **not** a leakage-free publication dataset.
 
 - [Architecture](docs/architecture.md)
@@ -61,5 +68,6 @@ CommonJS is supported. The original Jalangi backend remains: TypeScript downleve
 - [Current security/publication record](docs/security-publication-report.md)
 - [Migration limits](docs/migration.md)
 - [Research protocols and five-month plan](docs/research-directions.md)
+- [Revised-description comparison and implementation mapping](docs/revision-delta.md)
 
 Imported components retain their original licenses in `LICENSES/` and file notices. New recovery glue has no additional license grant pending the owner's choice. Upstream: [Proglang-TypeScript/typescript-runtime-analysis](https://github.com/Proglang-TypeScript/typescript-runtime-analysis), private because retained preservation material originates from a private repository.

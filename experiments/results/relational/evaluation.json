@@ -1,0 +1,233 @@
+{
+  "purpose": "first-party synthetic relational pipeline demonstration; not publication evaluation",
+  "clients": [
+    {
+      "configuration": "component-union",
+      "inference": {
+        "pass": false,
+        "diagnostics": [
+          {
+            "code": 2322,
+            "message": "Type 'string | number' is not assignable to type 'number'.\n  Type 'string' is not assignable to type 'number'."
+          },
+          {
+            "code": 2322,
+            "message": "Type 'string | number' is not assignable to type 'string'.\n  Type 'number' is not assignable to type 'string'."
+          },
+          {
+            "code": 2322,
+            "message": "Type 'string | number' is not assignable to type 'number'.\n  Type 'string' is not assignable to type 'number'."
+          },
+          {
+            "code": 2322,
+            "message": "Type 'string | number' is not assignable to type 'string'.\n  Type 'number' is not assignable to type 'string'."
+          },
+          {
+            "code": 2322,
+            "message": "Type 'string | number' is not assignable to type 'number'.\n  Type 'string' is not assignable to type 'number'."
+          },
+          {
+            "code": 2322,
+            "message": "Type 'string | number' is not assignable to type 'string'.\n  Type 'number' is not assignable to type 'string'."
+          }
+        ]
+      },
+      "heldOut": {
+        "pass": false,
+        "diagnostics": [
+          {
+            "code": 2322,
+            "message": "Type 'string | number' is not assignable to type 'boolean'.\n  Type 'string' is not assignable to type 'boolean'."
+          },
+          {
+            "code": 2345,
+            "message": "Argument of type 'boolean' is not assignable to parameter of type 'string | number'."
+          },
+          {
+            "code": 2322,
+            "message": "Type 'string | number' is not assignable to type '{ fresh: boolean; }'.\n  Type 'string' is not assignable to type '{ fresh: boolean; }'."
+          },
+          {
+            "code": 2345,
+            "message": "Argument of type '{ fresh: boolean; }' is not assignable to parameter of type 'string | number'."
+          },
+          {
+            "code": 2322,
+            "message": "Type 'string | number' is not assignable to type 'boolean'.\n  Type 'string' is not assignable to type 'boolean'."
+          },
+          {
+            "code": 2322,
+            "message": "Type 'boolean' is not assignable to type 'string | number'."
+          },
+          {
+            "code": 2322,
+            "message": "Type 'boolean' is not assignable to type 'string | number'."
+          },
+          {
+            "code": 2322,
+            "message": "Type 'string | number' is not assignable to type 'number'.\n  Type 'string' is not assignable to type 'number'."
+          },
+          {
+            "code": 2322,
+            "message": "Type 'string | number' is not assignable to type 'string'.\n  Type 'number' is not assignable to type 'string'."
+          }
+        ]
+      }
+    },
+    {
+      "configuration": "observation-overloads",
+      "inference": {
+        "pass": true,
+        "diagnostics": []
+      },
+      "heldOut": {
+        "pass": false,
+        "diagnostics": [
+          {
+            "code": 2769,
+            "message": "No overload matches this call.\n  Overload 1 of 2, '(arg0: \"seen\"): string', gave the following error.\n    Argument of type 'true' is not assignable to parameter of type '\"seen\"'.\n  Overload 2 of 2, '(arg0: 1): number', gave the following error.\n    Argument of type 'true' is not assignable to parameter of type '1'."
+          },
+          {
+            "code": 2769,
+            "message": "No overload matches this call.\n  Overload 1 of 2, '(arg0: \"seen\"): string', gave the following error.\n    Argument of type '{ fresh: boolean; }' is not assignable to parameter of type '\"seen\"'.\n  Overload 2 of 2, '(arg0: 1): number', gave the following error.\n    Argument of type '{ fresh: boolean; }' is not assignable to parameter of type '1'."
+          },
+          {
+            "code": 2769,
+            "message": "No overload matches this call.\n  Overload 2 of 2, '(arg0: string[]): string', gave the following error.\n    Type 'boolean' is not assignable to type 'string'.\n  Overload 2 of 2, '(arg0: string[]): string', gave the following error.\n    Type 'boolean' is not assignable to type 'string'."
+          },
+          {
+            "code": 2769,
+            "message": "No overload matches this call.\n  The last overload gave the following error.\n    Argument of type '\"number\"' is not assignable to parameter of type '\"string\"'."
+          },
+          {
+            "code": 2769,
+            "message": "No overload matches this call.\n  The last overload gave the following error.\n    Argument of type '8' is not assignable to parameter of type '4'."
+          }
+        ]
+      }
+    },
+    {
+      "configuration": "relational",
+      "inference": {
+        "pass": true,
+        "diagnostics": []
+      },
+      "heldOut": {
+        "pass": true,
+        "diagnostics": [],
+        "native": {
+          "exit": 0,
+          "diagnostics": ""
+        }
+      }
+    }
+  ],
+  "candidateValidity": [
+    {
+      "functionName": "identity",
+      "kind": "component-union",
+      "pass": true,
+      "diagnostics": []
+    },
+    {
+      "functionName": "identity",
+      "kind": "observation-overloads",
+      "pass": true,
+      "diagnostics": []
+    },
+    {
+      "functionName": "identity",
+      "kind": "identity-generic",
+      "pass": true,
+      "diagnostics": []
+    },
+    {
+      "functionName": "first",
+      "kind": "component-union",
+      "pass": true,
+      "diagnostics": []
+    },
+    {
+      "functionName": "first",
+      "kind": "observation-overloads",
+      "pass": true,
+      "diagnostics": []
+    },
+    {
+      "functionName": "first",
+      "kind": "element-generic",
+      "pass": true,
+      "diagnostics": []
+    },
+    {
+      "functionName": "convert",
+      "kind": "component-union",
+      "pass": true,
+      "diagnostics": []
+    },
+    {
+      "functionName": "convert",
+      "kind": "observation-overloads",
+      "pass": true,
+      "diagnostics": []
+    },
+    {
+      "functionName": "convert",
+      "kind": "discriminated-overloads",
+      "pass": true,
+      "diagnostics": []
+    },
+    {
+      "functionName": "convert",
+      "kind": "correlated-union",
+      "pass": true,
+      "diagnostics": []
+    },
+    {
+      "functionName": "apply",
+      "kind": "component-union",
+      "pass": true,
+      "diagnostics": []
+    },
+    {
+      "functionName": "apply",
+      "kind": "observation-overloads",
+      "pass": true,
+      "diagnostics": []
+    }
+  ],
+  "rejectedClient": {
+    "pass": false,
+    "diagnostics": [
+      {
+        "code": 2322,
+        "message": "Type 'number' is not assignable to type 'string'."
+      },
+      {
+        "code": 2769,
+        "message": "No overload matches this call.\n  Overload 1 of 2, '(arg0: \"number\", arg1: string): number', gave the following error.\n    Argument of type 'number' is not assignable to parameter of type 'string'.\n  Overload 2 of 2, '(arg0: \"string\", arg1: number): string', gave the following error.\n    Argument of type '\"number\"' is not assignable to parameter of type '\"string\"'."
+      },
+      {
+        "code": 2769,
+        "message": "No overload matches this call.\n  Overload 1 of 2, '(arg0: \"number\", arg1: string): number', gave the following error.\n    Argument of type '\"unknown\"' is not assignable to parameter of type '\"number\"'.\n  Overload 2 of 2, '(arg0: \"string\", arg1: number): string', gave the following error.\n    Argument of type '\"unknown\"' is not assignable to parameter of type '\"string\"'."
+      }
+    ]
+  },
+  "abstentions": [
+    {
+      "functionName": "apply",
+      "diagnostics": [
+        "Insufficient support, exceptional outcomes or callback inference outside this scaffold"
+      ]
+    },
+    {
+      "functionName": "fail",
+      "diagnostics": [
+        "No successful outcomes"
+      ]
+    }
+  ],
+  "supportingInvocationCount": 11,
+  "heldOutInvocationCount": 5,
+  "heldOutUsedForSynthesis": false
+}

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "purpose": "first-party synthetic relational pipeline demonstration; not publication evaluation",
+  "seed": 0,
+  "package": "tra-relational-fixture",
+  "version": "1.0.0",
+  "family": "synthetic-relations",
+  "inference": "inference.js",
+  "heldOut": "held-out.js",
+  "thresholds": {"minSupport": 2, "maxInvocations": 128, "maxBranches": 8},
+  "exclusions": ["polymorphic callbacks", "async/ESM", "empty-container generalization", "conditional/mapped types"]
+}
