@@ -1,0 +1,905 @@
+{
+  "schemaVersion": 1,
+  "identity": "6303932a4559bc7170ce36955cda066a3ed1f3cb57f679f1c00ece9b9bb80d1d",
+  "provenance": {
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+    "commit": "455254aa7204192e7f7fbe50266d2313cefdf6c9",
+    "scope": "sparse-development",
+    "pinnedCorpusPackages": 8680,
+    "availablePackages": [
+      "async",
+      "bluebird",
+      "d3-array",
+      "lodash",
+      "react",
+      "underscore"
+    ]
+  },
+  "compiler": "6.0.3",
+  "policy": "declared-entry-module-exports-v1",
+  "coverage": {
+    "selection": 6,
+    "pinnedCorpusPackages": 8680,
+    "fullPinnedCorpusSelected": false,
+    "extractionFailures": 0,
+    "compilerDiagnosticPackages": 1
+  },
+  "counts": {
+    "totalExportedCallableDeclarations": 3366,
+    "exportSignaturePairs": 8585,
+    "distinctCallableExports": 5236,
+    "declarationsWithTypeParameters": 2879,
+    "declarationsWithOwnTypeParameters": 1572,
+    "declarationsWithBothPolarities": 580,
+    "packagesWithExports": 6,
+    "packagesWithTypeParameters": 6,
+    "packagesWithBothPolarities": 6,
+    "genericOnlyThroughEnclosing": 1266,
+    "firstOrderPotentialDeclarations": 11,
+    "classes": {
+      "identity": 96,
+      "container-element": 2,
+      "value-to-container": 4,
+      "multiple-arguments": 27,
+      "constrained-generic": 55,
+      "higher-order": 506,
+      "overload-or-discriminated": 1964,
+      "unsupported": 2835
+    },
+    "obtainableRuntimePackages": 0,
+    "verifiedExecutableExports": 0,
+    "runtimeAssessment": "not-assessed"
+  },
+  "manualReview": {
+    "pending": 16,
+    "agree": 0,
+    "false-classification": 0,
+    "ambiguous": 0,
+    "excluded": 0
+  },
+  "packages": [
+    {
+      "directory": "async",
+      "declarationPackage": "@types/async",
+      "declarationVersion": "3.2.9999",
+      "owners": [
+        {
+          "name": "Boris Yankov",
+          "githubUsername": "borisyankov"
+        },
+        {
+          "name": "Arseniy Maximov",
+          "githubUsername": "kern0"
+        },
+        {
+          "name": "Angus Fenying",
+          "githubUsername": "fenying"
+        },
+        {
+          "name": "Pascal Martin",
+          "githubUsername": "pascalmartin"
+        },
+        {
+          "name": "Etienne Rossignon",
+          "githubUsername": "erossignon"
+        },
+        {
+          "name": "Lifeng Zhu",
+          "githubUsername": "Juliiii"
+        },
+        {
+          "name": "Tümay Çeber",
+          "githubUsername": "brendtumi"
+        },
+        {
+          "name": "Andrew Pensinger",
+          "githubUsername": "apnsngr"
+        }
+      ],
+      "projects": [
+        "https://github.com/caolan/async",
+        "https://caolan.github.io/async"
+      ],
+      "runtimePackage": "async",
+      "runtimeAvailability": "not-assessed",
+      "runtimeExecution": "not-assessed",
+      "entry": "types/async/index.d.ts",
+      "subpath": "",
+      "condition": "primary",
+      "variants": {
+        "typesVersions": null,
+        "exports": null
+      },
+      "exclusions": [],
+      "sourceNotices": {
+        "types/async/index.d.ts": {
+          "sha256": "7237d9e4f4dea53cf7afdf765d11c4e413e837c0f53e51ff124c97d7402110e6",
+          "leadingComments": "",
+          "attributionComments": []
+        }
+      },
+      "diagnosticCount": 0,
+      "status": "extracted",
+      "entrySha256": "7237d9e4f4dea53cf7afdf765d11c4e413e837c0f53e51ff124c97d7402110e6",
+      "entries": [
+        {
+          "entry": "types/async/index.d.ts",
+          "subpath": "",
+          "condition": "primary",
+          "status": "extracted",
+          "entrySha256": "7237d9e4f4dea53cf7afdf765d11c4e413e837c0f53e51ff124c97d7402110e6"
+        }
+      ],
+      "retainedDiagnosticCount": 0
+    },
+    {
+      "directory": "bluebird",
+      "declarationPackage": "@types/bluebird",
+      "declarationVersion": "3.5.9999",
+      "owners": [
+        {
+          "name": "Leonard Hecker",
+          "githubUsername": "lhecker"
+        }
+      ],
+      "projects": [
+        "https://github.com/petkaantonov/bluebird"
+      ],
+      "runtimePackage": "bluebird",
+      "runtimeAvailability": "not-assessed",
+      "runtimeExecution": "not-assessed",
+      "entry": "types/bluebird/index.d.ts",
+      "subpath": "",
+      "condition": "primary",
+      "variants": {
+        "typesVersions": null,
+        "exports": null
+      },
+      "exclusions": [],
+      "sourceNotices": {
+        "types/bluebird/index.d.ts": {
+          "sha256": "ee3a39a0de7a80b8f3637977bdba57bfc48c87877aac70011ddc391c5a91ab5c",
+          "leadingComments": "/*!\n * The code following this comment originates from:\n *   https://github.com/types/npm-bluebird\n *\n * Note for browser users: use bluebird-global typings instead of this one\n * if you want to use Bluebird via the global Promise symbol.\n *\n * Licensed under:\n *   The MIT License (MIT)\n *\n *   Copyright (c) 2016 unional\n *\n *   Permission is hereby granted, free of charge, to any person obtaining a copy\n *   of this software and associated documentation files (the \"Software\"), to deal\n *   in the Software without restriction, including without limitation the rights\n *   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n *   copies of the Software, and to permit persons to whom the Software is\n *   furnished to do so, subject to the following conditions:\n *\n *   The above copyright notice and this permission notice shall be included in\n *   all copies or substantial portions of the Software.\n *\n *   THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n *   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n *   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n *   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n *   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n *   THE SOFTWARE.\n */\n\n",
+          "attributionComments": [
+            "/*!\n * The code following this comment originates from:\n *   https://github.com/types/npm-bluebird\n *\n * Note for browser users: use bluebird-global typings instead of this one\n * if you want to use Bluebird via the global Promise symbol.\n *\n * Licensed under:\n *   The MIT License (MIT)\n *\n *   Copyright (c) 2016 unional\n *\n *   Permission is hereby granted, free of charge, to any person obtaining a copy\n *   of this software and associated documentation files (the \"Software\"), to deal\n *   in the Software without restriction, including without limitation the rights\n *   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n *   copies of the Software, and to permit persons to whom the Software is\n *   furnished to do so, subject to the following conditions:\n *\n *   The above copyright notice and this permission notice shall be included in\n *   all copies or substantial portions of the Software.\n *\n *   THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n *   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n *   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n *   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n *   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n *   THE SOFTWARE.\n */"
+          ]
+        }
+      },
+      "diagnosticCount": 0,
+      "status": "extracted",
+      "entrySha256": "ee3a39a0de7a80b8f3637977bdba57bfc48c87877aac70011ddc391c5a91ab5c",
+      "entries": [
+        {
+          "entry": "types/bluebird/index.d.ts",
+          "subpath": "",
+          "condition": "primary",
+          "status": "extracted",
+          "entrySha256": "ee3a39a0de7a80b8f3637977bdba57bfc48c87877aac70011ddc391c5a91ab5c"
+        }
+      ],
+      "retainedDiagnosticCount": 0
+    },
+    {
+      "directory": "d3-array",
+      "declarationPackage": "@types/d3-array",
+      "declarationVersion": "3.2.9999",
+      "owners": [
+        {
+          "name": "Alex Ford",
+          "githubUsername": "gustavderdrache"
+        },
+        {
+          "name": "Boris Yankov",
+          "githubUsername": "borisyankov"
+        },
+        {
+          "name": "Tom Wanzek",
+          "githubUsername": "tomwanzek"
+        },
+        {
+          "name": "denisname",
+          "githubUsername": "denisname"
+        },
+        {
+          "name": "Hugues Stefanski",
+          "githubUsername": "ledragon"
+        },
+        {
+          "name": "Nathan Bierema",
+          "githubUsername": "Methuselah96"
+        },
+        {
+          "name": "Fil",
+          "githubUsername": "Fil"
+        }
+      ],
+      "projects": [
+        "https://github.com/d3/d3-array",
+        "https://d3js.org/d3-array"
+      ],
+      "runtimePackage": "d3-array",
+      "runtimeAvailability": "not-assessed",
+      "runtimeExecution": "not-assessed",
+      "entry": "types/d3-array/index.d.ts",
+      "subpath": "",
+      "condition": "primary",
+      "variants": {
+        "typesVersions": null,
+        "exports": null
+      },
+      "exclusions": [],
+      "sourceNotices": {
+        "types/d3-array/index.d.ts": {
+          "sha256": "b1538a92b9bae8d230267210c5db38c2eb6bdb352128a3ce3aa8c6acf9fc9622",
+          "leadingComments": "// Last module patch version validated against: 3.2.4\n\n// --------------------------------------------------------------------------\n// Shared Types and Interfaces\n// --------------------------------------------------------------------------\n\n/**\n * Administrivia: JavaScript primitive types and Date\n */\n",
+          "attributionComments": []
+        }
+      },
+      "diagnosticCount": 0,
+      "status": "extracted",
+      "entrySha256": "b1538a92b9bae8d230267210c5db38c2eb6bdb352128a3ce3aa8c6acf9fc9622",
+      "entries": [
+        {
+          "entry": "types/d3-array/index.d.ts",
+          "subpath": "",
+          "condition": "primary",
+          "status": "extracted",
+          "entrySha256": "b1538a92b9bae8d230267210c5db38c2eb6bdb352128a3ce3aa8c6acf9fc9622"
+        }
+      ],
+      "retainedDiagnosticCount": 0
+    },
+    {
+      "directory": "lodash",
+      "declarationPackage": "@types/lodash",
+      "declarationVersion": "4.17.9999",
+      "owners": [
+        {
+          "name": "Brian Zengel",
+          "githubUsername": "bczengel"
+        },
+        {
+          "name": "Ilya Mochalov",
+          "githubUsername": "chrootsu"
+        },
+        {
+          "name": "AJ Richardson",
+          "githubUsername": "aj-r"
+        },
+        {
+          "name": "e-cloud",
+          "githubUsername": "e-cloud"
+        },
+        {
+          "name": "Jack Moore",
+          "githubUsername": "jtmthf"
+        },
+        {
+          "name": "Dominique Rau",
+          "githubUsername": "DomiR"
+        },
+        {
+          "name": "William Chelman",
+          "githubUsername": "WilliamChelman"
+        }
+      ],
+      "projects": [
+        "https://lodash.com"
+      ],
+      "runtimePackage": "lodash",
+      "runtimeAvailability": "not-assessed",
+      "runtimeExecution": "not-assessed",
+      "entry": "types/lodash/index.d.ts",
+      "subpath": "",
+      "condition": "primary",
+      "variants": {
+        "typesVersions": null,
+        "exports": null
+      },
+      "exclusions": [
+        {
+          "reason": "global-or-module-augmentation",
+          "source": {
+            "file": "types/lodash/common/common.d.ts",
+            "start": 187,
+            "line": 5,
+            "column": 1
+          }
+        },
+        {
+          "reason": "global-or-module-augmentation",
+          "source": {
+            "file": "types/lodash/common/array.d.ts",
+            "start": 373,
+            "line": 10,
+            "column": 1
+          }
+        },
+        {
+          "reason": "global-or-module-augmentation",
+          "source": {
+            "file": "types/lodash/common/collection.d.ts",
+            "start": 32,
+            "line": 2,
+            "column": 1
+          }
+        },
+        {
+          "reason": "global-or-module-augmentation",
+          "source": {
+            "file": "types/lodash/common/date.d.ts",
+            "start": 32,
+            "line": 2,
+            "column": 1
+          }
+        },
+        {
+          "reason": "global-or-module-augmentation",
+          "source": {
+            "file": "types/lodash/common/function.d.ts",
+            "start": 32,
+            "line": 2,
+            "column": 1
+          }
+        },
+        {
+          "reason": "global-or-module-augmentation",
+          "source": {
+            "file": "types/lodash/common/lang.d.ts",
+            "start": 185,
+            "line": 4,
+            "column": 1
+          }
+        },
+        {
+          "reason": "global-or-module-augmentation",
+          "source": {
+            "file": "types/lodash/common/math.d.ts",
+            "start": 32,
+            "line": 2,
+            "column": 1
+          }
+        },
+        {
+          "reason": "global-or-module-augmentation",
+          "source": {
+            "file": "types/lodash/common/number.d.ts",
+            "start": 32,
+            "line": 2,
+            "column": 1
+          }
+        },
+        {
+          "reason": "global-or-module-augmentation",
+          "source": {
+            "file": "types/lodash/common/object.d.ts",
+            "start": 73,
+            "line": 3,
+            "column": 1
+          }
+        },
+        {
+          "reason": "global-or-module-augmentation",
+          "source": {
+            "file": "types/lodash/common/seq.d.ts",
+            "start": 32,
+            "line": 2,
+            "column": 1
+          }
+        },
+        {
+          "reason": "global-or-module-augmentation",
+          "source": {
+            "file": "types/lodash/common/string.d.ts",
+            "start": 32,
+            "line": 2,
+            "column": 1
+          }
+        },
+        {
+          "reason": "global-or-module-augmentation",
+          "source": {
+            "file": "types/lodash/common/util.d.ts",
+            "start": 32,
+            "line": 2,
+            "column": 1
+          }
+        }
+      ],
+      "sourceNotices": {
+        "types/lodash/common/common.d.ts": {
+          "sha256": "380b919bfa0516118edaf25b99e45f855e7bc3fd75ce4163a1cfe4a666388804",
+          "leadingComments": "",
+          "attributionComments": []
+        },
+        "types/lodash/common/array.d.ts": {
+          "sha256": "40de86ced5175a6ffe84a52abe6ac59ac0efbc604a5975a8c6476c3ddc682ff1",
+          "leadingComments": "",
+          "attributionComments": []
+        },
+        "types/lodash/common/collection.d.ts": {
+          "sha256": "fcf79300e5257a23ed3bacaa6861d7c645139c6f7ece134d15e6669447e5e6db",
+          "leadingComments": "",
+          "attributionComments": []
+        },
+        "types/lodash/common/date.d.ts": {
+          "sha256": "187119ff4f9553676a884e296089e131e8cc01691c546273b1d0089c3533ce42",
+          "leadingComments": "",
+          "attributionComments": []
+        },
+        "types/lodash/common/function.d.ts": {
+          "sha256": "aa2c18a1b5a086bbcaae10a4efba409cc95ba7287d8cf8f2591b53704fea3dea",
+          "leadingComments": "",
+          "attributionComments": []
+        },
+        "types/lodash/common/lang.d.ts": {
+          "sha256": "5a0b15210129310cee9fa6af9200714bb4b12af4a04d890e15f34dbea1cf1852",
+          "leadingComments": "",
+          "attributionComments": []
+        },
+        "types/lodash/common/math.d.ts": {
+          "sha256": "0244119dbcbcf34faf3ffdae72dab1e9bc2bc9efc3c477b2240ffa94af3bca56",
+          "leadingComments": "",
+          "attributionComments": []
+        },
+        "types/lodash/common/number.d.ts": {
+          "sha256": "00baffbe8a2f2e4875367479489b5d43b5fc1429ecb4a4cc98cfc3009095f52a",
+          "leadingComments": "",
+          "attributionComments": []
+        },
+        "types/lodash/common/object.d.ts": {
+          "sha256": "a873c50d3e47c21aa09fbe1e2023d9a44efb07cc0cb8c72f418bf301b0771fd3",
+          "leadingComments": "",
+          "attributionComments": []
+        },
+        "types/lodash/common/seq.d.ts": {
+          "sha256": "7c14ccd2eaa82619fffc1bfa877eb68a012e9fb723d07ee98db451fadb618906",
+          "leadingComments": "",
+          "attributionComments": []
+        },
+        "types/lodash/common/string.d.ts": {
+          "sha256": "49c36529ee09ea9ce19525af5bb84985ea8e782cb7ee8c493d9e36d027a3d019",
+          "leadingComments": "",
+          "attributionComments": []
+        },
+        "types/lodash/common/util.d.ts": {
+          "sha256": "df996e25faa505f85aeb294d15ebe61b399cf1d1e49959cdfaf2cc0815c203f9",
+          "leadingComments": "",
+          "attributionComments": []
+        }
+      },
+      "diagnosticCount": 0,
+      "status": "extracted",
+      "entrySha256": "4f6a12044ee6f458db11964153830abbc499e73d065c51c329ec97407f4b13dd",
+      "entries": [
+        {
+          "entry": "types/lodash/index.d.ts",
+          "subpath": "",
+          "condition": "primary",
+          "status": "extracted",
+          "entrySha256": "4f6a12044ee6f458db11964153830abbc499e73d065c51c329ec97407f4b13dd"
+        }
+      ],
+      "retainedDiagnosticCount": 0
+    },
+    {
+      "directory": "react",
+      "declarationPackage": "@types/react",
+      "declarationVersion": "19.3.9999",
+      "owners": [
+        {
+          "name": "Asana",
+          "url": "https://asana.com"
+        },
+        {
+          "name": "AssureSign",
+          "url": "http://www.assuresign.com"
+        },
+        {
+          "name": "Microsoft",
+          "url": "https://microsoft.com"
+        },
+        {
+          "name": "John Reilly",
+          "githubUsername": "johnnyreilly"
+        },
+        {
+          "name": "Benoit Benezech",
+          "githubUsername": "bbenezech"
+        },
+        {
+          "name": "Patricio Zavolinsky",
+          "githubUsername": "pzavolinsky"
+        },
+        {
+          "name": "Eric Anderson",
+          "githubUsername": "ericanderson"
+        },
+        {
+          "name": "Dovydas Navickas",
+          "githubUsername": "DovydasNavickas"
+        },
+        {
+          "name": "Josh Rutherford",
+          "githubUsername": "theruther4d"
+        },
+        {
+          "name": "Guilherme Hübner",
+          "githubUsername": "guilhermehubner"
+        },
+        {
+          "name": "Ferdy Budhidharma",
+          "githubUsername": "ferdaber"
+        },
+        {
+          "name": "Johann Rakotoharisoa",
+          "githubUsername": "jrakotoharisoa"
+        },
+        {
+          "name": "Olivier Pascal",
+          "githubUsername": "pascaloliv"
+        },
+        {
+          "name": "Martin Hochel",
+          "githubUsername": "hotell"
+        },
+        {
+          "name": "Frank Li",
+          "githubUsername": "franklixuefei"
+        },
+        {
+          "name": "Jessica Franco",
+          "githubUsername": "Jessidhia"
+        },
+        {
+          "name": "Saransh Kataria",
+          "githubUsername": "saranshkataria"
+        },
+        {
+          "name": "Kanitkorn Sujautra",
+          "githubUsername": "lukyth"
+        },
+        {
+          "name": "Sebastian Silbermann",
+          "githubUsername": "eps1lon"
+        },
+        {
+          "name": "Kyle Scully",
+          "githubUsername": "zieka"
+        },
+        {
+          "name": "Cong Zhang",
+          "githubUsername": "dancerphil"
+        },
+        {
+          "name": "Dimitri Mitropoulos",
+          "githubUsername": "dimitropoulos"
+        },
+        {
+          "name": "JongChan Choi",
+          "githubUsername": "disjukr"
+        },
+        {
+          "name": "Victor Magalhães",
+          "githubUsername": "vhfmag"
+        },
+        {
+          "name": "Priyanshu Rav",
+          "githubUsername": "priyanshurav"
+        },
+        {
+          "name": "Dmitry Semigradsky",
+          "githubUsername": "Semigradsky"
+        },
+        {
+          "name": "Matt Pocock",
+          "githubUsername": "mattpocock"
+        }
+      ],
+      "projects": [
+        "https://react.dev/"
+      ],
+      "runtimePackage": "react",
+      "runtimeAvailability": "not-assessed",
+      "runtimeExecution": "not-assessed",
+      "entry": "types/react/index.d.ts",
+      "subpath": "",
+      "condition": "primary",
+      "variants": {
+        "typesVersions": {
+          "<=5.0": {
+            "*": [
+              "ts5.0/*"
+            ]
+          }
+        },
+        "exports": {
+          ".": {
+            "types@<=5.0": {
+              "default": "./ts5.0/index.d.ts"
+            },
+            "types": {
+              "default": "./index.d.ts"
+            }
+          },
+          "./canary": {
+            "types@<=5.0": {
+              "default": "./ts5.0/canary.d.ts"
+            },
+            "types": {
+              "default": "./canary.d.ts"
+            }
+          },
+          "./compiler-runtime": {
+            "types": {
+              "default": "./compiler-runtime.d.ts"
+            }
+          },
+          "./experimental": {
+            "types@<=5.0": {
+              "default": "./ts5.0/experimental.d.ts"
+            },
+            "types": {
+              "default": "./experimental.d.ts"
+            }
+          },
+          "./jsx-runtime": {
+            "types@<=5.0": {
+              "default": "./ts5.0/jsx-runtime.d.ts"
+            },
+            "types": {
+              "default": "./jsx-runtime.d.ts"
+            }
+          },
+          "./jsx-dev-runtime": {
+            "types@<=5.0": {
+              "default": "./ts5.0/jsx-dev-runtime.d.ts"
+            },
+            "types": {
+              "default": "./jsx-dev-runtime.d.ts"
+            }
+          }
+        }
+      },
+      "exclusions": [
+        {
+          "reason": "alternate-typesVersions-not-selected",
+          "detail": "Only unversioned/current declared entry branches are analyzed; version-conditional alternates require review"
+        },
+        {
+          "reason": "alternate-typesVersions-not-selected",
+          "detail": "Only unversioned/current declared entry branches are analyzed; version-conditional alternates require review"
+        },
+        {
+          "reason": "global-or-module-augmentation",
+          "source": {
+            "file": "types/react/canary.d.ts",
+            "start": 1060,
+            "line": 33,
+            "column": 1
+          }
+        },
+        {
+          "reason": "alternate-typesVersions-not-selected",
+          "detail": "Only unversioned/current declared entry branches are analyzed; version-conditional alternates require review"
+        },
+        {
+          "reason": "alternate-typesVersions-not-selected",
+          "detail": "Only unversioned/current declared entry branches are analyzed; version-conditional alternates require review"
+        },
+        {
+          "reason": "global-or-module-augmentation",
+          "source": {
+            "file": "types/react/canary.d.ts",
+            "start": 1060,
+            "line": 33,
+            "column": 1
+          }
+        },
+        {
+          "reason": "global-or-module-augmentation",
+          "source": {
+            "file": "types/react/experimental.d.ts",
+            "start": 1794,
+            "line": 44,
+            "column": 1
+          }
+        },
+        {
+          "reason": "alternate-typesVersions-not-selected",
+          "detail": "Only unversioned/current declared entry branches are analyzed; version-conditional alternates require review"
+        },
+        {
+          "reason": "alternate-typesVersions-not-selected",
+          "detail": "Only unversioned/current declared entry branches are analyzed; version-conditional alternates require review"
+        }
+      ],
+      "sourceNotices": {
+        "types/react/index.d.ts": {
+          "sha256": "045c1b395851aa71ef76393398466330fe1eeebc113c8085eefc6d84abea3a88",
+          "leadingComments": "// NOTE: Users of the `experimental` builds of React should add a reference\n// to 'react/experimental' in their project. See experimental.d.ts's top comment\n// for reference and documentation on how exactly to do it.\n\n/// <reference path=\"global.d.ts\" />\n\n",
+          "attributionComments": [
+            "/**\n     * The props any component accepting refs can receive.\n     * Class components, built-in browser components (e.g. `div`) and forwardRef components can receive refs and automatically accept these props.\n     * ```tsx\n     * const Component = forwardRef(() => <div />);\n     * <Component ref={(current) => console.log(current)} />\n     * ```\n     *\n     * You only need this type if you manually author the types of props that need to be compatible with legacy refs.\n     * ```tsx\n     * interface Props extends React.RefAttributes<HTMLDivElement> {}\n     * declare const Component: React.FunctionComponent<Props>;\n     * ```\n     *\n     * Otherwise it's simpler to directly use {@link Ref} since you can safely use the\n     * props type to describe to props that a consumer can pass to the component\n     * as well as describing the props the implementation of a component \"sees\".\n     * {@link RefAttributes} is generally not safe to describe both consumer and seen props.\n     *\n     * ```tsx\n     * interface Props extends {\n     *   ref?: React.Ref<HTMLDivElement> | undefined;\n     * }\n     * declare const Component: React.FunctionComponent<Props>;\n     * ```\n     *\n     * WARNING: The implementation of a component will not have access to the same type in versions of React supporting string refs.\n     * The following example would be incorrect usage because {@link Component} would never have access to a `ref` with type `string`\n     * ```tsx\n     * const Component = (props: React.RefAttributes) => props.ref;\n     * ```\n     */",
+            "/**\n         * Defines a human-readable, author-localized abbreviated description for the role of an element, which is intended to be converted into Braille.\n         * @see aria-roledescription.\n         */",
+            "/** Indicates keyboard shortcuts that an author has implemented to activate or give focus to an element. */",
+            "/** Defines a human-readable, author-localized description for the role of an element. */"
+          ]
+        },
+        "types/react/jsx-runtime.d.ts": {
+          "sha256": "b838d4c72740eb0afd284bf7575b74c624b105eff2e8c7b4aeead57e7ac320ff",
+          "leadingComments": "",
+          "attributionComments": []
+        },
+        "types/react/jsx-dev-runtime.d.ts": {
+          "sha256": "c30436b130b6218b7714314dc41d3f459590db4bdf099eecd51cb1bda32109a8",
+          "leadingComments": "",
+          "attributionComments": [
+            "/**\n     * The source file where the element originates from.\n     */"
+          ]
+        }
+      },
+      "diagnosticCount": 5,
+      "status": "extracted-with-diagnostics",
+      "entrySha256": "045c1b395851aa71ef76393398466330fe1eeebc113c8085eefc6d84abea3a88",
+      "entries": [
+        {
+          "entry": "types/react/index.d.ts",
+          "subpath": "",
+          "condition": "primary",
+          "status": "extracted-with-diagnostics",
+          "entrySha256": "045c1b395851aa71ef76393398466330fe1eeebc113c8085eefc6d84abea3a88"
+        },
+        {
+          "entry": "types/react/canary.d.ts",
+          "subpath": "canary",
+          "condition": "exports/types/default",
+          "status": "extracted-with-diagnostics",
+          "entrySha256": "865a2612f5ec073dd48d454307ccabb04c48f8b96fda9940c5ebfe6b4b451f51"
+        },
+        {
+          "entry": "types/react/compiler-runtime.d.ts",
+          "subpath": "compiler-runtime",
+          "condition": "exports/types/default",
+          "status": "extracted",
+          "entrySha256": "20fa37b636fdcc1746ea0738f733d0aed17890d1cd7cb1b2f37010222c23f13e"
+        },
+        {
+          "entry": "types/react/experimental.d.ts",
+          "subpath": "experimental",
+          "condition": "exports/types/default",
+          "status": "extracted-with-diagnostics",
+          "entrySha256": "2e07abf27aa06353d46f4448c0bbac73431f6065eef7113128a5cd804d0c384d"
+        },
+        {
+          "entry": "types/react/jsx-runtime.d.ts",
+          "subpath": "jsx-runtime",
+          "condition": "exports/types/default",
+          "status": "extracted-with-diagnostics",
+          "entrySha256": "b838d4c72740eb0afd284bf7575b74c624b105eff2e8c7b4aeead57e7ac320ff"
+        },
+        {
+          "entry": "types/react/jsx-dev-runtime.d.ts",
+          "subpath": "jsx-dev-runtime",
+          "condition": "exports/types/default",
+          "status": "extracted-with-diagnostics",
+          "entrySha256": "c30436b130b6218b7714314dc41d3f459590db4bdf099eecd51cb1bda32109a8"
+        }
+      ],
+      "retainedDiagnosticCount": 1
+    },
+    {
+      "directory": "underscore",
+      "declarationPackage": "@types/underscore",
+      "declarationVersion": "1.13.9999",
+      "owners": [
+        {
+          "name": "Boris Yankov",
+          "githubUsername": "borisyankov"
+        },
+        {
+          "name": "Josh Baldwin",
+          "githubUsername": "jbaldwin"
+        },
+        {
+          "name": "Christopher Currens",
+          "githubUsername": "ccurrens"
+        },
+        {
+          "name": "Ard Timmerman",
+          "githubUsername": "confususs"
+        },
+        {
+          "name": "Julian Gonggrijp",
+          "githubUsername": "jgonggrijp"
+        },
+        {
+          "name": "Florian Imdahl",
+          "githubUsername": "ffflorian"
+        },
+        {
+          "name": "Regev Brody",
+          "githubUsername": "regevbr"
+        },
+        {
+          "name": "Piotr Błażejewicz",
+          "githubUsername": "peterblazejewicz"
+        },
+        {
+          "name": "Michael Ness",
+          "githubUsername": "reubenrybnik"
+        },
+        {
+          "name": "Luke Tsekouras",
+          "githubUsername": "LukeGT"
+        }
+      ],
+      "projects": [
+        "https://underscorejs.org/"
+      ],
+      "runtimePackage": "underscore",
+      "runtimeAvailability": "not-assessed",
+      "runtimeExecution": "not-assessed",
+      "entry": "types/underscore/index.d.ts",
+      "subpath": "",
+      "condition": "primary",
+      "variants": {
+        "typesVersions": null,
+        "exports": {
+          ".": {
+            "types": {
+              "import": "./index.d.mts",
+              "default": "./index.d.ts"
+            }
+          }
+        }
+      },
+      "exclusions": [
+        {
+          "reason": "global-or-module-augmentation",
+          "source": {
+            "file": "types/underscore/index.d.ts",
+            "start": 238,
+            "line": 7,
+            "column": 1
+          }
+        },
+        {
+          "reason": "global-or-module-augmentation",
+          "source": {
+            "file": "types/underscore/index.d.ts",
+            "start": 238,
+            "line": 7,
+            "column": 1
+          }
+        }
+      ],
+      "sourceNotices": {
+        "types/underscore/index.d.ts": {
+          "sha256": "c8eae51f3b442bf9a80050e423cfafee463e20df9f130e8caac4c605d2e0c9bf",
+          "leadingComments": "",
+          "attributionComments": []
+        }
+      },
+      "diagnosticCount": 0,
+      "status": "extracted",
+      "entrySha256": "c8eae51f3b442bf9a80050e423cfafee463e20df9f130e8caac4c605d2e0c9bf",
+      "entries": [
+        {
+          "entry": "types/underscore/index.d.ts",
+          "subpath": "",
+          "condition": "primary",
+          "status": "extracted",
+          "entrySha256": "c8eae51f3b442bf9a80050e423cfafee463e20df9f130e8caac4c605d2e0c9bf"
+        },
+        {
+          "entry": "types/underscore/index.d.mts",
+          "subpath": "",
+          "condition": "exports/types/import",
+          "status": "extracted",
+          "entrySha256": "840db654af75b46d61376271b7b8f9fe167a9f0ea1ca64611f1378d6393e24e3"
+        }
+      ],
+      "retainedDiagnosticCount": 0
+    }
+  ]
+}

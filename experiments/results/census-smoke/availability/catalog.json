@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "identity": "b70c73b317fb17540d486e40ac040ab6801d844c1f32b378f006496cf54af4eb",
+  "censusIdentity": "6303932a4559bc7170ce36955cda066a3ed1f3cb57f679f1c00ece9b9bb80d1d",
+  "implementation": "4d84d8e2da4e8263071e21531885abf47c1642a535c9fe9fbcbabf3a082acb61",
+  "node": "v24.21.0",
+  "provenance": {
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+    "commit": "455254aa7204192e7f7fbe50266d2313cefdf6c9",
+    "scope": "sparse-development",
+    "pinnedCorpusPackages": 8680,
+    "availablePackages": [
+      "async",
+      "bluebird",
+      "d3-array",
+      "lodash",
+      "react",
+      "underscore"
+    ]
+  },
+  "registry": "https://registry.npmjs.org",
+  "queriedOn": "2026-09-14T13:44:59.777Z",
+  "entries": [
+    {
+      "directory": "d3-array",
+      "declarationVersion": "3.2.9999",
+      "matchingPolicy": "latest-stable-in-declaration-major-minor-line",
+      "name": "d3-array",
+      "version": "3.2.4",
+      "tarball": "https://registry.npmjs.org/d3-array/-/d3-array-3.2.4.tgz",
+      "integrity": "sha512-tdQAmyA18i4J7wprpYq8ClcxZy3SC31QMeByyCFyRt7BVHdREQZ5lpzoe5mFEYZUWe+oq8HBvk9JjpibyEV4Jg==",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/d3/d3-array.git"
+      },
+      "sourceCommit": "94d4541626ae3ac6c847e3d4c6e31aca1a8879b4",
+      "status": "metadata-available",
+      "runtimeExecution": "not-assessed"
+    },
+    {
+      "directory": "lodash",
+      "declarationVersion": "4.17.9999",
+      "matchingPolicy": "latest-stable-in-declaration-major-minor-line",
+      "name": "lodash",
+      "version": "4.17.23",
+      "tarball": "https://registry.npmjs.org/lodash/-/lodash-4.17.23.tgz",
+      "integrity": "sha512-LgVTMpQtIopCi79SJeDiP0TfWi5CNEc/L/aRdTh3yIvmZXTnheWpKjSZhnvMl8iXbC1tFg9gdHHDMLoV7CnG+w==",
+      "repository": {
+        "url": "git+https://github.com/lodash/lodash.git",
+        "type": "git"
+      },
+      "sourceCommit": "835a537f36ee2fd5fb7f524e213ff9ba2d8698f8",
+      "status": "metadata-available",
+      "runtimeExecution": "not-assessed"
+    }
+  ],
+  "counts": {
+    "selectedDeclarationPackages": 2,
+    "obtainableRuntimePackages": 2,
+    "verifiedExecutableExports": 0,
+    "runtimeAssessment": "not-assessed"
+  },
+  "scope": "Metadata only: no tarballs downloaded, lifecycle scripts run, packages installed or exports executed"
+}

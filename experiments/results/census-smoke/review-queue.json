@@ -1,0 +1,1596 @@
+{
+  "schemaVersion": 1,
+  "identity": "6303932a4559bc7170ce36955cda066a3ed1f3cb57f679f1c00ece9b9bb80d1d",
+  "seed": 0,
+  "perClass": 2,
+  "records": [
+    {
+      "reviewId": "4bfa570d989de16ab702d9f130e5a66089ceb2cce122cf253114e4e9ce56f79a",
+      "candidateId": "e0c7e950922a7e95890ce3873269fbc8617137e3a3d37c5e2826c76040e28b4d",
+      "declarationId": "f0d30fec3ca90b7be96c150610d52c079b4fffb91a75aa0dcbf65475f6e05d09",
+      "category": "identity",
+      "package": "lodash",
+      "exportPath": [
+        "Object",
+        "reduceRight"
+      ],
+      "source": {
+        "file": "types/lodash/common/collection.d.ts",
+        "start": 56017,
+        "line": 1558,
+        "column": 9
+      },
+      "declaration": "reduceRight<TResult>(callback: MemoObjectIterator<T[keyof T], TResult, T>, accumulator: TResult): TResult;",
+      "occurrences": [
+        {
+          "variable": "TResult",
+          "polarity": "positive",
+          "argument": 0,
+          "route": [
+            "alias",
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "unknown",
+          "argument": 0,
+          "route": [
+            "alias",
+            "function-parameter",
+            "unsupported"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "unknown",
+          "argument": 0,
+          "route": [
+            "alias",
+            "function-parameter",
+            "unsupported",
+            "unsupported"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "unknown",
+          "argument": 0,
+          "route": [
+            "alias",
+            "function-parameter",
+            "unsupported"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "unknown",
+          "argument": 0,
+          "route": [
+            "alias",
+            "function-parameter",
+            "unsupported",
+            "unsupported"
+          ]
+        },
+        {
+          "variable": "TResult",
+          "polarity": "negative",
+          "argument": 0,
+          "route": [
+            "alias",
+            "function-result"
+          ]
+        },
+        {
+          "variable": "TResult",
+          "polarity": "negative",
+          "argument": 1,
+          "route": []
+        },
+        {
+          "variable": "TResult",
+          "polarity": "positive",
+          "argument": null,
+          "route": []
+        }
+      ],
+      "unsupportedReasons": [
+        "unsupported-syntax:IndexedAccessType",
+        "unsupported-syntax:TypeOperator"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null
+    },
+    {
+      "reviewId": "f8f9702194be5583bd68c934aee31fe778fc6afc3688207c75494249f0ec1305",
+      "candidateId": "71b7d0843d47a1340c1e194086f18fd1ca324f2e44c395a5e2a8009320af2105",
+      "declarationId": "87fd786fce56fa6499dacf2408d9813992c088876dc90794fb6713642fff41e9",
+      "category": "identity",
+      "package": "lodash",
+      "exportPath": [
+        "LoDashStatic",
+        "mixin"
+      ],
+      "source": {
+        "file": "types/lodash/common/util.d.ts",
+        "start": 24436,
+        "line": 622,
+        "column": 9
+      },
+      "declaration": "mixin<TObject>(object: TObject, source: Dictionary<(...args: any[]) => any>, options?: MixinOptions): TObject;",
+      "occurrences": [
+        {
+          "variable": "TObject",
+          "polarity": "negative",
+          "argument": 0,
+          "route": []
+        },
+        {
+          "variable": "TObject",
+          "polarity": "positive",
+          "argument": null,
+          "route": []
+        }
+      ],
+      "unsupportedReasons": [
+        "unknown-variance:Dictionary"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null
+    },
+    {
+      "reviewId": "8d6f6be48d0bfb6e70d53ee0fa82e807f33468a9d067cc3e65bc9ed8cdee4edb",
+      "candidateId": "d44a12b43c9db45e0652a8d0e65dde55e922c747a77a9561d716f93ae1b4a50d",
+      "declarationId": "aaa467a53cf10c9a2945d7d85f4eb1779d73c0bec162619c1f7453541107c24d",
+      "category": "container-element",
+      "package": "lodash",
+      "exportPath": [
+        "reduceRight"
+      ],
+      "source": {
+        "file": "types/lodash/common/collection.d.ts",
+        "start": 55100,
+        "line": 1534,
+        "column": 9
+      },
+      "declaration": "reduceRight<T>(collection: T[] | null | undefined, callback: MemoListIterator<T, T, T[]>): T | undefined;",
+      "occurrences": [
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 0,
+          "route": [
+            "union",
+            "array"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": 1,
+          "route": [
+            "alias",
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": 1,
+          "route": [
+            "alias",
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": 1,
+          "route": [
+            "alias",
+            "function-parameter",
+            "array"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 1,
+          "route": [
+            "alias",
+            "function-result"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": null,
+          "route": [
+            "union"
+          ]
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null
+    },
+    {
+      "reviewId": "d5fafc9dc782963b24e113028e45ff73807ee6f82db7c092b2fc21c802248cba",
+      "candidateId": "b4e7934a394e4d82eaa5995f9058f2753ca597193a4b9210371221fc00a330b9",
+      "declarationId": "3e1e5903932bbf0fcc0b0dcdb97c5ddb2a6d87e3dcecb9c910033fa800c99f86",
+      "category": "container-element",
+      "package": "lodash",
+      "exportPath": [
+        "reduce"
+      ],
+      "source": {
+        "file": "types/lodash/common/collection.d.ts",
+        "start": 52243,
+        "line": 1463,
+        "column": 9
+      },
+      "declaration": "reduce<T>(collection: T[] | null | undefined, callback: MemoListIterator<T, T, T[]>): T | undefined;",
+      "occurrences": [
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 0,
+          "route": [
+            "union",
+            "array"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": 1,
+          "route": [
+            "alias",
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": 1,
+          "route": [
+            "alias",
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": 1,
+          "route": [
+            "alias",
+            "function-parameter",
+            "array"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 1,
+          "route": [
+            "alias",
+            "function-result"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": null,
+          "route": [
+            "union"
+          ]
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null
+    },
+    {
+      "reviewId": "033aed923bc6974ce00d3c26b49ac87d3ec72c3651b751835b0c6c1582077695",
+      "candidateId": "78f29c3efb5a3649ea4c671263f348c5c3227abc04031495b71b8954fc6c17b0",
+      "declarationId": "c2c17c4db01830e3ed04dbdf64582bdf734dfd81263a7ff0d224203b539c67ce",
+      "category": "value-to-container",
+      "package": "lodash",
+      "exportPath": [
+        "LoDashStatic",
+        "fill"
+      ],
+      "source": {
+        "file": "types/lodash/common/array.d.ts",
+        "start": 12773,
+        "line": 349,
+        "column": 9
+      },
+      "declaration": "fill<T>(array: any[] | null | undefined, value: T): T[];",
+      "occurrences": [
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 1,
+          "route": []
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": null,
+          "route": [
+            "array"
+          ]
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null
+    },
+    {
+      "reviewId": "e74876d987ec026a42c12bc11335fd42d0d5541708b450290398b181bb137e65",
+      "candidateId": "24cfdfea26e7507abd837f68acd796f918bc30da73db5b2bce20bbe3c0338ee6",
+      "declarationId": "de90533ab5c34bd757d25b4e7d6178dc257b0f7153b66d588ac7bf084a75fc42",
+      "category": "value-to-container",
+      "package": "lodash",
+      "exportPath": [
+        "castArray"
+      ],
+      "source": {
+        "file": "types/lodash/common/lang.d.ts",
+        "start": 466,
+        "line": 13,
+        "column": 9
+      },
+      "declaration": "castArray<T>(value?: Many<T>): T[];",
+      "occurrences": [
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 0,
+          "route": [
+            "alias",
+            "union"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 0,
+          "route": [
+            "alias",
+            "union",
+            "array"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": null,
+          "route": [
+            "array"
+          ]
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null
+    },
+    {
+      "reviewId": "8f29f737b7ac687397751ee1f0b5a0963fec4a4b8e2e9cf45dc3b68581e8a3cf",
+      "candidateId": "9a242ee3b05b520444d1c0bfb87879477f1e873ddbc4a6ce08e6ccf4eee06b36",
+      "declarationId": "aa39871d7a4475c00ae174c78b8c2ec4c5078cb2f0e85e02a5a0860a68541cd3",
+      "category": "multiple-arguments",
+      "package": "lodash",
+      "exportPath": [
+        "ObjectChain",
+        "reduce"
+      ],
+      "source": {
+        "file": "types/lodash/common/collection.d.ts",
+        "start": 53790,
+        "line": 1507,
+        "column": 9
+      },
+      "declaration": "reduce<TResult>(callback: MemoObjectIterator<T[keyof T], TResult, T>, accumulator: TResult): ExpChain<TResult>;",
+      "occurrences": [
+        {
+          "variable": "TResult",
+          "polarity": "positive",
+          "argument": 0,
+          "route": [
+            "alias",
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "unknown",
+          "argument": 0,
+          "route": [
+            "alias",
+            "function-parameter",
+            "unsupported"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "unknown",
+          "argument": 0,
+          "route": [
+            "alias",
+            "function-parameter",
+            "unsupported",
+            "unsupported"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "unknown",
+          "argument": 0,
+          "route": [
+            "alias",
+            "function-parameter",
+            "unsupported"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "unknown",
+          "argument": 0,
+          "route": [
+            "alias",
+            "function-parameter",
+            "unsupported",
+            "unsupported"
+          ]
+        },
+        {
+          "variable": "TResult",
+          "polarity": "negative",
+          "argument": 0,
+          "route": [
+            "alias",
+            "function-result"
+          ]
+        },
+        {
+          "variable": "TResult",
+          "polarity": "negative",
+          "argument": 1,
+          "route": []
+        },
+        {
+          "variable": "TResult",
+          "polarity": "unknown",
+          "argument": null,
+          "route": [
+            "alias",
+            "unsupported"
+          ]
+        },
+        {
+          "variable": "TResult",
+          "polarity": "unknown",
+          "argument": null,
+          "route": [
+            "alias",
+            "unsupported",
+            "unsupported"
+          ]
+        },
+        {
+          "variable": "TResult",
+          "polarity": "unknown",
+          "argument": null,
+          "route": [
+            "alias",
+            "unsupported",
+            "unsupported",
+            "unsupported"
+          ]
+        },
+        {
+          "variable": "TResult",
+          "polarity": "unknown",
+          "argument": null,
+          "route": [
+            "alias",
+            "unsupported",
+            "unsupported",
+            "unsupported",
+            "unknown-reference"
+          ]
+        },
+        {
+          "variable": "TResult",
+          "polarity": "unknown",
+          "argument": null,
+          "route": [
+            "alias",
+            "unsupported",
+            "unsupported",
+            "unsupported",
+            "unsupported"
+          ]
+        },
+        {
+          "variable": "TResult",
+          "polarity": "unknown",
+          "argument": null,
+          "route": [
+            "alias",
+            "unsupported",
+            "unsupported",
+            "unsupported",
+            "unsupported",
+            "unknown-reference"
+          ]
+        },
+        {
+          "variable": "TResult",
+          "polarity": "unknown",
+          "argument": null,
+          "route": [
+            "alias",
+            "unsupported",
+            "unsupported",
+            "unsupported",
+            "unsupported",
+            "unsupported"
+          ]
+        },
+        {
+          "variable": "TResult",
+          "polarity": "unknown",
+          "argument": null,
+          "route": [
+            "alias",
+            "unsupported",
+            "unsupported",
+            "unsupported",
+            "unsupported",
+            "unsupported",
+            "unsupported"
+          ]
+        },
+        {
+          "variable": "TResult",
+          "polarity": "unknown",
+          "argument": null,
+          "route": [
+            "alias",
+            "unsupported",
+            "unsupported",
+            "unsupported",
+            "unsupported",
+            "unsupported",
+            "unsupported",
+            "unknown-reference"
+          ]
+        },
+        {
+          "variable": "TResult",
+          "polarity": "unknown",
+          "argument": null,
+          "route": [
+            "alias",
+            "unsupported",
+            "unsupported",
+            "unsupported",
+            "unsupported",
+            "unsupported",
+            "unsupported",
+            "unknown-reference"
+          ]
+        }
+      ],
+      "unsupportedReasons": [
+        "mutable-or-indexed-structural-member",
+        "unknown-variance:ArrayLike",
+        "unknown-variance:CollectionChain",
+        "unknown-variance:FunctionChain",
+        "unknown-variance:ObjectChain",
+        "unknown-variance:PrimitiveChain",
+        "unknown-variance:StringChain",
+        "unsupported-syntax:ConditionalType",
+        "unsupported-syntax:Identifier",
+        "unsupported-syntax:IndexedAccessType",
+        "unsupported-syntax:InferType",
+        "unsupported-syntax:IntersectionType",
+        "unsupported-syntax:TypeOperator",
+        "unsupported-syntax:TypeParameter"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null
+    },
+    {
+      "reviewId": "67a6d20bd8f05ea5cf900184b22d28519f6040b38343a54929c7dddd81fcd468",
+      "candidateId": "b0b17beb91ddc192e25b53a7797b697268acddb525bff41454e72c4d92e6b7eb",
+      "declarationId": "d3a10de143b0b0e0bc8eb60d9b08c4950591f19bc018d3097e3f5adc7dad6ea5",
+      "category": "multiple-arguments",
+      "package": "bluebird",
+      "exportPath": [
+        "prototype",
+        "reduce"
+      ],
+      "source": {
+        "file": "types/bluebird/index.d.ts",
+        "start": 24848,
+        "line": 661,
+        "column": 5
+      },
+      "declaration": "reduce<U, Q>(\n        this: Bluebird<R & Iterable<Q>>,\n        reducer: (memo: U, item: Q, index: number, arrayLength: number) => Resolvable<U>,\n        initialValue?: Resolvable<U>,\n    ): Bluebird<U>;",
+      "occurrences": [
+        {
+          "variable": "R",
+          "polarity": "unknown",
+          "argument": 0,
+          "route": [
+            "unknown-reference",
+            "unsupported"
+          ]
+        },
+        {
+          "variable": "Q",
+          "polarity": "unknown",
+          "argument": 0,
+          "route": [
+            "unknown-reference",
+            "unsupported",
+            "unknown-reference"
+          ]
+        },
+        {
+          "variable": "U",
+          "polarity": "positive",
+          "argument": 1,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "Q",
+          "polarity": "positive",
+          "argument": 1,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "U",
+          "polarity": "negative",
+          "argument": 1,
+          "route": [
+            "function-result",
+            "alias",
+            "union"
+          ]
+        },
+        {
+          "variable": "U",
+          "polarity": "unknown",
+          "argument": 1,
+          "route": [
+            "function-result",
+            "alias",
+            "union",
+            "unknown-reference"
+          ]
+        },
+        {
+          "variable": "U",
+          "polarity": "negative",
+          "argument": 2,
+          "route": [
+            "alias",
+            "union"
+          ]
+        },
+        {
+          "variable": "U",
+          "polarity": "unknown",
+          "argument": 2,
+          "route": [
+            "alias",
+            "union",
+            "unknown-reference"
+          ]
+        },
+        {
+          "variable": "U",
+          "polarity": "unknown",
+          "argument": null,
+          "route": [
+            "unknown-reference"
+          ]
+        }
+      ],
+      "unsupportedReasons": [
+        "explicit-receiver-parameter",
+        "unknown-variance:Bluebird",
+        "unknown-variance:Iterable",
+        "unknown-variance:PromiseLike",
+        "unsupported-syntax:IntersectionType"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null
+    },
+    {
+      "reviewId": "a4c036bcb90ea50674cb7746b9d26573a9d3be8fb633ca66486c16ab0b50e2f9",
+      "candidateId": "fdd06a28a5e7057f1a774299ab134050105de128772e9f22c732070cad0aba06",
+      "declarationId": "4a73c545a80d06d13e9adaffb4b553dc81f361c94a257b2dc7456085ddbed0f4",
+      "category": "constrained-generic",
+      "package": "lodash",
+      "exportPath": [
+        "LoDashStatic",
+        "flow"
+      ],
+      "source": {
+        "file": "types/lodash/common/util.d.ts",
+        "start": 6476,
+        "line": 180,
+        "column": 9
+      },
+      "declaration": "flow<A extends any[], R1, R2, R3, R4, R5, R6, R7>(f1: (...args: A) => R1, f2: (a: R1) => R2, f3: (a: R2) => R3, f4: (a: R3) => R4, f5: (a: R4) => R5, f6: (a: R5) => R6, f7: (a: R6) => R7, ...func: Array<Many<(a: any) => any>>): (...args: A) => any;",
+      "occurrences": [
+        {
+          "variable": "A",
+          "polarity": "positive",
+          "argument": 0,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "R1",
+          "polarity": "negative",
+          "argument": 0,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "R1",
+          "polarity": "positive",
+          "argument": 1,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "R2",
+          "polarity": "negative",
+          "argument": 1,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "R2",
+          "polarity": "positive",
+          "argument": 2,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "R3",
+          "polarity": "negative",
+          "argument": 2,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "R3",
+          "polarity": "positive",
+          "argument": 3,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "R4",
+          "polarity": "negative",
+          "argument": 3,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "R4",
+          "polarity": "positive",
+          "argument": 4,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "R5",
+          "polarity": "negative",
+          "argument": 4,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "R5",
+          "polarity": "positive",
+          "argument": 5,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "R6",
+          "polarity": "negative",
+          "argument": 5,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "R6",
+          "polarity": "positive",
+          "argument": 6,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "R7",
+          "polarity": "negative",
+          "argument": 6,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "A",
+          "polarity": "negative",
+          "argument": null,
+          "route": [
+            "function-parameter"
+          ]
+        }
+      ],
+      "unsupportedReasons": [
+        "rest-or-destructured-parameter"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null
+    },
+    {
+      "reviewId": "a2d55410ec59f7aa6695079a6e8ac6a283977afdf17b1727ba5c779bd511139a",
+      "candidateId": "6831ffd0ba9f6c870c944829698cdf7e486ecadef820e93e6aa65f6dbd527f2c",
+      "declarationId": "bade6dd65fc399f7e930fb64344b64b9c29b3fd7e92e3ab3878a4f2bb1cd5ded",
+      "category": "constrained-generic",
+      "package": "lodash",
+      "exportPath": [
+        "flowRight"
+      ],
+      "source": {
+        "file": "types/lodash/common/util.d.ts",
+        "start": 11487,
+        "line": 283,
+        "column": 9
+      },
+      "declaration": "flowRight<A extends any[], R1, R2, R3, R4, R5, R6, R7>(f7: (a: R6) => R7, f6: (a: R5) => R6, f5: (a: R4) => R5, f4: (a: R3) => R4, f3: (a: R2) => R3, f2: (a: R1) => R2, f1: (...args: A) => R1): (...args: A) => R7;",
+      "occurrences": [
+        {
+          "variable": "R6",
+          "polarity": "positive",
+          "argument": 0,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "R7",
+          "polarity": "negative",
+          "argument": 0,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "R5",
+          "polarity": "positive",
+          "argument": 1,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "R6",
+          "polarity": "negative",
+          "argument": 1,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "R4",
+          "polarity": "positive",
+          "argument": 2,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "R5",
+          "polarity": "negative",
+          "argument": 2,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "R3",
+          "polarity": "positive",
+          "argument": 3,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "R4",
+          "polarity": "negative",
+          "argument": 3,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "R2",
+          "polarity": "positive",
+          "argument": 4,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "R3",
+          "polarity": "negative",
+          "argument": 4,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "R1",
+          "polarity": "positive",
+          "argument": 5,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "R2",
+          "polarity": "negative",
+          "argument": 5,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "A",
+          "polarity": "positive",
+          "argument": 6,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "R1",
+          "polarity": "negative",
+          "argument": 6,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "A",
+          "polarity": "negative",
+          "argument": null,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "R7",
+          "polarity": "positive",
+          "argument": null,
+          "route": [
+            "function-result"
+          ]
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null
+    },
+    {
+      "reviewId": "60ae8a7d8bf80e90d633d81f7e08388bd8effdde300e3efb94394e88f26f53ad",
+      "candidateId": "00a26d3fb7bfb9b469a386c3420b02fa92390fd8add218a778970f69172cbce3",
+      "declarationId": "73f7cb5478c58da6a2acd4d7dd310d36c558e61fd24feb5d5ddd5b6ace246871",
+      "category": "higher-order",
+      "package": "underscore",
+      "exportPath": [
+        "UnderscoreStatic",
+        "partial"
+      ],
+      "source": {
+        "file": "types/underscore/index.d.ts",
+        "start": 81496,
+        "line": 2259,
+        "column": 9
+      },
+      "declaration": "partial<T1, T2, T3, T4, T5, T6, T7, T8>(\n            fn: { (p1: T1, p2: T2, p3: T3, p4: T4, p5: T5, p6: T6, p7: T7): T8 },\n            stub1: UnderscoreStatic,\n            p2: T2,\n            p3: T3,\n            stub4: UnderscoreStatic,\n            p5: T5,\n        ): { (p1: T1, p4: T4, p6: T6, p7: T7): T8 };",
+      "occurrences": [
+        {
+          "variable": "T1",
+          "polarity": "positive",
+          "argument": 0,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T2",
+          "polarity": "positive",
+          "argument": 0,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T3",
+          "polarity": "positive",
+          "argument": 0,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T4",
+          "polarity": "positive",
+          "argument": 0,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T5",
+          "polarity": "positive",
+          "argument": 0,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T6",
+          "polarity": "positive",
+          "argument": 0,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T7",
+          "polarity": "positive",
+          "argument": 0,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T8",
+          "polarity": "negative",
+          "argument": 0,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "T2",
+          "polarity": "negative",
+          "argument": 2,
+          "route": []
+        },
+        {
+          "variable": "T3",
+          "polarity": "negative",
+          "argument": 3,
+          "route": []
+        },
+        {
+          "variable": "T5",
+          "polarity": "negative",
+          "argument": 5,
+          "route": []
+        },
+        {
+          "variable": "T1",
+          "polarity": "negative",
+          "argument": null,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T4",
+          "polarity": "negative",
+          "argument": null,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T6",
+          "polarity": "negative",
+          "argument": null,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T7",
+          "polarity": "negative",
+          "argument": null,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T8",
+          "polarity": "positive",
+          "argument": null,
+          "route": [
+            "function-result"
+          ]
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null
+    },
+    {
+      "reviewId": "3f502e0ad5bb97db85a97175eb5d5dc901d908ddbefac8b4ad3b800547cabf03",
+      "candidateId": "3fed0d8668f9b89970900353c33831e4a597910d568a3264d5ec10ffc57ea0a4",
+      "declarationId": "396b8e5cd0b8cc92004768c91b7d3dedbeff7f102ccdd91260a8d96f0ae8d168",
+      "category": "higher-order",
+      "package": "underscore",
+      "exportPath": [
+        "partial"
+      ],
+      "source": {
+        "file": "types/underscore/index.d.ts",
+        "start": 92585,
+        "line": 2582,
+        "column": 9
+      },
+      "declaration": "partial<T1, T2, T3, T4, T5, T6, T7, T8>(\n            fn: { (p1: T1, p2: T2, p3: T3, p4: T4, p5: T5, p6: T6, p7: T7): T8 },\n            p1: T1,\n            stub2: UnderscoreStatic,\n            p3: T3,\n            stub4: UnderscoreStatic,\n            stub5: UnderscoreStatic,\n            p6: T6,\n        ): { (p2: T2, p4: T4, p5: T5, p7: T7): T8 };",
+      "occurrences": [
+        {
+          "variable": "T1",
+          "polarity": "positive",
+          "argument": 0,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T2",
+          "polarity": "positive",
+          "argument": 0,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T3",
+          "polarity": "positive",
+          "argument": 0,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T4",
+          "polarity": "positive",
+          "argument": 0,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T5",
+          "polarity": "positive",
+          "argument": 0,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T6",
+          "polarity": "positive",
+          "argument": 0,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T7",
+          "polarity": "positive",
+          "argument": 0,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T8",
+          "polarity": "negative",
+          "argument": 0,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "T1",
+          "polarity": "negative",
+          "argument": 1,
+          "route": []
+        },
+        {
+          "variable": "T3",
+          "polarity": "negative",
+          "argument": 3,
+          "route": []
+        },
+        {
+          "variable": "T6",
+          "polarity": "negative",
+          "argument": 6,
+          "route": []
+        },
+        {
+          "variable": "T2",
+          "polarity": "negative",
+          "argument": null,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T4",
+          "polarity": "negative",
+          "argument": null,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T5",
+          "polarity": "negative",
+          "argument": null,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T7",
+          "polarity": "negative",
+          "argument": null,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T8",
+          "polarity": "positive",
+          "argument": null,
+          "route": [
+            "function-result"
+          ]
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null
+    },
+    {
+      "reviewId": "91a612786734fd5f37bdbfaf7cd06d9cba88324b4591e776394eb5277c3658f4",
+      "candidateId": "8fdad8b889fdd58518a6eee49b22e142d3f192d4b08d56630343f1d32b966842",
+      "declarationId": "5ce25feb14b8d3982c507c5a97ec26f84fbb1954f65036b4f4b09b8152c6cc54",
+      "category": "overload-or-discriminated",
+      "package": "bluebird",
+      "exportPath": [
+        "coroutine"
+      ],
+      "source": {
+        "file": "types/bluebird/index.d.ts",
+        "start": 34527,
+        "line": 855,
+        "column": 5
+      },
+      "declaration": "static coroutine<T, A1>(\n        generatorFunction: (a1: A1) => IterableIterator<any>,\n        options?: Bluebird.CoroutineOptions,\n    ): (a1: A1) => Bluebird<T>;",
+      "occurrences": [
+        {
+          "variable": "A1",
+          "polarity": "positive",
+          "argument": 0,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "A1",
+          "polarity": "negative",
+          "argument": null,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "unknown",
+          "argument": null,
+          "route": [
+            "function-result",
+            "unknown-reference"
+          ]
+        }
+      ],
+      "unsupportedReasons": [
+        "unknown-variance:Bluebird",
+        "unknown-variance:IterableIterator"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null
+    },
+    {
+      "reviewId": "858dafa34100936f83d95afc640189c997a9de42d0caea300bc670cbc2b9dd95",
+      "candidateId": "2d90fe86e02b95fefb8e2e01f8d8f3c3a7c8f73b3b4b456edb18856b572ca631",
+      "declarationId": "1702c5e2c3a6e77671c87616d2dc5c14c6b82c717173007d4ab436af53fd35d0",
+      "category": "overload-or-discriminated",
+      "package": "lodash",
+      "exportPath": [
+        "LoDashStatic",
+        "extendWith"
+      ],
+      "source": {
+        "file": "types/lodash/common/object.d.ts",
+        "start": 27806,
+        "line": 732,
+        "column": 9
+      },
+      "declaration": "extendWith<TObject, TSource1, TSource2>(object: TObject, source1: TSource1, source2: TSource2, customizer: AssignCustomizer): TObject & TSource1 & TSource2;",
+      "occurrences": [
+        {
+          "variable": "TObject",
+          "polarity": "negative",
+          "argument": 0,
+          "route": []
+        },
+        {
+          "variable": "TSource1",
+          "polarity": "negative",
+          "argument": 1,
+          "route": []
+        },
+        {
+          "variable": "TSource2",
+          "polarity": "negative",
+          "argument": 2,
+          "route": []
+        },
+        {
+          "variable": "TObject",
+          "polarity": "unknown",
+          "argument": null,
+          "route": [
+            "unsupported"
+          ]
+        },
+        {
+          "variable": "TSource1",
+          "polarity": "unknown",
+          "argument": null,
+          "route": [
+            "unsupported"
+          ]
+        },
+        {
+          "variable": "TSource2",
+          "polarity": "unknown",
+          "argument": null,
+          "route": [
+            "unsupported"
+          ]
+        }
+      ],
+      "unsupportedReasons": [
+        "unsupported-syntax:IntersectionType"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null
+    },
+    {
+      "reviewId": "ff1654d7c8190285d8490befc1313820c044053865c7ec9d7c03db6f3444c8dc",
+      "candidateId": "b7ee413a5d5e0bc0e5a7863b0095e95edb5e5fad8266ad3af05cecd20c40f1d9",
+      "declarationId": "33ae948805b97512900a5a0989885c89ed5a7c46f7b252edf5213551069fb2a0",
+      "category": "unsupported",
+      "package": "underscore",
+      "exportPath": [
+        "CollectionIterator"
+      ],
+      "source": {
+        "file": "types/underscore/index.d.ts",
+        "start": 2208,
+        "line": 82,
+        "column": 9
+      },
+      "declaration": "(element: T, key: CollectionKey<V>, collection: V): TResult;",
+      "occurrences": [
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 0,
+          "route": []
+        },
+        {
+          "variable": "V",
+          "polarity": "unknown",
+          "argument": 1,
+          "route": [
+            "alias",
+            "unsupported"
+          ]
+        },
+        {
+          "variable": "V",
+          "polarity": "unknown",
+          "argument": 1,
+          "route": [
+            "alias",
+            "unsupported",
+            "unsupported"
+          ]
+        },
+        {
+          "variable": "V",
+          "polarity": "unknown",
+          "argument": 1,
+          "route": [
+            "alias",
+            "unsupported",
+            "unsupported",
+            "unsupported"
+          ]
+        },
+        {
+          "variable": "V",
+          "polarity": "unknown",
+          "argument": 1,
+          "route": [
+            "alias",
+            "unsupported",
+            "unsupported",
+            "unsupported",
+            "unsupported"
+          ]
+        },
+        {
+          "variable": "V",
+          "polarity": "negative",
+          "argument": 2,
+          "route": []
+        },
+        {
+          "variable": "TResult",
+          "polarity": "positive",
+          "argument": null,
+          "route": []
+        }
+      ],
+      "unsupportedReasons": [
+        "no-supported-relational-variable",
+        "unknown-variance:Dictionary",
+        "unknown-variance:List",
+        "unsupported-syntax:ConditionalType"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null
+    },
+    {
+      "reviewId": "3b6411f5b7444e6ef8e71f495150f80af0b65ae92dc1e4e6cd1b2e3cdbd08eab",
+      "candidateId": "8db270728052cc94dda049ac9f9328e2a9c4d01b4e0dfa4b4c53c65daf986471",
+      "declarationId": "d9601286443c5ea5aa892944a5f3dd4613ae1977fcad10bdb987a228d2e95cab",
+      "category": "unsupported",
+      "package": "lodash",
+      "exportPath": [
+        "LoDashStatic",
+        "pullAllBy"
+      ],
+      "source": {
+        "file": "types/lodash/common/array.d.ts",
+        "start": 34525,
+        "line": 1019,
+        "column": 9
+      },
+      "declaration": "pullAllBy<TList extends MutableList<any>>(array: RejectReadonly<TList>, values?: List<TList[0]>, iteratee?: ValueIteratee<TList[0]>): TList;",
+      "occurrences": [
+        {
+          "variable": "TList",
+          "polarity": "unknown",
+          "argument": 0,
+          "route": [
+            "alias",
+            "unsupported"
+          ]
+        },
+        {
+          "variable": "TList",
+          "polarity": "unknown",
+          "argument": 1,
+          "route": [
+            "alias",
+            "unknown-reference",
+            "unsupported"
+          ]
+        },
+        {
+          "variable": "TList",
+          "polarity": "unknown",
+          "argument": 2,
+          "route": [
+            "alias",
+            "union",
+            "function-parameter",
+            "unsupported"
+          ]
+        },
+        {
+          "variable": "TList",
+          "polarity": "positive",
+          "argument": null,
+          "route": []
+        }
+      ],
+      "unsupportedReasons": [
+        "nested-generic-function",
+        "unknown-variance:ArrayLike",
+        "unsupported-syntax:ConditionalType",
+        "unsupported-syntax:Identifier",
+        "unsupported-syntax:IndexedAccessType",
+        "unsupported-syntax:MappedType",
+        "unsupported-syntax:MinusToken",
+        "unsupported-syntax:QuestionToken",
+        "unsupported-syntax:TupleType",
+        "unsupported-syntax:TypeOperator",
+        "unsupported-syntax:TypeParameter"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null
+    }
+  ]
+}

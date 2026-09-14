@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object", "required": ["schemaVersion", "identity", "package", "rows"], "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {"const": 1}, "identity": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "package": {"type": "object", "required": ["directory", "status", "runtimeAvailability", "runtimeExecution"], "properties": {"directory": {"type": "string"}, "status": {"enum": ["extracted", "extracted-with-diagnostics", "missing-entry", "extraction-failed"]}, "runtimeAvailability": {"enum": ["not-assessed", "metadata-available", "metadata-unavailable", "non-npm"]}, "runtimeExecution": {"const": "not-assessed"}}},
+    "rows": {"type": "array", "items": {
+      "type": "object", "required": ["id", "declarationId", "exportId", "package", "entry", "moduleSpecifier", "exportPath", "kind", "runtimeBinding", "source", "declaration", "extractionReason", "typeParameters", "hasTypeParameters", "hasOwnTypeParameters", "bothPolarities", "occurrences", "classes", "unsupportedReasons", "runtimeExecution"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "declarationId": {"type": "string"}, "exportId": {"type": "string"},
+        "package": {"type": "string"}, "entry": {"type": "string"}, "moduleSpecifier": {"type": "string"}, "exportPath": {"type": "array", "items": {"type": "string"}},
+        "kind": {"enum": ["function", "method", "constructor"]}, "runtimeBinding": {"enum": ["value", "instance", "type-only"]},
+        "source": {"type": "object", "required": ["file", "start", "line", "column"], "properties": {"file": {"type": "string"}, "start": {"type": "integer", "minimum": 0}, "line": {"type": "integer", "minimum": 1}, "column": {"type": "integer", "minimum": 1}}},
+        "declaration": {"type": "string"}, "extractionReason": {"type": "string"}, "typeParameters": {"type": "array", "items": {"type": "object"}},
+        "hasTypeParameters": {"type": "boolean"}, "hasOwnTypeParameters": {"type": "boolean"}, "bothPolarities": {"type": "boolean"},
+        "occurrences": {"type": "array", "items": {"type": "object", "required": ["variable", "polarity", "argument", "route"], "properties": {"variable": {"type": "string"}, "polarity": {"enum": ["negative", "positive", "unknown"]}, "argument": {"anyOf": [{"type": "integer", "minimum": 0}, {"type": "null"}]}, "route": {"type": "array", "items": {"type": "string"}}}}},
+        "classes": {"type": "array", "uniqueItems": true, "items": {"enum": ["identity", "container-element", "value-to-container", "multiple-arguments", "constrained-generic", "higher-order", "overload-or-discriminated", "unsupported"]}},
+        "unsupportedReasons": {"type": "array", "items": {"type": "string"}}, "runtimeExecution": {"const": "not-assessed"}
+      }
+    }}
+  }
+}

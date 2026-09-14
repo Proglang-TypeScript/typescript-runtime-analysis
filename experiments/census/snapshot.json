@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+  "commit": "455254aa7204192e7f7fbe50266d2313cefdf6c9",
+  "commitDate": "2026-09-14T08:33:16Z",
+  "resolvedOn": "2026-09-14",
+  "smokePackages": ["async", "bluebird", "d3-array", "lodash", "react", "underscore"],
+  "purpose": "Phase-2 input pin. Smoke selection is development/infrastructure only, not a census or held-out benchmark."
+}

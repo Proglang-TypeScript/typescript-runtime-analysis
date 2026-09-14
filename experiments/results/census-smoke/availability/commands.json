@@ -1,0 +1,68 @@
+[
+  {
+    "executable": "npm",
+    "parameters": [
+      "view",
+      "d3-array@3.2.x",
+      "version",
+      "--json",
+      "--registry=https://registry.npmjs.org",
+      "--userconfig=/Users/thiemann/Documents/Codex/2026-09-14/referenced-chatgpt-conversation-this-is-an/work/census-phase2-final-catalog/work/empty.npmrc",
+      "--globalconfig=/Users/thiemann/Documents/Codex/2026-09-14/referenced-chatgpt-conversation-this-is-an/work/census-phase2-final-catalog/work/empty-global.npmrc",
+      "--cache=/Users/thiemann/Documents/Codex/2026-09-14/referenced-chatgpt-conversation-this-is-an/work/census-phase2-final-catalog/work/cache"
+    ],
+    "status": 0,
+    "error": null,
+    "stdoutSha256": "ff72d618f83814b2dc7def666011cffe677be471d1e09177f66c7e33462ee202",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "executable": "npm",
+    "parameters": [
+      "view",
+      "d3-array@3.2.4",
+      "--json",
+      "--registry=https://registry.npmjs.org",
+      "--userconfig=/Users/thiemann/Documents/Codex/2026-09-14/referenced-chatgpt-conversation-this-is-an/work/census-phase2-final-catalog/work/empty.npmrc",
+      "--globalconfig=/Users/thiemann/Documents/Codex/2026-09-14/referenced-chatgpt-conversation-this-is-an/work/census-phase2-final-catalog/work/empty-global.npmrc",
+      "--cache=/Users/thiemann/Documents/Codex/2026-09-14/referenced-chatgpt-conversation-this-is-an/work/census-phase2-final-catalog/work/cache"
+    ],
+    "status": 0,
+    "error": null,
+    "stdoutSha256": "a8fb7e12b4904f5b05f1c978703006718436fa8ea0e6ff93c91d821cb267aaa1",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "executable": "npm",
+    "parameters": [
+      "view",
+      "lodash@4.17.x",
+      "version",
+      "--json",
+      "--registry=https://registry.npmjs.org",
+      "--userconfig=/Users/thiemann/Documents/Codex/2026-09-14/referenced-chatgpt-conversation-this-is-an/work/census-phase2-final-catalog/work/empty.npmrc",
+      "--globalconfig=/Users/thiemann/Documents/Codex/2026-09-14/referenced-chatgpt-conversation-this-is-an/work/census-phase2-final-catalog/work/empty-global.npmrc",
+      "--cache=/Users/thiemann/Documents/Codex/2026-09-14/referenced-chatgpt-conversation-this-is-an/work/census-phase2-final-catalog/work/cache"
+    ],
+    "status": 0,
+    "error": null,
+    "stdoutSha256": "9ca1bb41f21f8b6da82f62165e5394a5b2ebd5356bdcaef8dc331f1a34f74624",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "executable": "npm",
+    "parameters": [
+      "view",
+      "lodash@4.17.23",
+      "--json",
+      "--registry=https://registry.npmjs.org",
+      "--userconfig=/Users/thiemann/Documents/Codex/2026-09-14/referenced-chatgpt-conversation-this-is-an/work/census-phase2-final-catalog/work/empty.npmrc",
+      "--globalconfig=/Users/thiemann/Documents/Codex/2026-09-14/referenced-chatgpt-conversation-this-is-an/work/census-phase2-final-catalog/work/empty-global.npmrc",
+      "--cache=/Users/thiemann/Documents/Codex/2026-09-14/referenced-chatgpt-conversation-this-is-an/work/census-phase2-final-catalog/work/cache"
+    ],
+    "status": 0,
+    "error": null,
+    "stdoutSha256": "d7c9a7a61fef1cfade34c29903182a4d50868147bce3ca3c3c62dc2936a15e51",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

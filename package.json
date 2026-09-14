@@ -16,6 +16,12 @@
     "experiment": "node scripts/experiment.cjs",
     "experiment:relational": "node scripts/relational-experiment.cjs",
     "experiment:sealing": "node scripts/sealing-experiment.cjs",
+    "census:prepare": "node scripts/census.cjs prepare",
+    "census": "node scripts/census.cjs run",
+    "census:aggregate": "node scripts/census.cjs aggregate",
+    "census:review": "node scripts/census.cjs review",
+    "census:availability": "node scripts/census-availability.cjs",
+    "census:runtime": "node scripts/census.cjs runtime",
     "check": "npm run build && npm test && npm run smoke && npm run experiment"
   },
   "dependencies": {
