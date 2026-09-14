@@ -14,7 +14,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run check
-      - run: npm audit --omit=dev
+      - run: npm audit
       - uses: actions/upload-artifact@v7
         if: always()
         with:

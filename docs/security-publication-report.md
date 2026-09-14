@@ -4,7 +4,7 @@ Date: 2026-09-14. Workspace: /Users/thiemann/git/typescript. This record superse
 
 ## Publication
 
-Fresh upstream: [Proglang-TypeScript/typescript-runtime-analysis](https://github.com/Proglang-TypeScript/typescript-runtime-analysis), **private** because preservation material includes a patch from the private concrete-types repository. Its first publication is being finalized; consult GitHub for its current HEAD. Source import revisions remain recorded separately in docs/provenance.md; the revisions below are the newly maintained source heads.
+Fresh upstream: [Proglang-TypeScript/typescript-runtime-analysis](https://github.com/Proglang-TypeScript/typescript-runtime-analysis), **private** because preservation material includes a patch from the private concrete-types repository. Initial validated publication: `d0da3299355fea2b5e2f4a2bd1ec11d96932bba7` on master. Final synchronized heads are recorded in publication-verification.json. Source import revisions remain recorded separately in docs/provenance.md; the revisions below are the newly maintained source heads.
 
 | Repository | Maintained commit | Publication |
 |---|---|---|
@@ -35,9 +35,9 @@ Eight maintained existing repositories were pushed. js-code-pattern-discovery wa
 
 - Preserved generator65 unit +1 e2e and comparator44 assertions: **110 original assertions**. The consolidated runner also has8 Node regression tests (118 total), four genuine smoke workflows and two synthetic research scaffold runs. No historical assertion was skipped or changed into a placeholder to claim success.
 - Independent AST-utils2 and viewer2 security tests pass. Libraries whose original test scripts were placeholders are explicitly not counted as tested; their builds/lints pass.
-- All nine source packages clean-install on native Node24. The final clean consolidated Node24/npm12 install, all118 tests, all smoke/experiment workflows and full dependency audit passed after the argparse3 lock refresh (argparse3.0.2 confirmed).
+- All nine source packages clean-install on native Node24. The final clean consolidated Node24/npm12 install, all118 tests, all smoke/experiment workflows and full dependency audit passed after the argparse3 lock refresh (argparse3.0.2 confirmed). A clean Linux npm ci, complete check and full audit also passed with this exact lockfile, not a stale installation.
 - All six maintained images built. The Python/Node helper verified both versions, a non-root user, writable working copy and non-writable source. The actual service traced the calculator with the final tracer image and generated its declaration with the final generator image.
-- Published commit-matched GitHub CI succeeded for generator, AST-utils, visitors and tracer. New viewer/comparator workflows were still running at this snapshot; publication-verification.json records their final observed states. Repositories without workflows are not claimed to have CI passes.
+- Published commit-matched GitHub CI succeeded for generator, AST-utils, visitors, tracer, viewer and comparator. Fresh upstream validation is recorded in publication-verification.json. Repositories without workflows are not claimed to have CI passes.
 
 ## Unresolved boundaries
 
