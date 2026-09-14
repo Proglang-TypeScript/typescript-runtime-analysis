@@ -16,15 +16,35 @@ npm run census:prepare -- --out work/dt-smoke --smoke
 npm run census -- --snapshot work/dt-smoke --out work/census-smoke
 # Full input and census. Fetch is larger; extraction can run for hours.
 npm run census:prepare -- --out work/definitelytyped
-npm run census -- --snapshot work/definitelytyped --out work/census
+npm run census -- --snapshot work/definitelytyped --out work/census --time-limit-hours 4
 # Resume exactly the same pin/compiler/implementation/selection/seed.
-npm run census -- --snapshot work/definitelytyped --out work/census --resume
+npm run census -- --snapshot work/definitelytyped --out work/census --time-limit-hours 4 --resume
 npm run census:aggregate -- --out work/census
 ```
 
 To analyze a development subset of a full checkout, add `--packages lodash,d3-array`. A sparse checkout is never labeled full corpus, even when every available sparse directory is selected. Setup requires Git/GitHub network access; extraction and aggregation are offline. The existing checkout must match the exact pin/origin and be clean; setup refuses to overwrite it. Failed partial setup is preserved: choose a new directory or inspect/fix it explicitly. Existing output requires explicit `--resume` and identical provenance/configuration; changed rules require a fresh output directory.
 
 Each package is extracted in a separate worker with a 1 GB V8 heap, a two-minute deadline and a 64 MB output cap. Failed/missing entries retain an explicit zero-row failure shard and make the census command nonzero; they are not negative research results. Resume retries failed shards. Successful package shards avoid repeated compilation. An implementation hash and final input/implementation recheck prevent unnoticed rule/input drift. Aggregation streams shards to JSONL/CSV rather than holding all declarations/programs in memory; distinct-ID sets still consume memory proportional to the corpus. For unusually large corpora increase the parent Node heap deliberately, not worker limits silently.
+
+### Timed checkpoints and the complete resume call
+
+`--time-limit-hours HOURS` is an optional finite positive number, including fractions such as `0.5`. The budget starts when each invocation begins and is checked after each complete package worker (including all of that package's declared module entry points), after its shard is saved by atomic rename. It does not interrupt a module mid-extraction. The package boundary is the existing unit of resume; there are no intra-package checkpoints. A worker may exceed the remaining budget up to its existing two-minute deadline; checkpoint validation adds overhead. Final aggregation is outside this extraction budget.
+
+If the budget expires with packages remaining, the command validates the input/implementation, writes `checkpoint.json` with identity, state, invocation budget/elapsed hours, processed/successful/failed/pending packages, and exits normally (zero unless extraction failures occurred). Completed shards remain under `packages/`. Summary tables and the review queue are deferred until all selected packages have been processed; a timed checkpoint is **not** a completed census. `checkpoint.json` is also written at extraction completion. Without this option the run continues through the whole selection.
+
+From the repository root, the full resume command for the four-hour full-corpus example is:
+
+```sh
+npm run census -- --snapshot work/definitelytyped --out work/census --time-limit-hours 4 --resume
+```
+
+For a selected-package run with a nondefault review size, repeat those options too:
+
+```sh
+npm run census -- --snapshot work/definitelytyped --out work/census-subset --packages lodash,d3-array --review-size 10 --time-limit-hours 4 --resume
+```
+
+Use the original snapshot and output directory, identical package selection and review size, and unchanged pinned input/compiler/software. Check `run.json` for the original selection, review size and command. Preparation need not be repeated. Successful validated shards are skipped; failed shards are retried. The time limit is an invocation setting, not part of census identity: it may be changed or omitted on resume, and each invocation gets a fresh budget. Runs made with an earlier software implementation cannot be resumed with changed software; use the original version to finish those runs, or start a fresh output directory with this version. Manual aggregation requires every selected shard to exist and does not turn a partial checkpoint into a full census.
 
 ## Unit, deduplication and classifications
 

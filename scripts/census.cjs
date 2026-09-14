@@ -10,7 +10,18 @@ const validate = new Ajv({allErrors: true, strict: true}).compile(require('../pa
 const [command = 'run', ...args] = process.argv.slice(2);
 const option = (name, fallback) => {const index = args.indexOf('--' + name); return index < 0 ? fallback : args[index + 1];};
 const read = file => JSON.parse(fs.readFileSync(file, 'utf8'));
-const write = (directory, name, value) => fs.writeFileSync(path.join(directory, name), JSON.stringify(value, null, 2) + '\n');
+const write = (directory, name, value) => {
+  const file = path.join(directory, name);
+  const temporary = file + '.tmp';
+  fs.writeFileSync(temporary, JSON.stringify(value, null, 2) + '\n');
+  fs.renameSync(temporary, file);
+};
+function timeLimitHours(value) {
+  if (value === undefined) return null;
+  const hours = Number(value);
+  if (typeof value !== 'string' || !value.trim() || !Number.isFinite(hours) || hours <= 0 || !Number.isFinite(hours * 3600000)) throw new Error('--time-limit-hours requires a finite positive number of hours');
+  return hours;
+}
 function implementationHash() {return hash(['../packages/generic-api-census/index.cjs', '../packages/generic-api-census/polarity.cjs', '../packages/generic-api-census/schema.json', '../packages/generic-api-census/review.cjs', 'census.cjs', 'census-snapshot.cjs'].map(name => fs.readFileSync(path.resolve(__dirname, name))).join('\n'));}
 function aggregate(directory) {
   const metadata = read(path.join(directory, 'run.json'));
@@ -53,11 +64,14 @@ function aggregate(directory) {
   fs.writeFileSync(path.join(directory, 'summary.csv'), 'metric,count\n' + Object.entries(summary.counts).filter(([, value]) => typeof value === 'number').map(([name, value]) => `${name},${value}`).join('\n') + '\n' + Object.entries(summary.counts.classes).map(([name, value]) => `${name},${value}`).join('\n') + '\n');
   return summary;
 }
-function run() {
+function run({arguments: runArgs = args, inspectSnapshot = inspect, extractWorker = (root, name) => spawnSync(process.execPath, ['--max-old-space-size=1024', __filename, 'extract', root, name], {encoding: 'utf8', timeout: 120000, maxBuffer: 64 * 1024 * 1024, env: {PATH: process.env.PATH, TZ: 'UTC'}}), now = () => performance.now()} = {}) {
+  const started = now();
+  const option = (name, fallback) => {const index = runArgs.indexOf('--' + name); return index < 0 ? fallback : runArgs[index + 1];};
+  const hours = timeLimitHours(runArgs.includes('--time-limit-hours') ? option('time-limit-hours', null) ?? null : undefined);
   const root = path.resolve(option('snapshot', 'work/definitelytyped'));
   const directory = path.resolve(option('out', 'work/census'));
   if (directory === root || directory.startsWith(root + path.sep)) throw new Error('Output must be outside the pinned checkout');
-  const provenance = inspect(root);
+  const provenance = inspectSnapshot(root);
   const selection = option('packages') ? option('packages').split(',').sort() : provenance.availablePackages;
   if (!selection.length || new Set(selection).size !== selection.length || selection.some(name => !/^[a-z0-9][a-z0-9_.-]*$/.test(name) || !provenance.availablePackages.includes(name))) throw new Error('Invalid package selection');
   const reviewSize = Number(option('review-size', '5'));
@@ -65,23 +79,46 @@ function run() {
   const compiler = require('typescript').version;
   const identity = hash(JSON.stringify({provenance, selection, compiler, implementation: implementationHash(), reviewSize, seed: 0}));
   if (fs.existsSync(directory) && fs.readdirSync(directory).length) {
-    if (!args.includes('--resume') || read(path.join(directory, 'run.json')).identity !== identity) throw new Error('Existing output is not this exact census; use --resume or a fresh directory');
+    if (!runArgs.includes('--resume') || read(path.join(directory, 'run.json')).identity !== identity) throw new Error('Existing output is not this exact census; use --resume or a fresh directory');
   } else {fs.mkdirSync(path.join(directory, 'packages'), {recursive: true}); write(directory, 'run.json', {schemaVersion: 1, identity, provenance, selection, compiler, implementation: implementationHash(), seed: 0, reviewSize, command: process.argv.slice(2), workerLimits: {heapMb: 1024, timeoutMs: 120000, outputBytes: 64 * 1024 * 1024}});}
+  const processed = [];
+  const successful = [];
+  const failures = [];
+  function checkpoint(state) {
+    inspectSnapshot(root);
+    if (implementationHash() !== read(path.join(directory, 'run.json')).implementation) throw new Error('Census implementation changed during extraction; choose a fresh output directory');
+    const progress = {schemaVersion: 1, identity, state, timeLimitHours: hours, elapsedHours: (now() - started) / 3600000, command: ['run', ...runArgs], processed, successful, failures, pending: selection.filter(name => !processed.includes(name))};
+    write(directory, 'checkpoint.json', progress);
+    return progress;
+  }
   for (const name of selection) {
     const file = path.join(directory, 'packages', name + '.json');
-    if (fs.existsSync(file) && read(file).package.status.startsWith('extracted')) continue;
-    const result = spawnSync(process.execPath, ['--max-old-space-size=1024', __filename, 'extract', root, name], {encoding: 'utf8', timeout: 120000, maxBuffer: 64 * 1024 * 1024, env: {PATH: process.env.PATH, TZ: 'UTC'}});
+    const cached = fs.existsSync(file) ? read(file) : null;
+    if (cached && (!validate(cached) || cached.identity !== identity)) throw new Error('Invalid or stale census shard: ' + name);
     let data;
-    try {if (result.status !== 0 || result.error) throw result.error || new Error(result.stderr); data = JSON.parse(result.stdout);}
-    catch (error) {data = {package: {directory: name, status: 'extraction-failed', runtimeAvailability: 'not-assessed', runtimeExecution: 'not-assessed', failure: result.error?.code || 'WORKER_FAILURE', diagnostics: [String(error.message).slice(0, 2000)]}, rows: []};}
-    write(path.dirname(file), path.basename(file), {schemaVersion: 1, identity, ...data});
-    console.error(`${name}: ${data.package.status}; ${data.rows.length} export/signature pairs`);
+    if (cached?.package.status.startsWith('extracted')) data = cached;
+    else {
+      const result = extractWorker(root, name);
+      try {if (result.status !== 0 || result.error) throw result.error || new Error(result.stderr); data = JSON.parse(result.stdout); if (!validate({schemaVersion: 1, identity, ...data})) throw new Error('Invalid worker census shard');}
+      catch (error) {data = {package: {directory: name, status: 'extraction-failed', runtimeAvailability: 'not-assessed', runtimeExecution: 'not-assessed', failure: result.error?.code || 'WORKER_FAILURE', diagnostics: [String(error.message).slice(0, 2000)]}, rows: []};}
+      write(path.dirname(file), path.basename(file), {schemaVersion: 1, identity, ...data});
+      console.error(`${name}: ${data.package.status}; ${data.rows.length} export/signature pairs`);
+    }
+    processed.push(name);
+    (data.package.status.startsWith('extracted') ? successful : failures).push(name);
+    if (hours !== null && (now() - started) / 3600000 >= hours && processed.length < selection.length) {
+      const progress = checkpoint('time-limit-reached');
+      console.log(JSON.stringify(progress, null, 2));
+      console.error('Time limit reached at a complete package boundary; resume with the same snapshot/output/selection/review size and --resume. Final aggregation is deferred until all selected packages are processed.');
+      if (failures.length) process.exitCode = 1;
+      return progress;
+    }
   }
-  inspect(root);
-  if (implementationHash() !== read(path.join(directory, 'run.json')).implementation) throw new Error('Census implementation changed during extraction; choose a fresh output directory');
+  checkpoint('extraction-complete');
   const summary = aggregate(directory);
   console.log(JSON.stringify({counts: summary.counts, coverage: summary.coverage, manualReview: summary.manualReview}, null, 2));
   if (summary.coverage.extractionFailures) process.exitCode = 1;
+  return summary;
 }
 if (require.main === module) {
   try {
@@ -116,4 +153,4 @@ if (require.main === module) {
     } else throw new Error('Expected prepare, run, aggregate, review or runtime');
   } catch (error) {console.error(error.message); process.exitCode = 1;}
 }
-module.exports = {aggregate, implementationHash};
+module.exports = {aggregate, implementationHash, run, timeLimitHours};
