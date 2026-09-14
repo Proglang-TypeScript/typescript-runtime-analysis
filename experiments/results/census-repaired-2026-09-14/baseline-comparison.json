@@ -1,0 +1,132 @@
+{
+  "baselineIdentity": "8235039d24e334ab26863f6a87cb8f828ff91f75dbfbe01bcf9d2a9cd4f7dcf0",
+  "repairedIdentity": "191105aee86637c2edcfcec4673aed7314ddcb074beb0d6ee23e22f192cbed79",
+  "samePinnedCommit": true,
+  "comparisonBasis": "Fresh full rerun; distinct software identities and nonadditive imported-declaration counts",
+  "baselineCoverage": {
+    "selection": 8680,
+    "pinnedCorpusPackages": 8680,
+    "fullPinnedCorpusSelected": true,
+    "extractionFailures": 21,
+    "compilerDiagnosticPackages": 3738
+  },
+  "repairedCoverage": {
+    "selection": 8680,
+    "pinnedCorpusPackages": 8680,
+    "fullPinnedCorpusSelected": true,
+    "extractionFailures": 0,
+    "compilerDiagnosticPackages": 3750,
+    "incompleteEntryPackages": 1
+  },
+  "counts": {
+    "totalExportedCallableDeclarations": {
+      "baseline": 145776,
+      "repaired": 172156,
+      "delta": 26380
+    },
+    "exportSignaturePairs": {
+      "baseline": 1161271,
+      "repaired": 1871316,
+      "delta": 710045
+    },
+    "distinctCallableExports": {
+      "baseline": 894014,
+      "repaired": 1513756,
+      "delta": 619742
+    },
+    "declarationsWithTypeParameters": {
+      "baseline": 22180,
+      "repaired": 23705,
+      "delta": 1525
+    },
+    "declarationsWithOwnTypeParameters": {
+      "baseline": 9035,
+      "repaired": 10199,
+      "delta": 1164
+    },
+    "declarationsWithBothPolarities": {
+      "baseline": 2558,
+      "repaired": 2603,
+      "delta": 45
+    },
+    "packagesWithExports": {
+      "baseline": 6783,
+      "repaired": 6803,
+      "delta": 20
+    },
+    "packagesWithTypeParameters": {
+      "baseline": 2430,
+      "repaired": 2442,
+      "delta": 12
+    },
+    "packagesWithBothPolarities": {
+      "baseline": 786,
+      "repaired": 792,
+      "delta": 6
+    },
+    "genericOnlyThroughEnclosing": {
+      "baseline": 12617,
+      "repaired": 12968,
+      "delta": 351
+    },
+    "firstOrderPotentialDeclarations": {
+      "baseline": 272,
+      "repaired": 276,
+      "delta": 4
+    },
+    "obtainableRuntimePackages": {
+      "baseline": 0,
+      "repaired": 0,
+      "delta": 0
+    },
+    "verifiedExecutableExports": {
+      "baseline": 0,
+      "repaired": 0,
+      "delta": 0
+    }
+  },
+  "classes": {
+    "identity": {
+      "baseline": 758,
+      "repaired": 768,
+      "delta": 10
+    },
+    "container-element": {
+      "baseline": 98,
+      "repaired": 87,
+      "delta": -11
+    },
+    "value-to-container": {
+      "baseline": 49,
+      "repaired": 30,
+      "delta": -19
+    },
+    "multiple-arguments": {
+      "baseline": 216,
+      "repaired": 216,
+      "delta": 0
+    },
+    "constrained-generic": {
+      "baseline": 551,
+      "repaired": 568,
+      "delta": 17
+    },
+    "higher-order": {
+      "baseline": 1698,
+      "repaired": 1733,
+      "delta": 35
+    },
+    "overload-or-discriminated": {
+      "baseline": 31455,
+      "repaired": 36554,
+      "delta": 5099
+    },
+    "unsupported": {
+      "baseline": 131898,
+      "repaired": 157818,
+      "delta": 25920
+    }
+  },
+  "independentHumanValidation": "pending",
+  "runtimePilotReintake": "not-performed; earlier receipts retain their original identity"
+}

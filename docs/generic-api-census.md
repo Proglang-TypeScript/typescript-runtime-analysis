@@ -1,5 +1,11 @@
 # Phase 2: exported generic API census
 
+For independent validation, use [the human review guide](human-review-guide.md) and `scripts/census-human-review.cjs prepare/compare`. Separate source-family independence and finite runtime exercise from syntactic classification. Generated reviewer files have no earlier agent verdicts and must not be overwritten.
+
+Canonical shards and worker transport now use versioned lossless template/reference envelopes. `shard-codec.cjs` expands them to logical schema version 1; all aliases/export paths/overloads and formal classifications are preserved. Use the decoder before accessing `rows` in a canonical shard. Older expanded shards are also readable, but implementation hashes prevent resuming across software changes. Compact worker output remains capped at 256 MB; extraction is not fully streamed.
+
+A package with an absent selected branch and at least one existing entry has status `partial-entry` with explicit `entryCoverage`. Global coverage separates incomplete-entry packages from fatal extraction failures. Neither a completed checkpoint nor zero fatal failures means complete declared-entry or diagnostic coverage. Exit status remains nonzero when selected entry coverage is incomplete.
+
 ## Scope and input
 
 The checked-in `experiments/census/snapshot.json` pins DefinitelyTyped commit `455254aa7204192e7f7fbe50266d2313cefdf6c9`, resolved on 2026-09-14, containing 8,680 type-package directories. The six-package sparse smoke selection is development/infrastructure data, **not the full census or a held-out benchmark**. The supplied feasibility outline is retained under `docs/specifications`.

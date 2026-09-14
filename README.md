@@ -1,5 +1,9 @@
 # TypeScript runtime analysis
 
+Independent reviewers: [structured questions, worksheets and adjudication procedure](docs/human-review-guide.md).
+
+Latest census: [full repaired results and remaining validation boundaries](docs/census-repaired-followup.md).
+
 Recovered Proglang-TypeScript runtime callbacks and declaration inference, a repaired declaration comparator, versioned JSON observations, multi-source evidence, passive relational synthesis and active polarity-directed sealing/refinement scaffolds. Original pattern analysis remains available as a reference workflow.
 
 ## Install and validate

@@ -1,0 +1,34 @@
+[
+  {
+    "directory": "beyonk__gdpr-cookie-consent-banner",
+    "status": "partial-entry",
+    "failure": null,
+    "diagnostics": [],
+    "entries": [
+      {
+        "entry": "types/beyonk__gdpr-cookie-consent-banner/index.d.ts",
+        "subpath": "",
+        "condition": "primary",
+        "status": "extracted",
+        "entrySha256": "0e30d66cbedd6f64149e66e20c6a59b44548754443cf67d378a30c5c2843540d"
+      },
+      {
+        "entry": "types/beyonk__gdpr-cookie-consent-banner/esm/index.d.ts",
+        "subpath": "",
+        "condition": "exports/import",
+        "status": "missing-entry"
+      }
+    ],
+    "entryCoverage": {
+      "selected": 2,
+      "extracted": 1,
+      "missing": [
+        {
+          "entry": "types/beyonk__gdpr-cookie-consent-banner/esm/index.d.ts",
+          "condition": "exports/import",
+          "subpath": ""
+        }
+      ]
+    }
+  }
+]

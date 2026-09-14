@@ -1,5 +1,7 @@
 # Census baseline follow-up: failures, diagnostics, review and pilots
 
+**Subsequent work:** the Go storage blocker and explicit partial-entry reporting are implemented, and a fresh 8,680-package full rerun is complete. See [the repaired census and human-review report](census-repaired-followup.md). The findings below remain the historical baseline/failure-subset evidence, not the current global run.
+
 The compact full-corpus baseline was committed and pushed first as [2aa7db8](https://github.com/Proglang-TypeScript/typescript-runtime-analysis/commit/2aa7db845931b6fb09e798b4f0d5c6fa062c7cdc) on `phase-2-census-infrastructure`; its [validation workflow passed](https://github.com/Proglang-TypeScript/typescript-runtime-analysis/actions/runs/34876754823). Its data and checksums remain unchanged. Publication of these separate follow-up implementation/evidence changes is authorized by the subsequent explicit commit/push request. The evidence manifests describe their original prepublication capture state; publication and exact-commit remote CI verification are recorded separately.
 
 Follow-up evidence is under `experiments/results/census-followup-2026-09-14`. The baseline census identity is `8235039d24e334ab26863f6a87cb8f828ff91f75dbfbe01bcf9d2a9cd4f7dcf0`; the final failed-package supplemental run identity is `801ea8c72bb329317b4ac446555936bb5c13973ecef0edb4d45433ee544c2a5e`. Different identities must not be merged into an asserted repaired full-corpus census.

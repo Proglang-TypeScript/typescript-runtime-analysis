@@ -1,5 +1,13 @@
 # Census infrastructure
 
+The fresh full rerun is complete: 8,680 packages, zero fatal extraction failures, one explicit partial-entry package. See [the repaired census report](docs/census-repaired-followup.md) for counts, preserved-baseline checks and the pending human-review pack.
+
+Independent human reviewers should start with [the structured review guide](docs/human-review-guide.md). It defines ten questions per sampled category, separate runtime/source-family worksheets, two blind reviews, and explicit disagreement/adjudication handling.
+
+Current worker/canonical shards use lossless template/reference storage (`storageVersion: 1`), expanding to the existing logical row schema via `packages/generic-api-census/shard-codec.cjs`. Every declaration/export pair is retained; independent aliases are not dropped. Legacy expanded shards remain readable for aggregation, but changed software still requires a fresh run identity. The 256 MB worker-file, 1 GB worker-heap, two-minute worker and 1 MB log limits remain enforced. This is compact storage, **not fully streamed extraction**; aggregation emits expanded JSONL/CSV and can require a larger parent heap.
+
+Missing declared variants now report `partial-entry` when at least one selected entry exists. `entryCoverage` names absent files/conditions. The summary separates `incompleteEntryPackages` from fatal `extractionFailures`; completion can have either, and the command exits nonzero for either. Resume reuses an unchanged partial shard without claiming the missing branch was repaired. The pinned input is never fabricated or edited to conceal a missing ESM declaration.
+
 This infrastructure performs an automated census of public callable TypeScript declarations, followed by human classification review and separately reviewed runtime evidence. It is not an automatic executable benchmark or a proof of parametricity. Detailed conventions and evidence formats are in [the census documentation](docs/generic-api-census.md); the study outline and remaining gates are in [the feasibility report](docs/sealing-feasibility-report.md).
 
 ## Requirements and preparation

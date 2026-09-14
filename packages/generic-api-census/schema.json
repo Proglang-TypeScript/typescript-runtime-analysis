@@ -3,7 +3,7 @@
   "type": "object", "required": ["schemaVersion", "identity", "package", "rows"], "additionalProperties": false,
   "properties": {
     "schemaVersion": {"const": 1}, "identity": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
-    "package": {"type": "object", "required": ["directory", "status", "runtimeAvailability", "runtimeExecution"], "properties": {"directory": {"type": "string"}, "status": {"enum": ["extracted", "extracted-with-diagnostics", "missing-entry", "extraction-failed"]}, "runtimeAvailability": {"enum": ["not-assessed", "metadata-available", "metadata-unavailable", "non-npm"]}, "runtimeExecution": {"const": "not-assessed"}}},
+    "package": {"type": "object", "required": ["directory", "status", "runtimeAvailability", "runtimeExecution"], "properties": {"directory": {"type": "string"}, "status": {"enum": ["extracted", "extracted-with-diagnostics", "partial-entry", "missing-entry", "extraction-failed"]}, "runtimeAvailability": {"enum": ["not-assessed", "metadata-available", "metadata-unavailable", "non-npm"]}, "runtimeExecution": {"const": "not-assessed"}}},
     "rows": {"type": "array", "items": {
       "type": "object", "required": ["id", "declarationId", "exportId", "package", "entry", "moduleSpecifier", "exportPath", "kind", "runtimeBinding", "source", "declaration", "extractionReason", "typeParameters", "hasTypeParameters", "hasOwnTypeParameters", "bothPolarities", "occurrences", "classes", "unsupportedReasons", "runtimeExecution"],
       "properties": {

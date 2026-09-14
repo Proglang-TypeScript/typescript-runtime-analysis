@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "capturedOn": "2026-09-14T19:20:50.830Z",
+  "pinnedCommit": "455254aa7204192e7f7fbe50266d2313cefdf6c9",
+  "package": "beyonk__gdpr-cookie-consent-banner",
+  "selectedAbsentEntry": "types/beyonk__gdpr-cookie-consent-banner/esm/index.d.ts",
+  "primaryExists": true,
+  "sourceWasModified": false,
+  "upstreamDirectory": [
+    {
+      "name": ".npmignore",
+      "path": "types/beyonk__gdpr-cookie-consent-banner/.npmignore",
+      "sha": "93e307400a5456b8261ffc90b46bc530c311b425"
+    },
+    {
+      "name": "index.d.ts",
+      "path": "types/beyonk__gdpr-cookie-consent-banner/index.d.ts",
+      "sha": "4a3bb67f28c9bf37f0a5e55eb67d37cdbb2614d6"
+    },
+    {
+      "name": "package.json",
+      "path": "types/beyonk__gdpr-cookie-consent-banner/package.json",
+      "sha": "664643fd92951a0574655180254046c18af5f603"
+    },
+    {
+      "name": "test",
+      "path": "types/beyonk__gdpr-cookie-consent-banner/test",
+      "sha": "a96634ac377fc8902bb2e2268ada375703393e0c"
+    },
+    {
+      "name": "tsconfig.json",
+      "path": "types/beyonk__gdpr-cookie-consent-banner/tsconfig.json",
+      "sha": "335b0fc1a93bdae65eac930181c5a8e03c3ee290"
+    }
+  ],
+  "manifestHistory": [
+    {
+      "sha": "451dc8fc19383bc12af59522020e571957f1684e",
+      "date": "2023-10-17T20:54:18Z",
+      "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/commit/451dc8fc19383bc12af59522020e571957f1684e",
+      "subject": "Convert the repo into a pnpm monorepo (#67085)"
+    },
+    {
+      "sha": "6d9e7717e0e44c1c6b3eaf76d8c3f7d08a438517",
+      "date": "2022-10-13T20:44:01Z",
+      "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/commit/6d9e7717e0e44c1c6b3eaf76d8c3f7d08a438517",
+      "subject": "🤖 Merge PR #62581 add `@beyonk/gdpr-cookie-consent-banner` types by @bengry"
+    }
+  ],
+  "decision": "Keep primary rows and explicit partial-entry coverage; do not fabricate an ESM declaration or silently discard the import condition",
+  "upstreamRepairStatus": "not-submitted; requires validated ESM semantics and fresh snapshot pin for a source repair"
+}

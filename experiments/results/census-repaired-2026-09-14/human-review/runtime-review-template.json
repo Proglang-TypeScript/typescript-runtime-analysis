@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "pilotCensusIdentity": "8235039d24e334ab26863f6a87cb8f828ff91f75dbfbe01bcf9d2a9cd4f7dcf0",
+  "newCensusRebinding": "required-before-reintake",
+  "reviewer": null,
+  "date": null,
+  "questions": {
+    "R1": "Do package/version/integrity/declaration line and source mapping agree?",
+    "R2": "Does the correct export/import mode/receiver/call kind match?",
+    "R3": "Are arguments, identities, preconditions and omitted boundaries valid and explicit?",
+    "R4": "Do actual execution receipts/assertions/hashes establish the finite ordinary exercise?",
+    "R5": "Is the recorded isolated preparation/execution profile adequate and reproducible?",
+    "R6": "Does the trace instrument the dependency or only the wrapper? What remains unseen?",
+    "R7": "Were active seals run for this recipe? Distinguish ordinary calls, seal trials and proof.",
+    "R8": "Choose verified-finite-ordinary-exercise, mapping-unresolved, recipe-invalid, receipt-insufficient, or not-assessed; why and what next?"
+  },
+  "records": [
+    {
+      "package": "prelude-ls",
+      "version": "1.1.2",
+      "export": "id",
+      "exportId": "19eea96df292fb3db2a37ae8ad6c3f13469169b24476adf8926f2148f2643dae",
+      "declarationId": "8e66a5c18b5d8e8fbd600f7a8e46b3ed9f7257b10de63a62cf3d2b55dfa89527",
+      "recipe": "pilot-evidence/prelude-ls/pilot.cjs",
+      "heldOut": false,
+      "answers": {
+        "R1": null,
+        "R2": null,
+        "R3": null,
+        "R4": null,
+        "R5": null,
+        "R6": null,
+        "R7": null,
+        "R8": null
+      },
+      "evidence": [],
+      "status": "pending",
+      "notes": null
+    },
+    {
+      "package": "prelude-ls",
+      "version": "1.1.2",
+      "export": "head",
+      "exportId": "8d85c833564ba788894642031318a1fbef2854a9f8530000c70be05fb93e14b4",
+      "declarationId": "ce57966a4ae0849bdf0310c4a3b85516c81734983335c15d6018b867ba7045ef",
+      "recipe": "pilot-evidence/prelude-ls/pilot.cjs",
+      "heldOut": false,
+      "answers": {
+        "R1": null,
+        "R2": null,
+        "R3": null,
+        "R4": null,
+        "R5": null,
+        "R6": null,
+        "R7": null,
+        "R8": null
+      },
+      "evidence": [],
+      "status": "pending",
+      "notes": null
+    },
+    {
+      "package": "prelude-ls",
+      "version": "1.1.2",
+      "export": "reverse",
+      "exportId": "efbfd971f9e6c2586dccf6625a49ec462485bd1296e885a8eb19670454c9e060",
+      "declarationId": "076155eecab40333c9d6abcf90d16c6b22fe477ec6d2f45082bb818a0161188b",
+      "recipe": "pilot-evidence/prelude-ls/pilot.cjs",
+      "heldOut": false,
+      "answers": {
+        "R1": null,
+        "R2": null,
+        "R3": null,
+        "R4": null,
+        "R5": null,
+        "R6": null,
+        "R7": null,
+        "R8": null
+      },
+      "evidence": [],
+      "status": "pending",
+      "notes": null
+    },
+    {
+      "package": "transducers-js",
+      "version": "0.4.174",
+      "export": "identity",
+      "exportId": "f95ea215b05738492a0daaa8267a05366beb72e6637b96e38de3beae3fdd27d0",
+      "declarationId": "07983f4e722924738cf930108008c1061dcbbe9b0df3705e7748d3de5c16a3ca",
+      "recipe": "pilot-evidence/transducers-js/pilot.cjs",
+      "heldOut": false,
+      "answers": {
+        "R1": null,
+        "R2": null,
+        "R3": null,
+        "R4": null,
+        "R5": null,
+        "R6": null,
+        "R7": null,
+        "R8": null
+      },
+      "evidence": [],
+      "status": "pending",
+      "notes": null
+    },
+    {
+      "package": "underscore",
+      "version": "1.13.8",
+      "export": "identity",
+      "exportId": "dedbadb448e2d1d0819142dd755cbb8e7eacb67ccbc00026724f5b175e8f0fee",
+      "declarationId": "65c1653eb12eacecae06eb98d5d74f6bad6577a9d119ae1fa92ff1c162c2ea58",
+      "recipe": "pilot-evidence/underscore/pilot.cjs",
+      "heldOut": false,
+      "answers": {
+        "R1": null,
+        "R2": null,
+        "R3": null,
+        "R4": null,
+        "R5": null,
+        "R6": null,
+        "R7": null,
+        "R8": null
+      },
+      "evidence": [],
+      "status": "pending",
+      "notes": null
+    }
+  ],
+  "parametricityProof": false
+}

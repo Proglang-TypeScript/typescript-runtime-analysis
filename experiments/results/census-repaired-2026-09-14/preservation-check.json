@@ -1,0 +1,10 @@
+{
+  "checkedOn": "2026-09-14T18:46:45.687795+00:00",
+  "originalSourceFilesUnchanged": 5,
+  "originalRawShardsUnchanged": 8680,
+  "originalCompactBundleChecksumsValid": 13,
+  "priorFollowupBundleChecksumsValid": 43,
+  "priorSupplementalShardsUnchanged": 21,
+  "definitelyTypedCheckoutDuplicated": false,
+  "result": "all-preserved-evidence-matches-recorded-hashes"
+}

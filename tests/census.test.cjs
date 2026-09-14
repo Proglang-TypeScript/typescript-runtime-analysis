@@ -10,6 +10,7 @@ const {sample, assess} = require('../packages/generic-api-census/review.cjs');
 const {aggregate, run, timeLimitHours, extractWorker} = require('../scripts/census.cjs');
 const {selectVersion, selector, verifyMetadata} = require('../packages/generic-api-census/availability.cjs');
 const {assessRuntime} = require('../packages/generic-api-census/runtime-assessment.cjs');
+const {encodeShard, decodeShard} = require('../packages/generic-api-census/shard-codec.cjs');
 const classify = text => analyzeSignature(ts.createSourceFile('fixture.d.ts', text, ts.ScriptTarget.Latest, true).statements[0]);
 let directory;
 test.before(() => {
@@ -174,6 +175,9 @@ test('aggregation streams reproducible tables and leaves user review files untou
   assert.equal(fs.readFileSync(path.join(output, 'reviews.json'), 'utf8'), 'user-owned');
   assert.equal(first.coverage.fullPinnedCorpusSelected, false);
   assert.equal(first.counts.verifiedExecutableExports, 0);
+  fs.writeFileSync(path.join(output, 'packages/demo.json'), JSON.stringify(encodeShard({schemaVersion: 1, identity, ...result})));
+  assert.deepEqual(aggregate(output), first);
+  assert.equal(fs.readFileSync(path.join(output, 'declarations.csv'), 'utf8'), csv);
 });
 test('package selection rejects nonexistent names and traversal', () => {
   assert.throws(() => census(directory, ['../demo'], {scope: 'fixture'}), /invalid/);
@@ -237,6 +241,45 @@ test('time limit accepts fractional hours and rejects missing, zero, negative an
   for (const value of [null, '', ' ', '0', '-1', 'NaN', 'Infinity', '1e308', '--resume']) assert.throws(() => timeLimitHours(value), /finite positive/);
   assert.throws(() => run({arguments: ['--time-limit-hours']}), /finite positive/);
 });
+test('compact storage preserves every row, shared declaration, overload and export path', () => {
+  const shard = {schemaVersion: 1, identity: 'c'.repeat(64), ...analyzePackage(directory, 'demo')};
+  const encoded = encodeShard(shard);
+  assert.deepEqual(decodeShard(JSON.parse(JSON.stringify(encoded))), shard);
+  assert.ok(encoded.templates.length < encoded.references.length);
+  assert.deepEqual(decodeShard(shard), shard);
+  assert.throws(() => decodeShard({...encoded, storageVersion: 2}), /envelope/);
+  assert.throws(() => decodeShard({...encoded, rows: []}), /envelope/);
+  assert.throws(() => decodeShard({...encoded, references: [{...encoded.references[0], template: -1}]}), /reference/);
+  assert.throws(() => decodeShard({...encoded, references: [{...encoded.references[0], extra: true}]}), /reference/);
+  assert.throws(() => decodeShard({...encoded, templates: [{...encoded.templates[0], id: 'override'}]}), /template/);
+});
+test('missing declared variant preserves primary rows and remains explicit incomplete coverage on resume', context => {
+  const name = 'partial';
+  fs.mkdirSync(path.join(directory, 'types', name));
+  fs.writeFileSync(path.join(directory, 'types', name, 'package.json'), JSON.stringify({exports: {'.': {import: './esm/index.d.ts', default: './index.d.ts'}}}));
+  fs.writeFileSync(path.join(directory, 'types', name, 'index.d.ts'), 'export function id<T>(value:T):T;');
+  const result = analyzePackage(directory, name);
+  assert.equal(result.package.status, 'partial-entry');
+  assert.equal(result.rows.length, 1);
+  assert.equal(result.package.entryCoverage.extracted, 1);
+  assert.equal(result.package.entryCoverage.missing[0].entry, 'types/partial/esm/index.d.ts');
+  const output = fs.mkdtempSync(path.join(os.tmpdir(), 'tra-partial-results-'));
+  context.after(() => fs.rmSync(output, {recursive: true, force: true}));
+  let calls = 0;
+  const dependencies = {inspectSnapshot: () => ({scope: 'fixture', availablePackages: [name], pinnedCorpusPackages: 1}), extractWorker: () => {calls++; return {status: 0, data: result};}};
+  const runArgs = ['--snapshot', directory, '--out', output];
+  const previousExitCode = process.exitCode;
+  context.after(() => {process.exitCode = previousExitCode;});
+  const summary = run({...dependencies, arguments: runArgs});
+  assert.equal(summary.coverage.extractionFailures, 0);
+  assert.equal(summary.coverage.incompleteEntryPackages, 1);
+  assert.equal(process.exitCode, 1);
+  run({...dependencies, arguments: [...runArgs, '--resume']});
+  assert.equal(calls, 1);
+  const checkpoint = JSON.parse(fs.readFileSync(path.join(output, 'checkpoint.json')));
+  assert.deepEqual(checkpoint.incompleteEntries, [name]);
+  assert.deepEqual(checkpoint.failures, []);
+});
 test('recursive namespace aliases stop at their cycle while independent public aliases survive', () => {
   fs.mkdirSync(path.join(directory, 'types/recursive'), {recursive: true});
   fs.writeFileSync(path.join(directory, 'types/recursive/index.d.ts'), 'export namespace api { export function id<T>(value:T):T; export import self = api; } export import other = api;');
@@ -261,7 +304,7 @@ test('file-backed worker extraction retains schema data and cleans temporary out
   fs.mkdirSync(path.join(output, 'packages'));
   const result = extractWorker(directory, 'demo', output);
   assert.equal(result.status, 0, result.stderr);
-  assert.deepEqual(JSON.parse(result.stdout), analyzePackage(directory, 'demo'));
+  assert.deepEqual(result.data, analyzePackage(directory, 'demo'));
   assert.equal(fs.existsSync(path.join(output, 'packages/demo.worker.json')), false);
   const failed = extractWorker(directory, 'demo', path.join(output, 'missing'));
   assert.notEqual(failed.status, 0);
@@ -295,7 +338,7 @@ test('timed census saves a complete shard, then resumes with a different budget 
   const changedReviewSize = argumentsFor(output);
   changedReviewSize[changedReviewSize.indexOf('--review-size') + 1] = '3';
   assert.throws(() => run({...dependencies, arguments: [...changedReviewSize, '--resume']}), /exact census/);
-  const stale = JSON.parse(saved);
+  const stale = decodeShard(JSON.parse(saved));
   stale.identity = '0'.repeat(64);
   fs.writeFileSync(path.join(output, 'packages/commonjs.json'), JSON.stringify(stale));
   assert.throws(() => run({...dependencies, arguments: [...argumentsFor(output), '--resume']}), /stale census shard/);

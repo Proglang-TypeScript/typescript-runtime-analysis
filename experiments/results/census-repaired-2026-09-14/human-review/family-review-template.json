@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "pilotCensusIdentity": "8235039d24e334ab26863f6a87cb8f828ff91f75dbfbe01bcf9d2a9cd4f7dcf0",
+  "reviewer": null,
+  "date": null,
+  "questions": {
+    "F1": "What canonical repository and published commit can be corroborated against the tarball?",
+    "F2": "Is it a fork, rename, repackaging, vendoring or generated distribution? Cite provenance.",
+    "F3": "What is the implementation origin of the relevant functions? What copying/common ancestry is evidenced?",
+    "F4": "Which family must it be grouped into, and what ambiguity remains?",
+    "F5": "Was this package/family exposed during development? Is it eligible for untouched held-out evaluation?"
+  },
+  "packages": [
+    {
+      "package": "prelude-ls",
+      "provisionalFamilyId": "gkz-prelude-provisional",
+      "verifiedFamilyId": null,
+      "status": "pending",
+      "answers": {
+        "F1": null,
+        "F2": null,
+        "F3": null,
+        "F4": null,
+        "F5": null
+      },
+      "evidence": [],
+      "notes": null
+    },
+    {
+      "package": "transducers-js",
+      "provisionalFamilyId": "cognitect-transducers-unresolved-origin",
+      "verifiedFamilyId": null,
+      "status": "pending",
+      "answers": {
+        "F1": null,
+        "F2": null,
+        "F3": null,
+        "F4": null,
+        "F5": null
+      },
+      "evidence": [],
+      "notes": null
+    },
+    {
+      "package": "underscore",
+      "provisionalFamilyId": "jashkenas-underscore-provisional",
+      "verifiedFamilyId": null,
+      "status": "pending",
+      "answers": {
+        "F1": null,
+        "F2": null,
+        "F3": null,
+        "F4": null,
+        "F5": null
+      },
+      "evidence": [],
+      "notes": null
+    }
+  ],
+  "pairs": [
+    {
+      "packages": [
+        "prelude-ls",
+        "transducers-js"
+      ],
+      "relationship": "unclear",
+      "evidence": [],
+      "notes": null
+    },
+    {
+      "packages": [
+        "prelude-ls",
+        "underscore"
+      ],
+      "relationship": "unclear",
+      "evidence": [],
+      "notes": null
+    },
+    {
+      "packages": [
+        "transducers-js",
+        "underscore"
+      ],
+      "relationship": "unclear",
+      "evidence": [],
+      "notes": null
+    }
+  ],
+  "verifiedIndependentFamilies": null,
+  "unresolvedIssues": []
+}

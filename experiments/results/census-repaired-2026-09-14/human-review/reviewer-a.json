@@ -1,0 +1,3311 @@
+{
+  "schemaVersion": 1,
+  "identity": "191105aee86637c2edcfcec4673aed7314ddcb074beb0d6ee23e22f192cbed79",
+  "reviewQueueSha256": "5acc1243e029b4eff3fcf0f87ecc21b0d613f0450746743702e1b5567296d4a8",
+  "reviewerProfile": {
+    "name": null,
+    "role": "human",
+    "independentReviewConfirmed": null,
+    "conflicts": null,
+    "date": null
+  },
+  "questions": {
+    "Q1": "Does the pinned source and exact declaration location match? What is the unit: declaration, overload, export/signature pair or package?",
+    "Q2": "Is the callable publicly reachable? Is this a runtime value, an instance member requiring a receiver, or a type-only callable? Give the actual property chain or mark unresolved.",
+    "Q3": "Which type variables are owned by this signature versus enclosing scopes? Are constraints, specialization, rest arguments or overloads relevant?",
+    "Q4": "For each relevant variable, trace input/output occurrences and polarity flips at callback boundaries. Are any occurrences unknown? Do the recorded routes match?",
+    "Q5": "Does this specific category satisfy the documented bounded rubric? Explain using source positions, not just the presence of a generic name.",
+    "Q6": "Could unresolved imports, capped diagnostics, recursive aliases, unsupported syntax or missing entry branches undermine the classification? What needs further checking?",
+    "Q7": "Has an exact runtime package/version/import-mode mapping been established? Cite evidence, or explicitly answer not assessed; declaration presence alone is insufficient.",
+    "Q8": "Is there a feasible invocation recipe with receiver, setup, argument domain, preconditions, callbacks, async completion and cleanup? Describe it or mark not assessed.",
+    "Q9": "What does the evidence NOT establish? Distinguish syntactic classification, finite ordinary execution, seal outcomes and proof of parametricity.",
+    "Q10": "Choose agree, false-classification, ambiguous or excluded for this category. Why? State corrections or blockers and confidence."
+  },
+  "records": [
+    {
+      "reviewId": "63cabd8f7b6c1062aae4044dfdf74613269f94ad73908d929bfab54f1df1d4c9",
+      "candidateId": "d89ee683bdd126df4625da77fd0be57aadca834de3f993dfd430a5f44853d8cf",
+      "declarationId": "d2ab4c77e11a4ec20c2c8d5ea2993b53763f5bc00e73ba0a0405880ee5c043b6",
+      "category": "identity",
+      "package": "pg",
+      "exportPath": [
+        "PoolClient",
+        "query"
+      ],
+      "source": {
+        "file": "types/pg/index.d.ts",
+        "start": 7504,
+        "line": 251,
+        "column": 5
+      },
+      "declaration": "query<T extends Submittable>(queryStream: T): T;",
+      "occurrences": [
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 0,
+          "route": []
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": null,
+          "route": []
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "67f3d03f61a43f045851624e52ec438803ecf5d2247660f208bd9bcadb6ff298",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/pg/index.d.ts#L251",
+      "entry": "types/pg/index.d.mts",
+      "moduleSpecifier": "pg",
+      "runtimeBinding": "type-only",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "T",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": "Submittable"
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 2,
+        "extracted": 2,
+        "missing": []
+      },
+      "diagnosticCount": 16,
+      "retainedDiagnosticCount": 8,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "4795f611fa57943130ea2138af8c05fd0af4b1a997746a6fd02cb997d2b1be56",
+      "candidateId": "2580b88b2b7c671dab9fa7791ba9c1c723c64c9407a22b167ef904981113c594",
+      "declarationId": "64dd3d3c9e92ec12d6e975fd25a321c4084388d392e9b43f39081e196e9c4ff9",
+      "category": "identity",
+      "package": "fs-extra-promise-es6",
+      "exportPath": [
+        "WriteStream",
+        "Stream",
+        "Readable",
+        "addAbortSignal"
+      ],
+      "source": {
+        "file": "types/node/stream.d.ts",
+        "start": 69948,
+        "line": 1349,
+        "column": 9
+      },
+      "declaration": "function addAbortSignal<\n            T extends NodeJS.ReadableStream | NodeJS.WritableStream | web.ReadableStream | web.WritableStream,\n        >(signal: AbortSignal, stream: T): T;",
+      "occurrences": [
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 1,
+          "route": []
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": null,
+          "route": []
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "5b26c4dd672d88336bb929787c9bfb55119e80ba89ec6dc923da1c063892843e",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/node/stream.d.ts#L1349",
+      "entry": "types/fs-extra-promise-es6/index.d.ts",
+      "moduleSpecifier": "fs-extra-promise-es6",
+      "runtimeBinding": "value",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "T",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": "NodeJS.ReadableStream | NodeJS.WritableStream | web.ReadableStream | web.WritableStream"
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 5,
+      "retainedDiagnosticCount": 5,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "47ae3023f92b002d3b0bcecea90fd2092bd23656e840d0b466581d66bc0dd784",
+      "candidateId": "1ced1532079642670bd9b66e572abd4d65656b5b1c0ef6b47250e55b5fa66a3b",
+      "declarationId": "8cd79c558f19dfe744c1b60461986265584379747836c4db5919022898f44bcb",
+      "category": "identity",
+      "package": "itowns",
+      "exportPath": [
+        "GlobeView",
+        "camera3D",
+        "projectionMatrix",
+        "toArray"
+      ],
+      "source": {
+        "file": "types/three/src/math/Matrix4.d.ts",
+        "start": 19178,
+        "line": 505,
+        "column": 5
+      },
+      "declaration": "toArray<TArray extends ArrayLike<number> = Matrix4Tuple>(array?: TArray, offset?: number): TArray;",
+      "occurrences": [
+        {
+          "variable": "TArray",
+          "polarity": "negative",
+          "argument": 0,
+          "route": []
+        },
+        {
+          "variable": "TArray",
+          "polarity": "positive",
+          "argument": null,
+          "route": []
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "c6edcb1486e08b2fbbd82be383556f395b648aa12eb4b459d79cc1ae761c28c6",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/three/src/math/Matrix4.d.ts#L505",
+      "entry": "types/itowns/index.d.ts",
+      "moduleSpecifier": "itowns",
+      "runtimeBinding": "instance",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "TArray",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": "ArrayLike<number>"
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "c29a25686390259a0c2b4a79fbba43e8a3d6e3045231593b75c6cdd422eaeab4",
+      "candidateId": "09fbe4f9e14fd49440420a5f428cab753984831e01361f01d7c9f29bd954fc3f",
+      "declarationId": "f16491672bc9b6b0b80cf6761af97a576770db395fe847adaf61186bfcdd2d8e",
+      "category": "identity",
+      "package": "anyproxy",
+      "exportPath": [
+        "ResponseDetail",
+        "_res",
+        "req",
+        "pipe"
+      ],
+      "source": {
+        "file": "types/node/stream.d.ts",
+        "start": 403,
+        "line": 11,
+        "column": 9
+      },
+      "declaration": "pipe<T extends NodeJS.WritableStream>(\n            destination: T,\n            options?: Stream.PipeOptions,\n        ): T;",
+      "occurrences": [
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 0,
+          "route": []
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": null,
+          "route": []
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "5b26c4dd672d88336bb929787c9bfb55119e80ba89ec6dc923da1c063892843e",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/node/stream.d.ts#L11",
+      "entry": "types/anyproxy/index.d.ts",
+      "moduleSpecifier": "anyproxy",
+      "runtimeBinding": "type-only",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "T",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": "NodeJS.WritableStream"
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 5,
+      "retainedDiagnosticCount": 5,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "558e1ed9b2f429bcd48259ad31c26dfba259594bc03545e730938c6bff1f408a",
+      "candidateId": "7ab742443136190acf5f7a053b58fc86f38401e1ffd73aa2ed6cd7d98110fd30",
+      "declarationId": "91c5a97a97c76fdcc5e7537f83b26f2c89b713f7dd20e4ffb097a039642e1e78",
+      "category": "identity",
+      "package": "video.js",
+      "exportPath": [
+        "default",
+        "ChaptersButton",
+        "player_",
+        "liveTracker",
+        "addChild"
+      ],
+      "source": {
+        "file": "types/video.js/index.d.ts",
+        "start": 41215,
+        "line": 1309,
+        "column": 9
+      },
+      "declaration": "addChild<T extends Component>(child: string | T, options?: any, index?: number): T;",
+      "occurrences": [
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 0,
+          "route": [
+            "union"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": null,
+          "route": []
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "c6575c2574e63c9e213163468274981299be2c9d4b8b69f5204779eb82369fbb",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/video.js/index.d.ts#L1309",
+      "entry": "types/video.js/index.d.ts",
+      "moduleSpecifier": "video.js",
+      "runtimeBinding": "type-only",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "T",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": "Component"
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "75578e6d063ee49cfdc49cc069aa050663ae687212e3147d56a8fa78de1ccdfc",
+      "candidateId": "b3fbbb9999cae937836e1ba03d92637364ec8fe1d5645e42676ffdf7298c5b11",
+      "declarationId": "03a6e4a57c23526da60d8c48c88258c4637e2cce319fa0e3b2a45a5ad7b0ec45",
+      "category": "container-element",
+      "package": "restify-errors",
+      "exportPath": [
+        "ProxyAuthenticationRequiredError",
+        "SError",
+        "SError",
+        "errorFromList"
+      ],
+      "source": {
+        "file": "types/verror/index.d.ts",
+        "start": 908,
+        "line": 23,
+        "column": 5
+      },
+      "declaration": "static errorFromList<T extends Error>(errors: T[]): null | T | VError.MultiError;",
+      "occurrences": [
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 0,
+          "route": [
+            "array"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": null,
+          "route": [
+            "union"
+          ]
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "62ba45a86b9a31eb84ea03ae0b9e800a507d980c1f38dcec6528f10078cfdedd",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/verror/index.d.ts#L23",
+      "entry": "types/restify-errors/index.d.ts",
+      "moduleSpecifier": "restify-errors",
+      "runtimeBinding": "value",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "T",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": "Error"
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "b53c146c84ac93a808c5c7d02aa6a6e821f1949d979b6549db5f5419ab8cdaf3",
+      "candidateId": "8ac801e4845274522d71328f6e86638f959126471d4cc4e50257b0f15e8c9bca",
+      "declarationId": "de5f389d3136c0e4cc22a7e440a3abbe54d0e9843fafc77f3a41453190527c7b",
+      "category": "container-element",
+      "package": "frctl__fractal",
+      "exportPath": [
+        "utils",
+        "defaultsDeep"
+      ],
+      "source": {
+        "file": "types/frctl__fractal/index.d.ts",
+        "start": 28387,
+        "line": 705,
+        "column": 5
+      },
+      "declaration": "function defaultsDeep<T>(...args: T[]): T;",
+      "occurrences": [
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 0,
+          "route": [
+            "array"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": null,
+          "route": []
+        }
+      ],
+      "unsupportedReasons": [
+        "rest-or-destructured-parameter"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "fc33537c4e24b87ebaa3b1580eb8e41775209ec234706f19353f719fb39535ee",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/frctl__fractal/index.d.ts#L705",
+      "entry": "types/frctl__fractal/index.d.ts",
+      "moduleSpecifier": "@frctl/fractal",
+      "runtimeBinding": "value",
+      "kind": "function",
+      "typeParameters": [
+        {
+          "name": "T",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 5,
+      "retainedDiagnosticCount": 5,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "47fe36a3fcd4c6bf22185783eab724b3bd38ae7786ad1adbf4762933ded54793",
+      "candidateId": "bd0c1807c8eb0409b99f5c34dd9c8a6520f321fb80dbca5140b8e8212e7ec50d",
+      "declarationId": "d6f074bc0b100efac882d113aac05ac70e99e4289062e90934e57ce93036cb0e",
+      "category": "container-element",
+      "package": "numeric",
+      "exportPath": [
+        "min"
+      ],
+      "source": {
+        "file": "types/numeric/index.d.ts",
+        "start": 27246,
+        "line": 869,
+        "column": 5
+      },
+      "declaration": "min<T extends MultidimensionalMatrix>(\n        x: T,\n        y: T | Scalar,\n        ...args: Array<Scalar | T>\n    ): T;",
+      "occurrences": [
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 0,
+          "route": []
+        },
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 1,
+          "route": [
+            "union"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 2,
+          "route": [
+            "array",
+            "union"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": null,
+          "route": []
+        }
+      ],
+      "unsupportedReasons": [
+        "rest-or-destructured-parameter"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "f6c4772aef23c239ce16829815f8b4c35135a95ec603e3fdd02d67edb3f6f575",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/numeric/index.d.ts#L869",
+      "entry": "types/numeric/index.d.ts",
+      "moduleSpecifier": "numeric",
+      "runtimeBinding": "value",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "T",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": "MultidimensionalMatrix"
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "865f214ca70a06897d782aa84d746b8d622ed726170de2124bf0a7120b507015",
+      "candidateId": "fcaa1be4856eaa112eb4996949f958394f463df3be2418dd35b5e18d34f31c2d",
+      "declarationId": "228aac042224cbbfd5399aa863d2a71302abf8579329de12f8e19526a792df02",
+      "category": "container-element",
+      "package": "screeps-arena",
+      "exportPath": [
+        "AreaEffect",
+        "findClosestByPath"
+      ],
+      "source": {
+        "file": "types/screeps-arena/game/prototypes/game-object.d.ts",
+        "start": 2192,
+        "line": 47,
+        "column": 9
+      },
+      "declaration": "findClosestByPath<T extends Position>(positions: T[], options?: FindPathOptions): T;",
+      "occurrences": [
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 0,
+          "route": [
+            "array"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": null,
+          "route": []
+        }
+      ],
+      "unsupportedReasons": [
+        "mutable-or-indexed-structural-member",
+        "unsupported-syntax:IntersectionType"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "2f041c95c402701aeea19368360a26a7a704cd0f792c10f29e4836c337542b7b",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/screeps-arena/game/prototypes/game-object.d.ts#L47",
+      "entry": "types/screeps-arena/index.d.ts",
+      "moduleSpecifier": "arena/season_alpha/collect_and_control/basic",
+      "runtimeBinding": "instance",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "T",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": "Position"
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "9b0d279d1f07d377bb00bccbe5ea837de6d5a6b00442da982b33d67c155f05e0",
+      "candidateId": "e64c0b4a4a42d469b90eedf4a74d7f56a172eeac494054f1c1bc63bd35acfc98",
+      "declarationId": "5dd84d428886046c6283f8aaa71911009dc9921269eb6ab3b1f5a478b0b237a0",
+      "category": "container-element",
+      "package": "defined",
+      "exportPath": [],
+      "source": {
+        "file": "types/defined/index.d.ts",
+        "start": 19,
+        "line": 3,
+        "column": 1
+      },
+      "declaration": "declare function defined<T>(...args: T[]): T;",
+      "occurrences": [
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 0,
+          "route": [
+            "array"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": null,
+          "route": []
+        }
+      ],
+      "unsupportedReasons": [
+        "rest-or-destructured-parameter"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "a2d6b4ba5cee04ed1532ff08dd8d051437747b7ac78462b4be32bfb6c657cfa3",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/defined/index.d.ts#L3",
+      "entry": "types/defined/index.d.ts",
+      "moduleSpecifier": "defined",
+      "runtimeBinding": "value",
+      "kind": "function",
+      "typeParameters": [
+        {
+          "name": "T",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "033aed923bc6974ce00d3c26b49ac87d3ec72c3651b751835b0c6c1582077695",
+      "candidateId": "78f29c3efb5a3649ea4c671263f348c5c3227abc04031495b71b8954fc6c17b0",
+      "declarationId": "c2c17c4db01830e3ed04dbdf64582bdf734dfd81263a7ff0d224203b539c67ce",
+      "category": "value-to-container",
+      "package": "lodash",
+      "exportPath": [
+        "LoDashStatic",
+        "fill"
+      ],
+      "source": {
+        "file": "types/lodash/common/array.d.ts",
+        "start": 12773,
+        "line": 349,
+        "column": 9
+      },
+      "declaration": "fill<T>(array: any[] | null | undefined, value: T): T[];",
+      "occurrences": [
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 1,
+          "route": []
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": null,
+          "route": [
+            "array"
+          ]
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "40de86ced5175a6ffe84a52abe6ac59ac0efbc604a5975a8c6476c3ddc682ff1",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/lodash/common/array.d.ts#L349",
+      "entry": "types/lodash/index.d.ts",
+      "moduleSpecifier": "lodash",
+      "runtimeBinding": "type-only",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "T",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "56bdb4bb77f931611e506f6ddc0bfc547765d02480ca8baa6f97a1819a2e081d",
+      "candidateId": "bb5b1152ef918d71c053c273367a0766e258e89d67f2e0251a606c3ae2c4fc9a",
+      "declarationId": "ac4b50bae82469401c0eb4bf4a1553e58263063a49392eb5acd4fa4f5b59206d",
+      "category": "value-to-container",
+      "package": "core-js",
+      "exportPath": [
+        "Array",
+        "fill"
+      ],
+      "source": {
+        "file": "types/core-js/index.d.ts",
+        "start": 35141,
+        "line": 818,
+        "column": 9
+      },
+      "declaration": "fill<T>(array: ArrayLike<T>, value: T, start?: number, end?: number): T[];",
+      "occurrences": [
+        {
+          "variable": "T",
+          "polarity": "unknown",
+          "argument": 0,
+          "route": [
+            "unknown-reference"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 1,
+          "route": []
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": null,
+          "route": [
+            "array"
+          ]
+        }
+      ],
+      "unsupportedReasons": [
+        "unknown-variance:ArrayLike"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "4598da29642d129e01fdf0c3a04eb70dc413ebfee21e35df8a9e8a567b060620",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/core-js/index.d.ts#L818",
+      "entry": "types/core-js/index.d.ts",
+      "moduleSpecifier": "core-js/library/web/immediate",
+      "runtimeBinding": "value",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "T",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "f3b83a8c3d204eaef602a7812d11a542eaca5989878a02b272ab1f4c212e5847",
+      "candidateId": "99f684fc330d68eeb42430c74ff6bc7ed1b98ad16a01914ec08a10c588735ea8",
+      "declarationId": "05f9116df608f3fc94c26bbecb35af15b37eae45f7d3119a51b1846c5cb80ff3",
+      "category": "value-to-container",
+      "package": "prelude-ls",
+      "exportPath": [
+        "scanr"
+      ],
+      "source": {
+        "file": "types/prelude-ls/index.d.ts",
+        "start": 5906,
+        "line": 94,
+        "column": 5
+      },
+      "declaration": "export function scanr<A, B>(f: (x: A) => (y: B) => B, memo: B, xs: A[]): B[];",
+      "occurrences": [
+        {
+          "variable": "A",
+          "polarity": "positive",
+          "argument": 0,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "B",
+          "polarity": "positive",
+          "argument": 0,
+          "route": [
+            "function-result",
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "B",
+          "polarity": "negative",
+          "argument": 0,
+          "route": [
+            "function-result",
+            "function-result"
+          ]
+        },
+        {
+          "variable": "B",
+          "polarity": "negative",
+          "argument": 1,
+          "route": []
+        },
+        {
+          "variable": "A",
+          "polarity": "negative",
+          "argument": 2,
+          "route": [
+            "array"
+          ]
+        },
+        {
+          "variable": "B",
+          "polarity": "positive",
+          "argument": null,
+          "route": [
+            "array"
+          ]
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "3c0b63f579ac2d711ff2d74b3430791f8122648948945d628dfd57ed0342eca5",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/prelude-ls/index.d.ts#L94",
+      "entry": "types/prelude-ls/index.d.ts",
+      "moduleSpecifier": "prelude-ls",
+      "runtimeBinding": "value",
+      "kind": "function",
+      "typeParameters": [
+        {
+          "name": "A",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        },
+        {
+          "name": "B",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "e74876d987ec026a42c12bc11335fd42d0d5541708b450290398b181bb137e65",
+      "candidateId": "24cfdfea26e7507abd837f68acd796f918bc30da73db5b2bce20bbe3c0338ee6",
+      "declarationId": "de90533ab5c34bd757d25b4e7d6178dc257b0f7153b66d588ac7bf084a75fc42",
+      "category": "value-to-container",
+      "package": "lodash",
+      "exportPath": [
+        "castArray"
+      ],
+      "source": {
+        "file": "types/lodash/common/lang.d.ts",
+        "start": 466,
+        "line": 13,
+        "column": 9
+      },
+      "declaration": "castArray<T>(value?: Many<T>): T[];",
+      "occurrences": [
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 0,
+          "route": [
+            "alias",
+            "union"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 0,
+          "route": [
+            "alias",
+            "union",
+            "array"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": null,
+          "route": [
+            "array"
+          ]
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "5a0b15210129310cee9fa6af9200714bb4b12af4a04d890e15f34dbea1cf1852",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/lodash/common/lang.d.ts#L13",
+      "entry": "types/lodash/index.d.ts",
+      "moduleSpecifier": "lodash",
+      "runtimeBinding": "value",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "T",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "5f07f108fabef2d5fe49ea274f87506bd8f098441d3851263a46dfeab2a516f0",
+      "candidateId": "6cf2653e747892bf26a17cb2a40ee2c64c50433b5aa13012ba85612dd294eb1d",
+      "declarationId": "d1c590fe691e9ff4c84452e06586187022364d15fca1a4cd3921dec044df3df7",
+      "category": "value-to-container",
+      "package": "rax",
+      "exportPath": [
+        "RaxChildren",
+        "toArray"
+      ],
+      "source": {
+        "file": "types/rax/index.d.ts",
+        "start": 109812,
+        "line": 2551,
+        "column": 9
+      },
+      "declaration": "toArray<C>(children: C | C[]): C[];",
+      "occurrences": [
+        {
+          "variable": "C",
+          "polarity": "negative",
+          "argument": 0,
+          "route": [
+            "union"
+          ]
+        },
+        {
+          "variable": "C",
+          "polarity": "negative",
+          "argument": 0,
+          "route": [
+            "union",
+            "array"
+          ]
+        },
+        {
+          "variable": "C",
+          "polarity": "positive",
+          "argument": null,
+          "route": [
+            "array"
+          ]
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "efb4a719e0f7cddb4aa3d166bc2e8f82b32fd1a0e631831204845d9c2781d0b4",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/rax/index.d.ts#L2551",
+      "entry": "types/rax/index.d.ts",
+      "moduleSpecifier": "rax",
+      "runtimeBinding": "type-only",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "C",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 1,
+      "retainedDiagnosticCount": 1,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "addb9982e00be4806077d5ceb8881d26b3e37e3d4b0370624615e77011907185",
+      "candidateId": "46ebb900ea7cbf3e75fff7bb622876de21b3517de18a2ec333c111906a646bd7",
+      "declarationId": "2bd3f23b8b088f0c00f5129f49ae95f902f4f8e594e43e7e9c68100721edc711",
+      "category": "multiple-arguments",
+      "package": "rx-lite-experimental",
+      "exportPath": [
+        "SchedulerStatic",
+        "default",
+        "scheduleRecursiveWithAbsoluteAndState"
+      ],
+      "source": {
+        "file": "types/rx-lite/index.d.ts",
+        "start": 4985,
+        "line": 152,
+        "column": 9
+      },
+      "declaration": "scheduleRecursiveWithAbsoluteAndState<TState>(\n            state: TState,\n            dueTime: number,\n            action: (state: TState, action: (state: TState, dueTime: number) => void) => void,\n        ): IDisposable;",
+      "occurrences": [
+        {
+          "variable": "TState",
+          "polarity": "negative",
+          "argument": 0,
+          "route": []
+        },
+        {
+          "variable": "TState",
+          "polarity": "positive",
+          "argument": 2,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "TState",
+          "polarity": "negative",
+          "argument": 2,
+          "route": [
+            "function-parameter",
+            "function-parameter"
+          ]
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "d49d881fd42b1bbf97e52e1045dab923ea8c899ea27734f1e565f9ac461b3e7f",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/rx-lite/index.d.ts#L152",
+      "entry": "types/rx-lite-experimental/index.d.ts",
+      "moduleSpecifier": "rx-lite-experimental",
+      "runtimeBinding": "type-only",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "TState",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "5c4293cea93060b20b8fc235127ed2877bda2918e62691c8dbdc96e07bd99ddf",
+      "candidateId": "683f83740b012594cc066e8d840e32c469b60f26b6f7399664b8edcb387fd6f8",
+      "declarationId": "c2cfea0138836fd91e5460b0d126b6876407ac6fd132d16f794bd675a45b1d66",
+      "category": "multiple-arguments",
+      "package": "parse5-serializer-stream",
+      "exportPath": [
+        "prototype",
+        "reduce"
+      ],
+      "source": {
+        "file": "types/node/stream.d.ts",
+        "start": 32698,
+        "line": 632,
+        "column": 13
+      },
+      "declaration": "reduce<T>(\n                fn: (previous: T, data: any, options?: Abortable) => T,\n                initial: T,\n                options?: Abortable,\n            ): Promise<T>;",
+      "occurrences": [
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": 0,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 0,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 1,
+          "route": []
+        },
+        {
+          "variable": "T",
+          "polarity": "unknown",
+          "argument": null,
+          "route": [
+            "unknown-reference"
+          ]
+        }
+      ],
+      "unsupportedReasons": [
+        "unknown-variance:Promise"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "5b26c4dd672d88336bb929787c9bfb55119e80ba89ec6dc923da1c063892843e",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/node/stream.d.ts#L632",
+      "entry": "types/parse5-serializer-stream/index.d.ts",
+      "moduleSpecifier": "parse5-serializer-stream",
+      "runtimeBinding": "value",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "T",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 6,
+      "retainedDiagnosticCount": 6,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "660d04e11afd959793ed020509dbd99fd2555e0faf6b642fe17659686399d410",
+      "candidateId": "365f6ec9adca0625a1e38f8980d34e9b7c880ec805b80a35a4151d2a5168df38",
+      "declarationId": "ba4a08b72fa15f43bbd934dfcf90c3b80dbe04e78acdb1bffdc715eea01430bf",
+      "category": "multiple-arguments",
+      "package": "rx-jquery",
+      "exportPath": [
+        "SchedulerStatic",
+        "timeout",
+        "scheduleRecursiveWithState"
+      ],
+      "source": {
+        "file": "types/rx-lite/index.d.ts",
+        "start": 4655,
+        "line": 144,
+        "column": 9
+      },
+      "declaration": "scheduleRecursiveWithState<TState>(\n            state: TState,\n            action: (state: TState, action: (state: TState) => void) => void,\n        ): IDisposable;",
+      "occurrences": [
+        {
+          "variable": "TState",
+          "polarity": "negative",
+          "argument": 0,
+          "route": []
+        },
+        {
+          "variable": "TState",
+          "polarity": "positive",
+          "argument": 1,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "TState",
+          "polarity": "negative",
+          "argument": 1,
+          "route": [
+            "function-parameter",
+            "function-parameter"
+          ]
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "d49d881fd42b1bbf97e52e1045dab923ea8c899ea27734f1e565f9ac461b3e7f",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/rx-lite/index.d.ts#L144",
+      "entry": "types/rx-jquery/index.d.ts",
+      "moduleSpecifier": "rx-jquery",
+      "runtimeBinding": "type-only",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "TState",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "bf2bd27eec4013cd71d6660ea05f705a6cb26c1e6a5e242dc9b95eb7cdfbadd4",
+      "candidateId": "f1630f039596ac9c8167075a36cbd8fb315e0aab853e06e99fe2c9e302e2648d",
+      "declarationId": "c560793f9671cc68b92a414c34787fed45e8c3455f70d7cca00d0e625ec3a57b",
+      "category": "multiple-arguments",
+      "package": "rx-jquery",
+      "exportPath": [
+        "Observable",
+        "generateWithRelativeTime"
+      ],
+      "source": {
+        "file": "types/rx-lite-time/index.d.ts",
+        "start": 2514,
+        "line": 45,
+        "column": 9
+      },
+      "declaration": "generateWithRelativeTime<TState, TResult>(\n            initialState: TState,\n            condition: (state: TState) => boolean,\n            iterate: (state: TState) => TState,\n            resultSelector: (state: TState) => TResult,\n            timeSelector: (state: TState) => number,\n            scheduler?: IScheduler,\n        ): Observable<TResult>;",
+      "occurrences": [
+        {
+          "variable": "TState",
+          "polarity": "negative",
+          "argument": 0,
+          "route": []
+        },
+        {
+          "variable": "TState",
+          "polarity": "positive",
+          "argument": 1,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "TState",
+          "polarity": "positive",
+          "argument": 2,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "TState",
+          "polarity": "negative",
+          "argument": 2,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "TState",
+          "polarity": "positive",
+          "argument": 3,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "TResult",
+          "polarity": "negative",
+          "argument": 3,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "TState",
+          "polarity": "positive",
+          "argument": 4,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "TResult",
+          "polarity": "unknown",
+          "argument": null,
+          "route": [
+            "unknown-reference"
+          ]
+        }
+      ],
+      "unsupportedReasons": [
+        "unknown-variance:Observable"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "2c87e6b7b0156137f2d91d726d03f7f26984e79c9c1ab985ca1120d001eaf4a4",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/rx-lite-time/index.d.ts#L45",
+      "entry": "types/rx-jquery/index.d.ts",
+      "moduleSpecifier": "rx-jquery",
+      "runtimeBinding": "value",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "TState",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        },
+        {
+          "name": "TResult",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "59649bb1b26667238bf5efc1e6b023528536edf3e810ead942982c7e41d60549",
+      "candidateId": "bf2c40f68c7864143154061c06491a96aa9c8a0267ee0e02466ae4c7a9636a23",
+      "declarationId": "f8c4d404f3169f540ec01fb1372253bdd5f8a6c3274a85d81c253195f12d7324",
+      "category": "multiple-arguments",
+      "package": "rx-lite-aggregates",
+      "exportPath": [
+        "Observable",
+        "reduce"
+      ],
+      "source": {
+        "file": "types/rx-lite-aggregates/index.d.ts",
+        "start": 374,
+        "line": 10,
+        "column": 9
+      },
+      "declaration": "reduce<TAcc>(accumulator: (acc: TAcc, value: T) => TAcc, seed: TAcc): Observable<TAcc>;",
+      "occurrences": [
+        {
+          "variable": "TAcc",
+          "polarity": "positive",
+          "argument": 0,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": 0,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "TAcc",
+          "polarity": "negative",
+          "argument": 0,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "TAcc",
+          "polarity": "negative",
+          "argument": 1,
+          "route": []
+        },
+        {
+          "variable": "TAcc",
+          "polarity": "unknown",
+          "argument": null,
+          "route": [
+            "unknown-reference"
+          ]
+        }
+      ],
+      "unsupportedReasons": [
+        "unknown-variance:Observable"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "c83107db57871a34d2120485cbae16c92261860fafb23bcf1839df77c43aae26",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/rx-lite-aggregates/index.d.ts#L10",
+      "entry": "types/rx-lite-aggregates/index.d.ts",
+      "moduleSpecifier": "rx-lite-aggregates",
+      "runtimeBinding": "type-only",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "T",
+          "enclosing": true,
+          "enclosingKind": "InterfaceDeclaration",
+          "constraint": null
+        },
+        {
+          "name": "TAcc",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        }
+      ],
+      "contextNote": "Counts describe the formal source declaration; a free runtime generic is not established for an enclosing/specialized export context",
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "a103c4e9f14489bba68282e3f547f173980a86665a7c2c41824d8c450b21f529",
+      "candidateId": "bec7225f00700abd40d5297f43fc3795965dab8a0d90d987ede667fcabf3d5f5",
+      "declarationId": "64dd3d3c9e92ec12d6e975fd25a321c4084388d392e9b43f39081e196e9c4ff9",
+      "category": "constrained-generic",
+      "package": "node",
+      "exportPath": [
+        "Readable",
+        "Stream",
+        "addAbortSignal"
+      ],
+      "source": {
+        "file": "types/node/stream.d.ts",
+        "start": 69948,
+        "line": 1349,
+        "column": 9
+      },
+      "declaration": "function addAbortSignal<\n            T extends NodeJS.ReadableStream | NodeJS.WritableStream | web.ReadableStream | web.WritableStream,\n        >(signal: AbortSignal, stream: T): T;",
+      "occurrences": [
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 1,
+          "route": []
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": null,
+          "route": []
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "5b26c4dd672d88336bb929787c9bfb55119e80ba89ec6dc923da1c063892843e",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/node/stream.d.ts#L1349",
+      "entry": "types/node/index.d.ts",
+      "moduleSpecifier": "node:stream",
+      "runtimeBinding": "value",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "T",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": "NodeJS.ReadableStream | NodeJS.WritableStream | web.ReadableStream | web.WritableStream"
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 5,
+      "retainedDiagnosticCount": 5,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "10aa6d9433bd18ab8cbba6c8ad5b285fb892c8ff9d3d46c4aaa99bc42488cb04",
+      "candidateId": "3480b99351b9224733eb2126037d578c3753574f585cac4d580863febb068375",
+      "declarationId": "03a6e4a57c23526da60d8c48c88258c4637e2cce319fa0e3b2a45a5ad7b0ec45",
+      "category": "constrained-generic",
+      "package": "restify-errors",
+      "exportPath": [
+        "DefinedRestError",
+        "VError",
+        "errorFromList"
+      ],
+      "source": {
+        "file": "types/verror/index.d.ts",
+        "start": 908,
+        "line": 23,
+        "column": 5
+      },
+      "declaration": "static errorFromList<T extends Error>(errors: T[]): null | T | VError.MultiError;",
+      "occurrences": [
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 0,
+          "route": [
+            "array"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": null,
+          "route": [
+            "union"
+          ]
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "62ba45a86b9a31eb84ea03ae0b9e800a507d980c1f38dcec6528f10078cfdedd",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/verror/index.d.ts#L23",
+      "entry": "types/restify-errors/index.d.ts",
+      "moduleSpecifier": "restify-errors",
+      "runtimeBinding": "value",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "T",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": "Error"
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "a4c036bcb90ea50674cb7746b9d26573a9d3be8fb633ca66486c16ab0b50e2f9",
+      "candidateId": "fdd06a28a5e7057f1a774299ab134050105de128772e9f22c732070cad0aba06",
+      "declarationId": "4a73c545a80d06d13e9adaffb4b553dc81f361c94a257b2dc7456085ddbed0f4",
+      "category": "constrained-generic",
+      "package": "lodash",
+      "exportPath": [
+        "LoDashStatic",
+        "flow"
+      ],
+      "source": {
+        "file": "types/lodash/common/util.d.ts",
+        "start": 6476,
+        "line": 180,
+        "column": 9
+      },
+      "declaration": "flow<A extends any[], R1, R2, R3, R4, R5, R6, R7>(f1: (...args: A) => R1, f2: (a: R1) => R2, f3: (a: R2) => R3, f4: (a: R3) => R4, f5: (a: R4) => R5, f6: (a: R5) => R6, f7: (a: R6) => R7, ...func: Array<Many<(a: any) => any>>): (...args: A) => any;",
+      "occurrences": [
+        {
+          "variable": "A",
+          "polarity": "positive",
+          "argument": 0,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "R1",
+          "polarity": "negative",
+          "argument": 0,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "R1",
+          "polarity": "positive",
+          "argument": 1,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "R2",
+          "polarity": "negative",
+          "argument": 1,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "R2",
+          "polarity": "positive",
+          "argument": 2,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "R3",
+          "polarity": "negative",
+          "argument": 2,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "R3",
+          "polarity": "positive",
+          "argument": 3,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "R4",
+          "polarity": "negative",
+          "argument": 3,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "R4",
+          "polarity": "positive",
+          "argument": 4,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "R5",
+          "polarity": "negative",
+          "argument": 4,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "R5",
+          "polarity": "positive",
+          "argument": 5,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "R6",
+          "polarity": "negative",
+          "argument": 5,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "R6",
+          "polarity": "positive",
+          "argument": 6,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "R7",
+          "polarity": "negative",
+          "argument": 6,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "A",
+          "polarity": "negative",
+          "argument": null,
+          "route": [
+            "function-parameter"
+          ]
+        }
+      ],
+      "unsupportedReasons": [
+        "rest-or-destructured-parameter"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "df996e25faa505f85aeb294d15ebe61b399cf1d1e49959cdfaf2cc0815c203f9",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/lodash/common/util.d.ts#L180",
+      "entry": "types/lodash/index.d.ts",
+      "moduleSpecifier": "lodash",
+      "runtimeBinding": "type-only",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "A",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": "any[]"
+        },
+        {
+          "name": "R1",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        },
+        {
+          "name": "R2",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        },
+        {
+          "name": "R3",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        },
+        {
+          "name": "R4",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        },
+        {
+          "name": "R5",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        },
+        {
+          "name": "R6",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        },
+        {
+          "name": "R7",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "4b7d1480a163109bada3a5d77cce4a9fee9d59ad302dafad990ad7b5f8f2f971",
+      "candidateId": "6304d5fbd65fe5b93b1cda102b4f1b7846f433548f1c2c18203f6ce3bdb13e82",
+      "declarationId": "f16491672bc9b6b0b80cf6761af97a576770db395fe847adaf61186bfcdd2d8e",
+      "category": "constrained-generic",
+      "package": "express",
+      "exportPath": [
+        "request",
+        "pipe"
+      ],
+      "source": {
+        "file": "types/node/stream.d.ts",
+        "start": 403,
+        "line": 11,
+        "column": 9
+      },
+      "declaration": "pipe<T extends NodeJS.WritableStream>(\n            destination: T,\n            options?: Stream.PipeOptions,\n        ): T;",
+      "occurrences": [
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 0,
+          "route": []
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": null,
+          "route": []
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "5b26c4dd672d88336bb929787c9bfb55119e80ba89ec6dc923da1c063892843e",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/node/stream.d.ts#L11",
+      "entry": "types/express/index.d.ts",
+      "moduleSpecifier": "express",
+      "runtimeBinding": "value",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "T",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": "NodeJS.WritableStream"
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 5,
+      "retainedDiagnosticCount": 5,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "e1700e049d93c9efbf45e016e16033023023a0fd9ccd60f9c53bed656382a652",
+      "candidateId": "0f34722b07b3d18cdc81a474a1bc04c1a59fa1a4abe88826e0d3351fee3e42a2",
+      "declarationId": "ab321cfb6f4db7ddbbf6f9cc05011bac5de7cf37d1455cec93af1a5216d96215",
+      "category": "constrained-generic",
+      "package": "jiff",
+      "exportPath": [
+        "clone"
+      ],
+      "source": {
+        "file": "types/jiff/index.d.ts",
+        "start": 1472,
+        "line": 39,
+        "column": 5
+      },
+      "declaration": "clone<T extends jiff.JSONValue>(x: T): T;",
+      "occurrences": [
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 0,
+          "route": []
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": null,
+          "route": []
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "63fdbdab7b16410df103a9f186eddabd6cd853690607ca34c873944c2cab0892",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/jiff/index.d.ts#L39",
+      "entry": "types/jiff/index.d.ts",
+      "moduleSpecifier": "jiff",
+      "runtimeBinding": "value",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "T",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": "jiff.JSONValue"
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "10a9ae08c4dde024426fdc50508383e41ecd1bd9e8bd468e8aa8e230c79769c8",
+      "candidateId": "3a2f092bb14a90b7183c7425c46fac626dda52c5989d3462b23d9d56ccd4aa4d",
+      "declarationId": "d60483b119d7d1bedb1e9324ba6057239df452e438f28164143342cdac40e794",
+      "category": "higher-order",
+      "package": "rx-lite",
+      "exportPath": [
+        "Scheduler",
+        "default",
+        "schedulePeriodicWithState"
+      ],
+      "source": {
+        "file": "types/rx-lite/index.d.ts",
+        "start": 5678,
+        "line": 168,
+        "column": 9
+      },
+      "declaration": "schedulePeriodicWithState<TState>(\n            state: TState,\n            period: number,\n            action: (state: TState) => TState,\n        ): IDisposable;",
+      "occurrences": [
+        {
+          "variable": "TState",
+          "polarity": "negative",
+          "argument": 0,
+          "route": []
+        },
+        {
+          "variable": "TState",
+          "polarity": "positive",
+          "argument": 2,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "TState",
+          "polarity": "negative",
+          "argument": 2,
+          "route": [
+            "function-result"
+          ]
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "d49d881fd42b1bbf97e52e1045dab923ea8c899ea27734f1e565f9ac461b3e7f",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/rx-lite/index.d.ts#L168",
+      "entry": "types/rx-lite/index.d.ts",
+      "moduleSpecifier": "rx-lite",
+      "runtimeBinding": "value",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "TState",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "9506cb9f236d59fe2db1de0fb05b46ba4071764e3a43ddf34b586a95d987364b",
+      "candidateId": "7ce7ee375a61a00cbad0360b7258bd082b96bee5864c84eabe9771e8a62e7501",
+      "declarationId": "2bd3f23b8b088f0c00f5129f49ae95f902f4f8e594e43e7e9c68100721edc711",
+      "category": "higher-order",
+      "package": "rx-dom",
+      "exportPath": [
+        "SchedulerStatic",
+        "immediate",
+        "scheduleRecursiveWithAbsoluteAndState"
+      ],
+      "source": {
+        "file": "types/rx-lite/index.d.ts",
+        "start": 4985,
+        "line": 152,
+        "column": 9
+      },
+      "declaration": "scheduleRecursiveWithAbsoluteAndState<TState>(\n            state: TState,\n            dueTime: number,\n            action: (state: TState, action: (state: TState, dueTime: number) => void) => void,\n        ): IDisposable;",
+      "occurrences": [
+        {
+          "variable": "TState",
+          "polarity": "negative",
+          "argument": 0,
+          "route": []
+        },
+        {
+          "variable": "TState",
+          "polarity": "positive",
+          "argument": 2,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "TState",
+          "polarity": "negative",
+          "argument": 2,
+          "route": [
+            "function-parameter",
+            "function-parameter"
+          ]
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "d49d881fd42b1bbf97e52e1045dab923ea8c899ea27734f1e565f9ac461b3e7f",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/rx-lite/index.d.ts#L152",
+      "entry": "types/rx-dom/index.d.ts",
+      "moduleSpecifier": "rx-dom",
+      "runtimeBinding": "type-only",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "TState",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "564772bb2d039f16069704741a606ce85c714a37036d411135d2d1b15687ca5e",
+      "candidateId": "3c33ec3077162295f0b4178a3182efc809645e1a78bd540cb319afbacde81b06",
+      "declarationId": "dc39788f2645502783ed90937102e0a02ef25c700377051c52c3e96beeea0975",
+      "category": "higher-order",
+      "package": "mz",
+      "exportPath": [
+        "fs",
+        "readv"
+      ],
+      "source": {
+        "file": "types/node/fs.d.ts",
+        "start": 190828,
+        "line": 4479,
+        "column": 5
+      },
+      "declaration": "function readv<TBuffers extends readonly NodeJS.ArrayBufferView[]>(\n        fd: number,\n        buffers: TBuffers,\n        cb: (err: NodeJS.ErrnoException | null, bytesRead: number, buffers: TBuffers) => void,\n    ): void;",
+      "occurrences": [
+        {
+          "variable": "TBuffers",
+          "polarity": "negative",
+          "argument": 1,
+          "route": []
+        },
+        {
+          "variable": "TBuffers",
+          "polarity": "positive",
+          "argument": 2,
+          "route": [
+            "function-parameter"
+          ]
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "9d37b8a9678efbcdf38238b59ce8e6f7db70aba1a516f3a4a671a301dbacfb3d",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/node/fs.d.ts#L4479",
+      "entry": "types/mz/index.d.ts",
+      "moduleSpecifier": "mz",
+      "runtimeBinding": "value",
+      "kind": "function",
+      "typeParameters": [
+        {
+          "name": "TBuffers",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": "readonly NodeJS.ArrayBufferView[]"
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 5,
+      "retainedDiagnosticCount": 5,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "30d61a642a4b5937597a6df3e70c697cfd33cf84c5bc7d617fd8f1efb1a7c318",
+      "candidateId": "358cc1b928b810cc90ad5375f6d2ef5f79f98294657099b93e02d952e82d2600",
+      "declarationId": "aac6c2dd0712b284f44d0a72906732bffcf8acb1713d91ee7905502c74a38fdd",
+      "category": "higher-order",
+      "package": "core-js",
+      "exportPath": [
+        "Array",
+        "turn"
+      ],
+      "source": {
+        "file": "types/core-js/index.d.ts",
+        "start": 35399,
+        "line": 821,
+        "column": 9
+      },
+      "declaration": "turn<T>(\n            array: ArrayLike<T>,\n            callbackfn: (memo: T[], value: T, index: number, array: T[]) => void,\n            memo?: T[],\n        ): T[];",
+      "occurrences": [
+        {
+          "variable": "T",
+          "polarity": "unknown",
+          "argument": 0,
+          "route": [
+            "unknown-reference"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": 1,
+          "route": [
+            "function-parameter",
+            "array"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": 1,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": 1,
+          "route": [
+            "function-parameter",
+            "array"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "negative",
+          "argument": 2,
+          "route": [
+            "array"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": null,
+          "route": [
+            "array"
+          ]
+        }
+      ],
+      "unsupportedReasons": [
+        "unknown-variance:ArrayLike"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "4598da29642d129e01fdf0c3a04eb70dc413ebfee21e35df8a9e8a567b060620",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/core-js/index.d.ts#L821",
+      "entry": "types/core-js/index.d.ts",
+      "moduleSpecifier": "core-js/web/dom",
+      "runtimeBinding": "value",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "T",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "266366f79db51851ed42512fd8818189f6c0ed53d6fec093470a714c0b2659f5",
+      "candidateId": "31a789f5a684cecd156636cc6f2c906233f87f6ef29f462a774f19701608e368",
+      "declarationId": "ae9a2a3856e5484a27cc2af19f0a07dff692ae8dd6aa5757293fa62158c773b9",
+      "category": "higher-order",
+      "package": "multiplexjs",
+      "exportPath": [
+        "Enumerable",
+        "aggregate"
+      ],
+      "source": {
+        "file": "types/multiplexjs/index.d.ts",
+        "start": 54548,
+        "line": 1348,
+        "column": 9
+      },
+      "declaration": "aggregate<TAccumulate>(seed: TAccumulate, func: (accumulate: TAccumulate, item: T) => TAccumulate): TAccumulate;",
+      "occurrences": [
+        {
+          "variable": "TAccumulate",
+          "polarity": "negative",
+          "argument": 0,
+          "route": []
+        },
+        {
+          "variable": "TAccumulate",
+          "polarity": "positive",
+          "argument": 1,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": 1,
+          "route": [
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "TAccumulate",
+          "polarity": "negative",
+          "argument": 1,
+          "route": [
+            "function-result"
+          ]
+        },
+        {
+          "variable": "TAccumulate",
+          "polarity": "positive",
+          "argument": null,
+          "route": []
+        }
+      ],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "390579f9384d27b4b2ad1b584f391b33478d5ad781a94c72c6ed60302062f499",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/multiplexjs/index.d.ts#L1348",
+      "entry": "types/multiplexjs/index.d.ts",
+      "moduleSpecifier": "multiplexjs",
+      "runtimeBinding": "type-only",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "T",
+          "enclosing": true,
+          "enclosingKind": "InterfaceDeclaration",
+          "constraint": null
+        },
+        {
+          "name": "TAccumulate",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        }
+      ],
+      "contextNote": "Counts describe the formal source declaration; a free runtime generic is not established for an enclosing/specialized export context",
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "05e1ba5a3faa5df0fb5fea7bd4e0592889340e5ebf13f8e40c40c24d5c1297ee",
+      "candidateId": "69069e4b003fab69fa4c2327b387428fc57b015d516d2b236d9d3eb9a36eaa83",
+      "declarationId": "401b7122c1959a1788bd2965a54d7f9d9a4ffbc80ad761c4e067cd52aab5bb41",
+      "category": "overload-or-discriminated",
+      "package": "rx-lite-coincidence",
+      "exportPath": [
+        "GroupedObservable",
+        "publish"
+      ],
+      "source": {
+        "file": "types/rx-core-binding/index.d.ts",
+        "start": 1651,
+        "line": 63,
+        "column": 9
+      },
+      "declaration": "publish(): ConnectableObservable<T>;",
+      "occurrences": [
+        {
+          "variable": "T",
+          "polarity": "unknown",
+          "argument": null,
+          "route": [
+            "unknown-reference"
+          ]
+        }
+      ],
+      "unsupportedReasons": [
+        "unknown-variance:ConnectableObservable"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "f2fd176887a12ed680f6e6748044cd7e56785920ff0e612a2ea18fab4c332e78",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/rx-core-binding/index.d.ts#L63",
+      "entry": "types/rx-lite-coincidence/index.d.ts",
+      "moduleSpecifier": "rx-lite-coincidence",
+      "runtimeBinding": "type-only",
+      "kind": "method",
+      "typeParameters": [
+        {
+          "name": "T",
+          "enclosing": true,
+          "enclosingKind": "InterfaceDeclaration",
+          "constraint": null
+        }
+      ],
+      "contextNote": "Counts describe the formal source declaration; a free runtime generic is not established for an enclosing/specialized export context",
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "25cda06ba2195b383a41c846fc3482a3e3519279725e514243b8d813ac591495",
+      "candidateId": "f379d11ffbd860f439c21c31d76739355f2b7d4ed87f9d9aa03a5a3facf84096",
+      "declarationId": "cc6fd037b42bea5ede3f5c1904498d5b9e15518a9c841a75f058e58c4bdd13c1",
+      "category": "overload-or-discriminated",
+      "package": "node",
+      "exportPath": [
+        "EventEmitterAsyncResource",
+        "EventEmitterAsyncResource",
+        "EventEmitterAsyncResource",
+        "listenerCount"
+      ],
+      "source": {
+        "file": "types/node/events.d.ts",
+        "start": 29398,
+        "line": 612,
+        "column": 9
+      },
+      "declaration": "function listenerCount(emitter: EventTarget, eventName: string): number;",
+      "occurrences": [],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "8c7e618c2a91ea7f6b5cca272a295864e92c16413be8fc56a943e8c7d5320011",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/node/events.d.ts#L612",
+      "entry": "types/node/index.d.ts",
+      "moduleSpecifier": "node:events",
+      "runtimeBinding": "value",
+      "kind": "method",
+      "typeParameters": [],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 5,
+      "retainedDiagnosticCount": 5,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "77b8e36ec54a1f1fe4d81e1c3a4b57e3da28aba56bb9acb528dbe110bb396a4f",
+      "candidateId": "b2179e7535de50e5d13296d173f73c7cac84af450258ee3b3871dafdf3cc9592",
+      "declarationId": "d00dc7e738675c29eaafb811995b24d6eaa6f62d5d5bfae122582d2e5a716f4c",
+      "category": "overload-or-discriminated",
+      "package": "three",
+      "exportPath": [
+        "PointLightHelper",
+        "matrixWorld",
+        "makeTranslation"
+      ],
+      "source": {
+        "file": "types/three/src/math/Matrix4.d.ts",
+        "start": 12126,
+        "line": 346,
+        "column": 5
+      },
+      "declaration": "makeTranslation(v: Vector3): this;",
+      "occurrences": [],
+      "unsupportedReasons": [
+        "unsupported-syntax:ThisType"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "c6edcb1486e08b2fbbd82be383556f395b648aa12eb4b459d79cc1ae761c28c6",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/three/src/math/Matrix4.d.ts#L346",
+      "entry": "types/three/index.d.ts",
+      "moduleSpecifier": "three",
+      "runtimeBinding": "instance",
+      "kind": "method",
+      "typeParameters": [],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "d9f7d48d2fecdceddd0964955cdd9162e9f97cc462a7c3644cefbdd2dda52340",
+      "candidateId": "cadf5d4e9e7316349cc4c6c245e359419001b4f11f4551978fd9fac764a14781",
+      "declarationId": "132fd0aea77144bff2766fe547e784d6e984b32109ca5b6ee504fa2e93de79a4",
+      "category": "overload-or-discriminated",
+      "package": "openui5",
+      "exportPath": [
+        "default",
+        "attachEventOnce"
+      ],
+      "source": {
+        "file": "types/openui5/sap.ui.core.d.ts",
+        "start": 433645,
+        "line": 12379,
+        "column": 5
+      },
+      "declaration": "attachEventOnce(\n      /**\n       * The identifier of the event to listen for\n       */\n      sEventId: string,\n      /**\n       * The handler function to call when the event occurs. This function will be called in the context of the\n       * `oListener` instance (if present) or on the event provider instance. The event object ({@link sap.ui.base.Event})\n       * is provided as first argument of the handler. Handlers must not change the content of the event. The\n       * second argument is the specified `oData` instance (if present).\n       */\n      fnFunction: Function,\n      /**\n       * The object that wants to be notified when the event occurs (`this` context within the handler function).\n       * If it is not specified, the handler function is called in the context of the event provider.\n       */\n      oListener?: object\n    ): this;",
+      "occurrences": [],
+      "unsupportedReasons": [
+        "unsupported-syntax:ThisType"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "1c3133c132b5758930f6112defed4eb268ba7e5c112a135da54a6833ef10c422",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/openui5/sap.ui.core.d.ts#L12379",
+      "entry": "types/openui5/index.d.ts",
+      "moduleSpecifier": "sap/ui/mdc/valuehelp/base/Container",
+      "runtimeBinding": "instance",
+      "kind": "method",
+      "typeParameters": [],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "c9efc096f2afd365b3c129e806de7d98ad534273d3d7827c311cff45f945f8b5",
+      "candidateId": "1618120cd43aa1b029d57ee5a4d5f8d0d2695fab69334fdf42200078096ac8ed",
+      "declarationId": "15fe5accd2564477406b88f694bd18e560b1e93be11a4ab6abf13181714c0227",
+      "category": "overload-or-discriminated",
+      "package": "video.js",
+      "exportPath": [
+        "default",
+        "TextTrackMenuItem",
+        "player_",
+        "player_",
+        "width"
+      ],
+      "source": {
+        "file": "types/video.js/index.d.ts",
+        "start": 231339,
+        "line": 7208,
+        "column": 5
+      },
+      "declaration": "width(): number;",
+      "occurrences": [],
+      "unsupportedReasons": [],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "c6575c2574e63c9e213163468274981299be2c9d4b8b69f5204779eb82369fbb",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/video.js/index.d.ts#L7208",
+      "entry": "types/video.js/index.d.ts",
+      "moduleSpecifier": "video.js",
+      "runtimeBinding": "type-only",
+      "kind": "method",
+      "typeParameters": [],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "667993cac529fd57b9f0231163bacedd4abba52c4afb912c6df624e316d3803b",
+      "candidateId": "c4feadee7777209a3e17e9dbce41b8acb408ef2d013def612b78f79e5971f385",
+      "declarationId": "f7eea9db391c02c19e2977258029e4228eee31e60266ba87391a00e59bf9afa5",
+      "category": "unsupported",
+      "package": "node",
+      "exportPath": [
+        "Gzip",
+        "PassThrough",
+        "Transform",
+        "compose"
+      ],
+      "source": {
+        "file": "types/node/stream.d.ts",
+        "start": 87380,
+        "line": 1741,
+        "column": 9
+      },
+      "declaration": "function compose(\n            ...streams: [\n                ComposeSource<any>,\n                ...ComposeTransform<any, any>[],\n                ComposeDestination<any>,\n            ]\n        ): Duplex;",
+      "occurrences": [],
+      "unsupportedReasons": [
+        "rest-or-destructured-parameter",
+        "unknown-variance:AsyncIterable",
+        "unknown-variance:Iterable",
+        "unknown-variance:web.ReadableStream",
+        "unknown-variance:web.TransformStream",
+        "unknown-variance:web.WritableStream",
+        "unsupported-syntax:ConditionalType",
+        "unsupported-syntax:Identifier",
+        "unsupported-syntax:InferType",
+        "unsupported-syntax:RestType",
+        "unsupported-syntax:TupleType",
+        "unsupported-syntax:TypeParameter"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "5b26c4dd672d88336bb929787c9bfb55119e80ba89ec6dc923da1c063892843e",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/node/stream.d.ts#L1741",
+      "entry": "types/node/index.d.ts",
+      "moduleSpecifier": "node:zlib",
+      "runtimeBinding": "value",
+      "kind": "method",
+      "typeParameters": [],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 5,
+      "retainedDiagnosticCount": 5,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "a978b8db510941fdea639b60c2617fb2cba2753f6a59d7dc29a2f00c57e2b504",
+      "candidateId": "2d042a1a942e0265c7bfde6855e09e68c2570d406211d093bbf0282ab2942754",
+      "declarationId": "0b0b451284e87329294a70be6cb14252fdff22dd7fbde73fac9caaf9f58cc7d7",
+      "category": "unsupported",
+      "package": "bitcore-lib",
+      "exportPath": [
+        "HDPublicKey",
+        "fingerPrint",
+        "swap16"
+      ],
+      "source": {
+        "file": "types/node/buffer.d.ts",
+        "start": 49523,
+        "line": 1102,
+        "column": 13
+      },
+      "declaration": "swap16(): this;",
+      "occurrences": [],
+      "unsupportedReasons": [
+        "no-supported-relational-variable",
+        "unsupported-syntax:ThisType"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "575aa163c4c32e5b82e0e99b1f9f80806e1d78bfa259706e05139251c022277b",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/node/buffer.d.ts#L1102",
+      "entry": "types/bitcore-lib/index.d.ts",
+      "moduleSpecifier": "bitcore-lib",
+      "runtimeBinding": "instance",
+      "kind": "method",
+      "typeParameters": [],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 5,
+      "retainedDiagnosticCount": 5,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "3a5d6d3baea6aedf84b72f05376e48c054954e20e334e7be36c651d4ca869589",
+      "candidateId": "8f9bd4ebef4b8643ff2322b63ba3f441896819c3a96411c2bd8e015932077e74",
+      "declarationId": "5f80fef62cab4015cc1760ed2cf1afdefb3076e07890b8f5569ce135b11b8e21",
+      "category": "unsupported",
+      "package": "lodash-es",
+      "exportPath": [
+        "reduce"
+      ],
+      "source": {
+        "file": "types/lodash/common/collection.d.ts",
+        "start": 51835,
+        "line": 1455,
+        "column": 9
+      },
+      "declaration": "reduce<T, TResult>(collection: List<T> | null | undefined, callback: MemoListIterator<T, TResult, List<T>>, accumulator: TResult): TResult;",
+      "occurrences": [
+        {
+          "variable": "T",
+          "polarity": "unknown",
+          "argument": 0,
+          "route": [
+            "union",
+            "alias",
+            "unknown-reference"
+          ]
+        },
+        {
+          "variable": "TResult",
+          "polarity": "positive",
+          "argument": 1,
+          "route": [
+            "alias",
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "positive",
+          "argument": 1,
+          "route": [
+            "alias",
+            "function-parameter"
+          ]
+        },
+        {
+          "variable": "T",
+          "polarity": "unknown",
+          "argument": 1,
+          "route": [
+            "alias",
+            "function-parameter",
+            "alias",
+            "unknown-reference"
+          ]
+        },
+        {
+          "variable": "TResult",
+          "polarity": "negative",
+          "argument": 1,
+          "route": [
+            "alias",
+            "function-result"
+          ]
+        },
+        {
+          "variable": "TResult",
+          "polarity": "negative",
+          "argument": 2,
+          "route": []
+        },
+        {
+          "variable": "TResult",
+          "polarity": "positive",
+          "argument": null,
+          "route": []
+        }
+      ],
+      "unsupportedReasons": [
+        "unknown-variance:ArrayLike"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "fcf79300e5257a23ed3bacaa6861d7c645139c6f7ece134d15e6669447e5e6db",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/lodash/common/collection.d.ts#L1455",
+      "entry": "types/lodash-es/index.d.ts",
+      "moduleSpecifier": "lodash-es",
+      "runtimeBinding": "value",
+      "kind": "function",
+      "typeParameters": [
+        {
+          "name": "T",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        },
+        {
+          "name": "TResult",
+          "enclosing": false,
+          "enclosingKind": null,
+          "constraint": null
+        }
+      ],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "e120340f26d3fe390a82de31e828ea7c193ee1bff4c900d30cef6e483bd6b1df",
+      "candidateId": "cf2281fce68b8ca9bcb533596bc604403e10118f5b029ae40ad973dc857b6c31",
+      "declarationId": "16d7de3084b50346f189d47f52107e029470a00b7de2f2f093ef23304dd658ce",
+      "category": "unsupported",
+      "package": "blessed",
+      "exportPath": [
+        "Widgets",
+        "ListTableElement",
+        "screen",
+        "focused",
+        "removeLabel"
+      ],
+      "source": {
+        "file": "types/blessed/index.d.ts",
+        "start": 53729,
+        "line": 1888,
+        "column": 9
+      },
+      "declaration": "removeLabel(): any;",
+      "occurrences": [],
+      "unsupportedReasons": [
+        "no-supported-relational-variable"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "a4cb76c6f4b8356d14d6cf5c05e1e3fbc74007b160a00f6511a8c39295f08c42",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/blessed/index.d.ts#L1888",
+      "entry": "types/blessed/index.d.ts",
+      "moduleSpecifier": "blessed",
+      "runtimeBinding": "instance",
+      "kind": "method",
+      "typeParameters": [],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 5,
+      "retainedDiagnosticCount": 5,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    },
+    {
+      "reviewId": "d0237726094a8d4e3eb6e7cc8241837a8e4181d56db8b0fe88435bdfdbe9288e",
+      "candidateId": "233860921141fe3fdfe45680068900f5cb4577af431bd6e746201c8a3a180a5d",
+      "declarationId": "155064710f27ff92f4272ca8395ca1a14fbb3069e15bfbc30bdd38cf75bb00e5",
+      "category": "unsupported",
+      "package": "openui5",
+      "exportPath": [
+        "default",
+        "setBusyIndicatorDelay"
+      ],
+      "source": {
+        "file": "types/openui5/sap.ui.core.d.ts",
+        "start": 877554,
+        "line": 23105,
+        "column": 5
+      },
+      "declaration": "setBusyIndicatorDelay(\n      /**\n       * The delay in ms\n       */\n      iDelay: int\n    ): this;",
+      "occurrences": [],
+      "unsupportedReasons": [
+        "no-supported-relational-variable",
+        "unsupported-syntax:ThisType"
+      ],
+      "status": "pending",
+      "reviewer": null,
+      "notes": null,
+      "sourceSha256": "1c3133c132b5758930f6112defed4eb268ba7e5c112a135da54a6833ef10c422",
+      "sourceUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/455254aa7204192e7f7fbe50266d2313cefdf6c9/types/openui5/sap.ui.core.d.ts#L23105",
+      "entry": "types/openui5/index.d.ts",
+      "moduleSpecifier": "sap/m/PDFViewer",
+      "runtimeBinding": "instance",
+      "kind": "method",
+      "typeParameters": [],
+      "contextNote": null,
+      "entryCoverage": {
+        "selected": 1,
+        "extracted": 1,
+        "missing": []
+      },
+      "diagnosticCount": 0,
+      "retainedDiagnosticCount": 0,
+      "answers": {
+        "Q1": null,
+        "Q2": null,
+        "Q3": null,
+        "Q4": null,
+        "Q5": null,
+        "Q6": null,
+        "Q7": null,
+        "Q8": null,
+        "Q9": null,
+        "Q10": null
+      },
+      "evidence": []
+    }
+  ]
+}

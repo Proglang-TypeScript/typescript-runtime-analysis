@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "capturedOn": "2026-09-14T19:20:55.388Z",
+  "identity": "191105aee86637c2edcfcec4673aed7314ddcb074beb0d6ee23e22f192cbed79",
+  "implementation": "fea809dbbc1e4d88a886110811f8e34d50c98ca2baa4d9d8490e45310270b9b5",
+  "repository": "https://github.com/Proglang-TypeScript/typescript-runtime-analysis.git",
+  "branch": "phase-2-census-infrastructure",
+  "baseCommit": "f5dbf48ff311ccc0f0baba0c1fb6206b105e3c9d",
+  "implementationPublication": "uncommitted requested follow-up; source hashes retained",
+  "publicationStatusBasis": "Historical evidence capture before publication; the subsequent explicit commit/check-in request authorizes publication, verified separately without rewriting the capture state.",
+  "node": "v24.21.0",
+  "compiler": "6.0.3",
+  "provenance": {
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+    "commit": "455254aa7204192e7f7fbe50266d2313cefdf6c9",
+    "scope": "full"
+  },
+  "sourceFiles": [
+    {
+      "path": "packages/generic-api-census/index.cjs",
+      "sha256": "ade8ce83ea42af4351a1648baed3fc1d4c860184f2fef6069f6256b1a736a2cc"
+    },
+    {
+      "path": "packages/generic-api-census/polarity.cjs",
+      "sha256": "59709dc41b6c5ff489b9adc40eaf11675529372996955258c455bb873dbb2d87"
+    },
+    {
+      "path": "packages/generic-api-census/schema.json",
+      "sha256": "4562771aefc6ad3a155ffafc73a2e9aa680fe0b9ed91cdad643f2cee6176fd14"
+    },
+    {
+      "path": "packages/generic-api-census/review.cjs",
+      "sha256": "43ca856b3da0c89c6a2232489128acd176e26788d2e36fdcec7b0a64c51ee0f3"
+    },
+    {
+      "path": "packages/generic-api-census/shard-codec.cjs",
+      "sha256": "836726c7d12f348278fc92a7a358cd843a93640c5c8b15d0015ee2b80c278715"
+    },
+    {
+      "path": "scripts/census.cjs",
+      "sha256": "ba780fc0b712de0f987c1b022936ba993038aabcdda444ce9772e0190f3ad71a"
+    },
+    {
+      "path": "scripts/census-snapshot.cjs",
+      "sha256": "77c3b6732f2e8cd7231ac4f62a99f25daa252ed26813eb9309ff351bdfeffccd"
+    },
+    {
+      "path": "scripts/census-human-review.cjs",
+      "sha256": "94acca4e253a50d1c5f1ff03001ffa74d86af0d4e73b85e06e05fc346f59a515"
+    }
+  ],
+  "rawShardFiles": 8680,
+  "rawShardBytes": 1161389777,
+  "sourceFilesInRawRun": [
+    {
+      "path": "run.json",
+      "bytes": 404880,
+      "sha256": "41fc1b5bb238dd74853d16a61c020282d4bf2e7168f6d7e0d57605718cf35c85"
+    },
+    {
+      "path": "checkpoint.json",
+      "bytes": 387032,
+      "sha256": "362a12b7df584be36807fae5f52d99eb84e5d5bb124df75f43919117fe098b22"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 17176275,
+      "sha256": "ceeff909f9955ff35117c00400f258593fabf9685ce715cfaa7e2c96e16fb580"
+    },
+    {
+      "path": "review-queue.json",
+      "bytes": 54383,
+      "sha256": "5acc1243e029b4eff3fcf0f87ecc21b0d613f0450746743702e1b5567296d4a8"
+    }
+  ],
+  "noDefinitelyTypedCheckoutIncluded": true,
+  "noInstalledDependenciesIncluded": true,
+  "fullRawRowsIncluded": false,
+  "bundleResumable": false,
+  "independentHumanValidation": "pending",
+  "verifiedIndependentSourceFamilies": 0,
+  "limits": [
+    "Missing ESM branch remains explicitly partial",
+    "Compiler diagnostics persist under the pinned-only resolver",
+    "Finite ordinary pilot evidence is not sealing or parametricity proof",
+    "Reviewer profiles are self-declarations, not identity authentication",
+    "Do not merge old pilot evidence into this identity without matching exports and new intake"
+  ]
+}

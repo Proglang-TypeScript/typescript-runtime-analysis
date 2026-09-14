@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "identity": "191105aee86637c2edcfcec4673aed7314ddcb074beb0d6ee23e22f192cbed79",
+  "state": "extraction-complete",
+  "elapsedHours": 0.884160196701389,
+  "lastInvocationTimeLimitHours": 1,
+  "processed": 8680,
+  "successful": 8679,
+  "failures": [],
+  "incompleteEntries": [
+    "beyonk__gdpr-cookie-consent-banner"
+  ],
+  "pending": 0,
+  "resumableBundle": false
+}

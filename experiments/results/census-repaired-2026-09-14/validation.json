@@ -1,0 +1,56 @@
+{
+  "capturedOn": "2026-09-14T19:23:06.079961+00:00",
+  "identity": "191105aee86637c2edcfcec4673aed7314ddcb074beb0d6ee23e22f192cbed79",
+  "implementation": "fea809dbbc1e4d88a886110811f8e34d50c98ca2baa4d9d8490e45310270b9b5",
+  "maintainedCheck": {
+    "command": "npm run check",
+    "retryEnvironment": "NODE_OPTIONS=--max-old-space-size=4096",
+    "exitCode": 0,
+    "build": "passed",
+    "jestTests": 110,
+    "nodeTests": 65,
+    "totalTests": 175,
+    "smoke": "passed",
+    "experiment": "passed"
+  },
+  "focusedCensusTests": {
+    "passed": 27,
+    "includedInMaintainedTotal": true
+  },
+  "humanComparisonTests": {
+    "passed": 5,
+    "includedInMaintainedTotal": true
+  },
+  "realWorkerChecks": {
+    "go": {
+      "status": "extracted",
+      "exportSignaturePairs": 298369,
+      "workerLimitsUnchanged": true
+    },
+    "cookieBanner": {
+      "status": "partial-entry",
+      "retainedPrimaryPairs": 2,
+      "missingBranch": "exports/import"
+    }
+  },
+  "fullRun": {
+    "exitCode": 1,
+    "exitBasis": "Explicit incomplete declared-entry coverage",
+    "processed": 8680,
+    "successful": 8679,
+    "fatalFailures": 0,
+    "partialEntryPackages": 1,
+    "pending": 0,
+    "aggregation": "complete"
+  },
+  "reviewPack": {
+    "items": 40,
+    "distinctDeclarations": 36,
+    "independentHumanValidation": "pending",
+    "priorAgentVerdictsIncluded": false
+  },
+  "sourceFamilyValidation": "pending; zero independently certified families",
+  "runnerRecheckNote": "One optional default-heap recheck hit a native Node SIGSEGV in Jest, with no failing assertion. An immediate Node 24 Jest rerun with a 4 GB parent heap passed all 110 tests; the complete check then passed with NODE_OPTIONS=--max-old-space-size=4096 (exit 0, all 175 tests, build, smoke and experiment). Cause of the isolated native crash is not established; no unrelated repository workaround was introduced.",
+  "publication": "uncommitted; no push performed for this request",
+  "publicationStatusBasis": "Historical prepublication evidence capture; subsequent authorized commit/push verification is recorded separately."
+}

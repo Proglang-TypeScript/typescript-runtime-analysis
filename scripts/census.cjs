@@ -6,6 +6,7 @@ const {analyzePackage, classes, hash} = require('../packages/generic-api-census/
 const {sample, assess} = require('../packages/generic-api-census/review.cjs');
 const {prepare, inspect} = require('./census-snapshot.cjs');
 const {assessRuntime} = require('../packages/generic-api-census/runtime-assessment.cjs');
+const {encodeShard, decodeShard} = require('../packages/generic-api-census/shard-codec.cjs');
 const validate = new Ajv({allErrors: true, strict: true}).compile(require('../packages/generic-api-census/schema.json'));
 const [command = 'run', ...args] = process.argv.slice(2);
 const option = (name, fallback) => {const index = args.indexOf('--' + name); return index < 0 ? fallback : args[index + 1];};
@@ -22,7 +23,7 @@ function timeLimitHours(value) {
   if (typeof value !== 'string' || !value.trim() || !Number.isFinite(hours) || hours <= 0 || !Number.isFinite(hours * 3600000)) throw new Error('--time-limit-hours requires a finite positive number of hours');
   return hours;
 }
-function implementationHash() {return hash(['../packages/generic-api-census/index.cjs', '../packages/generic-api-census/polarity.cjs', '../packages/generic-api-census/schema.json', '../packages/generic-api-census/review.cjs', 'census.cjs', 'census-snapshot.cjs'].map(name => fs.readFileSync(path.resolve(__dirname, name))).join('\n'));}
+function implementationHash() {return hash(['../packages/generic-api-census/index.cjs', '../packages/generic-api-census/polarity.cjs', '../packages/generic-api-census/schema.json', '../packages/generic-api-census/review.cjs', '../packages/generic-api-census/shard-codec.cjs', 'census.cjs', 'census-snapshot.cjs'].map(name => fs.readFileSync(path.resolve(__dirname, name))).join('\n'));}
 function aggregate(directory) {
   const metadata = read(path.join(directory, 'run.json'));
   const sets = new Map();
@@ -36,7 +37,7 @@ function aggregate(directory) {
   fs.writeSync(csv, 'id,package,export,kind,file,line,generic,both_polarities,classes,runtime_execution\n');
   try {
     for (const name of metadata.selection) {
-      const shard = read(path.join(directory, 'packages', name + '.json'));
+      const shard = decodeShard(read(path.join(directory, 'packages', name + '.json')));
       if (!validate(shard) || shard.identity !== metadata.identity) throw new Error('Invalid or stale census shard: ' + name);
       packages.push({...shard.package, diagnostics: undefined});
       for (const row of shard.rows) {
@@ -60,6 +61,8 @@ function aggregate(directory) {
   const queue = sample(reviewPool, {size: metadata.reviewSize, seed: metadata.seed});
   write(directory, 'review-queue.json', {schemaVersion: 1, identity: metadata.identity, seed: metadata.seed, perClass: metadata.reviewSize, records: queue});
   const summary = {schemaVersion: 1, identity: metadata.identity, provenance: metadata.provenance, compiler: metadata.compiler, policy: 'declared-entry-module-exports-v1', coverage: {selection: metadata.selection.length, pinnedCorpusPackages: metadata.provenance.pinnedCorpusPackages, fullPinnedCorpusSelected: metadata.provenance.scope === 'full' && metadata.selection.length === metadata.provenance.pinnedCorpusPackages, extractionFailures: packages.filter(row => row.status === 'extraction-failed' || row.status === 'missing-entry').length, compilerDiagnosticPackages: packages.filter(row => row.status === 'extracted-with-diagnostics').length}, counts: {totalExportedCallableDeclarations: value('totalExportedCallableDeclarations'), exportSignaturePairs: rowsCount, distinctCallableExports: value('distinctCallableExports'), declarationsWithTypeParameters: value('declarationsWithTypeParameters'), declarationsWithOwnTypeParameters: value('declarationsWithOwnTypeParameters'), declarationsWithBothPolarities: value('declarationsWithBothPolarities'), packagesWithExports: value('packagesWithExports'), packagesWithTypeParameters: value('packagesWithTypeParameters'), packagesWithBothPolarities: value('packagesWithBothPolarities'), genericOnlyThroughEnclosing: value('genericOnlyThroughEnclosing'), firstOrderPotentialDeclarations: value('firstOrderPotentialDeclarations'), classes: Object.fromEntries(classes.map(name => [name, value('class:' + name)])), obtainableRuntimePackages: 0, verifiedExecutableExports: 0, runtimeAssessment: 'not-assessed'}, manualReview: {pending: queue.length, agree: 0, 'false-classification': 0, ambiguous: 0, excluded: 0}, packages};
+  summary.coverage.incompleteEntryPackages = packages.filter(row => row.status === 'partial-entry').length;
+  summary.coverage.compilerDiagnosticPackages = packages.filter(row => row.diagnosticCount > 0 || row.status === 'extracted-with-diagnostics').length;
   write(directory, 'summary.json', summary);
   fs.writeFileSync(path.join(directory, 'summary.csv'), 'metric,count\n' + Object.entries(summary.counts).filter(([, value]) => typeof value === 'number').map(([name, value]) => `${name},${value}`).join('\n') + '\n' + Object.entries(summary.counts.classes).map(([name, value]) => `${name},${value}`).join('\n') + '\n');
   return summary;
@@ -70,7 +73,7 @@ function extractWorker(root, name, directory) {
     const result = spawnSync(process.execPath, ['--max-old-space-size=1024', __filename, 'extract', root, name, file], {encoding: 'utf8', timeout: 120000, maxBuffer: 1024 * 1024, env: {PATH: process.env.PATH, TZ: 'UTC'}});
     if (result.status === 0 && !result.error) {
       if (fs.statSync(file).size > 256 * 1024 * 1024) throw new Error('Worker shard exceeds the explicit 256 MB file limit');
-      result.stdout = fs.readFileSync(file, 'utf8');
+      result.data = decodeShard(read(file));
     }
     return result;
   } catch (error) {return {status: 1, error};}
@@ -92,44 +95,45 @@ function run({arguments: runArgs = args, inspectSnapshot = inspect, extractWorke
   const identity = hash(JSON.stringify({provenance, selection, compiler, implementation: implementationHash(), reviewSize, seed: 0}));
   if (fs.existsSync(directory) && fs.readdirSync(directory).length) {
     if (!runArgs.includes('--resume') || read(path.join(directory, 'run.json')).identity !== identity) throw new Error('Existing output is not this exact census; use --resume or a fresh directory');
-  } else {fs.mkdirSync(path.join(directory, 'packages'), {recursive: true}); write(directory, 'run.json', {schemaVersion: 1, identity, provenance, selection, compiler, implementation: implementationHash(), seed: 0, reviewSize, command: process.argv.slice(2), workerLimits: {heapMb: 1024, timeoutMs: 120000, outputBytes: 256 * 1024 * 1024, transport: 'temporary-file', logBytes: 1024 * 1024}});}
+  } else {fs.mkdirSync(path.join(directory, 'packages'), {recursive: true}); write(directory, 'run.json', {schemaVersion: 1, identity, provenance, selection, compiler, implementation: implementationHash(), seed: 0, reviewSize, command: process.argv.slice(2), storage: {version: 1, representation: 'lossless-template-references', logicalSchemaVersion: 1}, workerLimits: {heapMb: 1024, timeoutMs: 120000, outputBytes: 256 * 1024 * 1024, transport: 'temporary-file', logBytes: 1024 * 1024}});}
   const processed = [];
   const successful = [];
+  const incompleteEntries = [];
   const failures = [];
   function checkpoint(state) {
     inspectSnapshot(root);
     if (implementationHash() !== read(path.join(directory, 'run.json')).implementation) throw new Error('Census implementation changed during extraction; choose a fresh output directory');
-    const progress = {schemaVersion: 1, identity, state, timeLimitHours: hours, elapsedHours: (now() - started) / 3600000, command: ['run', ...runArgs], processed, successful, failures, pending: selection.filter(name => !processed.includes(name))};
+    const progress = {schemaVersion: 1, identity, state, timeLimitHours: hours, elapsedHours: (now() - started) / 3600000, command: ['run', ...runArgs], processed, successful, failures, incompleteEntries, pending: selection.filter(name => !processed.includes(name))};
     write(directory, 'checkpoint.json', progress);
     return progress;
   }
   for (const name of selection) {
     const file = path.join(directory, 'packages', name + '.json');
-    const cached = fs.existsSync(file) ? read(file) : null;
+    const cached = fs.existsSync(file) ? decodeShard(read(file)) : null;
     if (cached && (!validate(cached) || cached.identity !== identity)) throw new Error('Invalid or stale census shard: ' + name);
     let data;
-    if (cached?.package.status.startsWith('extracted')) data = cached;
+    if (cached?.package.status.startsWith('extracted') || cached?.package.status === 'partial-entry') data = cached;
     else {
       const result = worker(root, name, directory);
-      try {if (result.status !== 0 || result.error) throw result.error || new Error(result.stderr); data = JSON.parse(result.stdout); if (!validate({schemaVersion: 1, identity, ...data})) throw new Error('Invalid worker census shard');}
+      try {if (result.status !== 0 || result.error) throw result.error || new Error(result.stderr); data = result.data || JSON.parse(result.stdout); if (!validate({schemaVersion: 1, identity, ...data})) throw new Error('Invalid worker census shard');}
       catch (error) {data = {package: {directory: name, status: 'extraction-failed', runtimeAvailability: 'not-assessed', runtimeExecution: 'not-assessed', failure: result.error?.code || 'WORKER_FAILURE', diagnostics: [String(error.message).slice(0, 2000)]}, rows: []};}
-      write(path.dirname(file), path.basename(file), {schemaVersion: 1, identity, ...data});
+      write(path.dirname(file), path.basename(file), encodeShard({schemaVersion: 1, identity, ...data}));
       console.error(`${name}: ${data.package.status}; ${data.rows.length} export/signature pairs`);
     }
     processed.push(name);
-    (data.package.status.startsWith('extracted') ? successful : failures).push(name);
+    (data.package.status === 'partial-entry' ? incompleteEntries : data.package.status.startsWith('extracted') ? successful : failures).push(name);
     if (hours !== null && (now() - started) / 3600000 >= hours && processed.length < selection.length) {
       const progress = checkpoint('time-limit-reached');
       console.log(JSON.stringify(progress, null, 2));
       console.error('Time limit reached at a complete package boundary; resume with the same snapshot/output/selection/review size and --resume. Final aggregation is deferred until all selected packages are processed.');
-      if (failures.length) process.exitCode = 1;
+      if (failures.length || incompleteEntries.length) process.exitCode = 1;
       return progress;
     }
   }
   checkpoint('extraction-complete');
   const summary = aggregate(directory);
   console.log(JSON.stringify({counts: summary.counts, coverage: summary.coverage, manualReview: summary.manualReview}, null, 2));
-  if (summary.coverage.extractionFailures) process.exitCode = 1;
+  if (summary.coverage.extractionFailures || summary.coverage.incompleteEntryPackages) process.exitCode = 1;
   return summary;
 }
 if (require.main === module) {
@@ -137,7 +141,8 @@ if (require.main === module) {
     if (command === 'prepare') console.log(JSON.stringify(prepare(option('out', 'work/definitelytyped'), args.includes('--smoke')), null, 2));
     else if (command === 'run') run();
     else if (command === 'extract') {
-      const data = JSON.stringify(analyzePackage(args[0], args[1]));
+      const result = analyzePackage(args[0], args[1]);
+      const data = JSON.stringify(args[2] ? encodeShard(result) : result);
       if (args[2]) {
         if (Buffer.byteLength(data) > 256 * 1024 * 1024) throw new Error('Worker shard exceeds the explicit 256 MB file limit');
         fs.writeFileSync(args[2], data);
@@ -161,7 +166,7 @@ if (require.main === module) {
       if (catalog.censusIdentity !== run.identity) throw new Error('Catalogue belongs to another census');
       const rows = [];
       for (const name of run.selection) {
-        const shard = read(path.join(directory, 'packages', name + '.json'));
+        const shard = decodeShard(read(path.join(directory, 'packages', name + '.json')));
         if (!validate(shard) || shard.identity !== run.identity) throw new Error('Invalid/stale runtime-assessment census shard');
         for (const row of shard.rows) rows.push({exportId: row.exportId, package: row.package, runtimeBinding: row.runtimeBinding});
       }
