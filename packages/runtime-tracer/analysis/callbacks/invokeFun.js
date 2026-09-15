@@ -3,6 +3,7 @@
 'use strict';
 
 const { produceMessage } = require('../../utils/kafka');
+const {collectPublicExports, matchesPublicModule} = require('../../public-exports.cjs');
 
 (function (sandbox) {
   function InvokeFunAnalysis() {
@@ -13,6 +14,7 @@ const { produceMessage } = require('../../utils/kafka');
     this.interactionWithResultHandler = sandbox.utils.interactionWithResultHandler;
     this.wrapperObjectsHandler = sandbox.utils.wrapperObjectsHandler;
     this.metadataStore = sandbox.utils.metadataStore;
+    this.functionIdHandler = sandbox.utils.functionIdHandler;
 
     var dis = this;
 
@@ -64,22 +66,15 @@ const { produceMessage } = require('../../utils/kafka');
         }
 
         if (f.name === 'require') {
-          const requiredModule = result;
-          const nameOfRequiredModule = args[0];
-
-          if (typeof requiredModule === 'function') {
-            requiredModule['__IS_EXPORTED_FUNCTION__'] = true;
-            requiredModule['__REQUIRED_MODULE__'] = nameOfRequiredModule;
-          }
-
-          iterateObjectProperties(requiredModule, function (key, obj) {
-            const value = obj[key];
-
-            if (typeof value === 'function' && value !== requiredModule) {
-              value['__IS_EXPORTED_FUNCTION__'] = false;
-              value['__REQUIRED_MODULE__'] = nameOfRequiredModule;
+          if (matchesPublicModule(args[0], process.env.TRACE_PUBLIC_MODULE)) {
+            const inventory = collectPublicExports(result, dis.functionIdHandler.getFunctionId);
+            for (const [functionId, paths] of Object.entries(inventory.pathsByFunctionId)) {
+              if (!sandbox.publicExports.pathsByFunctionId[functionId]) sandbox.publicExports.pathsByFunctionId[functionId] = [];
+              for (const path of paths) if (!sandbox.publicExports.pathsByFunctionId[functionId].some(previous => JSON.stringify(previous) === JSON.stringify(path))) sandbox.publicExports.pathsByFunctionId[functionId].push(path);
             }
-          });
+            sandbox.publicExports.exclusions.push(...inventory.exclusions);
+            sandbox.publicExports.matchedRequires.push(args[0]);
+          }
         }
 
       }

@@ -36,7 +36,7 @@ function trace(entry, options) {
     const result = spawnSync(process.execPath, [path.join(__dirname, 'jalangi-command.cjs'), '--inlineSource', '--inlineIID',
       ...analyses.flatMap(file => ['--analysis', path.join(__dirname, file)]),
       ...(options.captureInvocations ? ['--analysis', path.join(__dirname, 'invocation-analysis.cjs')] : []), entry], {
-      cwd: temporary, env: {PATH: process.env.PATH, KAFKA_ENABLED: 'false', TRACE_WORK_DIR: temporary, TRACE_RAW_OUTPUT: rawFile, TRACE_TARGET_ROOT: targetRoot, TRACE_MAX_OBSERVATIONS: String(options.maxObservations || 100000), ...(options.captureInvocations ? {TRACE_INVOCATIONS_OUTPUT: invocationFile} : {})},
+      cwd: temporary, env: {PATH: process.env.PATH, KAFKA_ENABLED: 'false', TRACE_WORK_DIR: temporary, TRACE_RAW_OUTPUT: rawFile, TRACE_TARGET_ROOT: targetRoot, TRACE_PUBLIC_MODULE: options.publicModule || 'module', TRACE_MAX_OBSERVATIONS: String(options.maxObservations || 100000), ...(options.captureInvocations ? {TRACE_INVOCATIONS_OUTPUT: invocationFile} : {})},
       timeout: options.timeout || 30000, maxBuffer: 8 * 1024 * 1024, encoding: 'utf8',
     });
     if (result.error || result.status !== 0) throw new Error(`Instrumentation/execution failed: ${result.error?.message || result.stderr}`);
@@ -46,9 +46,10 @@ function trace(entry, options) {
       evidence: options.evidence || 'fixture', code: fs.readFileSync(entry, 'utf8')})).digest('hex').slice(0, 24);
     const provenance = {package: options.package || path.basename(targetRoot), version: options.version || '0.0.0-fixture',
       repository: options.repository || 'local-fixture', commit: options.commit || 'uncommitted-fixture', evidence: options.evidence || 'fixture',
-      entryPoint: path.relative(targetRoot, entry), publicModule: options.publicModule || 'module', backend: 'jalangi2',
+      entryPoint: path.relative(targetRoot, entry), publicModule: options.publicModule || 'module', publicBoundary: 'commonjs-own-descriptor-v1', backend: 'jalangi2',
       backendVersion: 'bc879287b1678de6e3c423f5debe63207559525b', executionId};
     const observations = [];
+    const exportPaths = container => raw.publicExports?.pathsByFunctionId?.[container.functionId] || [];
     const location = source => {
       const map = source && raw.sourceMaps?.[source.file];
       const original = map && new SourceMapConsumer(map).originalPositionFor({line: source.line, column: source.column - 1});
@@ -58,16 +59,16 @@ function trace(entry, options) {
       const source = location(container.sourceLocation);
       if (!container.sourceLocation || source.file.startsWith('..') || source.file.split(path.sep).includes('node_modules')) continue;
       const functionId = `${source.file}:${source.line}:${source.column}:${container.functionName}`;
-      const isPublic = container.isExported || container.requiredModule === `./${provenance.publicModule}` || container.requiredModule === provenance.publicModule;
+      const paths = exportPaths(container);
       for (const argument of Object.values(container.args || {})) {
         for (const interaction of argument.interactions) {
           const {argumentId, interactionId, ...details} = interaction;
           observations.push({functionId, functionName: container.functionName, position: 'parameter', index: argument.argumentIndex,
-            type: shallow(interaction.typeof), source, executionId, order: observations.length, public: Boolean(isPublic), interaction: {kind: interaction.code, ...details}});
+            type: shallow(interaction.typeof), source, executionId, order: observations.length, public: paths.length > 0, exportPaths: paths, interaction: {kind: interaction.code, ...details}});
         }
       }
       for (const returned of container.returnTypeOfs) observations.push({functionId, functionName: container.functionName, position: 'result', index: -1,
-        type: shallow(returned.typeOf), source, executionId, order: observations.length, public: Boolean(isPublic), interaction: {kind: 'return', traceId: returned.traceId}});
+        type: shallow(returned.typeOf), source, executionId, order: observations.length, public: paths.length > 0, exportPaths: paths, interaction: {kind: 'return', traceId: returned.traceId}});
     }
     const operators = raw.patterns.map((operator, order) => ({operator: operator.operator, source: location(operator), leftType: shallow(operator.leftType),
       rightType: shallow(operator.rightType), executionId, order}));
@@ -81,7 +82,7 @@ function trace(entry, options) {
         const functionId = `${source.file}:${source.line}:${source.column}:${container.functionName}`;
         const invocationId = call => `${executionId}:${call}`;
         return {invocationId: invocationId(frame.call), functionId, functionName: container.functionName, source, executionId, order: frame.call,
-          public: Boolean(container.isExported || container.requiredModule === `./${provenance.publicModule}` || container.requiredModule === provenance.publicModule),
+          public: exportPaths(container).length > 0, exportPaths: exportPaths(container),
           arguments: frame.arguments, receiver: frame.receiver, result: frame.result, outcome: frame.outcome,
           parentInvocationId: frame.parent === null ? null : invocationId(frame.parent),
           callbacks: frame.callbacks.map(callback => ({argumentIndex: callback.argumentIndex, invocationId: invocationId(callback.call)}))};
@@ -91,6 +92,7 @@ function trace(entry, options) {
     fs.mkdirSync(path.dirname(options.output), {recursive: true});
     fs.writeFileSync(options.output, JSON.stringify(envelope, null, 2) + '\n');
     fs.writeFileSync(`${options.output}.raw.json`, JSON.stringify(raw, null, 2) + '\n');
+    fs.writeFileSync(`${options.output}.public-exports.json`, JSON.stringify({schemaVersion: 1, provenance, ...raw.publicExports, entries: Object.entries(raw.publicExports.pathsByFunctionId).map(([rawFunctionId, paths]) => ({rawFunctionId, paths, functionName: raw.functions[rawFunctionId]?.functionName || null, source: raw.functions[rawFunctionId]?.sourceLocation || null}))}, null, 2) + '\n');
     fs.writeFileSync(`${options.output}.execution.json`, JSON.stringify({node: process.version, stdout: result.stdout, durationLimitMs: options.timeout || 30000}, null, 2) + '\n');
     if (invocationTrace) fs.writeFileSync(`${options.output}.invocations.json`, JSON.stringify(invocationTrace, null, 2) + '\n');
     return envelope;

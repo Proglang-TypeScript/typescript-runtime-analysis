@@ -39,12 +39,22 @@ function generate(files, {moduleName = 'module', publicOnly = false, output} = {
     };
     for (const container of Object.values(raw.functions)) {
       if (!container.sourceLocation) continue;
-      const target = container.requiredModule === `./${moduleName}` || container.requiredModule === moduleName;
-      if (publicOnly && !target) {
+      const paths = raw.publicExports?.schemaVersion === 1 ? raw.publicExports.pathsByFunctionId[container.functionId] || [] : null;
+      const legacyTarget = container.requiredModule === `./${moduleName}` || container.requiredModule === moduleName;
+      if (publicOnly && paths === null) diagnostics.push({code: 'LEGACY_PUBLIC_BOUNDARY_UNVERIFIED', functionId: container.functionId, message: `Legacy public-boundary metadata for ${container.functionName} is not independently verified`});
+      if (publicOnly && (paths === null ? !legacyTarget : !paths.length)) {
         diagnostics.push({code: 'FILTERED_INTERNAL_API', functionId: container.functionId, message: `Excluded ${container.functionName}`});
         continue;
       }
+      if (publicOnly && paths && !paths.some(path => path.length === 0)) {
+        diagnostics.push({code: 'UNSUPPORTED_PUBLIC_EXPORT_PATH', functionId: container.functionId, message: `Public property paths for ${container.functionName}: ${paths.map(path => path.join('.')).join(', ')}`, reason: 'Legacy declaration builder cannot preserve object-member/re-export paths; retain evidence without flattening into a root function'});
+        continue;
+      }
       const renamed = rename(container);
+      if (publicOnly && paths?.some(path => path.length === 0)) {
+        renamed.requiredModule = `./${moduleName}`;
+        renamed.isExported = true;
+      }
       rawFunctions[renamed.functionId] = renamed;
     }
   });

@@ -28,7 +28,7 @@
         "functionId": {"type": "string", "minLength": 1},
         "functionName": {"type": "string"},
         "source": {"$ref": "https://example.invalid/typescript-runtime-analysis/v1#/definitions/source"},
-        "executionId": {"type": "string"}, "order": {"type": "integer", "minimum": 0}, "public": {"type": "boolean"},
+        "executionId": {"type": "string"}, "order": {"type": "integer", "minimum": 0}, "public": {"type": "boolean"}, "exportPaths": {"type": "array", "items": {"type": "array", "items": {"type": "string"}}},
         "arguments": {"type": "array", "maxItems": 16, "items": {"$ref": "#/definitions/value"}},
         "receiver": {"$ref": "#/definitions/value"}, "result": {"$ref": "#/definitions/value"},
         "outcome": {"enum": ["return", "throw"]},

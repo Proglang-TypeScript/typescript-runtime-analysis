@@ -4,6 +4,7 @@
 
 (function (sandbox) {
   sandbox.runTimeInfo = {};
+  sandbox.publicExports = {schemaVersion: 1, policy: 'commonjs-own-descriptor-v1', pathsByFunctionId: {}, exclusions: [], matchedRequires: []};
   sandbox.observationCount = 0;
   sandbox.recordObservation = function () {
     sandbox.observationCount++;

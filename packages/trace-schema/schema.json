@@ -14,7 +14,7 @@
       "properties": {
         "package":{"type":"string","minLength":1},"version":{"type":"string","minLength":1},"repository":{"type":"string"},
         "commit":{"type":"string"},"evidence":{"enum":["README","test","client","fixture"]},"entryPoint":{"type":"string"},
-        "publicModule":{"type":"string"},"backend":{"type":"string"},"backendVersion":{"type":"string"},"executionId":{"type":"string"}
+        "publicModule":{"type":"string"},"publicBoundary":{"enum":["commonjs-own-descriptor-v1"]},"backend":{"type":"string"},"backendVersion":{"type":"string"},"executionId":{"type":"string"}
       }
     },
     "observation": {
@@ -23,7 +23,7 @@
       "properties": {
         "functionId":{"type":"string"},"functionName":{"type":"string"},"position":{"enum":["parameter","result"]},
         "index":{"type":"integer","minimum":-1},"type":{"$ref":"#/definitions/shallowType"},"source":{"$ref":"#/definitions/source"},
-        "executionId":{"type":"string"},"order":{"type":"integer","minimum":0},"public":{"type":"boolean"},
+        "executionId":{"type":"string"},"order":{"type":"integer","minimum":0},"public":{"type":"boolean"},"exportPaths":{"type":"array","items":{"type":"array","items":{"type":"string"}}},
         "interaction":{"type":"object","required":["kind"],"properties":{"kind":{"type":"string"}},"additionalProperties":true}
       }
     },
