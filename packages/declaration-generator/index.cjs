@@ -7,10 +7,15 @@ const {RuntimeInfoParser} = require('../../dist/declaration-generator/src/runtim
 const {TypescriptDeclarationBuilder} = require('../../dist/declaration-generator/src/typescript-declaration/builder/TypescriptDeclarationBuilder.js');
 const {buildAst} = require('../../dist/declaration-generator/src/typescript-declaration/ast/buildAst.js');
 const {emit} = require('../../dist/declaration-generator/src/typescript-declaration/ts-ast-utils/utils.js');
+const {buildPublicObject} = require('./public-object.cjs');
 
 function generate(files, {moduleName = 'module', publicOnly = false, output} = {}) {
   files = [...files].sort((left, right) => left.localeCompare(right));
   const traces = files.map(file => validate('trace', JSON.parse(fs.readFileSync(file, 'utf8'))));
+  const publicIdentities = new Set(traces.map(trace => {
+    const fields = ['package', 'version', 'repository', 'commit', 'publicModule', 'publicBoundary'];
+    return JSON.stringify(Object.fromEntries(fields.map(field => [field, trace.provenance[field] || null])));
+  }));
   const observations = merge(traces, {publicOnly});
   const diagnostics = [];
   const typeSets = new Map();
@@ -25,6 +30,9 @@ function generate(files, {moduleName = 'module', publicOnly = false, output} = {
   for (const [key, types] of typeSets) if (types.size > 1) diagnostics.push({code: 'EVIDENCE_CONFLICT', functionId: key,
     message: `Observed types: ${[...types].sort().join(', ')}`, reason: 'Legacy merge heuristics retained; union may lose correlations'});
   const rawFunctions = {};
+  const memberPaths = new Map();
+  let hasDirectRoot = false;
+  let hasLegacyTarget = false;
   const seen = new Set();
   files.forEach((file, index) => {
     const run = traces[index].provenance.executionId;
@@ -41,17 +49,20 @@ function generate(files, {moduleName = 'module', publicOnly = false, output} = {
       if (!container.sourceLocation) continue;
       const paths = raw.publicExports?.schemaVersion === 1 ? raw.publicExports.pathsByFunctionId[container.functionId] || [] : null;
       const legacyTarget = container.requiredModule === `./${moduleName}` || container.requiredModule === moduleName;
+      if (publicOnly && paths === null && legacyTarget) hasLegacyTarget = true;
       if (publicOnly && paths === null) diagnostics.push({code: 'LEGACY_PUBLIC_BOUNDARY_UNVERIFIED', functionId: container.functionId, message: `Legacy public-boundary metadata for ${container.functionName} is not independently verified`});
       if (publicOnly && (paths === null ? !legacyTarget : !paths.length)) {
         diagnostics.push({code: 'FILTERED_INTERNAL_API', functionId: container.functionId, message: `Excluded ${container.functionName}`});
         continue;
       }
-      if (publicOnly && paths && !paths.some(path => path.length === 0)) {
-        diagnostics.push({code: 'UNSUPPORTED_PUBLIC_EXPORT_PATH', functionId: container.functionId, message: `Public property paths for ${container.functionName}: ${paths.map(path => path.join('.')).join(', ')}`, reason: 'Legacy declaration builder cannot preserve object-member/re-export paths; retain evidence without flattening into a root function'});
-        continue;
-      }
       const renamed = rename(container);
+      if (publicOnly && paths && !paths.some(path => path.length === 0)) {
+        renamed.requiredModule = `./${moduleName}`;
+        renamed.isExported = false;
+        memberPaths.set(renamed.functionId, {paths, sourceLocation: container.sourceLocation});
+      }
       if (publicOnly && paths?.some(path => path.length === 0)) {
+        hasDirectRoot = true;
         renamed.requiredModule = `./${moduleName}`;
         renamed.isExported = true;
       }
@@ -63,7 +74,22 @@ function generate(files, {moduleName = 'module', publicOnly = false, output} = {
     const input = path.join(temporary, 'legacy.json');
     fs.writeFileSync(input, JSON.stringify(rawFunctions));
     const parsed = new RuntimeInfoParser(input).parse();
-    const text = emit(buildAst(new TypescriptDeclarationBuilder().build(parsed, moduleName)));
+    if (memberPaths.size && hasDirectRoot) {
+      for (const [functionId, entry] of memberPaths) {
+        parsed[functionId].requiredModule = '';
+        parsed[functionId].isExported = false;
+        diagnostics.push({code: 'UNSUPPORTED_PUBLIC_EXPORT_PATH', functionId, message: `Callable-root member paths ${entry.paths.map(route => route.join('.')).join(', ')} require a callable/namespace identity policy`});
+      }
+    }
+    if (memberPaths.size && !hasDirectRoot && hasLegacyTarget) diagnostics.push({code: 'MIXED_PUBLIC_BOUNDARY_UNSUPPORTED',
+      message: 'Historical required-module entries lack export paths and are withheld from path-aware object declarations'});
+    if (publicOnly && memberPaths.size && publicIdentities.size > 1) diagnostics.push({code: 'INCOMPATIBLE_PUBLIC_EVIDENCE_PROVENANCE',
+      message: 'Path-aware public evidence from different package/version/module boundaries cannot be merged'});
+    let text;
+    if (publicOnly && memberPaths.size && publicIdentities.size > 1) text = '';
+    else if (memberPaths.size && !hasDirectRoot) text = buildPublicObject(parsed, memberPaths, moduleName, diagnostics);
+    else text = emit(buildAst(new TypescriptDeclarationBuilder().build(parsed, moduleName)));
+    if (!text && observations.length) diagnostics.push({code: 'NO_SUPPORTED_DECLARATIONS', message: 'Selected public runtime evidence had no supported declaration shape'});
     const declarationFile = path.join(temporary, 'index.d.ts');
     fs.writeFileSync(declarationFile, text);
     const compiler = ts.createProgram([declarationFile], {strict: true, noEmit: true, types: []});

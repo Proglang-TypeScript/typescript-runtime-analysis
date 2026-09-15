@@ -1,0 +1,17 @@
+# Line A object-member declaration extension
+
+## Supported boundary
+
+The public-only generator now translates own-data-property paths from `commonjs-own-descriptor-v1` into a `declare const Module: { ... }; export = Module;` declaration. Independent aliases and nested object routes receive separate member signatures, even when they point to one re-exported source function. The recovered interaction builder still infers each signature; only export identity and declaration assembly are new. Direct callable roots continue through the legacy builder. The emitter sorts paths and deduplicates matching signatures across evidence runs. It validates the result with the pinned TypeScript compiler.
+
+This is intentionally narrow. Member signatures are emitted only when the builder provides a compiler-supported keyword, literal, union or array type without dependent interfaces/classes. Constructor-valued members, callable-root static paths, inaccessible getters/symbols/prototypes, colliding object/callable shapes and conflicting source bindings are abstentions with diagnostics, not silently flattened declarations. Historical raw metadata mixed with a path-aware object is explicitly flagged and withheld. Path-aware generation also abstains if package, version, repository, commit, configured public module or boundary policy differ across traces. A selected public trace with no supported declaration receives `NO_SUPPORTED_DECLARATIONS`. An absent declaration is not evidence that an API does not exist.
+
+## First-party validation
+
+`experiments/line-a-object/` is a checked-in development fixture: `module.js` re-exports `implementation.calculate` as `calculate`, `alias` and `nested.calculate`; a README client calls the first route; a package-test client calls the other two and an unrelated `privateHelper`. The test traces both clients independently, merges their public-only evidence, checks all three property names in the generated declaration, and typechecks an accepted and rejected client against both the generated result and a hand-authored fixture reference. This validates path preservation and basic client behavior; the fixture reference is not an independently reviewed real-package oracle.
+
+Run focused validation with `node --test tests/public-exports.test.cjs`. `npm run build`, `npm test` and `npm run smoke` exercise the maintained pipeline. `npm run experiment` rewrites tracked synthetic results and should not be used merely to validate this branch.
+
+## Next empirical step
+
+A fixed-version development package pilot is **not** represented by this fixture. Curate packages across at least two test frameworks, preserve exact npm tarball integrity, repository commits, dependency locks/runtime image digests, README and test hashes, and version-matched, independently human-reviewed reference declarations. Use isolated offline execution; record eligibility, public-boundary exclusions, failures and both eligible/all-selected denominators before comparing README-only, tests-only, unfiltered union and filtered union. Generator identity checks do not replace source/tarball, reference or runtime-image verification. Report signature recall/precision and client checks by package; do not treat invocations as independent statistical samples or tune on later held-out evaluation packages. The protocol and first-two-week plan are in [research-directions.md](research-directions.md).
