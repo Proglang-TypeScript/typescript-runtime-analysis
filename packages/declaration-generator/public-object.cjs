@@ -21,7 +21,14 @@ function buildPublicObject(parsed, memberPaths, moduleName, diagnostics) {
       diagnostics.push({code: 'UNSUPPORTED_MEMBER_SIGNATURE', functionId, message: 'Constructor-valued object member requires a constructor identity policy'});
       continue;
     }
-    const declaration = new TypescriptDeclarationBuilder().build({[functionId]: info}, moduleName);
+    let declaration;
+    try {
+      declaration = new TypescriptDeclarationBuilder().build({[functionId]: info}, moduleName);
+    } catch (error) {
+      diagnostics.push({code: 'MEMBER_SIGNATURE_INFERENCE_FAILED', functionId,
+        message: String(error?.message || error).slice(0, 200)});
+      continue;
+    }
     const signatures = declaration.functions || [];
     if (!signatures.length || declaration.interfaces?.length || declaration.classes?.length ||
         signatures.some(signature => !supportedType(signature.returnType) || signature.parameters?.some(parameter => !supportedType(parameter.type)))) {

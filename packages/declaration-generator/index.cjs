@@ -31,6 +31,7 @@ function generate(files, {moduleName = 'module', publicOnly = false, output} = {
     message: `Observed types: ${[...types].sort().join(', ')}`, reason: 'Legacy merge heuristics retained; union may lose correlations'});
   const rawFunctions = {};
   const memberPaths = new Map();
+  const unfilteredPaths = new Map();
   let hasDirectRoot = false;
   let hasLegacyTarget = false;
   const seen = new Set();
@@ -56,12 +57,17 @@ function generate(files, {moduleName = 'module', publicOnly = false, output} = {
         continue;
       }
       const renamed = rename(container);
-      if (publicOnly && paths && !paths.some(path => path.length === 0)) {
+      if (!publicOnly) {
+        renamed.requiredModule = `./${moduleName}`;
+        renamed.isExported = false;
+        if (paths?.length && !paths.some(path => path.length === 0)) memberPaths.set(renamed.functionId, {paths, sourceLocation: container.sourceLocation});
+        else if (!paths?.length) unfilteredPaths.set(renamed.functionId, {paths: [[container.functionName || 'anonymous']], sourceLocation: container.sourceLocation});
+      } else if (paths && !paths.some(path => path.length === 0)) {
         renamed.requiredModule = `./${moduleName}`;
         renamed.isExported = false;
         memberPaths.set(renamed.functionId, {paths, sourceLocation: container.sourceLocation});
       }
-      if (publicOnly && paths?.some(path => path.length === 0)) {
+      if (paths?.some(path => path.length === 0)) {
         hasDirectRoot = true;
         renamed.requiredModule = `./${moduleName}`;
         renamed.isExported = true;
@@ -71,6 +77,11 @@ function generate(files, {moduleName = 'module', publicOnly = false, output} = {
   });
   const temporary = fs.mkdtempSync(path.join(os.tmpdir(), 'tra-generate-'));
   try {
+    if (!publicOnly && memberPaths.size && !hasDirectRoot) {
+      for (const [functionId, entry] of unfilteredPaths) memberPaths.set(functionId, entry);
+      diagnostics.push({code: 'UNFILTERED_INTERNAL_API_APPROXIMATION',
+        message: 'Functions without verified export paths are represented by source function names for the unfiltered contamination baseline'});
+    }
     const input = path.join(temporary, 'legacy.json');
     fs.writeFileSync(input, JSON.stringify(rawFunctions));
     const parsed = new RuntimeInfoParser(input).parse();

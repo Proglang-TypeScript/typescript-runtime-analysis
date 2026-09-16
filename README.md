@@ -1,6 +1,6 @@
 # TypeScript runtime analysis
 
-Line A development: [public-export boundary audit](docs/line-a-public-export-audit.md) and [object-member declaration extension](docs/line-a-object-member-extension.md).
+Line A development: [public-export boundary audit](docs/line-a-public-export-audit.md), [object-member declaration extension](docs/line-a-object-member-extension.md), and [two-package development pilot](docs/line-a-two-package-pilot.md).
 
 Recovered Proglang-TypeScript runtime callbacks and declaration inference, a repaired declaration comparator, versioned JSON observations, multi-source evidence, passive relational synthesis and active polarity-directed sealing/refinement scaffolds. Original pattern analysis remains available as a reference workflow.
 

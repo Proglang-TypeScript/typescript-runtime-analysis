@@ -1,0 +1,14 @@
+{
+  "ms": {
+    "ms-valid-string.ts": true,
+    "ms-valid-number.ts": true,
+    "ms-invalid-result.ts": false,
+    "ms-contamination.ts": false
+  },
+  "qs": {
+    "qs-valid-parse.ts": true,
+    "qs-valid-stringify.ts": true,
+    "qs-invalid-result.ts": false,
+    "qs-contamination.ts": false
+  }
+}

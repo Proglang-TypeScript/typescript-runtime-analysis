@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "module": "qs",
+  "text": "declare const Module: {\n    \"combine\"(a: string | any[], b: string | any[], arrayLimit: number, plainObjects: boolean, throwOnLimitExceeded: boolean): any[];\n    \"compactQueue\"(queue: any[]): void;\n    \"formats\": {\n        \"formatters\": {\n            \"RFC3986\": {\n                \"proxyMethod\"(value: string): string;\n            };\n            \"RFC3986%%PROXY_METHOD%%\"(value: string): string;\n        };\n    };\n    \"indices\"(prefix: string, key: string): string;\n    \"isNonNullishPrimitive\"(v: string | object | any[]): boolean;\n    \"isOverflow\"(obj: string | object | any[]): boolean;\n    \"normalizeParseOptions\"(opts?: undefined): object;\n    \"parse\"(str: string, opts?: undefined): object;\n    \"parseQueryStringKeys\"(givenKey: string, val: string | any[], options: object, valuesParsed: boolean): object;\n};\nexport = Module;\n",
+  "provenance": [
+    {
+      "package": "qs",
+      "version": "6.15.3",
+      "repository": "https://github.com/ljharb/qs.git",
+      "commit": "18d085e919dae70c8f1b200ab99323058edab2c2",
+      "evidence": "test",
+      "entryPoint": ".tra-test.js",
+      "publicModule": "./",
+      "publicBoundary": "commonjs-own-descriptor-v1",
+      "backend": "jalangi2",
+      "backendVersion": "bc879287b1678de6e3c423f5debe63207559525b",
+      "executionId": "123b31ee55d9be513ec101fe"
+    }
+  ],
+  "diagnostics": [
+    {
+      "code": "CONFLICTING_PUBLIC_EXPORT_BINDING",
+      "message": "Different source functions observed at anonymous"
+    },
+    {
+      "code": "EVIDENCE_CONFLICT",
+      "functionId": "lib/parse.js:169:19::parameter:1",
+      "message": "Observed types: array, string",
+      "reason": "Legacy merge heuristics retained; union may lose correlations"
+    },
+    {
+      "code": "EVIDENCE_CONFLICT",
+      "functionId": "lib/parse.js:314:17:parseQueryStringKeys:parameter:1",
+      "message": "Observed types: array, string",
+      "reason": "Legacy merge heuristics retained; union may lose correlations"
+    },
+    {
+      "code": "EVIDENCE_CONFLICT",
+      "functionId": "lib/stringify.js:208:33:normalizeStringifyOptions:parameter:0",
+      "message": "Observed types: object, undefined",
+      "reason": "Legacy merge heuristics retained; union may lose correlations"
+    },
+    {
+      "code": "EVIDENCE_CONFLICT",
+      "functionId": "lib/stringify.js:282:18:stringify:parameter:1",
+      "message": "Observed types: object, undefined",
+      "reason": "Legacy merge heuristics retained; union may lose correlations"
+    },
+    {
+      "code": "EVIDENCE_CONFLICT",
+      "functionId": "lib/stringify.js:55:29:isNonNullishPrimitive:parameter:0",
+      "message": "Observed types: array, object, string",
+      "reason": "Legacy merge heuristics retained; union may lose correlations"
+    },
+    {
+      "code": "EVIDENCE_CONFLICT",
+      "functionId": "lib/stringify.js:65:17:stringify:parameter:0",
+      "message": "Observed types: array, object, string",
+      "reason": "Legacy merge heuristics retained; union may lose correlations"
+    },
+    {
+      "code": "EVIDENCE_CONFLICT",
+      "functionId": "lib/stringify.js:65:17:stringify:parameter:10",
+      "message": "Observed types: null, undefined",
+      "reason": "Legacy merge heuristics retained; union may lose correlations"
+    },
+    {
+      "code": "EVIDENCE_CONFLICT",
+      "functionId": "lib/utils.js:19:18:isOverflow:parameter:0",
+      "message": "Observed types: array, object, string",
+      "reason": "Legacy merge heuristics retained; union may lose correlations"
+    },
+    {
+      "code": "EVIDENCE_CONFLICT",
+      "functionId": "lib/utils.js:327:16:isBuffer:parameter:0",
+      "message": "Observed types: array, object",
+      "reason": "Legacy merge heuristics retained; union may lose correlations"
+    },
+    {
+      "code": "EVIDENCE_CONFLICT",
+      "functionId": "lib/utils.js:335:15:combine:parameter:0",
+      "message": "Observed types: array, string",
+      "reason": "Legacy merge heuristics retained; union may lose correlations"
+    },
+    {
+      "code": "EVIDENCE_CONFLICT",
+      "functionId": "lib/utils.js:335:15:combine:parameter:1",
+      "message": "Observed types: array, string",
+      "reason": "Legacy merge heuristics retained; union may lose correlations"
+    },
+    {
+      "code": "EVIDENCE_CONFLICT",
+      "functionId": "lib/utils.js:70:19:setProperty:parameter:2",
+      "message": "Observed types: array, object",
+      "reason": "Legacy merge heuristics retained; union may lose correlations"
+    },
+    {
+      "code": "MEMBER_SIGNATURE_INFERENCE_FAILED",
+      "functionId": "123b31ee55d9be513ec101fe_functionId_109",
+      "message": "Maximum call stack size exceeded"
+    },
+    {
+      "code": "UNFILTERED_INTERNAL_API_APPROXIMATION",
+      "message": "Functions without verified export paths are represented by source function names for the unfiltered contamination baseline"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "123b31ee55d9be513ec101fe_functionId_103",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "123b31ee55d9be513ec101fe_functionId_105",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "123b31ee55d9be513ec101fe_functionId_117",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "123b31ee55d9be513ec101fe_functionId_17",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "123b31ee55d9be513ec101fe_functionId_21",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "123b31ee55d9be513ec101fe_functionId_29",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "123b31ee55d9be513ec101fe_functionId_37",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "123b31ee55d9be513ec101fe_functionId_41",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "123b31ee55d9be513ec101fe_functionId_51",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "123b31ee55d9be513ec101fe_functionId_55",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "123b31ee55d9be513ec101fe_functionId_63",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "123b31ee55d9be513ec101fe_functionId_67",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "123b31ee55d9be513ec101fe_functionId_69",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "123b31ee55d9be513ec101fe_functionId_75",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "123b31ee55d9be513ec101fe_functionId_97",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    }
+  ]
+}

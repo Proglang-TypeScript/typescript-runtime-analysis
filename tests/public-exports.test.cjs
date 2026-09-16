@@ -7,12 +7,28 @@ const ts = require('typescript');
 const {collectPublicExports, matchesPublicModule} = require('../packages/runtime-tracer/public-exports.cjs');
 const {trace} = require('../packages/runtime-tracer/index.cjs');
 const {generate} = require('../packages/declaration-generator/index.cjs');
+const {buildPublicObject} = require('../packages/declaration-generator/public-object.cjs');
 
 test('public module matching is exact, not any successful require', () => {
   assert.equal(matchesPublicModule('./module', 'module'), true);
   assert.equal(matchesPublicModule('module', 'module'), false);
   assert.equal(matchesPublicModule('./module.js', 'module'), true);
+  assert.equal(matchesPublicModule('./', './'), true);
+  assert.equal(matchesPublicModule('../', '../'), true);
+  assert.equal(matchesPublicModule('./module.js', './module'), true);
+  assert.equal(matchesPublicModule('./internal', './'), false);
   for (const name of ['./internal', './nested/module', '../module', 'other-module', null]) assert.equal(matchesPublicModule(name, 'module'), false);
+});
+
+test('object-member assembly abstains when legacy signature inference fails', () => {
+  const info = new Proxy({isConstructor: false, requiredModule: './module'}, {get(target, key) {
+    if (key === 'returnTypeOfs') throw new RangeError('synthetic inference depth');
+    return target[key];
+  }});
+  const diagnostics = [];
+  const text = buildPublicObject({fn: info}, new Map([['fn', {paths: [['bad']], sourceLocation: {file: 'fixture.js', line: 1, column: 1}}]]), 'module', diagnostics);
+  assert.equal(text, '');
+  assert.ok(diagnostics.some(item => item.code === 'MEMBER_SIGNATURE_INFERENCE_FAILED' && item.message.includes('synthetic inference depth')));
 });
 
 test('descriptor inventory retains aliases and nonenumerable own paths without evaluating getters or prototypes', () => {
@@ -91,6 +107,10 @@ test('checked-in object fixture preserves re-exported paths across README/test e
   assert.match(generated.text, /"nested": \{/);
   assert.ok(generated.diagnostics.some(item => item.code === 'FILTERED_INTERNAL_API'));
   assert.ok(!generated.diagnostics.some(item => item.code === 'CONFLICTING_PUBLIC_EXPORT_BINDING'));
+  const unfiltered = generate(files, {moduleName: 'module', publicOnly: false});
+  assert.match(unfiltered.text, /"alias"\(value: number\): number/);
+  assert.match(unfiltered.text, /"privateHelper"\(value: number\): number/);
+  assert.ok(unfiltered.diagnostics.some(item => item.code === 'UNFILTERED_INTERNAL_API_APPROXIMATION'));
   assert.match(generate(files, {moduleName: 'api', publicOnly: true}).text, /"alias"\(value: number\): number/);
   const mismatched = path.join(directory, 'mismatched.trace.json');
   trace(path.join(fixture, 'test.js'), {targetRoot: fixture, publicModule: 'module', output: mismatched,

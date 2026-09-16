@@ -35,6 +35,9 @@ function collectPublicExports(root, getFunctionId, {maxDepth = 4, maxProperties 
 }
 function matchesPublicModule(request, publicModule) {
   if (typeof request !== 'string' || typeof publicModule !== 'string' || !publicModule) return false;
+  if (publicModule.startsWith('.')) return request === publicModule ||
+    publicModule.endsWith('.js') && request === publicModule.slice(0, -3) ||
+    request.endsWith('.js') && request.slice(0, -3) === publicModule;
   const normalized = publicModule.replace(/^\.\//, '').replace(/\.js$/, '');
   return request === './' + normalized || request === './' + normalized + '.js';
 }

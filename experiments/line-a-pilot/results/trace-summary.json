@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "runs": [
+    {
+      "package": "ms",
+      "evidence": "README",
+      "executionId": "fad9e88f628b78f43889e727",
+      "observations": 48,
+      "publicObservations": 22,
+      "functions": 5,
+      "publicFunctions": 1,
+      "exportedFunctionEntries": 1,
+      "exclusions": {
+        "prototype-members-not-direct-exports": 1
+      },
+      "durationLimitMs": 30000
+    },
+    {
+      "package": "ms",
+      "evidence": "test",
+      "executionId": "24fda2f785a47b6759e4595d",
+      "observations": 49,
+      "publicObservations": 22,
+      "functions": 5,
+      "publicFunctions": 1,
+      "exportedFunctionEntries": 1,
+      "exclusions": {
+        "prototype-members-not-direct-exports": 1
+      },
+      "durationLimitMs": 30000
+    },
+    {
+      "package": "qs",
+      "evidence": "README",
+      "executionId": "e5c40c9bfa783af99e2c7c26",
+      "observations": 349,
+      "publicObservations": 24,
+      "functions": 24,
+      "publicFunctions": 3,
+      "exportedFunctionEntries": 5,
+      "exclusions": {
+        "export-depth-budget": 1,
+        "prototype-members-not-direct-exports": 5
+      },
+      "durationLimitMs": 30000
+    },
+    {
+      "package": "qs",
+      "evidence": "test",
+      "executionId": "123b31ee55d9be513ec101fe",
+      "observations": 727,
+      "publicObservations": 43,
+      "functions": 27,
+      "publicFunctions": 3,
+      "exportedFunctionEntries": 5,
+      "exclusions": {
+        "export-depth-budget": 1,
+        "prototype-members-not-direct-exports": 5
+      },
+      "durationLimitMs": 30000
+    }
+  ]
+}

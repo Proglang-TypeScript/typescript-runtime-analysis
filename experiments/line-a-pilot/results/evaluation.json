@@ -1,0 +1,531 @@
+{
+  "schemaVersion": 1,
+  "metric": "provisional-callable-path-v1",
+  "packages": [
+    {
+      "package": "ms",
+      "referenceCallablePaths": {
+        "": 2
+      },
+      "configurations": [
+        {
+          "configuration": "reference-candidate",
+          "callablePaths": {
+            "": 2
+          },
+          "pathScore": {
+            "expectedPaths": 1,
+            "generatedPaths": 1,
+            "matchedPaths": 1,
+            "recall": 1,
+            "precision": 1
+          },
+          "clientChecks": {
+            "ms-valid-string.ts": {
+              "expected": true,
+              "pass": true,
+              "errors": [],
+              "correct": true
+            },
+            "ms-valid-number.ts": {
+              "expected": true,
+              "pass": true,
+              "errors": [],
+              "correct": true
+            },
+            "ms-invalid-result.ts": {
+              "expected": false,
+              "pass": false,
+              "errors": [
+                "Type 'number' is not assignable to type 'string'."
+              ],
+              "correct": true
+            },
+            "ms-contamination.ts": {
+              "expected": false,
+              "pass": false,
+              "errors": [
+                "Property 'parse' does not exist on type '{ (value: number, options?: { long: boolean; } | undefined): string; (value: StringValue): number; }'."
+              ],
+              "correct": true
+            }
+          },
+          "clientScore": {
+            "correct": 4,
+            "total": 4
+          }
+        },
+        {
+          "configuration": "README-only",
+          "callablePaths": {
+            "": 2,
+            "fmtLong": 1,
+            "fmtShort": 1,
+            "parse": 1,
+            "plural": 1
+          },
+          "pathScore": {
+            "expectedPaths": 1,
+            "generatedPaths": 5,
+            "matchedPaths": 1,
+            "recall": 1,
+            "precision": 0.2
+          },
+          "clientChecks": {
+            "ms-valid-string.ts": {
+              "expected": true,
+              "pass": true,
+              "errors": [],
+              "correct": true
+            },
+            "ms-valid-number.ts": {
+              "expected": true,
+              "pass": true,
+              "errors": [],
+              "correct": true
+            },
+            "ms-invalid-result.ts": {
+              "expected": false,
+              "pass": false,
+              "errors": [
+                "Type 'number' is not assignable to type 'string'."
+              ],
+              "correct": true
+            },
+            "ms-contamination.ts": {
+              "expected": false,
+              "pass": true,
+              "errors": [],
+              "correct": false
+            }
+          },
+          "clientScore": {
+            "correct": 3,
+            "total": 4
+          }
+        },
+        {
+          "configuration": "tests-only",
+          "callablePaths": {
+            "": 2,
+            "fmtLong": 1,
+            "fmtShort": 1,
+            "parse": 1,
+            "plural": 1
+          },
+          "pathScore": {
+            "expectedPaths": 1,
+            "generatedPaths": 5,
+            "matchedPaths": 1,
+            "recall": 1,
+            "precision": 0.2
+          },
+          "clientChecks": {
+            "ms-valid-string.ts": {
+              "expected": true,
+              "pass": true,
+              "errors": [],
+              "correct": true
+            },
+            "ms-valid-number.ts": {
+              "expected": true,
+              "pass": true,
+              "errors": [],
+              "correct": true
+            },
+            "ms-invalid-result.ts": {
+              "expected": false,
+              "pass": false,
+              "errors": [
+                "Type 'number' is not assignable to type 'string'."
+              ],
+              "correct": true
+            },
+            "ms-contamination.ts": {
+              "expected": false,
+              "pass": true,
+              "errors": [],
+              "correct": false
+            }
+          },
+          "clientScore": {
+            "correct": 3,
+            "total": 4
+          }
+        },
+        {
+          "configuration": "union",
+          "callablePaths": {
+            "": 2,
+            "fmtLong": 1,
+            "fmtShort": 1,
+            "parse": 1,
+            "plural": 1
+          },
+          "pathScore": {
+            "expectedPaths": 1,
+            "generatedPaths": 5,
+            "matchedPaths": 1,
+            "recall": 1,
+            "precision": 0.2
+          },
+          "clientChecks": {
+            "ms-valid-string.ts": {
+              "expected": true,
+              "pass": true,
+              "errors": [],
+              "correct": true
+            },
+            "ms-valid-number.ts": {
+              "expected": true,
+              "pass": true,
+              "errors": [],
+              "correct": true
+            },
+            "ms-invalid-result.ts": {
+              "expected": false,
+              "pass": false,
+              "errors": [
+                "Type 'number' is not assignable to type 'string'."
+              ],
+              "correct": true
+            },
+            "ms-contamination.ts": {
+              "expected": false,
+              "pass": true,
+              "errors": [],
+              "correct": false
+            }
+          },
+          "clientScore": {
+            "correct": 3,
+            "total": 4
+          }
+        },
+        {
+          "configuration": "filtered-union",
+          "callablePaths": {
+            "": 2
+          },
+          "pathScore": {
+            "expectedPaths": 1,
+            "generatedPaths": 1,
+            "matchedPaths": 1,
+            "recall": 1,
+            "precision": 1
+          },
+          "clientChecks": {
+            "ms-valid-string.ts": {
+              "expected": true,
+              "pass": true,
+              "errors": [],
+              "correct": true
+            },
+            "ms-valid-number.ts": {
+              "expected": true,
+              "pass": true,
+              "errors": [],
+              "correct": true
+            },
+            "ms-invalid-result.ts": {
+              "expected": false,
+              "pass": false,
+              "errors": [
+                "Type 'number' is not assignable to type 'string'."
+              ],
+              "correct": true
+            },
+            "ms-contamination.ts": {
+              "expected": false,
+              "pass": false,
+              "errors": [
+                "Property 'parse' does not exist on type '{ (val: string, options?: undefined): number; (val: number, options?: I__options | I__options__1 | undefined): string; }'."
+              ],
+              "correct": true
+            }
+          },
+          "clientScore": {
+            "correct": 4,
+            "total": 4
+          }
+        }
+      ]
+    },
+    {
+      "package": "qs",
+      "referenceCallablePaths": {
+        "parse": 2,
+        "stringify": 1
+      },
+      "configurations": [
+        {
+          "configuration": "reference-candidate",
+          "callablePaths": {
+            "parse": 2,
+            "stringify": 1
+          },
+          "pathScore": {
+            "expectedPaths": 2,
+            "generatedPaths": 2,
+            "matchedPaths": 2,
+            "recall": 1,
+            "precision": 1
+          },
+          "clientChecks": {
+            "qs-valid-parse.ts": {
+              "expected": true,
+              "pass": true,
+              "errors": [],
+              "correct": true
+            },
+            "qs-valid-stringify.ts": {
+              "expected": true,
+              "pass": true,
+              "errors": [],
+              "correct": true
+            },
+            "qs-invalid-result.ts": {
+              "expected": false,
+              "pass": false,
+              "errors": [
+                "Type 'ParsedQs' is not assignable to type 'string'."
+              ],
+              "correct": true
+            },
+            "qs-contamination.ts": {
+              "expected": false,
+              "pass": false,
+              "errors": [
+                "Property 'compactQueue' does not exist on type 'typeof QueryString'."
+              ],
+              "correct": true
+            }
+          },
+          "clientScore": {
+            "correct": 4,
+            "total": 4
+          }
+        },
+        {
+          "configuration": "README-only",
+          "callablePaths": {
+            "compactQueue": 1,
+            "formats.formatters.RFC3986.proxyMethod": 1,
+            "formats.formatters.RFC3986%%PROXY_METHOD%%": 1,
+            "isNonNullishPrimitive": 1,
+            "isOverflow": 1,
+            "normalizeParseOptions": 1,
+            "normalizeStringifyOptions": 1,
+            "parse": 1,
+            "parseQueryStringKeys": 1
+          },
+          "pathScore": {
+            "expectedPaths": 2,
+            "generatedPaths": 9,
+            "matchedPaths": 1,
+            "recall": 0.5,
+            "precision": 0.1111111111111111
+          },
+          "clientChecks": {
+            "qs-valid-parse.ts": {
+              "expected": true,
+              "pass": true,
+              "errors": [],
+              "correct": true
+            },
+            "qs-valid-stringify.ts": {
+              "expected": true,
+              "pass": false,
+              "errors": [
+                "Property 'stringify' does not exist on type '{ compactQueue(queue: any[]): void; formats: { formatters: { RFC3986: { proxyMethod(value: string): string; }; \"RFC3986%%PROXY_METHOD%%\"(value: string): string; }; }; isNonNullishPrimitive(v: string): boolean; ... 4 more ...; parseQueryStringKeys(givenKey: string, val: string, options: object, valuesParsed: boolean)...'."
+              ],
+              "correct": false
+            },
+            "qs-invalid-result.ts": {
+              "expected": false,
+              "pass": false,
+              "errors": [
+                "Type 'object' is not assignable to type 'string'."
+              ],
+              "correct": true
+            },
+            "qs-contamination.ts": {
+              "expected": false,
+              "pass": true,
+              "errors": [],
+              "correct": false
+            }
+          },
+          "clientScore": {
+            "correct": 2,
+            "total": 4
+          }
+        },
+        {
+          "configuration": "tests-only",
+          "callablePaths": {
+            "combine": 1,
+            "compactQueue": 1,
+            "formats.formatters.RFC3986.proxyMethod": 1,
+            "formats.formatters.RFC3986%%PROXY_METHOD%%": 1,
+            "indices": 1,
+            "isNonNullishPrimitive": 1,
+            "isOverflow": 1,
+            "normalizeParseOptions": 1,
+            "parse": 1,
+            "parseQueryStringKeys": 1
+          },
+          "pathScore": {
+            "expectedPaths": 2,
+            "generatedPaths": 10,
+            "matchedPaths": 1,
+            "recall": 0.5,
+            "precision": 0.1
+          },
+          "clientChecks": {
+            "qs-valid-parse.ts": {
+              "expected": true,
+              "pass": true,
+              "errors": [],
+              "correct": true
+            },
+            "qs-valid-stringify.ts": {
+              "expected": true,
+              "pass": false,
+              "errors": [
+                "Property 'stringify' does not exist on type '{ combine(a: string | any[], b: string | any[], arrayLimit: number, plainObjects: boolean, throwOnLimitExceeded: boolean): any[]; compactQueue(queue: any[]): void; formats: { formatters: { ...; }; }; ... 5 more ...; parseQueryStringKeys(givenKey: string, val: string | any[], options: object, valuesParsed: boolean): ...'."
+              ],
+              "correct": false
+            },
+            "qs-invalid-result.ts": {
+              "expected": false,
+              "pass": false,
+              "errors": [
+                "Type 'object' is not assignable to type 'string'."
+              ],
+              "correct": true
+            },
+            "qs-contamination.ts": {
+              "expected": false,
+              "pass": true,
+              "errors": [],
+              "correct": false
+            }
+          },
+          "clientScore": {
+            "correct": 2,
+            "total": 4
+          }
+        },
+        {
+          "configuration": "union",
+          "callablePaths": {
+            "combine": 1,
+            "compactQueue": 1,
+            "formats.formatters.RFC3986.proxyMethod": 1,
+            "formats.formatters.RFC3986%%PROXY_METHOD%%": 1,
+            "indices": 1,
+            "isNonNullishPrimitive": 2,
+            "isOverflow": 2,
+            "normalizeParseOptions": 1,
+            "normalizeStringifyOptions": 1,
+            "parse": 1,
+            "parseQueryStringKeys": 2
+          },
+          "pathScore": {
+            "expectedPaths": 2,
+            "generatedPaths": 11,
+            "matchedPaths": 1,
+            "recall": 0.5,
+            "precision": 0.09090909090909091
+          },
+          "clientChecks": {
+            "qs-valid-parse.ts": {
+              "expected": true,
+              "pass": true,
+              "errors": [],
+              "correct": true
+            },
+            "qs-valid-stringify.ts": {
+              "expected": true,
+              "pass": false,
+              "errors": [
+                "Property 'stringify' does not exist on type '{ combine(a: string | any[], b: string | any[], arrayLimit: number, plainObjects: boolean, throwOnLimitExceeded: boolean): any[]; compactQueue(queue: any[]): void; formats: { formatters: { ...; }; }; ... 6 more ...; parseQueryStringKeys(givenKey: string, val: string, options: object, valuesParsed: boolean): object; ...'."
+              ],
+              "correct": false
+            },
+            "qs-invalid-result.ts": {
+              "expected": false,
+              "pass": false,
+              "errors": [
+                "Type 'object' is not assignable to type 'string'."
+              ],
+              "correct": true
+            },
+            "qs-contamination.ts": {
+              "expected": false,
+              "pass": true,
+              "errors": [],
+              "correct": false
+            }
+          },
+          "clientScore": {
+            "correct": 2,
+            "total": 4
+          }
+        },
+        {
+          "configuration": "filtered-union",
+          "callablePaths": {
+            "formats.formatters.RFC3986.proxyMethod": 1,
+            "formats.formatters.RFC3986%%PROXY_METHOD%%": 1,
+            "parse": 1
+          },
+          "pathScore": {
+            "expectedPaths": 2,
+            "generatedPaths": 3,
+            "matchedPaths": 1,
+            "recall": 0.5,
+            "precision": 0.3333333333333333
+          },
+          "clientChecks": {
+            "qs-valid-parse.ts": {
+              "expected": true,
+              "pass": true,
+              "errors": [],
+              "correct": true
+            },
+            "qs-valid-stringify.ts": {
+              "expected": true,
+              "pass": false,
+              "errors": [
+                "Property 'stringify' does not exist on type '{ formats: { formatters: { RFC3986: { proxyMethod(value: string): string; }; \"RFC3986%%PROXY_METHOD%%\"(value: string): string; }; }; parse(str: string, opts?: undefined): object; }'."
+              ],
+              "correct": false
+            },
+            "qs-invalid-result.ts": {
+              "expected": false,
+              "pass": false,
+              "errors": [
+                "Type 'object' is not assignable to type 'string'."
+              ],
+              "correct": true
+            },
+            "qs-contamination.ts": {
+              "expected": false,
+              "pass": false,
+              "errors": [
+                "Property 'compactQueue' does not exist on type '{ formats: { formatters: { RFC3986: { proxyMethod(value: string): string; }; \"RFC3986%%PROXY_METHOD%%\"(value: string): string; }; }; parse(str: string, opts?: undefined): object; }'."
+              ],
+              "correct": true
+            }
+          },
+          "clientScore": {
+            "correct": 3,
+            "total": 4
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Two-package Line A development pilot; not evaluation data",
+  "selectedAt": "2026-09-15",
+  "runtimeImage": "node@sha256:2fe369e969550cde8e867afc3fe370b260140cab4a23d467074295b42163d553",
+  "toolCommitAtStart": "8752b4f8e63091f0625120282a8fc68729b882d1",
+  "definitelyTyped": {
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+    "commit": "455254aa7204192e7f7fbe50266d2313cefdf6c9",
+    "reviewStatus": "version-matched candidate references; independent pilot review pending"
+  },
+  "packages": [
+    {
+      "name": "ms",
+      "version": "2.1.3",
+      "moduleShape": "callable CommonJS root",
+      "declaredTestFramework": "mocha@4.0.1",
+      "repository": "https://github.com/vercel/ms.git",
+      "commit": "1c6264b795492e8fdecbc82cb8802fcfbfc08d26",
+      "npmTarball": "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz",
+      "npmIntegrity": "sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==",
+      "npmShasum": "574c8138ce1d2b5861f0b44579dbadd60c6615b2",
+      "sourceHashes": {
+        "package.json": "1a6b4d9739790c0b94ab96c8cc0507e281c164c311ff4fbf5e57fb8d26290b40",
+        "index.js": "e5f0b6a946a9b2b356a28557728410717df54ea2f599edb619f9839df6b7b0e9",
+        "readme.md": "8bf6c4f414b123ea2a9375b91982882d01d8561ce7d12e3bb4f448c23359f040",
+        "tests.js": "0f53ac6af9f789d05c724bcd09d2d01488381a199f5706348b40ffa927e55d4a",
+        "package-lock.json": "c305800a87029694ad8b9039c57255483565c97d8c849d279e931d3430ade669"
+      },
+      "entryHashes": {
+        "entries/ms-readme.js": "98c463a83469c399a9dc032bcf78e5a568b4c6dd26ccb6225c6cf588be05cb90",
+        "entries/ms-test.js": "cfc18d950d270c290fa776f07270ca4e810c86dabd311e46292b38be7b413120"
+      },
+      "entryProvenance": {
+        "README": "readme.md lines 10-13 and 27-36; package-name import normalized to relative package root",
+        "test": "tests.js lines 16-49 plus numeric/long-form cases; assertions removed, calls retained"
+      },
+      "reference": {
+        "path": "types/ms/index.d.ts",
+        "packageVersion": "2.1.9999",
+        "sha256": "fb893a0dfc3c9fb0f9ca93d0648694dd95f33cbad2c0f2c629f842981dfd4e2e"
+      }
+    },
+    {
+      "name": "qs",
+      "version": "6.15.3",
+      "moduleShape": "CommonJS object export",
+      "declaredTestFramework": "tape@5.10.2",
+      "repository": "https://github.com/ljharb/qs.git",
+      "commit": "18d085e919dae70c8f1b200ab99323058edab2c2",
+      "npmTarball": "https://registry.npmjs.org/qs/-/qs-6.15.3.tgz",
+      "npmIntegrity": "sha512-O9gl3zCl5h5blw1KGUzQKhA5oUXSl8rwUIM5o0S3nCXMliSvy5Dzx7/DJcI+SwgICv+IneSZwhBh1oSyEHA71A==",
+      "npmShasum": "76852132a58ed5c7c0ef67e4441b9bb5d6061b3b",
+      "sourceHashes": {
+        "package.json": "47477ed1243939a78ab502c3d1d10a3d0571c06f9c2dfa128d7c047dbb010bf4",
+        "lib/index.js": "8f4e02eef6ccc43f2b7448c18ae209281c8e9af9807cad491df67450e3817a95",
+        "README.md": "804c314dd16acf5eb4a3b2028dbd602934d122c3d919a4324d5a27cb7ed51c96",
+        "test/parse.js": "6455f34463f64d0ac19fc167febf4efc48acd8fbc01dc32eabbb212b7a140ba8",
+        "test/stringify.js": "ad849c14f3cc4c9a54eb7ba2d419f0f8929fd28247a2aa824fad75b4ce2053cc"
+      },
+      "dependencyPreparation": {
+        "sourceLock": "pre-existing npm package-lock containing the exact registry integrity",
+        "sourceLockSha256": "01768d8aa2650ab69ce1c00f31652f0b35c99c6fa47a0cc29949d109fe91288a",
+        "runtimeDependencyManifestAggregateSha256": "2cd1f4aca240ff11b938eeec7a61f06b5e5bf562aa40292d9c369e19589654f2",
+        "runtimeDependencyManifestHashMethod": "sha256 of sorted package-name, NUL, package.json-sha256 rows joined with LF and a final LF",
+        "lifecycleScriptsRun": false
+      },
+      "entryHashes": {
+        "entries/qs-readme.js": "8612d3d678d748a90540b3f4171552e9bbe63b70aa4413800079b5162d7aa21c",
+        "entries/qs-test.js": "3350dd3e413c595a5faf6fadd6ebb52136050c51a120e644dfe97ba1632d37be"
+      },
+      "entryProvenance": {
+        "README": "README.md lines 24-45; package-name import normalized to relative package root",
+        "test": "test/parse.js lines 25-35 and test/stringify.js lines 16-31; assertions removed, calls retained"
+      },
+      "reference": {
+        "path": "types/qs/index.d.ts",
+        "packageVersion": "6.15.9999",
+        "sha256": "93a3b8e57c68e348fc4054b245bd7cf4893225f56c991028844b693c2fa8c03c"
+      }
+    }
+  ]
+}

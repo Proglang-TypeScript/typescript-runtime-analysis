@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "module": "qs",
+  "text": "declare const Module: {\n    \"compactQueue\"(queue: any[]): void;\n    \"formats\": {\n        \"formatters\": {\n            \"RFC3986\": {\n                \"proxyMethod\"(value: string): string;\n            };\n            \"RFC3986%%PROXY_METHOD%%\"(value: string): string;\n        };\n    };\n    \"isNonNullishPrimitive\"(v: string): boolean;\n    \"isOverflow\"(obj: object): boolean;\n    \"normalizeParseOptions\"(opts?: undefined): object;\n    \"normalizeStringifyOptions\"(opts?: undefined): object;\n    \"parse\"(str: string, opts?: undefined): object;\n    \"parseQueryStringKeys\"(givenKey: string, val: string, options: object, valuesParsed: boolean): object;\n};\nexport = Module;\n",
+  "provenance": [
+    {
+      "package": "qs",
+      "version": "6.15.3",
+      "repository": "https://github.com/ljharb/qs.git",
+      "commit": "18d085e919dae70c8f1b200ab99323058edab2c2",
+      "evidence": "README",
+      "entryPoint": ".tra-readme.js",
+      "publicModule": "./",
+      "publicBoundary": "commonjs-own-descriptor-v1",
+      "backend": "jalangi2",
+      "backendVersion": "bc879287b1678de6e3c423f5debe63207559525b",
+      "executionId": "e5c40c9bfa783af99e2c7c26"
+    }
+  ],
+  "diagnostics": [
+    {
+      "code": "CONFLICTING_PUBLIC_EXPORT_BINDING",
+      "message": "Different source functions observed at anonymous"
+    },
+    {
+      "code": "EVIDENCE_CONFLICT",
+      "functionId": "lib/utils.js:70:19:setProperty:parameter:2",
+      "message": "Observed types: object, string",
+      "reason": "Legacy merge heuristics retained; union may lose correlations"
+    },
+    {
+      "code": "MEMBER_SIGNATURE_INFERENCE_FAILED",
+      "functionId": "e5c40c9bfa783af99e2c7c26_functionId_95",
+      "message": "Maximum call stack size exceeded"
+    },
+    {
+      "code": "UNFILTERED_INTERNAL_API_APPROXIMATION",
+      "message": "Functions without verified export paths are represented by source function names for the unfiltered contamination baseline"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "e5c40c9bfa783af99e2c7c26_functionId_17",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "e5c40c9bfa783af99e2c7c26_functionId_21",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "e5c40c9bfa783af99e2c7c26_functionId_29",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "e5c40c9bfa783af99e2c7c26_functionId_37",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "e5c40c9bfa783af99e2c7c26_functionId_41",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "e5c40c9bfa783af99e2c7c26_functionId_51",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "e5c40c9bfa783af99e2c7c26_functionId_53",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "e5c40c9bfa783af99e2c7c26_functionId_61",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "e5c40c9bfa783af99e2c7c26_functionId_65",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "e5c40c9bfa783af99e2c7c26_functionId_67",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "e5c40c9bfa783af99e2c7c26_functionId_73",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "e5c40c9bfa783af99e2c7c26_functionId_81",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    },
+    {
+      "code": "UNSUPPORTED_MEMBER_SIGNATURE",
+      "functionId": "e5c40c9bfa783af99e2c7c26_functionId_91",
+      "message": "No supported keyword/literal/union/array signature without dependent interfaces or classes"
+    }
+  ]
+}
