@@ -24,6 +24,10 @@
         sandbox.patternObservations.push({operator: op, file: sourceMap.originalCodeFileName, line: sourceMap[iid][0], column: sourceMap[iid][1], leftType: sandbox.functions.getTypeOfForReporting(originalLeft), rightType: sandbox.functions.getTypeOfForReporting(originalRight)});
       }
 
+      if (sandbox.transparentTracing) {
+        return {op: op, left: left, right: right, skip: false};
+      }
+
       const typeCoercion = dis.operatorsTypeCoercionAnalyzer.analyzeTypeCoercion(
         op,
         originalLeft,
