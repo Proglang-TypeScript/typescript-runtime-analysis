@@ -46,10 +46,10 @@ const { produceMessage } = require('../../utils/kafka');
       }
 
       if (typeof val == 'function') {
-        val.declarationEnclosingFunctionId = getDeclarationEnclosingFunctionId(
-          dis.functionsExecutionStack,
-        );
-        val.isInstrumented = true;
+        Object.defineProperty(val, 'declarationEnclosingFunctionId', {
+          value: getDeclarationEnclosingFunctionId(dis.functionsExecutionStack), writable: true, configurable: true,
+        });
+        Object.defineProperty(val, 'isInstrumented', {value: true, writable: true, configurable: true});
 
         dis.metadataStore.set(val, 'declarationTraceId', dis.objectTraceIdMap.get(val));
       }
