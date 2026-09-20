@@ -71,3 +71,18 @@ test('runtime collection fails explicitly when its observation limit is reached'
     assert.equal(fs.existsSync(path.join(temporary, 'trace.json')), false);
   } finally { fs.rmSync(temporary, {recursive: true, force: true}); }
 });
+
+test('bounded collection can finish while recording deterministic later samples', () => {
+  const {trace} = require('../packages/runtime-tracer/index.cjs');
+  const fixture = path.resolve(__dirname, '../experiments/fixtures/client.js');
+  const temporary = fs.mkdtempSync(path.join(os.tmpdir(), 'tra-truncate-test-'));
+  const output = path.join(temporary, 'trace.json');
+  try {
+    trace(fixture, {targetRoot: path.dirname(fixture), output, trustedFixture: true, maxObservations: 1, truncateObservations: true, sampleEvery: 2});
+    const execution = JSON.parse(fs.readFileSync(`${output}.execution.json`, 'utf8'));
+    assert.equal(execution.observationBudget.limit, 1);
+    assert.equal(execution.observationBudget.truncated, true);
+    assert.ok(execution.observationBudget.dropped > 0);
+    assert.ok(execution.observationBudget.retained > 1);
+  } finally { fs.rmSync(temporary, {recursive: true, force: true}); }
+});

@@ -16,7 +16,8 @@ try {
       package: option('package', 'fixture'), version: option('version', '0.0.0-fixture'), evidence: option('evidence', 'fixture'),
       publicModule: option('module', 'module'), repository: option('repository'), commit: option('commit'), trustedFixture: args.includes('--trusted-fixture'),
       captureInvocations: args.includes('--invocations'), timeout: positiveIntegerOption('timeout-ms', 30000),
-      maxObservations: positiveIntegerOption('max-observations', 100000), instrumentPaths: jsonOption('instrument-paths'), transparent: args.includes('--transparent')});
+      maxObservations: positiveIntegerOption('max-observations', 100000), instrumentPaths: jsonOption('instrument-paths'), transparent: args.includes('--transparent'),
+      truncateObservations: args.includes('--truncate-observations'), sampleEvery: positiveIntegerOption('sample-every', 1000)});
   } else if (command === 'generate') {
     const files = args.filter((argument, index) => !argument.startsWith('--') && (index === 0 || !args[index - 1].startsWith('--')));
     require('../declaration-generator/index.cjs').generate(files, {moduleName: option('module', 'module'), output: option('out', 'index.d.ts'), publicOnly: args.includes('--public-only')});

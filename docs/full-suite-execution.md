@@ -2,6 +2,8 @@
 
 The full-suite workflow separates dependency preparation from external-code execution. Preparation is the only networked stage: it copies the exact package source, installs development dependencies from a verified lock without lifecycle scripts, writes a deterministic Mocha or Tape harness, and records hashes. Execution mounts that prepared tree read-only in the pinned Node 24 container with networking disabled, bounded CPU, memory, processes, temporary storage, observations and wall time. Every selected test executes unchanged; instrumentation is limited to the small root-loading harness and package implementation, so assertion/framework internals do not become provider evidence or dominate the execution budget. These profiles also enable transparent tracing: argument and result values are observed but never replaced with wrapper objects or proxies, preserving strict equality, native-class and cyclic-object behavior in the authoritative upstream tests.
 
+Full suites retain observations up to the profile budget and then keep deterministic periodic samples, rather than terminating the tests on repetitive workloads. `trace.json.execution.json` records the limit, total events seen, retained and dropped counts, sampling interval and whether truncation occurred. Treat a truncated trace as broad suite coverage rather than exhaustive event-frequency evidence.
+
 Use exact source checkouts for the two development profiles:
 
 ```sh

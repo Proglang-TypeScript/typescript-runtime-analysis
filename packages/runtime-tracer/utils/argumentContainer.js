@@ -13,7 +13,7 @@ const { produceMessage } = require('./kafka');
     this.interactions = [];
 
     this.addInteraction = function (interaction) {
-      sandbox.recordObservation();
+      if (!sandbox.recordObservation()) return false;
       this.interactions.push(interaction);
 
       const message = {
@@ -25,6 +25,7 @@ const { produceMessage } = require('./kafka');
       };
       
       produceMessage(message)?.catch((err) => console.log(err));
+      return true;
     };
 
 

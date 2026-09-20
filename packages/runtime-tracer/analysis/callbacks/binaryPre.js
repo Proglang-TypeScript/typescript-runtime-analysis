@@ -19,8 +19,7 @@
       const originalLeft = dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(left);
       const originalRight = dis.wrapperObjectsHandler.getFinalRealObjectFromProxy(right);
       const sourceMap = sandbox.smap && sandbox.smap[sandbox.sid];
-      if (sourceMap && sourceMap[iid]) {
-        sandbox.recordObservation();
+      if (sourceMap && sourceMap[iid] && sandbox.recordObservation()) {
         sandbox.patternObservations = sandbox.patternObservations || [];
         sandbox.patternObservations.push({operator: op, file: sourceMap.originalCodeFileName, line: sourceMap[iid][0], column: sourceMap[iid][1], leftType: sandbox.functions.getTypeOfForReporting(originalLeft), rightType: sandbox.functions.getTypeOfForReporting(originalRight)});
       }

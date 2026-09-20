@@ -39,12 +39,13 @@ function trace(entry, options) {
       cwd: temporary, env: {PATH: process.env.PATH, KAFKA_ENABLED: 'false', TRACE_WORK_DIR: temporary, TRACE_RAW_OUTPUT: rawFile,
         TRACE_TARGET_ROOT: targetRoot, TRACE_MAX_OBSERVATIONS: String(options.maxObservations || 100000),
         ...(options.transparent ? {TRACE_TRANSPARENT: '1'} : {}),
+        ...(options.truncateObservations ? {TRACE_TRUNCATE_OBSERVATIONS: '1', TRACE_SAMPLE_EVERY: String(options.sampleEvery || 1000)} : {}),
         ...(options.instrumentPaths ? {TRACE_INSTRUMENT_PATHS: JSON.stringify(options.instrumentPaths)} : {}),
         ...(options.captureInvocations ? {TRACE_INVOCATIONS_OUTPUT: invocationFile} : {})},
       timeout: options.timeout || 30000, maxBuffer: 8 * 1024 * 1024, encoding: 'utf8',
     });
     if (result.error || result.status !== 0) {
-      const output = [result.stderr, result.stdout].filter(Boolean).join('\n').trim();
+      const output = [result.stdout, result.stderr].filter(Boolean).join('\n').trim();
       const detail = result.error?.message || output.slice(-16000) || `process exited ${result.status}`;
       throw new Error(`Instrumentation/execution failed: ${detail}`);
     }
@@ -100,7 +101,8 @@ function trace(entry, options) {
     fs.writeFileSync(options.output, JSON.stringify(envelope, null, 2) + '\n');
     fs.writeFileSync(`${options.output}.raw.json`, JSON.stringify(raw, null, 2) + '\n');
     fs.writeFileSync(`${options.output}.execution.json`, JSON.stringify({node: process.version, stdout: result.stdout,
-      durationLimitMs: options.timeout || 30000, instrumentPaths: options.instrumentPaths || null, transparent: options.transparent === true}, null, 2) + '\n');
+      durationLimitMs: options.timeout || 30000, instrumentPaths: options.instrumentPaths || null, transparent: options.transparent === true,
+      observationBudget: raw.observationBudget || null}, null, 2) + '\n');
     if (invocationTrace) fs.writeFileSync(`${options.output}.invocations.json`, JSON.stringify(invocationTrace, null, 2) + '\n');
     return envelope;
   } finally {

@@ -32,6 +32,12 @@ function loadProfile(name, file = DEFAULT_PROFILES) {
   for (const field of ['timeoutMs', 'maxObservations']) {
     if (!Number.isSafeInteger(profile[field]) || profile[field] <= 0) throw new Error(`Profile ${name} has invalid ${field}`);
   }
+  if (profile.truncateObservations !== undefined && typeof profile.truncateObservations !== 'boolean') {
+    throw new Error(`Profile ${name} has invalid truncateObservations mode`);
+  }
+  if (profile.truncateObservations && (!Number.isSafeInteger(profile.sampleEvery) || profile.sampleEvery <= 0)) {
+    throw new Error(`Profile ${name} has invalid sampleEvery`);
+  }
   return {...profile, profile: name, image: profile.image || catalog.runtimeImage};
 }
 
