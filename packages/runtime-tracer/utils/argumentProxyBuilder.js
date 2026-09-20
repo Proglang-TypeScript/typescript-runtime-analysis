@@ -66,6 +66,10 @@
           f[key] = origMethod[key];
         }
       }
+      ['functionId', 'declarationEnclosingFunctionId', 'isInstrumented'].forEach(function (key) {
+        const descriptor = Object.getOwnPropertyDescriptor(origMethod, key);
+        if (descriptor) Object.defineProperty(f, key, descriptor);
+      });
 
       return f;
     }
