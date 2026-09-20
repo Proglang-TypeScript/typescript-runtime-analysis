@@ -2,13 +2,11 @@
 
 'use strict';
 
-const { nanoid } = require('nanoid');
-
 (function (sandbox) {
   function Interaction() {
     this.code = null;
     this.traceId = null;
-    this.interactionId = nanoid();
+    this.interactionId = sandbox.newTraceId('interaction');
   }
 
   if (sandbox.utils === undefined) {
