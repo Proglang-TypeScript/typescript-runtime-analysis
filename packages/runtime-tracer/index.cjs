@@ -42,7 +42,11 @@ function trace(entry, options) {
         ...(options.captureInvocations ? {TRACE_INVOCATIONS_OUTPUT: invocationFile} : {})},
       timeout: options.timeout || 30000, maxBuffer: 8 * 1024 * 1024, encoding: 'utf8',
     });
-    if (result.error || result.status !== 0) throw new Error(`Instrumentation/execution failed: ${result.error?.message || result.stderr}`);
+    if (result.error || result.status !== 0) {
+      const output = [result.stderr, result.stdout].filter(Boolean).join('\n').trim();
+      const detail = result.error?.message || output.slice(-16000) || `process exited ${result.status}`;
+      throw new Error(`Instrumentation/execution failed: ${detail}`);
+    }
     if (!fs.existsSync(rawFile)) throw new Error('Tracer produced no raw runtime information');
     const raw = JSON.parse(fs.readFileSync(rawFile, 'utf8'));
     const executionId = crypto.createHash('sha256').update(JSON.stringify({entry: path.relative(targetRoot, entry), package: options.package,
