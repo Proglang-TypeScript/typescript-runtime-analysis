@@ -3,12 +3,19 @@ const fs = require('node:fs');
 const path = require('node:path');
 const [command, ...args] = process.argv.slice(2);
 const option = (name, fallback) => {const index = args.indexOf(`--${name}`); return index < 0 ? fallback : args[index + 1];};
+const positiveIntegerOption = (name, fallback) => {
+  const value = Number(option(name, String(fallback)));
+  if (!Number.isSafeInteger(value) || value <= 0) throw new Error(`--${name} must be a positive integer`);
+  return value;
+};
 const read = file => JSON.parse(fs.readFileSync(file, 'utf8'));
 try {
   if (command === 'trace') {
     require('../runtime-tracer/index.cjs').trace(args[0], {targetRoot: option('target-root'), output: option('out', 'trace.json'),
       package: option('package', 'fixture'), version: option('version', '0.0.0-fixture'), evidence: option('evidence', 'fixture'),
-      publicModule: option('module', 'module'), repository: option('repository'), commit: option('commit'), trustedFixture: args.includes('--trusted-fixture'), captureInvocations: args.includes('--invocations')});
+      publicModule: option('module', 'module'), repository: option('repository'), commit: option('commit'), trustedFixture: args.includes('--trusted-fixture'),
+      captureInvocations: args.includes('--invocations'), timeout: positiveIntegerOption('timeout-ms', 30000),
+      maxObservations: positiveIntegerOption('max-observations', 100000)});
   } else if (command === 'generate') {
     const files = args.filter((argument, index) => !argument.startsWith('--') && (index === 0 || !args[index - 1].startsWith('--')));
     require('../declaration-generator/index.cjs').generate(files, {moduleName: option('module', 'module'), output: option('out', 'index.d.ts'), publicOnly: args.includes('--public-only')});

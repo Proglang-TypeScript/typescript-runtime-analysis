@@ -1,0 +1,19 @@
+# Reproducible full-suite execution
+
+The full-suite workflow separates dependency preparation from external-code execution. Preparation is the only networked stage: it copies the exact package source, installs development dependencies from a verified lock without lifecycle scripts, writes a deterministic Mocha or Tape harness, and records hashes. Execution mounts that prepared tree read-only in the pinned Node 24 container with networking disabled, bounded CPU, memory, processes, temporary storage, observations and wall time.
+
+Use exact source checkouts for the two development profiles:
+
+```sh
+node scripts/prepare-full-suite.cjs /path/to/ms work/full-suite/ms ms-2.1.3
+node scripts/run-full-suite-isolated.cjs work/full-suite/ms work/full-suite-runs/ms ms-2.1.3
+
+node scripts/prepare-full-suite.cjs /path/to/qs work/full-suite/qs qs-6.15.3
+node scripts/run-full-suite-isolated.cjs work/full-suite/qs work/full-suite-runs/qs qs-6.15.3
+```
+
+`ms@2.1.3` uses its committed npm lock and runs every test in `tests.js` through `mocha@4.0.1`. `qs@6.15.3` has no source lock, so preparation generates one from exact runtime dependencies plus every external module imported by `test/**/*.js`, requires its reviewed SHA-256, and then performs `npm ci`. This avoids unrelated lint, documentation and release tooling, including Git dependencies absent from the pinned slim image, without omitting any Tape test dependency. Tape is invoked directly rather than through `nyc`, because coverage rewriting is not part of runtime-signature evidence. Do not use `npm test` for `qs`: its pre/post hooks add lint, README generation and a networked audit outside the test suite.
+
+For Line B invocation tuples, add `--invocations` to the execution command. The output includes the trace sidecars, `full-suite.json`, preparation record, generated harness and exact package lock. These compact provenance files can be retained without checking in the package checkout or `node_modules`.
+
+Preparation deliberately fails if the destination already exists, source hashes differ, the package/version is wrong, or the resulting lock differs from the profile. Execution likewise refuses to overwrite a result directory and fails if prepared tests, harness or lock changed, if the framework is missing, if tests fail, or if a resource bound is reached. Remove or choose a new ignored `work/full-suite` directory explicitly when a new preparation or run is intended.
