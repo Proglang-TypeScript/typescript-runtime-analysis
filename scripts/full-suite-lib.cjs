@@ -20,6 +20,9 @@ function loadProfile(name, file = DEFAULT_PROFILES) {
   if (!Array.isArray(profile.instrumentPaths) || profile.instrumentPaths.length === 0) {
     throw new Error(`Profile ${name} has no instrumentation paths`);
   }
+  if (profile.transparent !== undefined && typeof profile.transparent !== 'boolean') {
+    throw new Error(`Profile ${name} has invalid transparent mode`);
+  }
   if (!profile.lock || !['source', 'generate'].includes(profile.lock.mode) || !/^[a-f0-9]{64}$/.test(profile.lock.sha256)) {
     throw new Error(`Profile ${name} has an invalid lock policy`);
   }

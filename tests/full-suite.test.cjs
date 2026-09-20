@@ -13,8 +13,10 @@ test('full-suite profiles pin the Mocha and Tape packages', () => {
   assert.equal(ms.framework, 'mocha');
   assert.deepEqual(ms.tests, ['tests.js']);
   assert.deepEqual(ms.instrumentPaths, ['.tra-full-suite.cjs', 'index.js']);
+  assert.equal(ms.transparent, true);
   assert.equal(qs.framework, 'tape');
   assert.deepEqual(qs.tests, ['test/**/*.js']);
+  assert.equal(qs.transparent, true);
   assert.match(ms.image, /^node@sha256:/);
   assert.match(qs.lock.sha256, /^[a-f0-9]{64}$/);
 });
@@ -73,6 +75,7 @@ test('instrumented function boundaries do not stack proxies', () => {
     return new Proxy(value, {get: (target, property) => property === 'IS_WRAPPER_OBJECT' ? true : property === 'TARGET_PROXY' ? target : target[property]});
   }};
   const sandbox = {
+    transparentTracing: false,
     functions: {getTypeOf: value => value === null ? 'null' : typeof value},
     utils: {argumentProxyBuilder: proxyBuilder, argumentWrapperObjectBuilder: {buildFromString: value => value, buildFromNumber: value => value, buildFromUndefined: value => value, buildFromNull: value => value}}
   };
@@ -81,4 +84,21 @@ test('instrumented function boundaries do not stack proxies', () => {
   assert.equal(sandbox.utils.wrapperObjectsHandler.convertToWrapperObject(wrapped), wrapped);
   assert.equal(sandbox.utils.wrapperObjectsHandler.convertToWrapperObject(Buffer.from('value')) instanceof Buffer, true);
   assert.equal(proxyCount, 1);
+});
+
+test('transparent tracing never substitutes package values', () => {
+  let proxyCount = 0;
+  const sandbox = {
+    transparentTracing: true,
+    functions: {getTypeOf: value => value === null ? 'null' : typeof value},
+    utils: {
+      argumentProxyBuilder: {buildProxy: value => { proxyCount++; return new Proxy(value, {}); }},
+      argumentWrapperObjectBuilder: {buildFromString: value => Object(value), buildFromNumber: value => Object(value), buildFromUndefined: value => value, buildFromNull: value => value}
+    }
+  };
+  vm.runInNewContext(fs.readFileSync(path.resolve(__dirname, '../packages/runtime-tracer/utils/wrapperObjectsHandler.js'), 'utf8'), {J$: sandbox, Object});
+  const record = {value: 1};
+  assert.equal(sandbox.utils.wrapperObjectsHandler.convertToWrapperObject(record), record);
+  assert.equal(sandbox.utils.wrapperObjectsHandler.convertToWrapperObject('value'), 'value');
+  assert.equal(proxyCount, 0);
 });
