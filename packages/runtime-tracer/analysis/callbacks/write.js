@@ -14,6 +14,7 @@
     var dis = this;
 
     this.callback = function (iid, name, val) {
+      if (sandbox.transparentTracing) return {result: val};
       addDeclarationFunctionIdToFunctionsInsideObject(val, dis.functionsExecutionStack);
 
       return {

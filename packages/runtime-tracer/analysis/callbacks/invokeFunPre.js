@@ -25,6 +25,7 @@ const { produceMessage } = require('../../utils/kafka');
 
     this.callback = function (iid, f, base, args, isConstructor, isMethod, functionIid) {
       args = Array.prototype.slice.call(args);
+      if (sandbox.transparentTracing) return {f: f, base: base, args: args, skip: f === undefined};
       if (f !== undefined && !isConsoleLog(f) && f.name !== 'require') {
         if (!f.temporaryTraceId) {
           f.temporaryTraceId = dis.functionsExecutionStack.getTraceId();

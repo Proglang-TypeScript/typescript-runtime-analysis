@@ -20,6 +20,7 @@
     var dis = this;
 
     this.callback = function (iid, base, offset, val, isComputed, isOpAssign) {
+      if (sandbox.transparentTracing) return {base: base, offset: offset, val: val, skip: false};
       val = addDeclarationEnclosingFunctionId(val);
 
       var interaction = getPutFieldInteracion(iid, base, offset, val, isComputed, isOpAssign);
