@@ -25,7 +25,7 @@ const { nanoid } = require('nanoid');
         },
       };
       
-      produceMessage(message).catch((err) => console.log(err));
+      produceMessage(message)?.catch((err) => console.log(err));
     };
 
 

@@ -61,7 +61,7 @@ const {collectPublicExports, matchesPublicModule} = require('../../public-export
           };
   
           // eslint-disable-next-line no-console
-          produceMessage(message).catch((err) => console.log(err));
+          produceMessage(message)?.catch((err) => console.log(err));
 
         }
 
