@@ -41,7 +41,7 @@ const { produceMessage } = require('../../utils/kafka');
             dis.metadataStore.get(f, 'declarationTraceId'),
           );
 
-          if (functionContainer.isConstructor === true) {
+          if (!sandbox.transparentTracing && functionContainer.isConstructor === true) {
             iterateObjectProperties(result, function (key, obj) {
               const value = obj[key];
 

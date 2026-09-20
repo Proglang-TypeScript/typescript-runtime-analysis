@@ -16,6 +16,7 @@
     var dis = this;
 
     this.callback = function (iid, result) {
+      if (sandbox.transparentTracing) return {result: result};
       let newResult = result;
 
       if (dis.wrapperObjectsHandler.objectIsWrapperObject(result)) {
