@@ -3,6 +3,7 @@ const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
 const test = require('node:test');
+const vm = require('node:vm');
 const {harness, loadProfile, testAggregate, testFiles} = require('../scripts/full-suite-lib.cjs');
 const {normalizedIncludes, shouldInstrument} = require('../packages/runtime-tracer/instrumentation-filter.cjs');
 
@@ -52,4 +53,15 @@ test('full-suite filtering instruments the harness and provider but not tests or
   assert.equal(shouldInstrument(path.join(root, 'lib', 'parse.js'), root, includes), true);
   assert.equal(shouldInstrument(path.join(root, 'test', 'parse.js'), root, includes), false);
   assert.equal(shouldInstrument(path.join(root, 'node_modules', 'tape', 'index.js'), root, includes), false);
+});
+
+test('repeated calls append argument observations without copying accumulated history', () => {
+  const sandbox = {utils: {}, functions: {getTypeOfForReporting: value => typeof value}};
+  vm.runInNewContext(fs.readFileSync(path.resolve(__dirname, '../packages/runtime-tracer/utils/functionContainer.js'), 'utf8'), {J$: sandbox});
+  const container = new sandbox.utils.FunctionContainer({functionId: 'function-1', name: 'parse'});
+  const first = {interactions: [{kind: 'first'}]};
+  const second = {interactions: [{kind: 'second'}]};
+  assert.equal(container.addArgumentContainer(0, first), first);
+  assert.equal(container.addArgumentContainer(0, second), first);
+  assert.deepEqual(first.interactions.map(interaction => interaction.kind), ['first', 'second']);
 });
