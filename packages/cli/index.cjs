@@ -8,6 +8,7 @@ const positiveIntegerOption = (name, fallback) => {
   if (!Number.isSafeInteger(value) || value <= 0) throw new Error(`--${name} must be a positive integer`);
   return value;
 };
+const jsonOption = name => { const value = option(name); return value === undefined ? undefined : JSON.parse(value); };
 const read = file => JSON.parse(fs.readFileSync(file, 'utf8'));
 try {
   if (command === 'trace') {
@@ -15,7 +16,7 @@ try {
       package: option('package', 'fixture'), version: option('version', '0.0.0-fixture'), evidence: option('evidence', 'fixture'),
       publicModule: option('module', 'module'), repository: option('repository'), commit: option('commit'), trustedFixture: args.includes('--trusted-fixture'),
       captureInvocations: args.includes('--invocations'), timeout: positiveIntegerOption('timeout-ms', 30000),
-      maxObservations: positiveIntegerOption('max-observations', 100000)});
+      maxObservations: positiveIntegerOption('max-observations', 100000), instrumentPaths: jsonOption('instrument-paths')});
   } else if (command === 'generate') {
     const files = args.filter((argument, index) => !argument.startsWith('--') && (index === 0 || !args[index - 1].startsWith('--')));
     require('../declaration-generator/index.cjs').generate(files, {moduleName: option('module', 'module'), output: option('out', 'index.d.ts'), publicOnly: args.includes('--public-only')});

@@ -17,6 +17,9 @@ function loadProfile(name, file = DEFAULT_PROFILES) {
   if (!profile) throw new Error(`Unknown full-suite profile: ${name}`);
   if (!['mocha', 'tape'].includes(profile.framework)) throw new Error(`Unsupported test framework: ${profile.framework}`);
   if (!Array.isArray(profile.tests) || profile.tests.length === 0) throw new Error(`Profile ${name} has no test patterns`);
+  if (!Array.isArray(profile.instrumentPaths) || profile.instrumentPaths.length === 0) {
+    throw new Error(`Profile ${name} has no instrumentation paths`);
+  }
   if (!profile.lock || !['source', 'generate'].includes(profile.lock.mode) || !/^[a-f0-9]{64}$/.test(profile.lock.sha256)) {
     throw new Error(`Profile ${name} has an invalid lock policy`);
   }
@@ -56,12 +59,13 @@ function harness(framework, files) {
   const selected = JSON.stringify(files);
   if (framework === 'mocha') return `'use strict';
 const path = require('node:path');
+require('./');
 const Mocha = require('/input/node_modules/mocha');
 const mocha = new Mocha({color: false, reporter: 'spec'});
 for (const file of ${selected}) mocha.addFile(path.join('/input', file));
 mocha.run(failures => { process.exitCode = failures ? 1 : 0; });
 `;
-  if (framework === 'tape') return `'use strict';\n${files.map(file => `require(${JSON.stringify(`/input/${file}`)});`).join('\n')}\n`;
+  if (framework === 'tape') return `'use strict';\nrequire('./');\n${files.map(file => `require(${JSON.stringify(`/input/${file}`)});`).join('\n')}\n`;
   throw new Error(`Unsupported test framework: ${framework}`);
 }
 
