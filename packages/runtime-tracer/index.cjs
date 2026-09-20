@@ -39,6 +39,7 @@ function trace(entry, options) {
       cwd: temporary, env: {PATH: process.env.PATH, KAFKA_ENABLED: 'false', TRACE_WORK_DIR: temporary, TRACE_RAW_OUTPUT: rawFile,
         TRACE_TARGET_ROOT: targetRoot, TRACE_PUBLIC_MODULE: options.publicModule || 'module',
         TRACE_MAX_OBSERVATIONS: String(options.maxObservations || 100000),
+        ...(options.transparent ? {TRACE_TRANSPARENT: '1'} : {}),
         ...(options.instrumentPaths ? {TRACE_INSTRUMENT_PATHS: JSON.stringify(options.instrumentPaths)} : {}),
         ...(options.captureInvocations ? {TRACE_INVOCATIONS_OUTPUT: invocationFile} : {})},
       timeout: options.timeout || 30000, maxBuffer: 8 * 1024 * 1024, encoding: 'utf8',
@@ -102,7 +103,7 @@ function trace(entry, options) {
     fs.writeFileSync(`${options.output}.raw.json`, JSON.stringify(raw, null, 2) + '\n');
     fs.writeFileSync(`${options.output}.public-exports.json`, JSON.stringify({schemaVersion: 1, provenance, ...raw.publicExports, entries: Object.entries(raw.publicExports.pathsByFunctionId).map(([rawFunctionId, paths]) => ({rawFunctionId, paths, functionName: raw.functions[rawFunctionId]?.functionName || null, source: raw.functions[rawFunctionId]?.sourceLocation || null}))}, null, 2) + '\n');
     fs.writeFileSync(`${options.output}.execution.json`, JSON.stringify({node: process.version, stdout: result.stdout,
-      durationLimitMs: options.timeout || 30000, instrumentPaths: options.instrumentPaths || null}, null, 2) + '\n');
+      durationLimitMs: options.timeout || 30000, instrumentPaths: options.instrumentPaths || null, transparent: options.transparent === true}, null, 2) + '\n');
     if (invocationTrace) fs.writeFileSync(`${options.output}.invocations.json`, JSON.stringify(invocationTrace, null, 2) + '\n');
     return envelope;
   } finally {

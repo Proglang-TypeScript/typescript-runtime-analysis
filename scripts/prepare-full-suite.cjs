@@ -69,6 +69,7 @@ try {
     commit: profile.commit,
     framework: profile.framework,
     instrumentPaths: profile.instrumentPaths,
+    transparent: profile.transparent === true,
     tests: selected,
     testsSha256: testAggregate(temporary, selected),
     packageJsonSha256: sha256(path.join(temporary, 'package.json')),
