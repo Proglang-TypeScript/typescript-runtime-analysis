@@ -4,12 +4,14 @@ const os = require('node:os');
 const path = require('node:path');
 const test = require('node:test');
 const {harness, loadProfile, testAggregate, testFiles} = require('../scripts/full-suite-lib.cjs');
+const {normalizedIncludes, shouldInstrument} = require('../packages/runtime-tracer/instrumentation-filter.cjs');
 
 test('full-suite profiles pin the Mocha and Tape packages', () => {
   const ms = loadProfile('ms-2.1.3');
   const qs = loadProfile('qs-6.15.3');
   assert.equal(ms.framework, 'mocha');
   assert.deepEqual(ms.tests, ['tests.js']);
+  assert.deepEqual(ms.instrumentPaths, ['.tra-full-suite.cjs', 'index.js']);
   assert.equal(qs.framework, 'tape');
   assert.deepEqual(qs.tests, ['test/**/*.js']);
   assert.match(ms.image, /^node@sha256:/);
@@ -41,4 +43,13 @@ test('framework harnesses load every selected test inside the isolated package',
   assert.match(tape, /require\("\/input\/test\/a\.js"\)/);
   assert.match(mocha, /test\/a\.js/);
   assert.match(tape, /test\/b\.js/);
+});
+
+test('full-suite filtering instruments the harness and provider but not tests or dependencies', () => {
+  const root = path.resolve('/input');
+  const includes = normalizedIncludes(['.tra-full-suite.cjs', 'lib/']);
+  assert.equal(shouldInstrument(path.join(root, '.tra-full-suite.cjs'), root, includes), true);
+  assert.equal(shouldInstrument(path.join(root, 'lib', 'parse.js'), root, includes), true);
+  assert.equal(shouldInstrument(path.join(root, 'test', 'parse.js'), root, includes), false);
+  assert.equal(shouldInstrument(path.join(root, 'node_modules', 'tape', 'index.js'), root, includes), false);
 });

@@ -36,7 +36,10 @@ function trace(entry, options) {
     const result = spawnSync(process.execPath, [path.join(__dirname, 'jalangi-command.cjs'), '--inlineSource', '--inlineIID',
       ...analyses.flatMap(file => ['--analysis', path.join(__dirname, file)]),
       ...(options.captureInvocations ? ['--analysis', path.join(__dirname, 'invocation-analysis.cjs')] : []), entry], {
-      cwd: temporary, env: {PATH: process.env.PATH, KAFKA_ENABLED: 'false', TRACE_WORK_DIR: temporary, TRACE_RAW_OUTPUT: rawFile, TRACE_TARGET_ROOT: targetRoot, TRACE_MAX_OBSERVATIONS: String(options.maxObservations || 100000), ...(options.captureInvocations ? {TRACE_INVOCATIONS_OUTPUT: invocationFile} : {})},
+      cwd: temporary, env: {PATH: process.env.PATH, KAFKA_ENABLED: 'false', TRACE_WORK_DIR: temporary, TRACE_RAW_OUTPUT: rawFile,
+        TRACE_TARGET_ROOT: targetRoot, TRACE_MAX_OBSERVATIONS: String(options.maxObservations || 100000),
+        ...(options.instrumentPaths ? {TRACE_INSTRUMENT_PATHS: JSON.stringify(options.instrumentPaths)} : {}),
+        ...(options.captureInvocations ? {TRACE_INVOCATIONS_OUTPUT: invocationFile} : {})},
       timeout: options.timeout || 30000, maxBuffer: 8 * 1024 * 1024, encoding: 'utf8',
     });
     if (result.error || result.status !== 0) throw new Error(`Instrumentation/execution failed: ${result.error?.message || result.stderr}`);
@@ -91,7 +94,8 @@ function trace(entry, options) {
     fs.mkdirSync(path.dirname(options.output), {recursive: true});
     fs.writeFileSync(options.output, JSON.stringify(envelope, null, 2) + '\n');
     fs.writeFileSync(`${options.output}.raw.json`, JSON.stringify(raw, null, 2) + '\n');
-    fs.writeFileSync(`${options.output}.execution.json`, JSON.stringify({node: process.version, stdout: result.stdout, durationLimitMs: options.timeout || 30000}, null, 2) + '\n');
+    fs.writeFileSync(`${options.output}.execution.json`, JSON.stringify({node: process.version, stdout: result.stdout,
+      durationLimitMs: options.timeout || 30000, instrumentPaths: options.instrumentPaths || null}, null, 2) + '\n');
     if (invocationTrace) fs.writeFileSync(`${options.output}.invocations.json`, JSON.stringify(invocationTrace, null, 2) + '\n');
     return envelope;
   } finally {

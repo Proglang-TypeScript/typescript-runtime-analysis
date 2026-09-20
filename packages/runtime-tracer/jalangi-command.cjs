@@ -75,6 +75,11 @@ var Module = require('module');
 var path = require('path');
 var fs = require('fs');
 var originalLoader = Module._extensions['.js'];
+var instrumentationFilter = require('./instrumentation-filter.cjs');
+var instrumentationRoot = process.env.TRACE_TARGET_ROOT && path.resolve(process.env.TRACE_TARGET_ROOT);
+var instrumentationPaths = instrumentationFilter.normalizedIncludes(
+  process.env.TRACE_INSTRUMENT_PATHS ? JSON.parse(process.env.TRACE_INSTRUMENT_PATHS) : undefined,
+);
 var FILESUFFIX1 = '_jalangi_';
 
 var blacklistedModules = [];
@@ -120,10 +125,7 @@ fs.writeFileSync(logFile, '');
 
 Module._extensions['.js'] = function (module, filename) {
   var code = fs.readFileSync(filename, 'utf8');
-  if (process.env.TRACE_TARGET_ROOT && !filename.startsWith(path.resolve(process.env.TRACE_TARGET_ROOT) + path.sep)) {
-    return originalLoader(module, filename);
-  }
-  if (filename.split(path.sep).includes('node_modules')) return originalLoader(module, filename);
+  if (instrumentationRoot && !instrumentationFilter.shouldInstrument(filename, instrumentationRoot, instrumentationPaths)) return originalLoader(module, filename);
   const ts = require('typescript');
   const transformed = ts.transpileModule(code, {fileName: filename, compilerOptions: {target: ts.ScriptTarget.ES5, module: ts.ModuleKind.CommonJS, sourceMap: true}});
   code = transformed.outputText;
