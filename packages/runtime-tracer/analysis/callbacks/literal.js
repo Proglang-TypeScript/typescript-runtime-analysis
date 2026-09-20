@@ -8,7 +8,7 @@
 
     this.callback = function (iid, val) {
       if (typeof val === 'function') {
-        val.isInstrumented = true;
+        Object.defineProperty(val, 'isInstrumented', {value: true, writable: true, configurable: true});
       }
 
       return {
