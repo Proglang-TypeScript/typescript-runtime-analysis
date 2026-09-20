@@ -83,8 +83,10 @@
         return dis.argumentWrapperObjectBuilder.buildFromNumber(originalValue);
       }
 
+      const prototype = originalValue && Object.getPrototypeOf(originalValue);
       if (
         getTypeOf(originalValue) == 'object' &&
+        (prototype === Object.prototype || prototype === null) &&
         // eslint-disable-next-line no-undef
         !(typeof Node === 'function' && originalValue instanceof Node)
       ) {
