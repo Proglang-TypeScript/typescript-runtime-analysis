@@ -10,7 +10,7 @@
 
     this.getFunctionId = function (f) {
       if (f[functionIdField] === undefined) {
-        f[functionIdField] = prefix + counter.toString();
+        Object.defineProperty(f, functionIdField, {value: prefix + counter.toString(), writable: true, configurable: true});
         counter += 2;
       }
 
