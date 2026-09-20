@@ -27,7 +27,7 @@ const { produceMessage } = require('../../utils/kafka');
 
         if (functionContainer) {
           var argumentContainer = buildArgumentContainer(argumentIndex, name, val);
-          functionContainer.addArgumentContainer(argumentIndex, argumentContainer);
+          argumentContainer = functionContainer.addArgumentContainer(argumentIndex, argumentContainer);
 
           const message = {
             command: 'add-argument-container',
