@@ -3,10 +3,7 @@ const { KAFKA_BROKER, KAFKA_TOPIC, KAFKA_CLIENT_ID_PRODUCER, KAFKA_ENABLED } = r
 
 let producer;
 
-const produceMessage = async (message) => {
-  if (!KAFKA_ENABLED) {
-    return;
-  }
+const sendMessage = async (message) => {
 
   if (!producer) {
     const { Kafka } = require('kafkajs');
@@ -22,6 +19,8 @@ const produceMessage = async (message) => {
   });
   await producer.disconnect();
 };
+
+const produceMessage = (message) => KAFKA_ENABLED ? sendMessage(message) : null;
 
 module.exports = {
   produceMessage,
