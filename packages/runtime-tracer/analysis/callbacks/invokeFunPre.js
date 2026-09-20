@@ -57,7 +57,7 @@ const { produceMessage } = require('../../utils/kafka');
           };
 
           // eslint-disable-next-line no-console
-          produceMessage(message).catch((err) => console.log(err));
+          produceMessage(message)?.catch((err) => console.log(err));
         }
       }
 
