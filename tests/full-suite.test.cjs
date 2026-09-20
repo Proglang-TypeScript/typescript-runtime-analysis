@@ -38,7 +38,7 @@ test('framework harnesses load every selected test inside the isolated package',
   const tape = harness('tape', files);
   assert.match(mocha, /node_modules\/mocha/);
   assert.match(mocha, /mocha\.run/);
-  assert.match(tape, /require\(path\.join\('\/input', file\)\)/);
+  assert.match(tape, /require\("\/input\/test\/a\.js"\)/);
   assert.match(mocha, /test\/a\.js/);
   assert.match(tape, /test\/b\.js/);
 });

@@ -61,10 +61,7 @@ const mocha = new Mocha({color: false, reporter: 'spec'});
 for (const file of ${selected}) mocha.addFile(path.join('/input', file));
 mocha.run(failures => { process.exitCode = failures ? 1 : 0; });
 `;
-  if (framework === 'tape') return `'use strict';
-const path = require('node:path');
-for (const file of ${selected}) require(path.join('/input', file));
-`;
+  if (framework === 'tape') return `'use strict';\n${files.map(file => `require(${JSON.stringify(`/input/${file}`)});`).join('\n')}\n`;
   throw new Error(`Unsupported test framework: ${framework}`);
 }
 
