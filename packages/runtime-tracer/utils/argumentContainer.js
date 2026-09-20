@@ -3,13 +3,12 @@
 'use strict';
 
 const { produceMessage } = require('./kafka');
-const { nanoid } = require('nanoid');
 
 (function (sandbox) {
   function ArgumentContainer(argumentIndex, name) {
     this.argumentIndex = argumentIndex;
     this.argumentName = name;
-    this.argumentId = nanoid();
+    this.argumentId = sandbox.newTraceId('argument');
 
     this.interactions = [];
 
