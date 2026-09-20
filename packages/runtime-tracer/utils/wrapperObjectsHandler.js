@@ -62,6 +62,10 @@
     };
 
     this.convertToWrapperObject = function (originalValue) {
+      if (this.objectIsWrapperObject(originalValue)) {
+        return originalValue;
+      }
+
       let newValue = originalValue;
 
       newValue = this.convertToWrapperObjectIfItIsALiteral(newValue);
