@@ -67,12 +67,18 @@ test('repeated calls append argument observations without copying accumulated hi
 });
 
 test('instrumented function boundaries do not stack proxies', () => {
-  const proxyBuilder = {buildProxy: value => new Proxy(value, {get: (target, property) => property === 'IS_WRAPPER_OBJECT' ? true : property === 'TARGET_PROXY' ? target : target[property]})};
+  let proxyCount = 0;
+  const proxyBuilder = {buildProxy: value => {
+    proxyCount++;
+    return new Proxy(value, {get: (target, property) => property === 'IS_WRAPPER_OBJECT' ? true : property === 'TARGET_PROXY' ? target : target[property]});
+  }};
   const sandbox = {
     functions: {getTypeOf: value => value === null ? 'null' : typeof value},
     utils: {argumentProxyBuilder: proxyBuilder, argumentWrapperObjectBuilder: {buildFromString: value => value, buildFromNumber: value => value, buildFromUndefined: value => value, buildFromNull: value => value}}
   };
-  vm.runInNewContext(fs.readFileSync(path.resolve(__dirname, '../packages/runtime-tracer/utils/wrapperObjectsHandler.js'), 'utf8'), {J$: sandbox});
+  vm.runInNewContext(fs.readFileSync(path.resolve(__dirname, '../packages/runtime-tracer/utils/wrapperObjectsHandler.js'), 'utf8'), {J$: sandbox, Object});
   const wrapped = sandbox.utils.wrapperObjectsHandler.convertToWrapperObject({value: 1});
   assert.equal(sandbox.utils.wrapperObjectsHandler.convertToWrapperObject(wrapped), wrapped);
+  assert.equal(sandbox.utils.wrapperObjectsHandler.convertToWrapperObject(Buffer.from('value')) instanceof Buffer, true);
+  assert.equal(proxyCount, 1);
 });
