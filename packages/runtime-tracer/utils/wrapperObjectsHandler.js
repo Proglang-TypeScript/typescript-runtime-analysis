@@ -62,6 +62,10 @@
     };
 
     this.convertToWrapperObject = function (originalValue) {
+      if (sandbox.transparentTracing) {
+        return originalValue;
+      }
+
       if (this.objectIsWrapperObject(originalValue)) {
         return originalValue;
       }
