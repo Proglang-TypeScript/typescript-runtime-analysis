@@ -15,7 +15,7 @@
 
     this.endExecution = function () {
       if (process.env.TRACE_RAW_OUTPUT) {
-        require('fs').writeFileSync(process.env.TRACE_RAW_OUTPUT, JSON.stringify({functions: sandbox.runTimeInfo, patterns: sandbox.patternObservations || [], sourceMaps: sandbox.traSourceMaps || {}}, null, 2));
+        require('fs').writeFileSync(process.env.TRACE_RAW_OUTPUT, JSON.stringify({functions: sandbox.runTimeInfo, patterns: sandbox.patternObservations || [], sourceMaps: sandbox.traSourceMaps || {}, observationBudget: sandbox.observationBudget}, null, 2));
         return;
       }
       // eslint-disable-next-line no-console

@@ -15,6 +15,8 @@
       "timeoutMs": 300000,
       "prepareTimeoutMs": 1200000,
       "maxObservations": 1000000,
+      "truncateObservations": true,
+      "sampleEvery": 1000,
       "lock": {
         "mode": "source",
         "sha256": "c305800a87029694ad8b9039c57255483565c97d8c849d279e931d3430ade669"
@@ -37,7 +39,9 @@
       "publicModule": "./",
       "timeoutMs": 900000,
       "prepareTimeoutMs": 1200000,
-      "maxObservations": 2000000,
+      "maxObservations": 250000,
+      "truncateObservations": true,
+      "sampleEvery": 1000,
       "lock": {
         "mode": "generate",
         "sha256": "6b4797fc5f5a5bec15106c87e8d35a9919c50a9f37da1bde7cc2f8a16f5baf96"

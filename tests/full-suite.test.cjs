@@ -17,6 +17,8 @@ test('full-suite profiles pin the Mocha and Tape packages', () => {
   assert.equal(qs.framework, 'tape');
   assert.deepEqual(qs.tests, ['test/**/*.js']);
   assert.equal(qs.transparent, true);
+  assert.equal(qs.truncateObservations, true);
+  assert.equal(qs.sampleEvery, 1000);
   assert.match(ms.image, /^node@sha256:/);
   assert.match(qs.lock.sha256, /^[a-f0-9]{64}$/);
 });
