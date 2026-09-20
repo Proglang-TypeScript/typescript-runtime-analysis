@@ -50,6 +50,8 @@ Prepare fixed-version package files and dependencies separately with install scr
 node scripts/run-isolated.cjs /path/to/package test-entry.js /path/to/run-output
 ```
 
+Complete Mocha/Tape package suites use a separate networked dependency-preparation step followed by an offline, read-only execution step. Exact `ms@2.1.3` and `qs@6.15.3` profiles, commands, bounds and retained provenance are documented in [full-suite execution](docs/full-suite-execution.md). Add `--invocations` during execution when Line B tuples are required.
+
 The runner uses Node 24, no network, a read-only root and source/tool mounts, one writable output mount, a 256 MB temporary filesystem, one CPU, 1 GB RAM, 128 processes, dropped capabilities and a 60-second timeout. It passes no host credentials or Docker socket into the container. Docker must be able to read the selected directories; this machine's Colima shares the home directory but macOS denies access to Documents, so use the adjacent repository under `/Users/thiemann/git/typescript`. This Colima configuration does not share `/tmp/colima`. Tests requiring network or additional services need a separately reviewed profile.
 
 CommonJS is supported. The original Jalangi backend remains: TypeScript downlevels target source to ES5 and source maps recover original positions. Modern arrow syntax is covered by a regression test. This does not establish support for all JavaScript semantics, async behavior, ESM, classes, native bindings, dynamic imports or getters. Source files and dependencies are never rewritten during tracing; dependencies are executed but not instrumented.
