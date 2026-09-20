@@ -26,11 +26,10 @@
       if (!(argumentIndex in this.args)) {
         this.args[argumentIndex] = argumentContainer;
       } else {
-        argumentContainer.interactions = this.args[argumentIndex].interactions.concat(
-          argumentContainer.interactions,
-        );
-        this.args[argumentIndex] = argumentContainer;
+        this.args[argumentIndex].interactions.push(...argumentContainer.interactions);
       }
+
+      return this.args[argumentIndex];
     };
 
     this.addReturnTypeOf = function (returnValue, traceId, declarationTraceId) {
