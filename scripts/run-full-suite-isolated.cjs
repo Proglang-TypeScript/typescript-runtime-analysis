@@ -43,7 +43,7 @@ const result = spawnSync(docker, ['run', '--rm', '--network=none', '--read-only'
   'node', '/tool/packages/cli/index.cjs', 'trace', '/input/.tra-full-suite.cjs', '--target-root', '/input', '--out', '/output/trace.json',
   '--package', profile.package, '--version', profile.version, '--evidence', 'test', '--module', profile.publicModule,
   '--repository', profile.repository, '--commit', profile.commit, '--timeout-ms', String(profile.timeoutMs),
-  '--max-observations', String(profile.maxObservations), ...invocationArgs],
+  '--max-observations', String(profile.maxObservations), '--instrument-paths', JSON.stringify(profile.instrumentPaths), ...invocationArgs],
 {stdio: 'inherit', timeout: profile.timeoutMs + 120000});
 const run = {
   schemaVersion: 1,
@@ -51,6 +51,7 @@ const run = {
   package: profile.package,
   version: profile.version,
   framework: profile.framework,
+  instrumentPaths: profile.instrumentPaths,
   tests: preparation.tests,
   testsSha256: preparation.testsSha256,
   packageLockSha256: preparation.packageLockSha256,

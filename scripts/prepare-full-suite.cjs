@@ -68,6 +68,7 @@ try {
     repository: profile.repository,
     commit: profile.commit,
     framework: profile.framework,
+    instrumentPaths: profile.instrumentPaths,
     tests: selected,
     testsSha256: testAggregate(temporary, selected),
     packageJsonSha256: sha256(path.join(temporary, 'package.json')),
