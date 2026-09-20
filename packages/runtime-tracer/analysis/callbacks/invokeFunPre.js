@@ -30,7 +30,7 @@ const { produceMessage } = require('../../utils/kafka');
           f.temporaryTraceId = dis.functionsExecutionStack.getTraceId();
         }
 
-        for (var argIndex in args) {
+        for (var argIndex = 0; argIndex < args.length; argIndex++) {
           addDeclarationEnclosingFunctionIdIfApplicable(args[argIndex]);
           addUsedAsArgumentInteractionIfApplicable(args[argIndex], f, argIndex);
 
