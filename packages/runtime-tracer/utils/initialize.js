@@ -11,9 +11,19 @@
     nextTraceId++;
     return prefix + '-' + nextTraceId;
   };
-  sandbox.observationCount = 0;
+  var observationLimit = Number(process.env.TRACE_MAX_OBSERVATIONS || 100000);
+  var truncateObservations = process.env.TRACE_TRUNCATE_OBSERVATIONS === '1';
+  var sampleEvery = Number(process.env.TRACE_SAMPLE_EVERY || 1000);
+  sandbox.observationBudget = {limit: observationLimit, seen: 0, retained: 0, dropped: 0, sampleEvery: truncateObservations ? sampleEvery : null, truncated: false};
   sandbox.recordObservation = function () {
-    sandbox.observationCount++;
-    if (sandbox.observationCount > Number(process.env.TRACE_MAX_OBSERVATIONS || 100000)) throw new Error('Runtime observation limit exceeded');
+    sandbox.observationBudget.seen++;
+    if (sandbox.observationBudget.seen <= observationLimit || truncateObservations && (sandbox.observationBudget.seen - observationLimit) % sampleEvery === 0) {
+      sandbox.observationBudget.retained++;
+      return true;
+    }
+    sandbox.observationBudget.dropped++;
+    sandbox.observationBudget.truncated = true;
+    if (truncateObservations) return false;
+    throw new Error('Runtime observation limit exceeded');
   };
 })(J$);

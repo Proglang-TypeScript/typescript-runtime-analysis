@@ -33,7 +33,7 @@
     };
 
     this.addReturnTypeOf = function (returnValue, traceId, declarationTraceId) {
-      sandbox.recordObservation();
+      if (!sandbox.recordObservation()) return false;
       const returnTypeOf = {
         typeOf: getTypeOfForReporting(returnValue),
         traceId,
@@ -41,6 +41,7 @@
       };
 
       this.returnTypeOfs.push(returnTypeOf);
+      return true;
     };
 
     this.getArgumentContainer = function (argumentIndex) {

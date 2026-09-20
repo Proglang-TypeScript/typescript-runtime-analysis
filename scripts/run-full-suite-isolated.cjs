@@ -16,7 +16,8 @@ verifySource(source, profile);
 const preparationFile = path.join(source, '.tra-full-suite-preparation.json');
 const entry = path.join(source, '.tra-full-suite.cjs');
 const preparation = JSON.parse(fs.readFileSync(preparationFile, 'utf8'));
-if (preparation.schemaVersion !== 1 || preparation.profile !== profile.profile || preparation.transparent !== (profile.transparent === true)) {
+if (preparation.schemaVersion !== 1 || preparation.profile !== profile.profile || preparation.transparent !== (profile.transparent === true) ||
+    preparation.truncateObservations !== (profile.truncateObservations === true) || preparation.sampleEvery !== (profile.sampleEvery || null)) {
   throw new Error('Prepared package profile mismatch');
 }
 if (sha256(path.join(source, 'package-lock.json')) !== preparation.packageLockSha256 ||
@@ -39,6 +40,7 @@ const gid = process.getgid?.() || 1000;
 const docker = process.env.DOCKER_BIN || 'docker';
 const invocationArgs = args.includes('--invocations') ? ['--invocations'] : [];
 const transparencyArgs = profile.transparent ? ['--transparent'] : [];
+const observationArgs = profile.truncateObservations ? ['--truncate-observations', '--sample-every', String(profile.sampleEvery)] : [];
 const result = spawnSync(docker, ['run', '--rm', '--network=none', '--read-only', `--user=${uid}:${gid}`, '--cpus=1', '--memory=2g',
   '--pids-limit=256', '--cap-drop=ALL', '--security-opt=no-new-privileges', '--tmpfs=/tmp:rw,size=512m',
   '--mount', `type=bind,source=${source},target=/input,readonly`, '--mount', `type=bind,source=${tool},target=/tool,readonly`,
@@ -46,7 +48,7 @@ const result = spawnSync(docker, ['run', '--rm', '--network=none', '--read-only'
   'node', '/tool/packages/cli/index.cjs', 'trace', '/input/.tra-full-suite.cjs', '--target-root', '/input', '--out', '/output/trace.json',
   '--package', profile.package, '--version', profile.version, '--evidence', 'test', '--module', profile.publicModule,
   '--repository', profile.repository, '--commit', profile.commit, '--timeout-ms', String(profile.timeoutMs),
-  '--max-observations', String(profile.maxObservations), '--instrument-paths', JSON.stringify(profile.instrumentPaths), ...transparencyArgs, ...invocationArgs],
+  '--max-observations', String(profile.maxObservations), '--instrument-paths', JSON.stringify(profile.instrumentPaths), ...transparencyArgs, ...observationArgs, ...invocationArgs],
 {stdio: 'inherit', timeout: profile.timeoutMs + 120000});
 const run = {
   schemaVersion: 1,
@@ -56,6 +58,8 @@ const run = {
   framework: profile.framework,
   instrumentPaths: profile.instrumentPaths,
   transparent: profile.transparent === true,
+  truncateObservations: profile.truncateObservations === true,
+  sampleEvery: profile.sampleEvery || null,
   tests: preparation.tests,
   testsSha256: preparation.testsSha256,
   packageLockSha256: preparation.packageLockSha256,

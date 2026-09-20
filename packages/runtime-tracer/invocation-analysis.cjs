@@ -41,10 +41,14 @@ const enter = analysis.functionEnter;
 analysis.functionEnter = function (iid, fn, receiver, args) {
   const returned = enter.apply(this, arguments);
   if (args.length > 16) throw new Error('Invocation argument limit exceeded');
-  sandbox.recordObservation();
   const parent = frames.at(-1);
+  if (!sandbox.recordObservation()) {
+    frames.push({recorded: false});
+    return returned;
+  }
   const frame = {call: nextCall++, functionId: (fn.proxyMethod || fn).functionId, arguments: Array.from(args, value => snapshot(value)), receiver: snapshot(receiver), callbacks: [], parent: parent?.call ?? null};
-  if (parent) {
+  frame.recorded = true;
+  if (parent?.recorded) {
     const identity = snapshot(fn).valueId;
     const index = parent.arguments.findIndex(value => value.type === 'function' && value.valueId === identity);
     if (index >= 0) parent.callbacks.push({argumentIndex: index, call: frame.call});
@@ -56,6 +60,7 @@ const exit = analysis.functionExit;
 analysis.functionExit = function (iid, result, exception) {
   const frame = frames.pop();
   if (!frame) throw new Error('Invocation stack mismatch');
+  if (!frame.recorded) return exit.apply(this, arguments);
   frame.outcome = exception === undefined ? 'return' : 'throw';
   frame.result = snapshot(exception === undefined ? result : exception.exception);
   completed.push(frame);
