@@ -19,3 +19,12 @@ node scripts/run-full-suite-isolated.cjs work/full-suite/qs work/full-suite-runs
 For Line B invocation tuples, add `--invocations` to the execution command. The output includes the trace sidecars, `full-suite.json`, preparation record, generated harness and exact package lock. These compact provenance files can be retained without checking in the package checkout or `node_modules`.
 
 Preparation deliberately fails if the destination already exists, source hashes differ, the package/version is wrong, or the resulting lock differs from the profile. Execution likewise refuses to overwrite a result directory and fails if prepared tests, harness or lock changed, if the framework is missing, if tests fail, or if a resource bound is reached. Remove or choose a new ignored `work/full-suite` directory explicitly when a new preparation or run is intended.
+
+## Validation record
+
+Validated on 2026-09-19 with the pinned Node image and offline execution stage:
+
+- `ms@2.1.3`: all 49 Mocha tests passed; 1,917 events were retained without truncation.
+- `qs@6.15.3`: all 1,013 Tape assertions passed; 663,346 events were seen, with the 250,000-event prefix plus 413 deterministic later samples retained and truncation reported.
+- Line B invocation mode: the complete `ms` suite passed and retained 193 invocation tuples without truncation.
+- Repository validation: build, Jest, Node tests and smoke checks passed on baseline, Line A and Line B.
