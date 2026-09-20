@@ -19,6 +19,7 @@
     var dis = this;
 
     this.callback = function (iid, base, offset, val, isComputed, isOpAssign, isMethodCall) {
+      if (sandbox.transparentTracing) return {result: val};
       let result = val;
 
       if (isMethodCall === true) {
