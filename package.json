@@ -28,7 +28,7 @@
     "esotope": "1.4.5",
     "nanoid": "6.0.1",
     "object-hash": "3.0.0",
-    "source-map-js": "1.2.1",
+    "source-map-js": "1.2.2",
     "typescript": "6.0.3"
   },
   "devDependencies": {
