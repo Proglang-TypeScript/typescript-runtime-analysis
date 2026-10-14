@@ -19,7 +19,7 @@
     "check": "npm run build && npm test && npm run smoke && npm run experiment"
   },
   "dependencies": {
-    "acorn": "8.18.0",
+    "acorn": "8.19.0",
     "acorn-legacy": "npm:acorn@7.4.1",
     "acorn-walk": "8.3.5",
     "ajv": "8.20.0",
